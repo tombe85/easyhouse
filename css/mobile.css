@@ -90,7 +90,6 @@ footer{
     margin: 0px;
     background-color: #3f51b5;
     width: 100%;
-    border: none;
 }
 
 /* TAGS GENÉRICOS */
@@ -111,6 +110,8 @@ h2{
 
 header h1{
     color: white;
+    font-weight: bold;
+    font-size: 32px;
 }
 
 /* IDS */
@@ -139,5 +140,5 @@ header h1{
 /* CLASES */
 
 .menubutton{
-    max-width: 70%;
+    max-width: 35px;
 }
