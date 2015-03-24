@@ -76,7 +76,7 @@ header{
     padding: 5px;
     margin: 0px;
     width: 100%;
-    background-color: #008888;
+    background-color: #3f51b5;
 }
 
 #content{
@@ -88,7 +88,7 @@ header{
 footer{
     padding: 5px;
     margin: 0px;
-    background-color: #008888;
+    background-color: #3f51b5;
     width: 100%;
     border: none;
 }
