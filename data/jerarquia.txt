@@ -2,7 +2,7 @@
 index.html -- redirige a o login o a home segun si esta iniciada sesion o no
 login.html -- hace login en la pagina
 register.html -- registrarse en la pagina
-newhome.html -- crear una casa lanzar invitaciones etc, la cuenta se vuelve admin de esa casa a esta pagina solo se puede acceder si no estas en ninguna casa
+userregister.html -- registro de un usuario normal (por invitación)
 
 -- USER -- 
 home.html -- registro de las ultimas noticias y compras urgentes y otras historias o una invitacion a crear una casa nuevo ya que no eres miembro de ninguna casa
