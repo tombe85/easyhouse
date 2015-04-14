@@ -83,6 +83,7 @@ body{
     margin: 0px;
     padding: 0px;
     width: 100%;
+    height: 100%;
 }
 
 header{
@@ -91,12 +92,6 @@ header{
     width: 100%;
     float: left;
     background-color: #3f51b5;
-}
-
-#content{
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
 }
 
 footer{
@@ -132,8 +127,14 @@ header h1{
 
 #logo{
     margin-left: 5px;
-    /*text-align: center;*/
+    text-align: center;
     float: left;
+}
+
+#logoLogIn{
+    margin-left: 5px;
+    width: 100%;
+    text-align: center;
 }
 
 #foto{
@@ -170,7 +171,28 @@ header h1{
 }
 
 #content{
-    padding: 5px;
+    padding: 1em;
+    margin: 0px;
+    height: 100%;
+}
+
+#contentLogIn{
+    padding: 4em;
+    margin: 0px;
+    
+    height: auto;
+    vertical-align: middle;
+}
+
+#contentLogIn input{
+    background-color: white;
+}
+
+#contentLogIn button{
+    background-color: #d50000;
+    border: none;
+    margin-top: 1em;
+    color: white;
 }
 
 /* CLASES */
@@ -178,3 +200,13 @@ header h1{
 .menubutton{
     max-width: 35px;
 }
+
+.entradaLogIn{
+    color: white;
+}
+
+.blueBackground{
+    background-color: #7986cb;
+}
+
+
