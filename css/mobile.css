@@ -95,9 +95,9 @@ header{
 }
 
 footer{
-    padding: 5px;
+    padding: 0px;
     margin: 0px;
-    background-color: #3f51b5;
+    
     width: 100%;
 }
 
@@ -112,7 +112,23 @@ h1{
 h2{
     padding: 0px;
     margin: 0px;
-    font-family: 'roboto_condensedlight';   
+    font-family: 'roboto_condensedbold';   
+}
+
+h3{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'roboto_condensedbold';
+}
+
+button{
+    margin: 0px;
+    padding: 0px;
+}
+
+input{
+    margin: 0px;
+    padding: 0px;
 }
 
 /* COMBINACIONES DE TAGS */
@@ -164,7 +180,9 @@ header h1{
 
 #menuinf{
     width: 100%;
-    
+    background-color: #3f51b5;
+    margin: 0px;
+    padding: 5px;
 }
 
 #menuinf td{
@@ -189,6 +207,13 @@ header h1{
     background-color: white;
 }
 
+#contentLogIn input[type="file"]{
+    background-color: #7986cb;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
 #contentLogIn button{
     background-color: #d50000;
     border: none;
@@ -196,7 +221,29 @@ header h1{
     color: white;
 }
 
+#limpiaHome{
+    width: inherit;
+}
+
+#limpiaHome button{
+    width: inherit;
+}
+
 /* CLASES */
+
+.buttonNormal{
+    background-color: #7986cb;
+    border: none;
+    color: white;
+    width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
+}
+
+.buttonAction{
+    background-color: #d50000;
+    border: none;
+    color: white;
+    width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
+}
 
 .menubutton{
     max-width: 35px;
@@ -204,10 +251,53 @@ header h1{
 
 .entradaLogIn{
     color: white;
+    margin: 0px;
+    padding: 0px;
 }
 
 .blueBackground{
     background-color: #7986cb;
 }
 
+.registro{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    float: left;
+}
+
+.registroFoto{
+    width: 50px;
+    text-align: center;
+    background-color: white;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    height: 50px;
+    border-radius: 25px 25px 25px 25px;
+    -moz-border-radius: 25px 25px 25px 25px;
+    -webkit-border-radius: 25px 25px 25px 25px;
+    overflow: hidden;
+    float: inherit;
+}
+
+.registroFoto img{
+    height: 100%;
+    overflow: hidden;
+}
+
+.registroTexto{
+    width: auto;
+    vertical-align:middle;
+    padding-top: 1em;
+    float: inherit;
+}
+
+.botonesinferiores{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
 
