@@ -159,6 +159,7 @@ header h1{
 
 #elevated{
     font-size: 15px;
+    vertical-align:super;
 }
 
 #menuinf{
