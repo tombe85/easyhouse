@@ -229,7 +229,19 @@ header h1{
     width: inherit;
 }
 
+#addButton{
+    width: inherit;
+}
+
+#addButton button{
+    width: inherit;
+}
+
 /* CLASES */
+
+.tabla{
+    width: 100%;
+}
 
 .buttonNormal{
     background-color: #7986cb;
@@ -263,8 +275,17 @@ header h1{
     width: 100%;
     margin: 0px;
     padding: 0px;
-    display: block;
     float: left;
+}
+
+.registroTablon{
+    width: 100%;
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+    border-top: 1px solid #7986cb;
+    border-bottom: 1px solid #7986cb;
 }
 
 .registroFoto{
@@ -290,7 +311,6 @@ header h1{
 .registroTexto{
     width: auto;
     vertical-align:middle;
-    padding-top: 1em;
     float: inherit;
 }
 
