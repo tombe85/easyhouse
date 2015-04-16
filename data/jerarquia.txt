@@ -22,21 +22,10 @@ tasks/main.html  -- pagina de tareas para usuarios
 shopping/main.html -- pagina con la lista de la compra
 shopping/addproduct.html -- pagina para añadir productos a la lista
 
--- ADMIN --
-admin/home.html -- registro de las ultimas noticias y compras urgentes y otras historias o una invitacion a crear una casa nuevo ya que no eres miembro de ninguna casa. Tambien permite al admin aprovar o rechazar tareas completadas
-
-admin/board/main.html -- pagina principal del tablon
-admin/board/newmessage.html -- escribir un nuevo mensaje
-admin/board/viewmessage.html -- ver un mensaje en concreto/responder
+-- ADMIN -- home, tareas, etc las mismas que el usuario normal
 
 admin/config/main.html -- pagina principal de configuracion
 admin/config/users.html -- para admin permite añadir/quitar usuarios a la casa
 admin/config/tasks.html -- para admin permite añadir/quitar/modificar tareas o aprovar tareas sugeridas por otros usuarios
 admin/config/products.html -- para admin permite añadir/quitar/modificar productos o aprovar productos sugeridos por otros usuarios
 
-admin/expenses/main.html -- pagina de gastos para admin
-
-admin/tasks/main.html  -- pagina de tareas para admin
-
-shopping/main.html -- pagina con la lista de la compra
-shopping/addproduct.html -- pagina para añadir productos a la lista
