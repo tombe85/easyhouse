@@ -191,6 +191,7 @@ header h1{
 
 #content{
     margin: 0px;
+    padding: 0px;
     height: 100%;
 }
 
@@ -207,7 +208,7 @@ header h1{
 }
 
 #contentLogIn input[type="file"]{
-    background-color: #7986cb;
+    background-color: #C5CAE9;
     border: none;
     margin: 0px;
     padding: 0px;
@@ -244,7 +245,7 @@ header h1{
 }
 
 .buttonNormal{
-    background-color: #7986cb;
+    background-color: #C5CAE9;
     border: none;
     color: white;
     width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
@@ -268,7 +269,7 @@ header h1{
 }
 
 .blueBackground{
-    background-color: #7986cb;
+    background-color: #c5cae9;
 }
 
 .registro{
@@ -281,11 +282,10 @@ header h1{
 .registroTablon{
     width: 100%;
     margin: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
     float: left;
-    border-top: 1px solid #7986cb;
-    border-bottom: 1px solid #7986cb;
+    border-top: 1px solid #3f51b5;
+    border-bottom: 1px solid #3f51b5;
 }
 
 .registroFoto{
@@ -311,6 +311,7 @@ header h1{
 .registroTexto{
     width: auto;
     vertical-align:middle;
+    padding-left: 10px;
     float: inherit;
 }
 
