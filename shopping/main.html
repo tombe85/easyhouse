@@ -12,47 +12,73 @@
 
         <style>
 
-            .shopping{
-                width: 100%;
-                margin: 0px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                float: left;
-                border-bottom: 1px solid #7986cb;
+            .ui-checkbox{
+                float:left;
             }
 
-            .tabla{
-            width: 100%;
-}
+            .estiloShopping{
+                width: 100%;
+                margin: 0px;
+                float: left;
+                background-color: #b0c4de;
+            }
+
+            .botoneInferiorIzda{
+                float:left;
+                width: 50%;
+                background:#FF5252;
+                text-align: center;
+            }
+            .botoneInferiorDcha{
+                float: right;
+                width: 50%;
+                background:#d50000;
+                text-align: center;
+            }
+            .buttonActionAdd{
+                background-color: #FF5252;
+                border: none;
+                color: white;
+                width: 100%;
+            }
 
         </style>
+
     </head>
     <body>
         <header data-role="header" data-position="fixed">
             <div id="logo">
-                <h1>sweetHome <span id="elevated">SW</span></h1>
+                <h1>sweetHome<span id="elevated">SW</span></h1>
             </div>
             <div id="foto">
                 <a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a>
             </div>
         </header>
-        <div id="content" data-role="content">
-             <form method="post" action="#">
-                <div class"shopping">
-                    <input type="checkbox" id="huevos">
-                    <label for"huevos">Huevos</label> 
-                </div>
-                <div></div>
-                <table>
-                    <tr class="producto">
-                        <td class="shopping">
-                          <input type="checkbox" name = "productoX" value = "Huevos">Huevos
-                        </td>
-                    </tr>         
-                </table>            
-            </form>
+        <div class = "estiloShopping" id="content" data-role="content">
+            <table class>
+                <tr class="registro">
+                    <td>
+                        <label><input type="checkbox" name="Huevos" value="Huevos">Huevos</label>
+                    </td>
+                </tr>
+                 <tr class="registro">
+                    <td>
+                        <label><input type="checkbox" name="Leche" value="Leche">Leche</label>
+                    </td>
+                </tr>
+            </table>
         </div>
         <footer data-role="footer" data-position="fixed">
+            <div class="botoneInferiorIzda">
+                <div id="addToLista">
+                    <button class="buttonActionAdd"><h1>+</h1></button>
+                </div>
+            </div>
+            <div class="botoneInferiorDcha">
+                <div id="addToCarrito">
+                    <button class="buttonAction"><h1>icono</h1></button>
+                </div>
+            </div>
             <table id="menuinf">
                 <tr>
                     <td><a href="/sweethomesw/home.html"><img id="homebutton" class="menubutton" src="/sweethomesw/img/home.png" /></a></td>
