@@ -16,13 +16,6 @@
                 float:left;
             }
 
-            .estiloShopping{
-                width: 100%;
-                margin: 0px;
-                float: left;
-                background-color: #b0c4de;
-            }
-
             .botoneInferiorIzda{
                 float:left;
                 width: 50%;
@@ -41,29 +34,35 @@
                 color: white;
                 width: 100%;
             }
+            .tablaHeader{
+                width: 95%;
+                margin: 2%;
+            }
 
         </style>
 
     </head>
-    <body>
+    <body class = "blueBackground">
         <header data-role="header" data-position="fixed">
-            <div id="logo">
-                <h1>sweetHome<span id="elevated">SW</span></h1>
-            </div>
-            <div id="foto">
-                <a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a>
-            </div>
+            <table class = "tablaHeader">
+                <tr>
+                    <td><img id="nullheader" class="menubutton" src="/sweethomesw/img/null.png" /></td>
+                    <td id="logo"><h1>sweetHome<span id="elevated">SW</span></h1></td>
+                    <td id="foto"><a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
+                </tr>
+            </table>
         </header>
-        <div class = "estiloShopping" id="content" data-role="content">
-            <table class>
-                <tr class="registro">
-                    <td>
-                        <label><input type="checkbox" name="Huevos" value="Huevos">Huevos</label>
+
+        <div id="content" data-role="content">
+            <table class="tabla">
+                <tr class="registroTablon">
+                    <td class="registroTexto">
+                        <label><input type="checkbox" name="Huevos" value="Huevos"><h3>Huevos</h3></label>
                     </td>
                 </tr>
-                 <tr class="registro">
-                    <td>
-                        <label><input type="checkbox" name="Leche" value="Leche">Leche</label>
+                 <tr class="registroTablon">
+                    <td class="registroTexto">
+                        <label><input type="checkbox" name="Leche" value="Leche"><h3>Leche</h3></label>
                     </td>
                 </tr>
             </table>
@@ -71,7 +70,7 @@
         <footer data-role="footer" data-position="fixed">
             <div class="botoneInferiorIzda">
                 <div id="addToLista">
-                    <button class="buttonActionAdd"><h1>+</h1></button>
+                    <a href="/sweethomesw/shopping/addproduct.html"><button class="buttonActionAdd"><h1>+</h1></button></a>
                 </div>
             </div>
             <div class="botoneInferiorDcha">
