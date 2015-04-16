@@ -240,6 +240,7 @@ header h1{
 
 .tabla{
     width: 100%;
+    border-spacing: 0px;
 }
 
 .buttonNormal{
