@@ -14,47 +14,45 @@
             .ui-checkbox{
                 float:left;
             }
-            .estiloShopping{
-                width: 100%;
-                margin: 0px;
-                float: left;
-                background-color: #b0c4de;
+
+            .tablaHeader{
+                width: 95%;
+                margin: 2%;
             }
-            .buttonActionRome{
-                float: left;
-                width: 100%;
-                background:#d50000;
-                text-align: center;
-                /*Este botón se ajusta completamente, no quedan líneas blancas por debajo*/
-            }
+
         </style>
 
     </head>
-    <body>
+    <body class = "blueBackground">
         <header data-role="header" data-position="fixed">
-            <div id="logo">
-                <h1>sweetHome <span id="elevated">SW</span></h1>
-            </div>
-            <div id="foto">
-                <a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a>
-            </div>
+            <table class = "tablaHeader">
+                <tr>
+                    <td><a href="/sweethomesw/shopping/main.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
+                    <td id="logo"><h1>sweetHome<span id="elevated">SW</span></h1></td>
+                    <td id="foto"><a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
+                </tr>
+            </table>
         </header>
+
+
+
+
         <div class = "estiloShopping" id="content" data-role="content">
-            <table class>
-                <tr class="registro">
-                    <td>
-                        <label><input type="checkbox" name="café" value="Café">Café</label>
+            <table class="tabla">
+                <tr class="registroTablon">
+                    <td class="registroTexto">
+                        <label><input type="checkbox" name="café" value="Café"><h3>Café</h3></label>
                     </td>
                 </tr>
-                 <tr class="registro">
-                    <td>
-                        <label><input type="checkbox" name="Detergente" value="Detergente">Detergente</label>
+                 <tr class="registroTablon">
+                    <td class="registroTexto">
+                        <label><input type="checkbox" name="Detergente" value="Detergente"><h3>Detergente</h3></label>
                     </td>
                 </tr>
             </table>
         </div>
         <footer data-role="footer" data-position="fixed">
-            <div class="buttonActionRome">
+            <div class="buttonAction">
                 <div id="addButton">
                     <button class="buttonAction"><h1>icono</h1></button>
                 </div>
