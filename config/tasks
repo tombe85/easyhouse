@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" style="text/css" href="css/mobile.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script>
+            
+        </script>
+		<style>
+			#submitButton{
+				width: inherit;}
+			#submitButton button{
+				width: inherit;}	
+		</style>
+    </head>
+    <body class="blueBackground">
+        <header data-role="header" data-position="fixed">
+            <div id="logoLogIn">
+                <h1>sweetHome <span id="elevated">SW</span></h1>
+            </div>
+        </header>
+		
+        <div id="contentLogIn" data-role="content">
+            <form method="post" action="#">
+                <div class="entradaTarea">
+                    <h2>Nombre de la tarea</h2>
+                    <input type="text" name="tarea">
+                </div>
+                <div class="entradaTarea">
+                    <h2>Puntuacion</h2>
+                    <input type="number" name="puntuacion">
+                </div>
+				<div class="entradaTarea">
+                    <h2>Periodo</h2>
+                    <input type="number" name="periodo">
+                </div>
+            </form>
+        </div>
+		
+        <footer data-role="footer" data-position="fixed">
+            <div class = "botonesinferiores">
+			    <div id="submitButton">
+                    <button class="buttonAction"><h1>Submit</h1></button>
+                </div>
+			</div>
+			<table id="menuinf">				
+                <tr>
+                    <td><a href="#"><img id="homebutton" class="menubutton" src="img/home.png" /></a></td>
+                    <td><a href="#"><img id="tablonbutton" class="menubutton" src="img/tablon.png" /></a></td>
+                    <td><a href="#"><img id="tareasbutton" class="menubutton" src="img/tareas.png" /></a></td>
+                    <td><a href="#"><img id="comprabutton" class="menubutton" src="img/compra.png" /></a></td>
+                    <td><a href="#"><img id="gastosbutton" class="menubutton" src="img/gastos.png" /></a></td>
+                    <td><a href="#"><img id="configbutton" class="menubutton" src="img/config.png" /></a></td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>
