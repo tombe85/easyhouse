@@ -227,6 +227,8 @@ header h1{
 
 #limpiaHome button{
     width: inherit;
+    margin: 0px;
+    border: none;
 }
 
 #addButton{
