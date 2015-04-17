@@ -327,3 +327,10 @@ header h1{
     width: inherit;
     
 }
+.tablaHeader{
+    width: 95%;
+    margin: 2%;
+}
+#null{
+    width: 16.5%;
+}
