@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" style="text/css" href="css/mobile.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script>
+            
+        </script>
+		<style>
+			#submitButton{
+				width: inherit;}
+			#submitButton button{
+				width: inherit;}
+			.usuario{
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+				float: left;
+			}
+			.usuarioFoto{
+				width: 50px;
+				text-align: center;
+				background-color: white;
+				margin-top: 2px;
+				margin-bottom: 2px;
+				margin-right: 10px;
+				height: 50px;
+				border-radius: 25px 25px 25px 25px;
+				-moz-border-radius: 25px 25px 25px 25px;
+				-webkit-border-radius: 25px 25px 25px 25px;
+				overflow: hidden;
+				float: inherit;
+				}
+			.usuarioFoto img{
+				height: 100%;
+				overflow: hidden;
+			}
+			.usuarioTexto{
+				width: auto;
+				vertical-align:middle;
+				padding-left: 10px;
+				float: inherit;
+			}
+#contentAdminUsuario{
+    padding: 3em;
+    margin: 0px;
+    
+    height: auto;
+    vertical-align: middle;
+}
+
+#contentAdminUsuario input{
+    background-color: white;
+}
+
+#contentAdminUsuario input[type="file"]{
+    background-color: #C5CAE9;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#contentAdminUsuario button{
+    background-color: #d50000;
+    border: none;
+    margin-top: 1em;
+    color: white;
+}
+			
+		</style>
+    </head>
+    <body class="blueBackground">
+        <header data-role="header" data-position="fixed">
+            <table class = "tablaHeader">
+                <tr>
+                    <td id="null"></td>
+                    <td id="logo"><h1>sweetHome<span id="elevated">SW</span></h1></td>
+                    <td id="foto"><a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
+                </tr>
+            </table>
+        </header>
+		
+        <div id="contentAdminUsuario" data-role="content">
+            <table>
+                <tr class="usuario">
+                    <td class="usuarioFoto">
+                        <img src="img/usuario.png" />
+                    </td>
+                    <td class="usuarioCorreo">
+                        <h3>laura@ucm.es</h3>
+                    </td>
+					<td class="usuarioPapelera">
+                        <img src="img/papelera.png" />
+                    </td>
+                </tr>
+				
+                <tr class="usuario">
+                    <td class="usuarioFoto">
+                        <img src="img/usuario.png" />
+                    </td>
+                    <td class="usuarioCorreo">
+                        <h3>Lorena@ucm.es</h3>
+                    </td>
+					<td class="usuarioPapelera">
+                        <img src="img/papelera.png" />
+                    </td>
+                </tr>
+				
+				<tr class="usuario">
+                    <td class="usuarioFoto">
+                        <img src="img/usuario.png" />
+                    </td>
+                    <td class="usuarioCorreo">
+                        <h3>Alberto@ucm.es</h3>
+                    </td>
+					<td class="usuarioPapelera">
+                        <img src="img/papelera.png" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+		
+        <footer data-role="footer" data-position="fixed">
+
+			<table id="menuinf">				
+                <tr>
+                    <td><a href="#"><img id="atrasbutton" class="menubutton" src="img/back.png" /></a></td>
+                    <td><a href="#"><img id="usuariobutton" class="menubutton" src="img/usuarioconfig.png" /></a></td>
+                    <td><a href="#"><img id="tareabutton" class="menubutton" src="img/tareaconfig.png" /></a></td>
+                    <td><a href="#"><img id="comprabutton" class="menubutton" src="img/compraconfig.png" /></a></td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>
