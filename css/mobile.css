@@ -80,6 +80,7 @@
 
 body{
     font-family: 'roboto_condensedlight';
+    font-size: 1.17em;
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -234,7 +235,7 @@ header h1{
 
 #limpiaHome{
     width: inherit;
-    border-spacing: 2px;
+    border-spacing: 0px;
 }
 
 #limpiaHome button{
@@ -388,11 +389,20 @@ header h1{
 }
 
 .sendtext{
-    width: auto;
+    width: 100%;
+    float: left;
+    border-spacing: 0px;
+    background-color: white;
+}
+
+.sendtext input{
+    font-size: 1.17em;
 }
 
 .sendbutton{
     width: auto;
+    text-align: right;
+    border-spacing: 0px;
 }
 
 form{
