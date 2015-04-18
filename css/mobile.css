@@ -276,6 +276,7 @@ header h1{
 .buttonAzulOscuro{
     background-color: #303F9F;
     color: white;
+    border: 0px;
 }
 
 .menubutton{
