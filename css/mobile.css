@@ -90,7 +90,6 @@ header{
     padding: 5px;
     margin: 0px;
     width: 100%;
-    float: left;
     background-color: #3f51b5;
 }
 
@@ -116,6 +115,12 @@ h2{
 }
 
 h3{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'roboto_condensedlight';
+}
+
+h4{
     padding: 0px;
     margin: 0px;
     font-family: 'roboto_condensedlight';
@@ -193,6 +198,7 @@ header h1{
     margin: 0px;
     padding: 0px;
     height: 100%;
+    width: 100%;
 }
 
 #contentLogIn{
@@ -223,6 +229,7 @@ header h1{
 
 #limpiaHome{
     width: inherit;
+    border-spacing: 2px;
 }
 
 #limpiaHome button{

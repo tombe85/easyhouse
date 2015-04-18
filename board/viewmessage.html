@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" style="text/css" href="/sweethomesw/css/mobile.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script>
+            
+        </script>
+        <style>
+            #originalmessage{
+                width: 100%;
+                padding: 10px;
+                margin: 0px;
+                border-bottom: 2px solid #3f51b5;
+            }
+            
+            #originalmessBottom{
+                width: 100%;
+                padding: 0px;
+                margin-left: 0px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            
+            .registroFotoPequena{
+                width: 30px;
+                text-align: center;
+                /*background-color: white;*/
+                margin-top: 2px;
+                margin-bottom: 2px;
+                margin-right: 10px;
+                height: 30px;
+                border-radius: 15px 15px 15px 15px;
+                -moz-border-radius: 15px 15px 15px 15px;
+                -webkit-border-radius: 15px 15px 15px 15px;
+                overflow: hidden;
+                float: inherit;
+            }
+            
+            .registroFotoPequena img{
+                width: 100%;
+                height: 30px;
+                overflow: hidden;
+            }
+            
+            .sendtext{
+                width: auto;
+            }
+            
+            .sendbutton{
+                width: auto;
+            }
+            
+            form{
+                margin-bottom: 0px;
+            }
+            
+            .ui-input-text{
+                margin:0px;
+            }
+            
+        </style>
+    </head>
+    <body class = "blueBackground">
+        <header data-role="header" data-position="fixed">
+            <table class = "tablaHeader">
+                <tr>
+                    <td id="null"><a href="/sweethomesw/board/main.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></td>
+                    <td id="logo"><h1>sweetHome<span id="elevated">SW</span></h1></td>
+                    <td id="foto"><a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
+                </tr>
+            </table>
+        </header>
+        <div id="content" data-role="content">
+            <div id="originalmessage">
+                <table class="tabla">
+                    <tr>
+                        <td class="registroFoto">
+                            <img src="/sweethomesw/img/usuario.png" />
+                        </td>
+                        <td class="registroTexto">
+                            <h2>Viene el del GAS</h2>
+                        </td>
+                    </tr>
+                </table>
+                <div id="originalmessBottom">
+                    <h3>A las 19:00, el día 18 de Abril viene el del gas. Es necesario que alguien esté en casa para abrirle!!</h3>
+                </div>
+            </div>
+            <table class="tabla">
+                <tr class="registroTablon">
+                    <td class="registroFotoPequena">
+                        <img src="/sweethomesw/img/usuario.png" />
+                    </td>
+                    <td class="registroTexto">
+                        <h3>Yo no puedo estar</h3>
+                    </td>
+                </tr>
+                <tr class="registroTablon">
+                    <td class="registroFotoPequena">
+                        <img src="/sweethomesw/img/usuario.png" />
+                    </td>
+                    <td class="registroTexto">
+                        <h3>Yo acabo de trabajar a esa hora, llegaré lo antes posible!</h3>
+                    </td>
+                </tr>
+                <tr class="registroTablon">
+                    <td class="registroFotoPequena">
+                        <img src="/sweethomesw/img/usuario.png" />
+                    </td>
+                    <td class="registroTexto">
+                        <h3>Yo puedo estar de 18:00 a 19:15 así puedo abrirle, pero debe estar alguien después.</h3>
+                    </td>
+                </tr>
+                <tr class="registroTablon">
+                    <td class="registroFotoPequena">
+                        <img src="/sweethomesw/img/usuario.png" />
+                    </td>
+                    <td class="registroTexto">
+                        <h3>Me quedo todo el día en casa! No problem.</h3>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+        <footer data-role="footer" data-position="fixed">
+            <div class="botonesinferiores">
+                <form>
+                    <table class="tabla">
+                        <tr id="limpiaHome">
+                            <td class="sendtext">
+                                <input type="text" name="texto" />
+                            </td>
+                            <td class="sendbutton">
+                                <button class="buttonAction"><h2>Enviar</h2></button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <table id="menuinf">
+                <tr>
+                    <td><a href="/sweethomesw/home.html"><img id="homebutton" class="menubutton" src="/sweethomesw/img/home.png" /></a></td>
+                    <td><a href="/sweethomesw/board/main.html"><img id="tablonbutton" class="menubutton" src="/sweethomesw/img/tablon.png" /></a></td>
+                    <td><a href="/sweethomesw/tasks/main.html"><img id="tareasbutton" class="menubutton" src="/sweethomesw/img/tareas.png" /></a></td>
+                    <td><a href="/sweethomesw/shopping/main.html"><img id="comprabutton" class="menubutton" src="/sweethomesw/img/compra.png" /></a></td>
+                    <td><a href="/sweethomesw/expenses/main.html"><img id="gastosbutton" class="menubutton" src="/sweethomesw/img/gastos.png" /></a></td>
+                    <td><a href="/sweethomesw/config/main.html"><img id="configbutton" class="menubutton" src="/sweethomesw/img/config.png" /></a></td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>
