@@ -79,7 +79,7 @@
 /* PARTES */
 
 body{
-    font-family: 'roboto_condensedregular';
+    font-family: 'roboto_condensedlight';
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -106,19 +106,19 @@ footer{
 h1{
     padding: 0px;
     margin: 0px;
-    font-family: 'roboto_condensedregular';
+    font-family: 'roboto_condensedlight';
 }
 
 h2{
     padding: 0px;
     margin: 0px;
-    font-family: 'roboto_condensedregular';   
+    font-family: 'roboto_condensedlight';   
 }
 
 h3{
     padding: 0px;
     margin: 0px;
-    font-family: 'roboto_condensedregular';
+    font-family: 'roboto_condensedlight';
 }
 
 button{
