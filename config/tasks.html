@@ -13,7 +13,38 @@
 			#submitButton{
 				width: inherit;}
 			#submitButton button{
-				width: inherit;}	
+				width: inherit;}
+				
+			#contentTarea{
+				padding: 3em;
+				margin: 0px;
+				
+				height: auto;
+				vertical-align: middle;
+			}
+
+			#contentTarea input{
+				background-color: white;
+			}
+
+			#contentTarea input[type="file"]{
+				background-color: #C5CAE9;
+				border: none;
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#contentTarea button{
+				background-color: #d50000;
+				border: none;
+				margin-top: 1em;
+				color: white;
+			}
+			.entradaTarea{
+				color: black;
+				margin: 0px;
+				padding: 0px;
+			}				
 		</style>
     </head>
     <body class="blueBackground">
@@ -23,7 +54,7 @@
             </div>
         </header>
 		
-        <div id="contentLogIn" data-role="content">
+        <div id="contentTarea" data-role="content">
             <form method="post" action="#">
                 <div class="entradaTarea">
                     <h2>Nombre de la tarea</h2>
@@ -43,17 +74,15 @@
         <footer data-role="footer" data-position="fixed">
             <div class = "botonesinferiores">
 			    <div id="submitButton">
-                    <button class="buttonAction"><h1>Submit</h1></button>
+                    <button class="buttonAction"><h1>Agregar</h1></button>
                 </div>
 			</div>
 			<table id="menuinf">				
                 <tr>
-                    <td><a href="#"><img id="homebutton" class="menubutton" src="img/home.png" /></a></td>
-                    <td><a href="#"><img id="tablonbutton" class="menubutton" src="img/tablon.png" /></a></td>
-                    <td><a href="#"><img id="tareasbutton" class="menubutton" src="img/tareas.png" /></a></td>
-                    <td><a href="#"><img id="comprabutton" class="menubutton" src="img/compra.png" /></a></td>
-                    <td><a href="#"><img id="gastosbutton" class="menubutton" src="img/gastos.png" /></a></td>
-                    <td><a href="#"><img id="configbutton" class="menubutton" src="img/config.png" /></a></td>
+                    <td><a href="#"><img id="atrasbutton" class="menubutton" src="img/back.png" /></a></td>
+                    <td><a href="#"><img id="usuariobutton" class="menubutton" src="img/usuarioconfig.png" /></a></td>
+                    <td><a href="#"><img id="tareabutton" class="menubutton" src="img/tareaconfig.png" /></a></td>
+                    <td><a href="#"><img id="comprabutton" class="menubutton" src="img/compraconfig.png" /></a></td>
                 </tr>
             </table>
         </footer>
