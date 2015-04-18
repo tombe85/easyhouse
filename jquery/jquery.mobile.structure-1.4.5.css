@@ -229,7 +229,7 @@ div.ui-mobile-viewport {
 /* Buttons and icons */
 .ui-btn {
 	font-size: 16px;
-	margin: .5em 0;
+	margin: 0;
 	padding: .7em 1em;
 	display: block;
 	position: relative;
