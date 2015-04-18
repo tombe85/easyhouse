@@ -271,6 +271,11 @@ header h1{
     width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
 }
 
+.buttonAzulOscuro{
+    background-color: #303F9F;
+    color: white;
+}
+
 .menubutton{
     max-width: 35px;
 }
