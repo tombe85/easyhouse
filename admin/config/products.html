@@ -11,6 +11,10 @@
         </script>
 		
 		<style>
+					#submitButton{
+				width: inherit;}
+			#submitButton button{
+				width: inherit;}
 		#contentAdminProductos{
     padding: 3em;
     margin: 0px;
@@ -41,15 +45,25 @@
     margin: 0px;
     padding: 0px;
 }
+			#backimg{
+				width: 50px;
+				text-align: center;
+				float: right;
+				margin-top: 2px;
+				margin-bottom: 2px;
+				margin-right: 10px;
+				height: 50px;
+				overflow: hidden;
+			}
 		</style>
     </head>
     <body class="blueBackground">
         <header data-role="header" data-position="fixed">
-            <table class = "tablaHeader">
+            <table class="tablaHeader">
                 <tr>
-                    <td id="null"></td>
+                    <td id="backimg"><a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
                     <td id="logo"><h1>sweetHome<span id="elevated">SW</span></h1></td>
-                    <td id="foto"><a href="#"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
+                    <td id="foto"><a href="/sweethome/admin/config/main.html"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
                 </tr>
             </table>
         </header>
@@ -65,15 +79,14 @@
         <footer data-role="footer" data-position="fixed">
             <div class = "botonesinferiores">
 			    <div id="submitButton">
-                    <button class="buttonAction"><h1>Agregar</h1></button>
+                    <button class="buttonAction"><img class="menubutton" src="/sweethomesw/img/ok.png"/></button>
                 </div>
 			</div>
 			<table id="menuinf">				
                 <tr>
-                    <td><a href="#"><img id="atrasbutton" class="menubutton" src="img/atras.png" /></a></td>
-                    <td><a href="#"><img id="usuariobutton" class="menubutton" src="img/usuarioconfig.png" /></a></td>
-                    <td><a href="#"><img id="tareabutton" class="menubutton" src="img/tareaconfig.png" /></a></td>
-                    <td><a href="#"><img id="comprabutton" class="menubutton" src="img/compraconfig.png" /></a></td>
+                    <td><a href="#"><img id="usuariobutton" class="menubutton" src="/sweethomesw/img/usuarioconfig.png" /></a></td>
+                    <td><a href="#"><img id="tareabutton" class="menubutton" src="/sweethomesw/img/tareaconfig.png" /></a></td>
+                    <td><a href="#"><img id="comprabutton" class="menubutton" src="/sweethomesw/img/compraraction.png" /></a></td>
                 </tr>
             </table>
         </footer>
