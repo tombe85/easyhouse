@@ -413,3 +413,7 @@ form{
 .ui-input-text{
     margin:0px;
 }
+
+.whitefont{
+    color: white;
+}
