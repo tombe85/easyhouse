@@ -418,3 +418,19 @@ form{
 .whitefont{
     color: white;
 }
+
+
+#datosuser{
+    margin-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #3f51b5;
+}
+
+#datosuser img{
+    width: 6em;
+}
+.buttonConfig{
+    border-bottom: 1px solid #3f51b5;
+}
