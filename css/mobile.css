@@ -352,6 +352,11 @@ header h1{
     float: inherit;
 }
 
+.registroTexto a{
+    text-decoration: none;
+    color: black;
+}
+
 .botonesinferiores{
     width: 100%;
     padding: 0px;
