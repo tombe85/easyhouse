@@ -219,14 +219,7 @@ header h1{
     background-color: white;
 }
 
-#contentLogIn input[type="file"]{
-    background-color: #C5CAE9;
-    border: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-#contentLogIn button{
+.submitbutton button{
     background-color: #d50000;
     border: none;
     margin-top: 1em;
