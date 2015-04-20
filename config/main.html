@@ -9,6 +9,19 @@
         <script>
             
         </script>
+        <style>
+            #cambiapasswd{
+                padding: 1em;
+                display: none;
+                
+            }
+            
+            .entradaLogin input[type="text"], .entradaLogin input[type="password"]{
+                background-color: white;
+            }
+            
+            
+        </style>
     </head>
     <body class = "blueBackground">
         <header data-role="header" data-position="fixed">
@@ -28,8 +41,21 @@
             <div class="buttonConfig">
                 <button type="submit" class="buttonAzulOscuro"><h2>Mis Tareas</h2></button>
             </div>
-            <div class="buttonConfig">
+            <div class="buttonConfig" onmousedown='document.getElementById("cambiapasswd").style.display="block";'>
                 <button type="submit" class="buttonAzulOscuro"><h2>Cambiar Contraseña</h2></button>
+            </div>
+            <div id="cambiapasswd">
+                <div class="entradaLogIn">
+                    <h2>Contraseña nueva</h2>
+                    <input type="text" name="passwdnueva">
+                </div>
+                <div class="entradaLogIn">
+                    <h2>Contraseña antigua</h2>
+                    <input type="password" name="passwd">
+                </div>
+                <div class="submitbutton">
+                    <button type="submit"><h2><a class="whitefont" href="/sweethomesw/config/main.html">Actualizar</a></h2></button>
+                </div>
             </div>
             <div class="buttonConfig">
                 <button type="submit" class="buttonAzulOscuro"><h2>Cambiar Correo</h2></button>
