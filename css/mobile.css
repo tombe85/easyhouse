@@ -411,10 +411,6 @@ form{
     margin-bottom: 0px;
 }
 
-.ui-input-text{
-    margin:0px;
-}
-
 .whitefont{
     color: white;
 }
@@ -444,4 +440,73 @@ form{
     width: 6em;
     height: 6em;
     overflow: hidden;
+}
+
+#cambiapasswd{
+    padding: 1em;
+    display: none;
+
+}
+
+.entradaLogin input[type="text"], .entradaLogin input[type="password"]{
+    background-color: white;
+}
+
+.expenseMenu{
+    border-bottom: 1px solid #c5cae9;
+}
+
+.expenseMenu ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0px;
+    height: 0px;
+    margin: 0;
+
+    /*Animacion menu*/
+    -webkit-transition: height 0.5s ease;
+       -moz-transition: height 0.5s ease;
+         -o-transition: height 0.5s ease;
+        -ms-transition: height 0.5s ease;
+            transition: height 0.5s ease; 
+}
+
+.expenseMenu:hover ul {
+    height: 232px;
+}
+
+.expenseMenu li{
+    padding: 2px;
+}
+
+.expenseMenu li img{
+    vertical-align: middle;
+}
+
+.expenseButton{
+    background-color: #303F9F;
+    border: 0px;
+}
+
+.expenseButton a{
+    color: white;
+}
+
+.botoneInferiorIzda{
+    float:left;
+    width: 50%;
+    background:#FF5252;
+    text-align: center;
+}
+.botoneInferiorDcha{
+    float: right;
+    width: 50%;
+    background:#d50000;
+    text-align: center;
+}
+.buttonActionAdd{
+    background-color: #FF5252;
+    border: none;
+    color: white;
+    width: 100%;
 }
