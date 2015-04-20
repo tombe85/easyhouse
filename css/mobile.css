@@ -462,6 +462,7 @@ form{
     padding: 0px;
     height: 0px;
     margin: 0;
+    border-bottom: 2px solid #3f51b5;
 
     /*Animacion menu*/
     -webkit-transition: height 0.5s ease;
@@ -484,12 +485,13 @@ form{
 }
 
 .expenseButton{
-    background-color: #303F9F;
+    background-color: #c5cae9;
+    
     border: 0px;
 }
 
 .expenseButton a{
-    color: white;
+    color: black;
 }
 
 .botoneInferiorIzda{
