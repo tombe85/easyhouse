@@ -9,67 +9,20 @@
         <script>
             
         </script>
-		
-		<style>
-					#submitButton{
-				width: inherit;}
-			#submitButton button{
-				width: inherit;}
-		#contentAdminProductos{
-    padding: 3em;
-    margin: 0px;
-    
-    height: auto;
-    vertical-align: middle;
-}
-
-#contentAdminProductos input{
-    background-color: white;
-}
-
-#contentAdminProductos input[type="file"]{
-    background-color: #C5CAE9;
-    border: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-#contentAdminProductos button{
-    background-color: #d50000;
-    border: none;
-    margin-top: 1em;
-    color: white;
-}
-.entradaAdminProductos{
-    color: black;
-    margin: 0px;
-    padding: 0px;
-}
-			#backimg{
-				width: 50px;
-				text-align: center;
-				float: right;
-				margin-top: 2px;
-				margin-bottom: 2px;
-				margin-right: 10px;
-				height: 50px;
-				overflow: hidden;
-			}
-		</style>
     </head>
     <body class="blueBackground">
         <header data-role="header" data-position="fixed">
             <table class="tablaHeader">
                 <tr>
-                    <td id="backimg"><a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
+                    <td id="null"><a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
                     <td id="logo"><h1>sweetHome<span id="elevated">SW</span></h1></td>
-                    <td id="foto"><a href="/sweethomesw/admin/config/main.html"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
+                    <td id="foto"><a href="/sweethomesw/config/main.html"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
                 </tr>
             </table>
         </header>
-        <div id="contentAdminProductos" data-role="content">
+        <div id="contentLogIn" data-role="content">
             <form method="post" action="#">
-                <div class="entradaAdminProductos">
+                <div class="entradaLogIn">
                     <h2>Nombre del producto:</h2>
                     <input type="text" name="usuario">
                 </div>
@@ -78,18 +31,20 @@
         </div>
         <footer data-role="footer" data-position="fixed">
             <div class = "botonesinferiores">
-			    <div id="submitButton">
-                    <button class="buttonAction"><img class="menubutton" src="/sweethomesw/img/ok.png"/></button>
+                <div id="limpiaHome">
+                    <button class="buttonAction"><img class="menubutton" src="/sweethomesw/img/ok.png" /></button>
                 </div>
-			</div>
-			<table id="menuinf">				
+            <table id="menuinf">				
                 <tr>
-					<td><a href="/sweethomesw/admin/config/main.html"><img id="usuariobutton" class="menubutton" src="/sweethomesw/img/config.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/users.html"><img id="usuariobutton" class="menubutton" src="/sweethomesw/img/usuariosconfig.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/tasks.html"><img id="tareabutton" class="menubutton" src="/sweethomesw/img/tareaconfig.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/products.html"><img id="comprabutton" class="menubutton" src="/sweethomesw/img/compraraction.png" /></a></td>
+					<td><a href="/sweethomesw/admin/config/main.html"><img class="menubutton" src="/sweethomesw/img/config.png" /></a></td>
+                    <td><a href="/sweethomesw/admin/config/users.html"><img class="menubutton" src="/sweethomesw/img/usuariosconfig.png" /></a></td>
+                    <td><a href="/sweethomesw/admin/config/tasks.html"><img class="menubutton" src="/sweethomesw/img/tareaconfig.png" /></a></td>
+                    <td><a href="/sweethomesw/admin/config/products.html"><img class="menubutton" src="/sweethomesw/img/compraraction.png" /></a></td>
                 </tr>
             </table>
         </footer>
     </body>
 </html>
+
+
+
