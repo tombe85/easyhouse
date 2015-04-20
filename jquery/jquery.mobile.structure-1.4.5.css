@@ -261,7 +261,7 @@ div.ui-mobile-viewport {
 /* Make buttons in toolbars default to mini and inline. */
 .ui-header .ui-btn,
 .ui-footer .ui-btn {
-	font-size: 12.5px;
+	/*font-size: 12.5px;*/
 	display: inline-block;
 	vertical-align: middle;
 }

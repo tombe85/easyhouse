@@ -364,6 +364,20 @@ header h1{
     text-align: center;
 }
 
+.botoneInferiorIzda{
+    float:left;
+    width: 50%;
+    background:#FF5252;
+    text-align: center;
+}
+
+.botoneInferiorDcha{
+    float: right;
+    width: 50%;
+    background:#d50000;
+    text-align: center;
+}
+
 .textoGrande{
     width: inherit;
     
@@ -526,18 +540,6 @@ form{
     color: white;
 }
 
-.botoneInferiorIzda{
-    float:left;
-    width: 50%;
-    background:#FF5252;
-    text-align: center;
-}
-.botoneInferiorDcha{
-    float: right;
-    width: 50%;
-    background:#d50000;
-    text-align: center;
-}
 .buttonActionAdd{
     background-color: #FF5252;
     border: none;
