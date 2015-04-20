@@ -357,6 +357,10 @@ header h1{
     color: black;
 }
 
+.registroClean{
+    width: 10%;
+}
+
 .botonesinferiores{
     width: 100%;
     padding: 0px;

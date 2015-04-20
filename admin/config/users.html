@@ -6,140 +6,75 @@
         <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
-        <script>
-            
-        </script>
-		<style>
-			#submitButton{
-				width: inherit;}
-			#submitButton button{
-				width: inherit;}
-			.usuario{
-				width: 100%;
-				margin: 0px;
-				padding: 0px;
-				float: left;
-			}
-			.usuarioFoto{
-				width: 50px;
-				text-align: center;
-				background-color: white;
-				margin-top: 2px;
-				margin-bottom: 2px;
-				margin-right: 10px;
-				height: 50px;
-				border-radius: 25px 25px 25px 25px;
-				-moz-border-radius: 25px 25px 25px 25px;
-				-webkit-border-radius: 25px 25px 25px 25px;
-				overflow: hidden;
-				float: inherit;
-				}
-			.usuarioFoto img{
-				height: 100%;
-				overflow: hidden;
-			}
-			.usuarioTexto{
-				width: auto;
-				vertical-align:middle;
-				padding-left: 10px;
-				float: inherit;
-			}
-#contentAdminUsuario{
-    padding: 3em;
-    margin: 0px;
-    
-    height: auto;
-    vertical-align: middle;
-}
-
-#contentAdminUsuario input{
-    background-color: white;
-}
-
-#contentAdminUsuario input[type="file"]{
-    background-color: #C5CAE9;
-    border: none;
-    margin: 0px;
-    padding: 0px;
-}
-
-#contentAdminUsuario button{
-    background-color: #d50000;
-    border: none;
-    margin-top: 1em;
-    color: white;
-}
-			#backimg{
-				width: 50px;
-				text-align: center;
-				float: right;
-				margin-top: 2px;
-				margin-bottom: 2px;
-				margin-right: 10px;
-				height: 50px;
-				overflow: hidden;
-			}
-			
-		</style>
     </head>
-    <body class="blueBackground">
+    <body class = "blueBackground">
         <header data-role="header" data-position="fixed">
             <table class="tablaHeader">
                 <tr>
-                    <td id="backimg"><a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
+                    <td id="null"><a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
                     <td id="logo"><h1>sweetHome<span id="elevated">SW</span></h1></td>
-                    <td id="foto"><a href="/sweethomesw/admin/config/main.html"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
+                    <td id="foto"><a href="/sweethomesw/config/main.html"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
                 </tr>
             </table>
         </header>
-		
-        <div id="contentAdminUsuario" data-role="content">
-            <table>
-                <tr class="usuario">
-                    <td class="usuarioFoto">
-                        <img src="img/usuario.png" />
+        <div id="content" data-role="content">
+            <table class="tabla">
+                <tr class="registroTablon">
+                    <td class="registroFoto">
+                        <img src="/sweethomesw/img/usuario.png" />
                     </td>
-                    <td class="usuarioCorreo">
-                        <h3>laura@ucm.es</h3>
+                    <td class="registroTexto">
+                        <h3>usuario1@mail.com</h3>
                     </td>
-					<td class="usuarioPapelera">
-                        <img src="img/papelera.png" />
-                    </td>
-                </tr>
-				
-                <tr class="usuario">
-                    <td class="usuarioFoto">
-                        <img src="img/usuario.png" />
-                    </td>
-                    <td class="usuarioCorreo">
-                        <h3>Lorena@ucm.es</h3>
-                    </td>
-					<td class="usuarioPapelera">
-                        <img src="img/papelera.png" />
+                    <td class="registroClean">
+                        <img src="/sweethomesw/img/clean.png" class="menubutton" />
                     </td>
                 </tr>
-				
-				<tr class="usuario">
-                    <td class="usuarioFoto">
-                        <img src="img/usuario.png" />
+                <tr class="registroTablon">
+                    <td class="registroFoto">
+                        <img src="/sweethomesw/img/usuario.png" />
                     </td>
-                    <td class="usuarioCorreo">
-                        <h3>Alberto@ucm.es</h3>
+                    <td class="registroTexto">
+                        <h3>usuario2@mail.com</h3>
                     </td>
-					<td class="usuarioPapelera">
-                        <img src="img/papelera.png" />
+                    <td class="registroClean">
+                        <img src="/sweethomesw/img/clean.png" class="menubutton" />
+                    </td>
+                </tr>
+                <tr class="registroTablon">
+                    <td class="registroFoto">
+                        <img src="/sweethomesw/img/usuario.png" />
+                    </td>
+                    <td class="registroTexto">
+                        <h3>usuario3@mail.com</h3>
+                    </td>
+                    <td class="registroClean">
+                        <img src="/sweethomesw/img/clean.png" class="menubutton" />
                     </td>
                 </tr>
             </table>
         </div>
-		
         <footer data-role="footer" data-position="fixed">
-			<table id="menuinf">				
+            <div class="botonesinferiores">
+                <form>
+                    <table class="tabla">
+                        <tr id="limpiaHome">
+                            <td class="sendtext">
+                                <input type="text" name="texto" />
+                            </td>
+                            <td class="sendbutton">
+                                <button class="buttonAction"><h2><img src="/sweethomesw/img/add.png" class="menubutton" /> </h2></button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <table id="menuinf">				
                 <tr>
-					<td><a href="/sweethomesw/admin/config/main.html"><img id="usuariobutton" class="menubutton" src="/sweethomesw/img/config.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/users.html"><img id="usuariosbutton" class="menubutton" src="/sweethomesw/img/usuariosconfig.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/tasks.html"><img id="tareabutton" class="menubutton" src="/sweethomesw/img/tareaconfig.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/products.html"><img id="comprabutton" class="menubutton" src="/sweethomesw/img/compraraction.png" /></a></td>
+					<td><a href="/sweethomesw/admin/config/main.html"><img class="menubutton" src="/sweethomesw/img/config.png" /></a></td>
+                    <td><a href="/sweethomesw/admin/config/users.html"><img class="menubutton" src="/sweethomesw/img/usuariosconfig.png" /></a></td>
+                    <td><a href="/sweethomesw/admin/config/tasks.html"><img class="menubutton" src="/sweethomesw/img/tareaconfig.png" /></a></td>
+                    <td><a href="/sweethomesw/admin/config/products.html"><img class="menubutton" src="/sweethomesw/img/compraraction.png" /></a></td>
                 </tr>
             </table>
         </footer>
