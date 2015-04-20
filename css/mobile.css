@@ -296,6 +296,16 @@ header h1{
     padding: 0px;
 }
 
+.entradaLogin textarea{
+    font-size: 1.17em;
+    font-family: 'roboto_condensedregular';
+}
+
+.entradaLogin input[type="text"]{
+    font-size: 1.17em;
+    font-family: 'roboto_condensedregular';
+}
+
 .blueBackground{
     background-color: #c5cae9;
 }
@@ -327,8 +337,6 @@ header h1{
     -moz-border-radius: 25px 25px 25px 25px;
     -webkit-border-radius: 25px 25px 25px 25px;
     overflow: hidden;
-    float: inherit;
-    
 }
 
 .registroFoto img{
@@ -348,7 +356,6 @@ header h1{
     -moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius: 15px 15px 15px 15px;
     overflow: hidden;
-    float: inherit;
 }
 
 .registroFotoPequena img{
@@ -360,8 +367,8 @@ header h1{
 .registroTexto{
     width: auto;
     vertical-align:middle;
-    padding-left: 10px;
-    float: inherit;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .registroTexto a{
@@ -561,4 +568,9 @@ form{
     border: none;
     color: white;
     width: 100%;
+}
+
+.buttontrash{
+    max-width: 35px;
+    margin-right: 20px;
 }
