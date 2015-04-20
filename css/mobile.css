@@ -347,7 +347,6 @@ header h1{
     -moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius: 15px 15px 15px 15px;
     overflow: hidden;
-    float: inherit;
 }
 
 .registroFotoPequena img{
@@ -359,8 +358,8 @@ header h1{
 .registroTexto{
     width: auto;
     vertical-align:middle;
-    padding-left: 10px;
-    float: inherit;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .registroTexto a{
