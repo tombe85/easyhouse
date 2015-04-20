@@ -326,8 +326,6 @@ header h1{
     -moz-border-radius: 25px 25px 25px 25px;
     -webkit-border-radius: 25px 25px 25px 25px;
     overflow: hidden;
-    float: inherit;
-    
 }
 
 .registroFoto img{
