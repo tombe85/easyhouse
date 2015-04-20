@@ -427,9 +427,6 @@ form{
 #datosuser img{
     width: 6em;
 }
-.buttonConfig{
-    border-bottom: 1px solid #3f51b5;
-}
 
 .entradafoto button{
     background-color: #c5cae9;
@@ -442,18 +439,12 @@ form{
     overflow: hidden;
 }
 
-#cambiapasswd{
-    padding: 1em;
-    display: none;
-
-}
-
 .entradaLogin input[type="text"], .entradaLogin input[type="password"]{
     background-color: white;
 }
 
 .expenseMenu{
-   border-bottom: 2px solid #3f51b5;
+    border-bottom: 1px solid #c5cae9;
 }
 
 .expenseMenu ul {
@@ -462,7 +453,7 @@ form{
     padding: 0px;
     height: 0px;
     margin: 0;
-    
+    border-bottom: 2px solid #3f51b5;
 
     /*Animacion menu*/
     -webkit-transition: height 0.5s ease;
@@ -486,12 +477,53 @@ form{
 
 .expenseButton{
     background-color: #c5cae9;
-    
     border: 0px;
 }
 
 .expenseButton a{
     color: black;
+}
+
+.configMenu input[type="text"], .configMenu input[type="password"]{
+    background-color: white;
+}
+
+.configMenu ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2px;
+    height: 0px;
+    margin: 0;
+
+    /*Animacion menu*/
+    -webkit-transition: height 0.5s ease;
+       -moz-transition: height 0.5s ease;
+         -o-transition: height 0.5s ease;
+        -ms-transition: height 0.5s ease;
+            transition: height 0.5s ease; 
+}
+
+#taskConfig:hover ul{
+    height: 114px;
+}
+
+.configMenu:hover ul {
+    height: 255px;
+}
+
+.configMenu li img{
+    vertical-align: middle;
+}
+
+.buttonConfig{
+    background-color: #c5cae9;
+    border: 0px;
+}
+
+.buttonConfig a{
+    color: white;
 }
 
 .botoneInferiorIzda{
