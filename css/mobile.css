@@ -158,6 +158,12 @@ header h1{
     float: left;
 }
 
+#logoInicio{
+    text-align: center;
+    height: 25%;
+}
+
+
 #logoLogIn{
     margin-left: 5px;
     width: 100%;
@@ -274,6 +280,11 @@ header h1{
 
 .menubutton{
     max-width: 35px;
+}
+
+.menulogin{
+    max-width: 50px;
+    width: 100%;
 }
 
 .entradaLogIn{
