@@ -1,22 +1,46 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" style="text/css" href="/sweethomesw/css/mobile.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
+        <link rel="stylesheet" style="text/css" href="/sweethomesw/css/mobile.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
-        <script>
-            
-        </script>
 
-       <style>
+        <style>
+            .expenseMenu ul {
+                list-style-type: none;
+                overflow: hidden;
+                padding: 0px;
+                height: 0px;
+                margin: 0;
 
-		.buttonRaro{
+                /*Animacion menu*/
+                -webkit-transition: height 0.5s ease;
+                   -moz-transition: height 0.5s ease;
+                     -o-transition: height 0.5s ease;
+                    -ms-transition: height 0.5s ease;
+                        transition: height 0.5s ease; 
+            }
+
+            .expenseMenu:hover ul {
+                height: 232px;
+            }
+
+            .expenseMenu li{
+                padding: 2px;
+            }
+
+            .expenseMenu li img{
+                vertical-align: middle;
+            }
+
+            .expenseButton{
                 background-color: #5C6BC0;
                 color: white;
             }
-       </style>
+        </style>
+
     </head>
     <body class = "blueBackground">
         <header data-role="header" data-position="fixed">
@@ -28,34 +52,57 @@
                 </tr>
             </table>
         </header>
-        <div class="botonesinferiores">
-        	<div id="limpiaHome">
-            	<button class="buttonRaro">
-            		<h2><a href="/sweethomesw/expenses/comunidadcontent.html">Comunidad</a></h2>
-            	</button>
-          	</div>
+
+        <div>
+            <div class="expenseMenu">
+                <button class="expenseButton">
+                    <h2><a href="#">Comunidad</a></h2>
+                </button>
+                <ul>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                </ul>
+            </div>
+
+            <div class="expenseMenu">
+                <button class="expenseButton">
+                    <h2><a href="#">Gas</a></h2>
+                </button>
+                <ul>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                </ul>
+            </div>
+
+            <div class="expenseMenu">
+                <button class="expenseButton">
+                    <h2><a href="#">Internet</a></h2>
+                </button>
+                <ul>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                </ul>
+            </div>
+
+            <div class="expenseMenu">
+                <button class="expenseButton">
+                    <h2><a href="#">Luz</a></h2>
+                </button>
+                <ul>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pagado</h3></li>
+                    <li><h3><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h3></li>
+                </ul>
+            </div>
         </div>
-        <div class="botonesinferiores">
-        	<div id="limpiaHome">
-            	<button class="buttonRaro">
-            		<h2>Gas</h2>
-            	</button>
-          	</div>
-        </div>
-        <div class="botonesinferiores">
-        	<div id="limpiaHome">
-            	<button class="buttonRaro">
-            		<h2>Internet</h2>
-            	</button>
-          	</div>
-        </div>
-        <div class="botonesinferiores">
-        	<div id="limpiaHome">
-            	<button class="buttonRaro">
-            		<h2>Luz</h2>
-            	</button>
-          	</div>
-        </div>
+
         <footer data-role="footer" data-position="fixed">
             <table id="menuinf">
                 <tr>
