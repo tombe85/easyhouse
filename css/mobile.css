@@ -285,6 +285,16 @@ header h1{
     padding: 0px;
 }
 
+.entradaLogin textarea{
+    font-size: 1.17em;
+    font-family: 'roboto_condensedregular';
+}
+
+.entradaLogin input[type="text"]{
+    font-size: 1.17em;
+    font-family: 'roboto_condensedregular';
+}
+
 .blueBackground{
     background-color: #c5cae9;
 }
