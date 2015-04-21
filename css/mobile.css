@@ -493,12 +493,12 @@ form{
     width: 6em;
 }
 
-.entradafoto button{
+.photoInput button{
     background-color: #c5cae9;
     border: none;
 }
 
-.entradafoto img{
+.photoInput img{
     width: 6em;
     height: 6em;
     overflow: hidden;
