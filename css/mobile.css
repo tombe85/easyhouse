@@ -143,6 +143,11 @@ input{
     font-size: 1.17em;
 }
 
+table{
+    width: 100%;
+    border-spacing: 0px;  
+}
+
 /* COMBINACIONES DE TAGS */
 
 header h1{
@@ -259,11 +264,6 @@ header h1{
 }
 
 /* CLASES */
-
-.tabla{
-    width: 100%;
-    border-spacing: 0px;
-}
 
 .buttonNormal{
     background-color: #C5CAE9;
