@@ -543,12 +543,12 @@ form{
     vertical-align: middle;
 }
 
-.expenseButton{
+.buttonTransparent{
     background-color: #c5cae9;
     border: 0px;
 }
 
-.expenseButton a{
+.buttonTransparent a{
     color: black;
 }
 
