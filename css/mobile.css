@@ -330,7 +330,7 @@ header h1{
     float: left;
 }
 
-.registroTablon{
+.rowBordered{
     width: 100%;
     margin: 0px;
     padding: 5px;
@@ -338,7 +338,7 @@ header h1{
     border-bottom: 2px solid #3f51b5;
 }
 
-.registroFoto{
+.rowPhoto{
     width: 50px;
     text-align: center;
     background-color: white;
@@ -352,12 +352,12 @@ header h1{
     overflow: hidden;
 }
 
-.registroFoto img{
+.rowPhoto img{
     height: 100%;
     overflow: hidden;
 }
 
-.registroFotoPequena{
+.rowPhotoSmall{
     width: 30px;
     text-align: center;
     /*background-color: white;*/
@@ -371,25 +371,25 @@ header h1{
     overflow: hidden;
 }
 
-.registroFotoPequena img{
+.rowPhotoSmall img{
     width: 100%;
     height: 30px;
     overflow: hidden;
 }
 
-.registroTexto{
+.rowText{
     width: auto;
     vertical-align:middle;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.registroTexto a{
+.rowText a{
     text-decoration: none;
     color: black;
 }
 
-.registroClean{
+.rowIcon{
     width: 10%;
 }
 
@@ -513,7 +513,7 @@ form{
 }
 
 .expenseMenu{
-    border-bottom: 2px solid #3f51b5
+    border-bottom: 1px solid #3f51b5;
 }
 
 .expenseMenu ul {
