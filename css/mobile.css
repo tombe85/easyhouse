@@ -334,7 +334,6 @@ header h1{
     width: 100%;
     margin: 0px;
     padding: 5px;
-    float: left;
     border-bottom: 2px solid #3f51b5;
 }
 
@@ -400,14 +399,14 @@ header h1{
     text-align: center;
 }
 
-.botoneInferiorIzda{
+.contentBottomLeft{
     float:left;
     width: 50%;
     background:#FF5252;
     text-align: center;
 }
 
-.botoneInferiorDcha{
+.contentBottomRight{
     float: right;
     width: 50%;
     background:#d50000;
