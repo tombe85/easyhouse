@@ -181,6 +181,10 @@ table{
 
 #userData img{
     width: 6em;
+    border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -webkit-border-radius: 50% 50% 50% 50%;
+    overflow: hidden;
 }
 
 /* CLASES */
