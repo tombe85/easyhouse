@@ -133,20 +133,6 @@ table{
     background-color: white;
 }
 
-#fotoHeader{
-    width: 50px;
-    text-align: center;
-    background-color: white;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-right: 10px;
-    height: 50px;
-    border-radius: 25px 25px 25px 25px;
-    -moz-border-radius: 25px 25px 25px 25px;
-    -webkit-border-radius: 25px 25px 25px 25px;
-    overflow: hidden;
-}
-
 #fotousuario{
     height: 100%;
     overflow: hidden;
@@ -154,12 +140,6 @@ table{
 
 #infoHeader{
     width: 16.5%;
-}
-
-#logoHeader{
-    margin-left: 5px;
-    width: 100%;
-    text-align: center;
 }
 
 #menuinf td{
