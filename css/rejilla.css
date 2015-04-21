@@ -80,6 +80,10 @@ header{
     text-align: right;
 }
 
+#infoHeader{
+    width: 16.5%;
+}
+
 #logoHeader{
     margin-left: 5px;
     width: 67%;
