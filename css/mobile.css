@@ -63,7 +63,12 @@
 
 }
 
-/* PARTES */
+/* TAGS */
+
+a{
+    text-decoration: none;
+    color: black;
+}
 
 body{
     background-color: #c5cae9;
@@ -75,11 +80,9 @@ body{
     height: 100%;
 }
 
-header{
-    padding: 5px;
+button{
     margin: 0px;
-    width: 100%;
-    background-color: #3f51b5;
+    padding: 0px;
 }
 
 footer{
@@ -89,11 +92,9 @@ footer{
     width: 100%;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+form{
+    margin-bottom: 0px;
 }
-/* TAGS GENÉRICOS */
 
 h1{
     padding: 0px;
@@ -119,9 +120,17 @@ h4{
     font-family: 'roboto_condensedlight';
 }
 
-button{
+header{
+    padding: 5px;
     margin: 0px;
-    padding: 0px;
+    width: 100%;
+    background-color: #3f51b5;
+}
+
+header h1{
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
 }
 
 input{
@@ -135,36 +144,67 @@ table{
     border-spacing: 0px;
 }
 
+
+/* IDS */
+
+#backHeader{
+    width: 16.5%;
+}
+
+#buttonBottom{
+    width: inherit;
+    border-spacing: 0px;
+}
+
+#buttonBottom button{
+    width: inherit;
+    margin: 0px;
+    border: none;
+}
+
+#content{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
 #content tr{
     width: 100%;
     display: block;
 }
 
-/* COMBINACIONES DE TAGS */
-
-header h1{
-    color: white;
-    font-weight: bold;
-    font-size: 2em;
-}
-
-/* IDS */
-
-#logoHeader{
-    margin-left: 5px;
-    text-align: center;
-}
-
-.logoInicio{
-    text-align: center;
-    height: 25%;
-}
-
-
-#logoLogIn{
-    margin-left: 5px;
+#contentBottom{
     width: 100%;
+    padding: 0px;
+    margin: 0px;
     text-align: center;
+}
+
+#contentBottomLeft{
+    float:left;
+    width: 50%;
+    background:#FF5252;
+    text-align: center;
+}
+
+#contentBottomRight{
+    float: right;
+    width: 50%;
+    background:#d50000;
+    text-align: center;
+}
+
+#contentInput{
+    padding: 3em;
+    margin: 0px;
+    
+    height: auto;
+    vertical-align: middle;
+}
+
+#contentInput input{
+    background-color: white;
 }
 
 #fotoHeader{
@@ -186,14 +226,14 @@ header h1{
     overflow: hidden;
 }
 
-#elevated{
-    font-size: 15px;
-    vertical-align:super;
+#infoHeader{
+    width: 16.5%;
 }
 
-#elevatedreducido{
-    font-size: 10px;
-    vertical-align:super;
+#logoHeader{
+    margin-left: 5px;
+    width: 100%;
+    text-align: center;
 }
 
 #menuinf{
@@ -207,59 +247,54 @@ header h1{
     text-align: center;
 }
 
-#content{
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
+#originalmessage{
     width: 100%;
-}
-
-
-#contentInput{
-    padding: 3em;
+    padding: 10px;
     margin: 0px;
-    
-    height: auto;
-    vertical-align: middle;
+    border-bottom: 2px solid #3f51b5;
 }
 
-#contentInput input{
-    background-color: white;
+#originalmessBottom{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    padding: 10px;
 }
 
-.submitbutton button{
-    background-color: #d50000;
-    border: none;
+#taskConfig:hover ul{
+    height: 114px;
+}
+
+#userData{
     margin-top: 1em;
-    color: white;
+    padding-bottom: 1em;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #3f51b5;
 }
 
-#buttonBottom{
-    width: inherit;
-    border-spacing: 0px;
+#userData img{
+    width: 6em;
 }
 
-#buttonBottom button{
-    width: inherit;
-    margin: 0px;
-    border: none;
-}
-
-#addButton{
-    width: inherit;
-}
-
-#addButton button{
-    width: inherit;
-}
 
 /* CLASES */
 
-.buttonNormal{
-    background-color: #C5CAE9;
-    border: none;
-    color: white;
-    width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
+.aboutLine{
+    width: 100%;
+    margin: 10%;
+    padding: 0px;
+    height: 100%;
+    color: #3f51b5;
+}
+
+.aboutText{
+    width: 85%;
+    margin: 10%;
+    padding: 0px;
+    height: 100%;
+    color: #3f51b5;
+    font-size: 15px; 
 }
 
 .buttonAction{
@@ -267,6 +302,13 @@ header h1{
     border: none;
     color: white;
     width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
+}
+
+.buttonActionAdd{
+    background-color: #FF5252;
+    border: none;
+    color: white;
+    width: 100%;
 }
 
 .buttonDarkBlue{
@@ -279,17 +321,57 @@ header h1{
     color: white;
 }
 
-.menubutton{
+.buttonNormal{
+    background-color: #C5CAE9;
+    border: none;
+    color: white;
+    width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
+}
+
+.buttonTransparent{
+    background-color: #c5cae9;
+    border: 0px;
+}
+
+.buttonTransparent a{
+    color: black;
+}
+
+.buttonTrash{
     max-width: 35px;
+    margin-right: 20px;
 }
 
-.menulogin{
-    max-width: 50px;
-    width: 100%;
+.configMenu input[type="text"], .configMenu input[type="password"]{
+    background-color: white;
 }
 
-/*Data input: label + cuadro de entrada*/
-.dataInput{
+.configMenu li img{
+    vertical-align: middle;
+}
+
+.configMenu:hover ul {
+    height: 255px;
+}
+
+.configMenu ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2px;
+    height: 0px;
+    margin: 0;
+
+    /*Animacion menu*/
+    -webkit-transition: height 0.5s ease;
+       -moz-transition: height 0.5s ease;
+         -o-transition: height 0.5s ease;
+        -ms-transition: height 0.5s ease;
+            transition: height 0.5s ease; 
+}
+
+.dataInput{ /* texto + entrada */
     color: black;
     margin-top: 5px;
     margin-bottom: 0px;
@@ -313,10 +395,66 @@ header h1{
     background-color: white;
 }
 
-.rowNormal{
-    width: 100%;
-    margin: 0px;
-    padding: 5px;
+.elevated{
+    font-size: 15px;
+    vertical-align:super;
+}
+
+.elevatedreducido{
+    font-size: 10px;
+    vertical-align:super;
+}
+
+.expenseMenu{
+    border-bottom: 1px solid #3f51b5;
+}
+
+.expenseMenu li{
+    padding: 2px;
+}
+
+.expenseMenu li img{
+    vertical-align: middle;
+}
+
+.expenseMenu ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0px;
+    height: 0px;
+    margin: 0;
+    border-bottom: 2px solid #3f51b5;
+
+    /*Animacion menu*/
+    -webkit-transition: height 0.5s ease;
+       -moz-transition: height 0.5s ease;
+         -o-transition: height 0.5s ease;
+        -ms-transition: height 0.5s ease;
+            transition: height 0.5s ease; 
+}
+
+.expenseMenu:hover ul {
+    height: 232px;
+}
+
+.logoInicio{
+    text-align: center;
+    height: 25%;
+}
+
+.menubutton{
+    max-width: 35px;
+}
+
+.photoInput button{
+    background-color: #c5cae9;
+    border: none;
+}
+
+.photoInput img{
+    width: 6em;
+    height: 6em;
+    overflow: hidden;
 }
 
 .rowBordered{
@@ -324,6 +462,16 @@ header h1{
     margin: 0px;
     padding: 5px;
     border-bottom: 2px solid #3f51b5;
+}
+
+.rowIcon{
+    width: 10%;
+}
+
+.rowNormal{
+    width: 100%;
+    margin: 0px;
+    padding: 5px;
 }
 
 .rowPhoto{
@@ -377,78 +525,10 @@ header h1{
     color: black;
 }
 
-.rowIcon{
-    width: 10%;
-}
-
-.contentBottom{
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-}
-
-.contentBottomLeft{
-    float:left;
-    width: 50%;
-    background:#FF5252;
-    text-align: center;
-}
-
-.contentBottomRight{
-    float: right;
-    width: 50%;
-    background:#d50000;
-    text-align: center;
-}
-
-.textoGrande{
-    width: inherit;
-    
-}
-.tableHeader{
-    width: 95%;
-    margin: 2%;
-}
-
-#backHeader{
-    width: 16.5%;
-}
-
-#infoHeader{
-    width: 16.5%;
-}
-
-#originalmessage{
-    width: 100%;
-    padding: 10px;
-    margin: 0px;
-    border-bottom: 2px solid #3f51b5;
-}
-
-.aboutLine{
-    width: 100%;
-    margin: 10%;
-    padding: 0px;
-    height: 100%;
-    color: #3f51b5;
-}
-
-.aboutText{
-    width: 85%;
-    margin: 10%;
-    padding: 0px;
-    height: 100%;
-    color: #3f51b5;
-    font-size: 15px; 
-}
-
-
-#originalmessBottom{
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    padding: 10px;
+.sendbutton{
+    width: auto;
+    text-align: right;
+    border-spacing: 0px;
 }
 
 .sendtext{
@@ -462,126 +542,18 @@ header h1{
     font-size: 1.17em;
 }
 
-.sendbutton{
-    width: auto;
-    text-align: right;
-    border-spacing: 0px;
+.submitbutton button{
+    background-color: #d50000;
+    border: none;
+    margin-top: 1em;
+    color: white;
 }
 
-form{
-    margin-bottom: 0px;
+.tableHeader{
+    width: 95%;
+    margin: 2%;
 }
 
 .whitefont{
     color: white;
-}
-
-
-#userData{
-    margin-top: 1em;
-    padding-bottom: 1em;
-    width: 100%;
-    text-align: center;
-    border-bottom: 2px solid #3f51b5;
-}
-
-#userData img{
-    width: 6em;
-}
-
-.photoInput button{
-    background-color: #c5cae9;
-    border: none;
-}
-
-.photoInput img{
-    width: 6em;
-    height: 6em;
-    overflow: hidden;
-}
-
-.expenseMenu{
-    border-bottom: 1px solid #3f51b5;
-}
-
-.expenseMenu ul {
-    list-style-type: none;
-    overflow: hidden;
-    padding: 0px;
-    height: 0px;
-    margin: 0;
-    border-bottom: 2px solid #3f51b5;
-
-    /*Animacion menu*/
-    -webkit-transition: height 0.5s ease;
-       -moz-transition: height 0.5s ease;
-         -o-transition: height 0.5s ease;
-        -ms-transition: height 0.5s ease;
-            transition: height 0.5s ease; 
-}
-
-.expenseMenu:hover ul {
-    height: 232px;
-}
-
-.expenseMenu li{
-    padding: 2px;
-}
-
-.expenseMenu li img{
-    vertical-align: middle;
-}
-
-.buttonTransparent{
-    background-color: #c5cae9;
-    border: 0px;
-}
-
-.buttonTransparent a{
-    color: black;
-}
-
-.configMenu input[type="text"], .configMenu input[type="password"]{
-    background-color: white;
-}
-
-.configMenu ul {
-    list-style-type: none;
-    overflow: hidden;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 2px;
-    height: 0px;
-    margin: 0;
-
-    /*Animacion menu*/
-    -webkit-transition: height 0.5s ease;
-       -moz-transition: height 0.5s ease;
-         -o-transition: height 0.5s ease;
-        -ms-transition: height 0.5s ease;
-            transition: height 0.5s ease; 
-}
-
-#taskConfig:hover ul{
-    height: 114px;
-}
-
-.configMenu:hover ul {
-    height: 255px;
-}
-
-.configMenu li img{
-    vertical-align: middle;
-}
-
-.buttonActionAdd{
-    background-color: #FF5252;
-    border: none;
-    color: white;
-    width: 100%;
-}
-
-.buttontrash{
-    max-width: 35px;
-    margin-right: 20px;
 }
