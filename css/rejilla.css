@@ -68,9 +68,8 @@ header{
 }
 
 #contentInput{
-    padding: 3em;
+    padding: 1em 2em 2em;
     margin: 0px;
-    
     height: auto;
     vertical-align: middle;
 }
