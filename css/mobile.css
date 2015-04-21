@@ -195,6 +195,11 @@ header h1{
     vertical-align:super;
 }
 
+#elevatedreducido{
+    font-size: 10px;
+    vertical-align:super;
+}
+
 #menuinf{
     width: 100%;
     background-color: #3f51b5;
@@ -212,6 +217,7 @@ header h1{
     height: 100%;
     width: 100%;
 }
+
 
 #contentLogIn{
     padding: 3em;
@@ -409,6 +415,7 @@ header h1{
     width: 95%;
     margin: 2%;
 }
+
 #null{
     width: 16.5%;
 }
@@ -419,6 +426,24 @@ header h1{
     margin: 0px;
     border-bottom: 2px solid #3f51b5;
 }
+
+#about{
+    width: 100%;
+    margin: 10%;
+    padding: 0px;
+    height: 100%;
+    color: #3f51b5;
+}
+
+#texto{
+    width: 85%;
+    margin: 10%;
+    padding: 0px;
+    height: 100%;
+    color: #3f51b5;
+    font-size: 15px; 
+}
+
 
 #originalmessBottom{
     width: 100%;
