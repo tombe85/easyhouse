@@ -7,7 +7,7 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
     </head>
-    <body class = "blueBackground">
+    <body>
         <header data-role="header" data-position="fixed">
             <table class="tablaHeader">
                 <tr>
@@ -18,17 +18,15 @@
             </table>
         </header>
         <div id="content" data-role="content">
-            <div id="datosuser">
+            <div id="userData">
                 <img src="/sweethomesw/img/usuario.png" />
                 <h2>NombreUser</h2>
             </div>
 
             <div class="configMenu" id="taskConfig">
-                <div class="buttonConfig">
-                    <button type="submit" class="buttonAzulOscuro">
-                        <h2><a href="#">Mis Tareas</a></h2>
-                    </button>
-                </div>
+                <button type="submit" class="buttonDarkBlue">
+                    <h2>Mis Tareas</h2>
+                </button>
                 <ul>
                     <li><h4><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Tarea 1</h4></li>
                     <li><h4><img class="registroFoto" src="/sweethomesw/img/usuario.png"/>Tarea 2</h4></li>
@@ -36,32 +34,28 @@
             </div>
 
             <div class="configMenu">
-                <div class="buttonConfig">
-                    <button type="submit" class="buttonAzulOscuro">
-                        <h2><a href="#">Cambiar Contraseña</a></h2>
-                    </button>
-                </div>
+                <button type="submit" class="buttonDarkBlue">
+                    <h2>Cambiar Contraseña</h2>
+                </button>
                 <ul>
                     <li><h4>Contraseña nueva</h4></li>
                     <li><input type="text" name="passwdnueva"></li>
                     <li><h4>Contraseña antigua</h4></li>
                     <li><input type="password" name="passwd"></li>
-                    <li><div class="submitbutton"><button type="submit"><h3><a class="whitefont" href="/sweethomesw/config/main.html">Actualizar</a></h3></button></div></li>
+                    <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
                 </ul>
             </div>
 
             <div class="configMenu">
-                <div class="buttonConfig">
-                    <button type="submit" class="buttonAzulOscuro">
-                        <h2><a href="#">Cambiar Correo</a></h2>
-                    </button>
-                </div>
+                <button type="submit" class="buttonDarkBlue">
+                    <h2>Cambiar Correo</h2>
+                </button>
                 <ul>
                     <li><h4>Nuevo Correo</h4></li>
                     <li><input type="text" name="email"></li>
                     <li><h4>Contraseña</h4></li>
                     <li><input type="password" name="emailpasswd"></li>
-                    <li><div class="submitbutton"><button type="submit"><h3><a class="whitefont" href="/sweethomesw/config/main.html">Actualizar</a></h3></button></div></li>
+                    <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
                 </ul>
             </div>
 
