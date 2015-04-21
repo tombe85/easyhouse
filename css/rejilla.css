@@ -76,22 +76,13 @@ header{
 }
 
 #fotoHeader{
-    width: 50px;
-    text-align: center;
-    background-color: white;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-right: 10px;
-    height: 50px;
-    border-radius: 25px 25px 25px 25px;
-    -moz-border-radius: 25px 25px 25px 25px;
-    -webkit-border-radius: 25px 25px 25px 25px;
-    overflow: hidden;
+    width: 16.5%;
+    text-align: right;
 }
 
 #logoHeader{
     margin-left: 5px;
-    width: 100%;
+    width: 67%;
     text-align: center;
 }
 
