@@ -239,12 +239,12 @@ header h1{
     color: white;
 }
 
-#limpiaHome{
+#buttonBottom{
     width: inherit;
     border-spacing: 0px;
 }
 
-#limpiaHome button{
+#buttonBottom button{
     width: inherit;
     margin: 0px;
     border: none;
@@ -393,7 +393,7 @@ header h1{
     width: 10%;
 }
 
-.botonesinferiores{
+.contentBottom{
     width: 100%;
     padding: 0px;
     margin: 0px;
