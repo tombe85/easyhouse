@@ -79,6 +79,7 @@
 /* PARTES */
 
 body{
+    background-color: #c5cae9;
     font-family: 'roboto_condensedlight';
     font-size: 1.17em;
     margin: 0px;
@@ -310,10 +311,6 @@ header h1{
 .entradaLogin input[type="text"]{
     font-size: 1.17em;
     font-family: 'roboto_condensedregular';
-}
-
-.blueBackground{
-    background-color: #c5cae9;
 }
 
 .registro{
