@@ -129,6 +129,21 @@ table{
     display: block;
 }
 
+@media screen and (min-width: 700px){
+    
+    #contentConfig button{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #contentConfig button{
+        width: 100%;
+    }
+}
+
 #contentInput input{
     background-color: white;
 }
@@ -176,7 +191,6 @@ table{
     padding-bottom: 1em;
     width: 100%;
     text-align: center;
-    border-bottom: 2px solid #3f51b5;
 }
 
 #userData img{
