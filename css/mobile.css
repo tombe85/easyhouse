@@ -145,7 +145,12 @@ input{
 
 table{
     width: 100%;
-    border-spacing: 0px;  
+    border-spacing: 0px;
+}
+
+#content tr{
+    width: 100%;
+    display: block;
 }
 
 /* COMBINACIONES DE TAGS */
@@ -161,7 +166,6 @@ header h1{
 #logoHeader{
     margin-left: 5px;
     text-align: center;
-    float: left;
 }
 
 .logoInicio{
@@ -179,7 +183,6 @@ header h1{
 #fotoHeader{
     width: 50px;
     text-align: center;
-    float: right;
     background-color: white;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -323,11 +326,10 @@ header h1{
     background-color: white;
 }
 
-.registro{
+.rowNormal{
     width: 100%;
     margin: 0px;
-    padding: 0px;
-    float: left;
+    padding: 5px;
 }
 
 .rowBordered{
