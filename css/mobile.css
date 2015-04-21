@@ -434,7 +434,7 @@ header h1{
     border-bottom: 2px solid #3f51b5;
 }
 
-#about{
+.aboutLine{
     width: 100%;
     margin: 10%;
     padding: 0px;
@@ -442,7 +442,7 @@ header h1{
     color: #3f51b5;
 }
 
-#texto{
+.aboutText{
     width: 85%;
     margin: 10%;
     padding: 0px;
