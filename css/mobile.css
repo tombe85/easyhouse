@@ -159,7 +159,7 @@ header h1{
     float: left;
 }
 
-#logoInicio{
+.logoInicio{
     text-align: center;
     height: 25%;
 }
@@ -220,7 +220,7 @@ header h1{
 }
 
 
-#contentLogIn{
+#contentInput{
     padding: 3em;
     margin: 0px;
     
@@ -228,7 +228,7 @@ header h1{
     vertical-align: middle;
 }
 
-#contentLogIn input{
+#contentInput input{
     background-color: white;
 }
 
@@ -294,7 +294,8 @@ header h1{
     width: 100%;
 }
 
-.entradaLogIn{
+/*Data input: label + cuadro de entrada*/
+.dataInput{
     color: black;
     margin-top: 5px;
     margin-bottom: 0px;
@@ -303,14 +304,19 @@ header h1{
     padding: 0px;
 }
 
-.entradaLogin textarea{
+.dataInput textarea{
     font-size: 1.17em;
     font-family: 'roboto_condensedregular';
 }
 
-.entradaLogin input[type="text"]{
+.dataInput input[type="text"]{
     font-size: 1.17em;
     font-family: 'roboto_condensedregular';
+    background-color: white;
+}
+
+.dataInput input[type="password"]{
+    background-color: white;
 }
 
 .registro{
@@ -496,10 +502,6 @@ form{
     width: 6em;
     height: 6em;
     overflow: hidden;
-}
-
-.entradaLogin input[type="text"], .entradaLogin input[type="password"]{
-    background-color: white;
 }
 
 .expenseMenu{
