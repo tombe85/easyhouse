@@ -95,10 +95,19 @@ header{
     width: 100%;
     background-color: #3f51b5;
     margin: 0px;
-    padding: 5px;
+    padding: 0px;
 }
 
 /* CLASES */
+
+.indicator{
+    padding: 5px;
+    margin: 0px;
+    width: 100%;
+    background-color: #7986CB;
+    text-align: center;
+    color: white;
+}
 
 .tableHeader{
     width: 95%;
