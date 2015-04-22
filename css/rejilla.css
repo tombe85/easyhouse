@@ -139,46 +139,52 @@ header{
     }
 }
 
-@media screen and (min-width: 700px){
+@media screen and (min-width: 700px) and (max-width: 998px){
     #content{
-
-    padding: 0px;
-    max-width: 350px;
-    padding: 1em 2em 2em;
-    margin: 0px auto;
-    height: auto;
-    vertical-align: middle;
+        max-width: 350px;
+        padding: 1em 2em 2em;
+        margin: 0px auto;
+        height: auto;
+        vertical-align: middle;
     }
 }
 
 @media screen and (max-width: 700px){
     #content{    
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    width: 100%;    
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;    
     }
 }
 
 @media screen and (min-width: 998px){
+    
 	body{
 		background-image: url("/sweethomesw/img/bg.png");
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
+        background-attachment: fixed;
+        height: 90%;
+        
 	}
 	#content{
 		background-color: rgba(197, 202, 233, 0.7);
-		height:650px;
+		min-height:inherit;
+        margin-bottom: 0px;
+        max-width: 350px;
+        padding: 1em 2em 2em;
+        margin: 0px auto;
+        vertical-align: middle;
 	}
+    
 	#contentConfig{
 		background-color: rgba(197, 202, 233, 0.7);
-		height:650px;
 	}
 	#contentInput{
 		background-color: rgba(197, 202, 233, 0.7);
-		height:650px;
 	}
 }
 
