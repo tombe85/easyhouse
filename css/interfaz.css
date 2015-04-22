@@ -360,9 +360,14 @@ table{
     height: 232px;
 }
 
-.logoInicio{
+#logoInicio{
     text-align: center;
-    height: 25%;
+    height: 38%;
+}
+
+#logoAbout{
+    text-align: center;
+    height: 20%;
 }
 
 .menubutton{
