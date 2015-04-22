@@ -139,7 +139,7 @@ header{
     }
 }
 
-@media screen and (min-width: 700px) and (max-width: 998px){
+@media screen and (min-width: 700px){
     #content{
         max-width: 350px;
         padding: 1em 2em 2em;
@@ -168,23 +168,8 @@ header{
 		background-size: cover;
         background-attachment: fixed;
         height: 90%;
-        
-	}
-	#content{
-		background-color: rgba(197, 202, 233, 0.7);
-		min-height:inherit;
-        margin-bottom: 0px;
-        max-width: 350px;
-        padding: 1em 2em 2em;
-        margin: 0px auto;
-        vertical-align: middle;
-	}
-    
-	#contentConfig{
-		background-color: rgba(197, 202, 233, 0.7);
-	}
-	#contentInput{
-		background-color: rgba(197, 202, 233, 0.7);
+        background-color: rgba(197, 202, 233, 0.85);
+        background-blend-mode: color;
 	}
 }
 
