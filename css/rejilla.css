@@ -84,9 +84,9 @@ header{
     background:#FF5252;
     text-align: center;
     margin-bottom: 10px;
-    border-radius: 10px 10px 10px 10px;
-        -moz-border-radius: 10px 10px 10px 10px;
-        -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 0px 0px 10px;
+        -moz-border-radius: 10px 0px 0px 10px;
+        -webkit-border-radius: 10px 0px 0px 10px;
     }
 
     #contentBottomRight{
@@ -95,9 +95,9 @@ header{
     background:#d50000;
     text-align: center;
     margin-bottom: 10px;
-    border-radius: 10px 10px 10px 10px;
-        -moz-border-radius: 10px 10px 10px 10px;
-        -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 0px 10px 10px 0px;
+        -moz-border-radius: 0px 10px 10px 0px;
+        -webkit-border-radius: 0px 10px 10px 0px;
     }
 }
 
