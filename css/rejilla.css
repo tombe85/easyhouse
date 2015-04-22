@@ -160,6 +160,27 @@ header{
     }
 }
 
+@media screen and (min-width: 998px){
+	body{
+		background-image: url("/sweethomesw/img/bg.png");
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	#content{
+		background-color: rgba(197, 202, 233, 0.7);
+		height:650px;
+	}
+	#contentConfig{
+		background-color: rgba(197, 202, 233, 0.7);
+		height:650px;
+	}
+	#contentInput{
+		background-color: rgba(197, 202, 233, 0.7);
+		height:650px;
+	}
+}
 
 #fotoHeader{
     width: 16.5%;

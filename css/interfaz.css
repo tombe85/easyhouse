@@ -252,7 +252,7 @@ table{
 }
 
 .buttonTransparent{
-    background-color: #c5cae9;
+    background-color: transparent;
     border: 0px;
 }
 
@@ -274,7 +274,7 @@ table{
 }
 
 .configMenu:hover ul {
-    height: 255px;
+    height: 225px;
 }
 
 .configMenu ul {
