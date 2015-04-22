@@ -469,6 +469,10 @@ table{
     border: none;
     margin-top: 1em;
     color: white;
+     border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
 }
 
 .whitefont{
