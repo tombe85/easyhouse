@@ -46,11 +46,30 @@ header{
     width: 100%;
 }
 
-#contentBottom{
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
+@media screen and (max-width: 700px){
+    #contentBottom{
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+        
+    }
+}
+
+@media screen and (min-width: 700px){
+    #contentBottom{
+        width: 350px;
+        padding: 0px;
+        margin: 0px auto;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    #contentBottom button{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
 }
 
 #contentBottomLeft{
