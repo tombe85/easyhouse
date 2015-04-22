@@ -39,13 +39,6 @@ header{
     border-spacing: 0px;
 }
 
-#content{
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    width: 100%;
-}
-
 @media screen and (max-width: 700px){
     #contentBottom{
         width: 100%;
@@ -53,6 +46,20 @@ header{
         margin: 0px;
         text-align: center;
         
+    }
+    
+    #contentBottomLeft{
+    float:left;
+    width: 50%;
+    background:#FF5252;
+    text-align: center;
+    }
+
+    #contentBottomRight{
+    float: right;
+    width: 50%;
+    background:#d50000;
+    text-align: center;
     }
 }
 
@@ -70,20 +77,28 @@ header{
         -moz-border-radius: 10px 10px 10px 10px;
         -webkit-border-radius: 10px 10px 10px 10px;
     }
-}
 
-#contentBottomLeft{
+    #contentBottomLeft{
     float:left;
     width: 50%;
     background:#FF5252;
     text-align: center;
-}
+    margin-bottom: 10px;
+    border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
 
-#contentBottomRight{
+    #contentBottomRight{
     float: right;
     width: 50%;
     background:#d50000;
     text-align: center;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
 }
 
 @media screen and (max-width: 700px){
@@ -123,6 +138,28 @@ header{
         vertical-align: middle;
     }
 }
+
+@media screen and (min-width: 700px){
+    #content{
+
+    padding: 0px;
+    max-width: 350px;
+    padding: 1em 2em 2em;
+    margin: 0px auto;
+    height: auto;
+    vertical-align: middle;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #content{    
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;    
+    }
+}
+
 
 #fotoHeader{
     width: 16.5%;
