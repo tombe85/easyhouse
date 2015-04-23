@@ -70,6 +70,12 @@ a{
     color: black;
 }
 
+body{
+    background-color: #c5cae9;
+    font-family: 'roboto_condensedlight';
+    font-size: 1.17em;
+}
+
 button{
     margin: 0px;
     padding: 0px;
@@ -97,6 +103,10 @@ h4{
     padding: 0px;
     margin: 0px;
     font-family: 'roboto_condensedlight';
+}
+
+header{
+    background-color: #3f51b5;
 }
 
 header h1{
@@ -129,6 +139,51 @@ table{
     display: block;
 }
 
+@media screen and (max-width: 700px){
+    #contentBottom{
+        text-align: center;
+    }
+    
+    #contentBottomLeft{
+        background:#FF5252;
+        text-align: center;
+    }
+
+    #contentBottomRight{
+        background:#d50000;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 700px){
+    #contentBottom{
+        text-align: center;
+    }
+    
+    #contentBottom button{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
+
+    #contentBottomLeft{
+    background:#FF5252;
+    text-align: center;
+    border-radius: 10px 0px 0px 10px;
+        -moz-border-radius: 10px 0px 0px 10px;
+        -webkit-border-radius: 10px 0px 0px 10px;
+    }
+
+    #contentBottomRight{
+    background:#d50000;
+    text-align: center;
+    border-radius: 0px 10px 10px 0px;
+        -moz-border-radius: 0px 10px 10px 0px;
+        -webkit-border-radius: 0px 10px 10px 0px;
+    }
+}
+
+
 @media screen and (min-width: 700px){
     
     #contentConfig button{
@@ -146,6 +201,26 @@ table{
 
 #contentInput input{
     background-color: white;
+}
+
+#fotoHeader{
+    text-align: right;
+}
+
+#infoHeader{
+    text-align: right;
+}
+
+#logoHeader{
+    text-align: center;
+}
+
+#logoHeader100{
+    text-align: center;
+}
+
+#menuinf{
+    background-color: #3f51b5;
 }
 
 #fotousuario{
@@ -358,6 +433,12 @@ table{
 
 .expenseMenu:hover ul {
     height: 232px;
+}
+
+.indicator{
+    background-color: #7986CB;
+    text-align: center;
+    color: white;
 }
 
 #logoInicio{
