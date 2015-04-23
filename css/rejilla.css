@@ -169,8 +169,7 @@ header{
         background-attachment: fixed;
         height: 90%;
         background-color: rgba(197, 202, 233, 0.85);
-        background-blend-mode: multiply;
-        
+        background-blend-mode: color;
 	}
 }
 
