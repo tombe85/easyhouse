@@ -168,13 +168,29 @@ header{
 		background-size: cover;
         background-attachment: fixed;
         height: 90%;
-        background-color: rgba(197, 202, 233, 0.85);
-        background-blend-mode: color;
 	}
+    
+    #content{
+        background-color: rgba(197, 202, 233, 0.85);
+        min-height: inherit;
+        padding-bottom: auto;
+    }
+    
+    #contentInput{
+        background-color: rgba(197, 202, 233, 0.85);
+        min-height: inherit;
+        padding-bottom: auto;
+    }
+    
+    #contentConfig{
+        background-color: rgba(197, 202, 233, 0.85);
+        min-height: inherit;
+        padding-bottom: auto;
+    }
 }
 
 #fotoHeader{
-    width: 16.5%;
+    width: 16.5%; 
     text-align: right;
 }
 
