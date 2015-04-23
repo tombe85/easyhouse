@@ -1,11 +1,11 @@
 Hay que exportar parte el codigo html que seria dinamico segun que usuario (juan,pepe,luis,etc) a otros html que se van a pedir de manera dinamica con AJAX al back end. Por ahora estos html van a ser estaticos, pero luego se generaran dinamicamente cuando enlacemos con la base de dato.
 Las secciones de html que hay que exportar son la mayoria de contents de cada una de las paginas, pero en concreto son
 El header y el footer ambos tambien con AJAX (la imagen del header por ejemplo)
-La actividad reciente que hay en home.html
-Los mensajes del tabon en board/main.html
-Las tareas disponibles en tasks/main.html
-La lista de la compra en shopping/main.html
-La lista de productos disponibles en shopping/addproduct.html
-El desplegable de los gastos en expenses/main.html
-Las que se despliegan en Mis Tareas en config/main.html
-La Imagen y el nombre en config/main.html
+La actividad reciente que hay en home.html -> registry.html
+Los mensajes del tablon en board/main.html -> messages.html
+Las tareas disponibles en tasks/main.html -> tasks.html
+La lista de la compra en shopping/main.html -> shoppinglist.html
+La lista de productos disponibles en shopping/addproduct.html -> productlist.html
+El desplegable de los gastos en expenses/main.html -> expenses.html
+Las que se despliegan en Mis Tareas en config/main.html -> mytasks.html
+La Imagen y el nombre en config/main.html -> myprofile.html 
