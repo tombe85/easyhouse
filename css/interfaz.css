@@ -1,3 +1,5 @@
+/* FUENTES */
+
 @font-face {
     font-family: 'roboto_condensedbold';
     src: url('/sweethomesw/fonts/RobotoCondensed-Bold-webfont.eot');
@@ -137,66 +139,6 @@ table{
 #content tr{
     width: 100%;
     display: block;
-}
-
-@media screen and (max-width: 700px){
-    #contentBottom{
-        text-align: center;
-    }
-    
-    #contentBottomLeft{
-        background:#FF5252;
-        text-align: center;
-    }
-
-    #contentBottomRight{
-        background:#d50000;
-        text-align: center;
-    }
-}
-
-@media screen and (min-width: 700px){
-    #contentBottom{
-        text-align: center;
-    }
-    
-    #contentBottom button{
-        border-radius: 10px 10px 10px 10px;
-        -moz-border-radius: 10px 10px 10px 10px;
-        -webkit-border-radius: 10px 10px 10px 10px;
-    }
-
-    #contentBottomLeft{
-    background:#FF5252;
-    text-align: center;
-    border-radius: 10px 0px 0px 10px;
-        -moz-border-radius: 10px 0px 0px 10px;
-        -webkit-border-radius: 10px 0px 0px 10px;
-    }
-
-    #contentBottomRight{
-    background:#d50000;
-    text-align: center;
-    border-radius: 0px 10px 10px 0px;
-        -moz-border-radius: 0px 10px 10px 0px;
-        -webkit-border-radius: 0px 10px 10px 0px;
-    }
-}
-
-
-@media screen and (min-width: 700px){
-    
-    #contentConfig button{
-        border-radius: 10px 10px 10px 10px;
-        -moz-border-radius: 10px 10px 10px 10px;
-        -webkit-border-radius: 10px 10px 10px 10px;
-    }
-}
-
-@media screen and (max-width: 700px){
-    #contentConfig button{
-        width: 100%;
-    }
 }
 
 #contentInput input{
@@ -563,4 +505,60 @@ table{
 
 .whitefont{
     color: white;
+}
+
+/* MOVIL */
+@media screen and (max-width: 700px){
+    #contentBottom{
+        text-align: center;
+    }
+    
+    #contentBottomLeft{
+        background:#FF5252;
+        text-align: center;
+    }
+
+    #contentBottomRight{
+        background:#d50000;
+        text-align: center;
+    }
+    
+    #contentConfig button{
+        width: 100%;
+    }
+}
+
+/* TABLET Y PC */
+@media screen and (min-width: 700px){
+    #contentBottom{
+        text-align: center;
+    }
+    
+    #contentBottom button{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
+
+    #contentBottomLeft{
+        background:#FF5252;
+        text-align: center;
+        border-radius: 10px 0px 0px 10px;
+        -moz-border-radius: 10px 0px 0px 10px;
+        -webkit-border-radius: 10px 0px 0px 10px;
+    }
+
+    #contentBottomRight{
+        background:#d50000;
+        text-align: center;
+        border-radius: 0px 10px 10px 0px;
+        -moz-border-radius: 0px 10px 10px 0px;
+        -webkit-border-radius: 0px 10px 10px 0px;
+    }
+    
+    #contentConfig button{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
 }

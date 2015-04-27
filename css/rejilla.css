@@ -34,129 +34,6 @@ header{
     border-spacing: 0px;
 }
 
-@media screen and (max-width: 700px){
-    #contentBottom{
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-    }
-    
-    #contentBottomLeft{
-        float:left;
-        width: 50%;
-    }
-
-    #contentBottomRight{
-        float: right;
-        width: 50%;
-    }
-}
-
-@media screen and (min-width: 700px){
-    #contentBottom{
-        width: 350px;
-        padding: 0px;
-        margin: 0px auto;
-        margin-bottom: 10px;
-    }
-
-    #contentBottomLeft{
-    float:left;
-    width: 50%;
-    margin-bottom: 10px;
-    }
-
-    #contentBottomRight{
-    float: right;
-    width: 50%;
-    margin-bottom: 10px;
-    }
-}
-
-@media screen and (max-width: 700px){
-    #contentConfig{
-        margin: 0px;
-        padding: 0px;
-        height: 100%;
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 700px){
-    #contentConfig{
-        padding: 1em 2em 2em;
-        margin: 0px auto;
-        max-width: 350px;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 700px){
-    #contentInput{
-        padding: 1em 2em 2em;
-        margin: 0px;
-        height: auto;
-    }
-}
-
-@media screen and (min-width: 700px){
-    #contentInput{
-        padding: 1em 2em 2em;
-        margin: 0px auto;
-        max-width: 350px;
-        height: auto;
-    }
-}
-
-@media screen and (min-width: 700px){
-    #content{
-        max-width: 350px;
-        padding: 1em 2em 2em;
-        margin: 0px auto;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 700px){
-    #content{    
-        margin: 0px;
-        padding: 0px;
-        height: 100%;
-        width: 100%;    
-    }
-}
-
-@media screen and (min-width: 998px){
-    
-	body{
-		background-image: url("/sweethomesw/img/bg.png");
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-        background-attachment: fixed;
-        height: 90%;
-	}
-    
-    #content{
-        background-color: rgba(197, 202, 233, 0.85);
-        min-height: inherit;
-        padding-bottom: auto;
-    }
-    
-    #contentInput{
-        background-color: rgba(197, 202, 233, 0.85);
-        min-height: inherit;
-        padding-bottom: auto;
-    }
-    
-    #contentConfig{
-        background-color: rgba(197, 202, 233, 0.85);
-        min-height: inherit;
-        padding-bottom: auto;
-    }
-}
-
 #fotoHeader{
     width: 16.5%; 
 }
@@ -192,4 +69,122 @@ header{
 .tableHeader{
     width: 95%;
     margin: 2%;
+}
+
+/* MÓVIL */
+@media screen and (max-width: 700px){
+    
+    #content{    
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;    
+    }
+    
+    #contentBottom{
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    #contentBottomLeft{
+        float:left;
+        width: 50%;
+    }
+
+    #contentBottomRight{
+        float: right;
+        width: 50%;
+    }
+    
+    #contentConfig{
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #contentInput{
+        padding: 1em 2em 2em;
+        margin: 0px;
+        height: auto;
+    }
+    
+}
+
+/*TABLET Y PC*/
+@media screen and (min-width: 700px){
+    
+    #content{
+        max-width: 350px;
+        padding: 1em 2em 2em;
+        margin: 0px auto;
+        height: auto;
+    }
+    
+    #contentBottom{
+        width: 350px;
+        padding: 0px;
+        margin: 0px auto;
+        margin-bottom: 10px;
+    }
+
+    #contentBottomLeft{
+        float:left;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    #contentBottomRight{
+        float: right;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    
+    #contentConfig{
+        padding: 1em 2em 2em;
+        margin: 0px auto;
+        max-width: 350px;
+        height: auto;
+    }
+    
+    #contentInput{
+        padding: 1em 2em 2em;
+        margin: 0px auto;
+        max-width: 350px;
+        height: auto;
+    }
+    
+}
+
+/* PC */
+@media screen and (min-width: 998px){
+    
+	body{
+		background-image: url("/sweethomesw/img/bg.png");
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+        background-attachment: fixed;
+        height: 90%;
+	}
+    
+    #content{
+        background-color: rgba(197, 202, 233, 0.85);
+        min-height: inherit;
+        padding-bottom: auto;
+    }
+    
+    #contentInput{
+        background-color: rgba(197, 202, 233, 0.85);
+        min-height: inherit;
+        padding-bottom: auto;
+    }
+    
+    #contentConfig{
+        background-color: rgba(197, 202, 233, 0.85);
+        min-height: inherit;
+        padding-bottom: auto;
+    }
 }
