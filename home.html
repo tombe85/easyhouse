@@ -7,6 +7,15 @@
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
+        <script>
+            $(function(){
+                //Footer
+                $("#footerMenu").load("/sweethomesw/footer.html");
+                $(document).ajaxComplete(function(){
+                    $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
+                });
+            });
+        </script>
     </head>
     <body>
         <header data-role="header" data-position="fixed">
@@ -60,19 +69,11 @@
         <footer data-role="footer" data-position="fixed">
             <div id="contentBottom">
                 <div id="buttonBottom">
-                    <button class="buttonActionAdd"><img id="homebutton" class="menubutton" src="/sweethomesw/img/clean.png" /></button>
+                    <button class="buttonActionAdd"><img id="cleanhomebutton" class="menubutton" src="/sweethomesw/img/clean.png" /></button>
                 </div>
             </div>
-            <table id="menuinf">
-                <tr>
-                    <td><a href="/sweethomesw/home.html"><img id="homebutton" class="menubutton" src="/sweethomesw/img/homeselected.png" /></a></td>
-                    <td><a href="/sweethomesw/board/main.html"><img id="tablonbutton" class="menubutton" src="/sweethomesw/img/tablon.png" /></a></td>
-                    <td><a href="/sweethomesw/tasks/main.html"><img id="tareasbutton" class="menubutton" src="/sweethomesw/img/tareas.png" /></a></td>
-                    <td><a href="/sweethomesw/shopping/main.html"><img id="comprabutton" class="menubutton" src="/sweethomesw/img/compra.png" /></a></td>
-                    <td><a href="/sweethomesw/expenses/main.html"><img id="gastosbutton" class="menubutton" src="/sweethomesw/img/gastos.png" /></a></td>
-                    <td><a href="/sweethomesw/config/main.html"><img id="configbutton" class="menubutton" src="/sweethomesw/img/config.png" /></a></td>
-                </tr>
-            </table>
+            <div id="footerMenu">
+            </div>
         </footer>
     </body>
 </html>
