@@ -141,6 +141,14 @@ table{
     display: block;
 }
 
+#contentConfig{
+     -webkit-transition: height 0.5s ease;
+       -moz-transition: height 0.5s ease;
+         -o-transition: height 0.5s ease;
+        -ms-transition: height 0.5s ease;
+            transition: height 0.5s ease;
+}
+
 #contentInput input{
     background-color: white;
 }
@@ -197,10 +205,6 @@ table{
     padding: 0px;
     margin: 0px;
     padding: 10px;
-}
-
-#taskConfig:hover ul{
-    height: 114px;
 }
 
 #userData{
@@ -290,8 +294,29 @@ table{
     vertical-align: middle;
 }
 
-.configMenu:hover ul {
+.configMenuOpen input[type="text"], .configMenuOpen input[type="password"]{
+    background-color: white;
+}
+
+.configMenuOpen li img{
+    vertical-align: middle;
+}
+
+.configMenuOpen ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2px;
     height: 225px;
+    margin: 0;
+
+    /*Animacion menu*/
+    -webkit-transition: height 0.5s ease;
+       -moz-transition: height 0.5s ease;
+         -o-transition: height 0.5s ease;
+        -ms-transition: height 0.5s ease;
+            transition: height 0.5s ease; 
 }
 
 .configMenu ul {

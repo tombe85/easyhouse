@@ -21,6 +21,28 @@
                     $("#fotoHeader").find("img").attr("class","menubutton");
                 });
             });
+            
+            var abierto = 0;
+            
+            $.fn.openclose = function(){
+                var altura = $("#contentConfig").height();
+                if($(this).attr("class") === "configMenu"){
+                    altura += (225);
+                    $(this).attr("class", "configMenuOpen");
+                    if(abierto === 0){
+                        altura += $("footer").height();
+                    }
+                    abierto++;
+                }else{
+                    abierto--;
+                    altura -= (225);
+                    $(this).attr("class", "configMenu");
+                    if(abierto === 0){
+                        altura -= $("footer").height();
+                    }
+                }
+                $("#contentConfig").css("height", altura + "px");
+            }
         </script>
     </head>
     <body>
@@ -32,7 +54,7 @@
             </div>
 
             <div class="configMenu" id="taskConfig">
-                <button type="submit" class="buttonDarkBlue">
+                <button type="submit" class="buttonDarkBlue" onclick='$("#taskConfig").openclose()'>
                     <h2>Mis Tareas</h2>
                 </button>
                 <ul>
@@ -41,8 +63,8 @@
                 </ul>
             </div>
 
-            <div class="configMenu">
-                <button type="submit" class="buttonDarkBlue">
+            <div id="passwdConfig" class="configMenu">
+                <button type="submit" class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
                 <ul>
@@ -54,8 +76,8 @@
                 </ul>
             </div>
 
-            <div class="configMenu">
-                <button type="submit" class="buttonDarkBlue">
+            <div id="mailConfig" class="configMenu">
+                <button type="submit" class="buttonDarkBlue" onclick='$("#mailConfig").openclose()'>
                     <h2>Cambiar Correo</h2>
                 </button>
                 <ul>
