@@ -14,7 +14,7 @@
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
-                    $("#backHeader").html('<a href="/sweethomesw/shopping/main.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a>');
+                    $("#backHeader").find("a").attr("href","/sweethomesw/shopping/main.html");
                 });
             });
         </script>

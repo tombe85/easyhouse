@@ -12,8 +12,11 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $(document).ajaxComplete(function(){
-                    $("#backHeader").html('<a href="/sweethomesw/admin/config/main.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a>');
-                    $("#fotoHeader").html('<img class="menubutton" src="/sweethomesw/img/infoselected.png" />');
+                    $("#backHeader").find("a").attr("href","/sweethomesw/admin/config/main.html");
+                    $("#fotoHeader").find("a").attr("href","#");
+                    $("#fotoHeader").find("img").attr("id","noone");
+                    $("#fotoHeader").find("img").attr("src","/sweethomesw/img/infoselected.png");
+                    $("#fotoHeader").find("img").attr("class","menubutton");
                 });
             });
         </script>

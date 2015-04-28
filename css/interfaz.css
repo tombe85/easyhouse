@@ -556,6 +556,7 @@ table{
 @media screen and (min-width: 700px){
     #contentBottom{
         text-align: center;
+        background-color: #c5cae9;
     }
     
     #contentBottom button{

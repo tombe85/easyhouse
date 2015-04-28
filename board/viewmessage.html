@@ -13,8 +13,8 @@
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $(document).ajaxComplete(function(){
-                    $("#backHeader").html('<button class="buttonTransparent" onclick=\'location.href="/sweethomesw/board/main.html"\'><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></button>');
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
+                    $("#backHeader").find("a").attr("href","/sweethomesw/board/main.html");
                     $("#content").css("height", ($("#content").height() + $("footer").height() + $("#contentBottom").height()) + "px"); 
                 });
             });
@@ -77,7 +77,7 @@
                 </tr>
             </table>
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
-                <form>
+                <form method="post" action="">
                     <table>
                         <tr id="buttonBottom">
                             <td class="sendtext">

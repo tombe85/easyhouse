@@ -9,10 +9,15 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
             $(document).bind('pageinit', function(){
-                $("#headerlogin").load("/sweethomesw/header/headerLogin.html");
+                $("#headerlogin").load("/sweethomesw/header/header.html");
                 $("#loginbutton").click(function(){
                     location.href="/sweethomesw/home.html";
                 });
+                $(document).ajaxComplete(function(){
+                    $("#backbutton").css("display","none");
+                    $("#fotousuario").css("display","none");
+                });
+                
             });
         </script>
     </head>

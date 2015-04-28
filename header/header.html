@@ -1,9 +1,10 @@
 <header data-role="header" data-position="fixed" data-tap-toggle="false">
     <table class = "tableHeader">
         <tr>
-            <td id="backHeader"></td>
+            <!--Se debe asignar el enlace de back u ocultarlo-->
+            <td id="backHeader"><a data-ajax="false"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
             <td id="logoHeader"><h1>sweetHome<span class="elevated">SW</span></h1></td>
-            <td id="fotoHeader"><button class="buttontransparent" onclick='location.href="/sweethomesw/config/main.html"'><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></button></td>
+            <td id="fotoHeader"><a href="/sweethomesw/config/main.html" data-ajax="false"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
         </tr>
     </table>
 </header>
