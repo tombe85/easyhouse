@@ -13,7 +13,7 @@
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $(document).ajaxComplete(function(){
-                    $("#backHeader").html('<a href="/sweethomesw/board/main.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a>');
+                    $("#backHeader").html('<button class="buttonTransparent" onclick=\'location.href="/sweethomesw/board/main.html"\'><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></button>');
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
                 });
             });
