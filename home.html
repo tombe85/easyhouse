@@ -8,7 +8,7 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
-            $(function(){
+            $(document).bind('pageinit', function(){
                 //Footer
                 $("#headerhome").load("/sweethomesw/header/header.html");
                 $("#footerMenu").load("/sweethomesw/footer.html");
@@ -20,7 +20,7 @@
     </head>
     <body>
         <div id="headerhome"></div>
-        <div class="indicator">
+        <div id="indicator" class="indicator">
             <h4>Inicio</h4>
         </div>
         <div id="content" data-role="content">
