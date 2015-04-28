@@ -7,13 +7,17 @@
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
+        <script>
+            $(function(){
+                $("#headerlogin").load("/sweethomesw/header/headerLogin.html");
+                $("#registerbutton").click(function(){
+                    location.href="/sweethomesw/home.html";
+                });
+            });
+        </script>
     </head>
     <body>
-        <header data-role="header" data-position="fixed" data-tap-toggle="false">
-            <div id="logoHeader100">
-                <h1>sweetHome<span class="elevated">SW</span></h1>
-            </div>
-        </header>
+        <div id="headerlogin"></div>
         <div id="contentInput" data-role="content">
             <form method="post" action="#">
                 
@@ -38,7 +42,7 @@
                     <input type="password" name="passwd2">
                 </div>
                 <div class="submitbutton">
-                    <button type="submit"><h4><a class="whitefont" href="admin/config/main.html">Registrarse</a></h4></button>
+                    <button id="registerbutton" type="submit"><h4>Registrarse</h4></button>
                 </div>
             </form>
         </div>
