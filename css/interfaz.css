@@ -373,8 +373,32 @@ table{
             transition: height 0.5s ease; 
 }
 
-.expenseMenu:hover ul {
+.expenseMenuOpen{
+    border-bottom: 1px solid #3f51b5;
+}
+
+.expenseMenuOpen li{
+    padding: 2px;
+}
+
+.expenseMenuOpen li img{
+    vertical-align: middle;
+}
+
+.expenseMenuOpen ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0px;
     height: 232px;
+    margin: 0;
+    border-bottom: 2px solid #3f51b5;
+
+    /*Animacion menu*/
+    -webkit-transition: height 0.5s ease;
+       -moz-transition: height 0.5s ease;
+         -o-transition: height 0.5s ease;
+        -ms-transition: height 0.5s ease;
+            transition: height 0.5s ease; 
 }
 
 .indicator{

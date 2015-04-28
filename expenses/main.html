@@ -8,6 +8,7 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
+            var abierto = 0;
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
@@ -16,6 +17,27 @@
                     $("#gastosbutton").attr("src","/sweethomesw/img/gastosselected.png");
                 });
             });
+            
+            $.fn.openclose = function(){
+                var altura = $("#content").height();
+                if($(this).attr("class") === "expenseMenu"){
+                    $(this).attr("class", "expenseMenuOpen");
+                    altura += (232);
+                    if(abierto === 0){
+                        altura += $("#footer").height();
+                    }
+                    abierto++;
+                }else{
+                    abierto--;
+                    $(this).attr("class", "expenseMenu");
+                    altura -= (232);
+                    if(abierto === 0){
+                        altura -= $("#footer").height();
+                    }
+                }
+                $("#content").css("height", altura);
+                
+            }
         </script>
     </head>
     <body>
@@ -24,8 +46,8 @@
             <h4>Gastos</h4>
         </div>
         <div id="content">
-            <div class="expenseMenu">
-                <button class="buttonTransparent">
+            <div id="ComunidadExpense" class="expenseMenu">
+                <button class="buttonTransparent" onclick='$("#ComunidadExpense").openclose()'>
                     <h2><a href="#">Comunidad</a></h2>
                 </button>
                 <ul>
@@ -36,8 +58,8 @@
                 </ul>
             </div>
 
-            <div class="expenseMenu">
-                <button class="buttonTransparent">
+            <div id="GasExpense" class="expenseMenu">
+                <button class="buttonTransparent" onclick='$("#GasExpense").openclose()'>
                     <h2><a href="#">Gas</a></h2>
                 </button>
                 <ul>
@@ -48,8 +70,8 @@
                 </ul>
             </div>
 
-            <div class="expenseMenu">
-                <button class="buttonTransparent">
+            <div id="InternetExpense" class="expenseMenu">
+                <button class="buttonTransparent" onclick='$("#InternetExpense").openclose()'>
                     <h2><a href="#">Internet</a></h2>
                 </button>
                 <ul>
@@ -60,8 +82,8 @@
                 </ul>
             </div>
 
-            <div class="expenseMenu">
-                <button class="buttonTransparent">
+            <div id="LuzExpense" class="expenseMenu">
+                <button class="buttonTransparent" onclick='$("#LuzExpense").openclose()'>
                     <h2><a href="#">Luz</a></h2>
                 </button>
                 <ul>
