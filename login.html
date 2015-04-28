@@ -7,13 +7,14 @@
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
+        <script>
+            $(function(){
+                $("#headerlogin").load("/sweethomesw/header/headerLogin.html");
+            });
+        </script>
     </head>
     <body>
-        <header data-role="header" data-position="fixed">
-            <div id="logoHeader100">
-                <h1>sweetHome<span class="elevated">SW</span></h1>
-            </div>
-        </header>
+        <div id="headerlogin"></div>
         <div id="contentInput" data-role="content">
             <form method="post" action="#">
                 <div id="logoInicio">
@@ -32,7 +33,5 @@
                 </div>
             </form>
         </div>
-        <footer data-role="footer" data-position="fixed">
-        </footer>
     </body>
 </html>
