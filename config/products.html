@@ -14,8 +14,8 @@
                 $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
                 $(document).ajaxComplete(function(){
                     $("#productsbutton").attr("src","/sweethomesw/img/compraractionselected.png");
-                    $("#backHeader").html('<a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a>');
-                    $("#fotoHeader").html('<a href="/sweethomesw/about.html"><img class="menubutton" src="/sweethomesw/img/info.png" /></a>');
+                    $("#backHeader").html('<button class="buttontransparent" onclick=\'location.href="/sweethomesw/home.html"\'><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></button>');
+                    $("#fotoHeader").html('<button class="buttontransparent" onclick=\'location.href="/sweethomesw/about.html"\'><img class="menubutton" src="/sweethomesw/img/info.png" /></button>');
                 });
             });
         </script>

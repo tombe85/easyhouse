@@ -10,8 +10,8 @@
         <script>
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#headerhome").load("/sweethomesw/header/header.html");
-                $("#footerMenu").load("/sweethomesw/footer/footer.html");
+                $("#header").load("/sweethomesw/header/header.html");
+                $("#footer").load("/sweethomesw/footer/footer.html");
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
                 });
@@ -19,7 +19,7 @@
         </script>
     </head>
     <body>
-        <div id="headerhome"></div>
+        <div id="header"></div>
         <div id="indicator" class="indicator">
             <h4>Inicio</h4>
         </div>
@@ -65,7 +65,7 @@
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
-            <div id="footerMenu">
+            <div id="footer">
             </div>
         </footer>
     </body>
