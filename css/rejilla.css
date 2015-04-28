@@ -35,27 +35,27 @@ header{
 }
 
 #fotoHeader{
-    width: 16.5%; 
+    width: 16%; 
+    padding-right: 10px;
 }
 
 #infoHeader{
-    width: 16.5%;
+    width: 16%;
+    padding-right: 10px;
 }
 
 #logoHeader{
-    margin-left: 5px;
-    width: 67%;
+    width: 68%;
 }
 
 #logoHeader100{
-    margin-left: 5px;
     width: 100%;
 }
 
 #menuinf{
     width: 100%;
     margin: 0px;
-    padding: 0px;
+    padding: 2px;
 }
 
 /* CLASES */
@@ -67,8 +67,12 @@ header{
 }
 
 .tableHeader{
-    width: 95%;
-    margin: 2%;
+    width: 100%;
+    margin: 0px;
+}
+
+.tableHeader td{
+    padding: 5px;
 }
 
 /* MÓVIL */
