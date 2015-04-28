@@ -10,6 +10,7 @@
         <script>
             $(function(){
                 //Footer
+                $("#header").load("/sweethomesw/header/header.html");
                 $("#footerMenu").load("/sweethomesw/footer.html");
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
@@ -18,15 +19,7 @@
         </script>
     </head>
     <body>
-        <header data-role="header" data-position="fixed">
-            <table class = "tableHeader">
-                <tr>
-                    <td id="backHeader"></td>
-                    <td id="logoHeader"><h1>sweetHome<span class="elevated">SW</span></h1></td>
-                    <td id="fotoHeader"><a href="/sweethomesw/config/main.html"><img id="fotousuario" src="/sweethomesw/img/usuario.png" /></a></td>
-                </tr>
-            </table>
-        </header>
+        <div id="header"></div>
         <div class="indicator">
             <h4>Inicio</h4>
         </div>
