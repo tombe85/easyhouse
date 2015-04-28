@@ -8,7 +8,7 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
-            $(function(){
+            $(document).bind('pageinit', function(){
                 $("#headerlogin").load("/sweethomesw/header/headerLogin.html");
                 $("#loginbutton").click(function(){
                     location.href="/sweethomesw/home.html";
