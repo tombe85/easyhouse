@@ -7,17 +7,21 @@
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
+        <script>
+            $(document).bind('pageinit', function(){
+                //Footer
+                $("#header").load("/sweethomesw/header/header.html");
+                $("#footer").load("/sweethomesw/footer/footerConfig.html");
+                $(document).ajaxComplete(function(){
+                    $("#usersbutton").attr("src","/sweethomesw/img/usuariosconfigselected.png");
+                    $("#backHeader").html('<a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a>');
+                    $("#fotoHeader").html('<a href="/sweethomesw/about.html"><img class="menubutton" src="/sweethomesw/img/info.png" /></a>');
+                });
+            });
+        </script>
     </head>
     <body>
-        <header data-role="header" data-position="fixed" data-tap-toggle="false">
-            <table class="tableHeader">
-                <tr>
-                    <td id="backHeader"><a href="/sweethomesw/home.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a></td>
-                    <td id="logoHeader"><h1>sweetHome<span class="elevated">SW</span></h1></td>
-                    <td id="infoHeader"><a href="/sweethomesw/aboutadmin.html"><img class="menubutton" src="/sweethomesw/img/info.png" /></a></td>
-                </tr>
-            </table>
-        </header>
+        <div id="header"></div>
         <div class="indicator">
             <h4>Gestión de usuarios</h4>
         </div>
@@ -73,14 +77,7 @@
                     </table>
                 </form>
             </div>
-            <table id="menuinf">				
-                <tr>
-					<td><a href="/sweethomesw/admin/config/main.html"><img class="menubutton" src="/sweethomesw/img/config.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/users.html"><img class="menubutton" src="/sweethomesw/img/usuariosconfigselected.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/tasks.html"><img class="menubutton" src="/sweethomesw/img/tareaconfig.png" /></a></td>
-                    <td><a href="/sweethomesw/admin/config/products.html"><img class="menubutton" src="/sweethomesw/img/compraraction.png" /></a></td>
-                </tr>
-            </table>
+            <div id="footer"></div>
         </footer>
     </body>
 </html>
