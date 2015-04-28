@@ -15,13 +15,14 @@
                 $(document).ajaxComplete(function(){
                     $("#backHeader").html('<a href="/sweethomesw/board/main.html"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a>');
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
+                    $("#content").css("height", ($("body").height() + $("footer").height() + $("#contentBottom").height()) + "px"); 
                 });
             });
         </script>
     </head>
     <body>
         <div id="header"></div>
-        <div id="content" data-role="content">
+        <div id="content" data-role="content" class="bottomSpaced">
             <div id="originalmessage">
                 <table>
                     <tr>
