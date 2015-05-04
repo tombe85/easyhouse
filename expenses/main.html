@@ -13,10 +13,12 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#expensesList").load("/sweethomesw/ajax/expenses.html");
                 $(document).ajaxComplete(function(){
                     $("#gastosbutton").attr("src","/sweethomesw/img/gastosselected.png");
                     $("#backbutton").css("display","none");
                     $("body").resize();
+                    $("footer").resize();
                 });
             });
             
@@ -48,55 +50,9 @@
             <div class="indicator">
                 <h4>Gastos</h4>
             </div>
-            <div id="ComunidadExpense" class="expenseMenu">
-                <button class="buttonTransparent" onclick='$("#ComunidadExpense").openclose()'>
-                    <h2><a href="#">Comunidad</a></h2>
-                </button>
-                <ul>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                </ul>
-            </div>
-
-            <div id="GasExpense" class="expenseMenu">
-                <button class="buttonTransparent" onclick='$("#GasExpense").openclose()'>
-                    <h2><a href="#">Gas</a></h2>
-                </button>
-                <ul>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                </ul>
-            </div>
-
-            <div id="InternetExpense" class="expenseMenu">
-                <button class="buttonTransparent" onclick='$("#InternetExpense").openclose()'>
-                    <h2><a href="#">Internet</a></h2>
-                </button>
-                <ul>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                </ul>
-            </div>
-
-            <div id="LuzExpense" class="expenseMenu">
-                <button class="buttonTransparent" onclick='$("#LuzExpense").openclose()'>
-                    <h2><a href="#">Luz</a></h2>
-                </button>
-                <ul>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pagado</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Pendiente</h4></li>
-                </ul>
+            <div id="expensesList">
             </div>
         </div>
-
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div id="footer"></div>
         </footer>
