@@ -15,12 +15,13 @@
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
                     $("#backbutton").css("display","none");
+                    $("body").resize();
                 });
             });
         </script>
     </head>
     <body>
-        <div id="header"></div>
+        <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="indicator" class="indicator">
             <h4>Inicio</h4>
         </div>

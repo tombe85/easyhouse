@@ -15,12 +15,13 @@
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
                     $("#backbutton").css("display","none");
+                    $("body").resize();
                 });
             });
         </script>
     </head>
     <body>
-        <div id="header"></div>
+        <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div class="indicator">
             <h4>Tablón</h4>
         </div>

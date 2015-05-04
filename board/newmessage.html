@@ -15,12 +15,13 @@
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
                     $("#backHeader").find("a").attr("href","/sweethomesw/board/main.html");
+                    $("body").resize();
                 });
             });
         </script>
     </head>
     <body>
-        <div id="header"></div>
+        <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div class="indicator">
             <h4>Nueva entrada del Tablón</h4>
         </div>

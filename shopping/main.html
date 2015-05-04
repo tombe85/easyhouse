@@ -15,12 +15,13 @@
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
                     $("#backbutton").css("display","none");
+                    $("body").resize();
                 });
             });
         </script>
     </head>
     <body>
-        <div id="header"></div>
+        <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div class="indicator">
             <h4>Lista de la compra</h4>
         </div>

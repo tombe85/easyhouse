@@ -16,6 +16,7 @@
                 $(document).ajaxComplete(function(){
                     $("#gastosbutton").attr("src","/sweethomesw/img/gastosselected.png");
                     $("#backbutton").css("display","none");
+                    $("body").resize();
                 });
             });
             
@@ -42,11 +43,11 @@
         </script>
     </head>
     <body>
-        <div id="header"></div>
-        <div class="indicator">
-            <h4>Gastos</h4>
-        </div>
+        <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="content">
+            <div class="indicator">
+                <h4>Gastos</h4>
+            </div>
             <div id="ComunidadExpense" class="expenseMenu">
                 <button class="buttonTransparent" onclick='$("#ComunidadExpense").openclose()'>
                     <h2><a href="#">Comunidad</a></h2>
