@@ -1,4 +1,6 @@
 <?php
+//cogemos la sesión
+session_start();
 
 //Cogemos los datos de POST
 $user=$_POST["usuario"];
@@ -48,6 +50,21 @@ $query='insert into users (name,idhome,mail,passwd,admin) values ("administrador
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 
+//buscar iduser generada
+$query='select * from users where mail like "'.$mail.'"';
+$result = $db->query($query)
+    or die($db->error. " en la línea ".(__LINE__-1));
+$reg=$result->fetch_array();
+$iduser=$reg["iduser"];
+
 $db->close();
+
+//Actualizar variables de sesión y cookies
+$_SESSION["login"]=true;
+$_SESSION["admin"]=true;
+$_SESSION["idhome"]=$idhome;
+$_SESSION["iduser"]=$iduser;
+// cookies?
+
 header('Location: /sweethomesw/admin/config/main.html');
 ?>

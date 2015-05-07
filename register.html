@@ -19,20 +19,20 @@
         </script>
         <script type="text/javascript">
             function validaCampos(formu){
+                var misa = false;
                 if(formu.usuario.value == "" || formu.email.value == "" || formu.nombrecasa.value == "" || formu.passwd.value == "" || formu.passwd2.value == ""){
                     alert("Debes rellenar todos los campos");
-                    return false;
                 }else{
                     var datos = {"mail": formu.email.value};
                     jQuery.post('/sweethomesw/backend/consultamailregistro.php', {mail:formu.email.value}, function(data, textStatus){
                         if(data == 1){
                             alert("El mail introducido ya existe");
-                            return false;
                         }else if(data == 0){
-                            return true;
+                            misa = true;
                         }
                     });
                 }
+                return misa;
             }
         </script>
     </head>
