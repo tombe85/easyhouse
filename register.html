@@ -10,9 +10,6 @@
         <script>
             $(document).bind('pageinit', function(){
                 $("#headerlogin").load("/sweethomesw/header/header.html");
-                $("#registerbutton").click(function(){
-                    location.href="/sweethomesw/home.html";
-                });
                 $(document).ajaxComplete(function(){
                     $("#backbutton").css("display","none");
                     $("#fotousuario").css("display","none");
@@ -23,7 +20,7 @@
     <body>
         <header id="headerlogin" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="contentInput" data-role="content">
-            <form method="post" action="#">
+            <form method="post" action="/sweethomesw/backend/registro.php" data-ajax="false">
                 
                 <div class="dataInput">
                     <h4>Usuario</h4>
