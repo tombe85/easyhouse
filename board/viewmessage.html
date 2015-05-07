@@ -12,10 +12,12 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#originalmessage").load("/sweethomesw/ajax/singlemessage.html");
+                $("#comments").load("/sweethomesw/ajax/messagecomments.html");
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
                     $("#backHeader").find("a").attr("href","/sweethomesw/board/main.html");
-                    $("#content").css("height", ($("#content").height() + $("footer").height() + $("#contentBottom").height()) + "px");
+                    $("#content").css("height", ($("#originalmessage").height() + $("#comments").height() + $("footer").height() + $("#contentBottom").height()) + "px");
                     $("body").resize();
                 });
             });
@@ -25,58 +27,11 @@
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="content" data-role="content" class="bottomSpaced">
             <div id="originalmessage">
-                <table>
-                    <tr>
-                        <td class="rowPhoto">
-                            <img src="/sweethomesw/img/usuario.png" />
-                        </td>
-                        <td class="rowText">
-                            <h2>Viene el del GAS</h2>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td id="originalmessBottom">
-                            <h3><p>A las 19:00, el día 18 de Abril viene el del gas. Es necesario que alguien esté en casa para abrirle!!</p></h3>
-                        </td>
-                    </tr>
-                </table>
-                
             </div>
-            <table>
-                <tr class="rowBordered">
-                    <td class="rowPhotoSmall">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Yo no puedo estar</h3>
-                    </td>
-                </tr>
-                <tr class="rowBordered">
-                    <td class="rowPhotoSmall">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Yo acabo de trabajar a esa hora, llegaré lo antes posible!</h3>
-                    </td>
-                </tr>
-                <tr class="rowBordered">
-                    <td class="rowPhotoSmall">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Yo puedo estar de 18:00 a 19:15 así puedo abrirle, pero debe estar alguien después.</h3>
-                    </td>
-                </tr>
-                <tr class="rowBordered">
-                    <td class="rowPhotoSmall">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Me quedo todo el día en casa! No problem.</h3>
-                    </td>
-                </tr>
-            </table>
+            
+            <div id="comments">
+            </div>
+            
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <form method="post" action="">
                     <table>
