@@ -12,6 +12,7 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#registry").load("/sweethomesw/ajax/registry.html");
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
                     $("#backbutton").css("display","none");
@@ -27,40 +28,10 @@
             <div id="indicator" class="indicator">
                 <h4>Inicio</h4>
             </div>
-            <table>
-                <tr class="rowNormal">
-                    <td class="rowPhoto">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Ha añadido una tarea nueva</h3>
-                    </td>
-                </tr>
-                <tr class="rowNormal">
-                    <td class="rowPhoto">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Ha comprado: Cerveza</h3>
-                    </td>
-                </tr>
-                <tr class="rowNormal">
-                    <td class="rowPhoto">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Ha completado: Bajar la basura</h3>
-                    </td>
-                </tr>
-                <tr class="rowNormal">
-                    <td class="rowPhoto">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>Ha añadido una tarea nueva</h3>
-                    </td>
-                </tr>
-            </table>
+            
+            <div id="registry">
+            </div>
+            
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <div id="buttonBottom">
                     <button class="buttonActionAdd"><img id="cleanhomebutton" class="menubutton" src="/sweethomesw/img/clean.png" /></button>
