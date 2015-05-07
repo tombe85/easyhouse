@@ -12,6 +12,7 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.html");
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
                     $("#backbutton").css("display","none");
@@ -27,23 +28,10 @@
             <div class="indicator">
                 <h4>Lista de la compra</h4>
             </div>
-            <table>
-                <tr class="rowBordered">
-                    <td class="rowText">
-                        <label><input type="checkbox" name="Huevos" value="Huevos"><h3>Huevos</h3></label>
-                    </td>
-                </tr>
-                 <tr class="rowBordered">
-                    <td class="rowText">
-                        <label><input type="checkbox" name="Leche" value="Leche"><h3>Leche</h3></label>
-                    </td>
-                </tr>
-                <tr class="rowBordered">
-                    <td class="rowText">
-                        <label><input type="checkbox" name="Soja" value="Soja"><h3>Soja</h3></label>
-                    </td>
-                </tr>
-            </table>
+            
+            <div id="shoppingList">
+            </div>
+            
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <div id="contentBottomLeft">
                     <button class="buttonActionAdd" onclick='location.href="/sweethomesw/shopping/addproduct.html"'><img class="menubutton" src="/sweethomesw/img/add.png" /></button>
