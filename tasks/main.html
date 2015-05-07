@@ -12,6 +12,7 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#taskList").load("/sweethomesw/ajax/tasks.html");
                 $(document).ajaxComplete(function(){
                     $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
                     $("#backbutton").css("display","none");
@@ -24,17 +25,7 @@
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         
         <div id="content" data-role="content">
-            <div class="indicator">
-                <h4>Tareas</h4>
-            </div>
-            <div class="rowBordered">
-                <button type="submit" class="buttonTransparent"><h3>Limpiar baño (4 días)</h3></button>
-            </div>
-            <div class="rowBordered">
-                <button type="submit" class="buttonTransparent"><h3>Bajar basura (3 días)</h3></button>
-            </div>
-            <div class="rowBordered">
-                <button type="submit" class="buttonTransparent"><h3>Colada (3 días)</h3></button>
+            <div id="taskList">
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
