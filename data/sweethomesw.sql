@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-05-2015 a las 16:52:56
+-- Tiempo de generación: 08-05-2015 a las 19:27:14
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -80,9 +80,33 @@ CREATE TABLE IF NOT EXISTS `expenses` (
 CREATE TABLE IF NOT EXISTS `homes` (
   `idhome` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_spanish_ci NOT NULL,
-  `numusers` int(10) unsigned NOT NULL,
-  `maxscore` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`idhome`)
+  `numusers` int(10) unsigned NOT NULL DEFAULT '1',
+  `maxscore` int(10) unsigned NOT NULL DEFAULT '0',
+  `adminmail` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`idhome`),
+  UNIQUE KEY `adminmail` (`adminmail`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=8 ;
+
+--
+-- Volcado de datos para la tabla `homes`
+--
+
+INSERT INTO `homes` (`idhome`, `name`, `numusers`, `maxscore`, `adminmail`) VALUES
+(1, 'First Home', 1, 0, NULL),
+(7, 'mig', 1, 0, 'mig@mig.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `invited`
+--
+
+CREATE TABLE IF NOT EXISTS `invited` (
+  `idinvited` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mail` text COLLATE utf8_spanish_ci NOT NULL,
+  `code` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`idinvited`),
+  UNIQUE KEY `code` (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -147,12 +171,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` text COLLATE utf8_spanish_ci NOT NULL,
   `idhome` int(10) unsigned NOT NULL,
   `mail` text COLLATE utf8_spanish_ci NOT NULL,
-  `photo` text COLLATE utf8_spanish_ci NOT NULL,
+  `photo` varchar(100) COLLATE utf8_spanish_ci NOT NULL DEFAULT '/sweethomesw/img/usuario.png',
   `passwd` text COLLATE utf8_spanish_ci NOT NULL,
-  `admin` tinyint(1) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`iduser`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`iduser`, `name`, `idhome`, `mail`, `photo`, `passwd`, `admin`) VALUES
+(1, 'Miguel', 1, 'mhiguera@easyhouse.me', '/sweethomesw/img/usuario.png', 'miguel', 1),
+(2, 'mig', 7, 'mig@mig.com', '/sweethomesw/img/usuario.png', 'fcb7cf1bbaa0f4add37c710d046418bdf0bfb43e', 1);
 
 --
 -- Restricciones para tablas volcadas
@@ -162,15 +194,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Filtros para la tabla `board`
 --
 ALTER TABLE `board`
-  ADD CONSTRAINT `board_ibfk_2` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`),
-  ADD CONSTRAINT `board_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`);
+  ADD CONSTRAINT `board_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`),
+  ADD CONSTRAINT `board_ibfk_2` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`);
 
 --
 -- Filtros para la tabla `boardcomments`
 --
 ALTER TABLE `boardcomments`
-  ADD CONSTRAINT `boardcomments_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`),
-  ADD CONSTRAINT `boardcomments_ibfk_1` FOREIGN KEY (`idboard`) REFERENCES `board` (`idboard`);
+  ADD CONSTRAINT `boardcomments_ibfk_1` FOREIGN KEY (`idboard`) REFERENCES `board` (`idboard`),
+  ADD CONSTRAINT `boardcomments_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`);
 
 --
 -- Filtros para la tabla `expenses`
@@ -188,8 +220,8 @@ ALTER TABLE `products`
 -- Filtros para la tabla `registro`
 --
 ALTER TABLE `registro`
-  ADD CONSTRAINT `registro_ibfk_2` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`),
-  ADD CONSTRAINT `registro_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`);
+  ADD CONSTRAINT `registro_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`),
+  ADD CONSTRAINT `registro_ibfk_2` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`);
 
 --
 -- Filtros para la tabla `tasks`
