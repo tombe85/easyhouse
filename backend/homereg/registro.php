@@ -20,7 +20,7 @@ if($passwd !== $passwd2){
 }
 
 //Conectamos a la base de datos
-include('functions.php');
+include('../functions.php');
 $db = connectDataBase();
 
 //Añadimos registros a la base de datos

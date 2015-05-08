@@ -1,7 +1,9 @@
 <?php
-$mail=$_POST["mail"];
-include_once('functions.php');
-$db=connectDataBase();
+$mail=$_REQUEST["mail"];
+
+include('../functions.php');
+$db = connectDataBase();
+
 $query='select * from users where mail like "'.$mail.'"';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
@@ -11,3 +13,4 @@ if($result->num_rows > 0){
 }else{
     echo "0";
 }
+?>
