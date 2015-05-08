@@ -18,12 +18,42 @@
                     $("#fotousuario").css("display","none");
                 });
             });
+            
+            function validaCampos(formu){
+                if(formu.usuario.value == "" || formu.email.value == "" || formu.passwd.value == "" || formu.passwd2.value == "" || formu.rutafoto.value == ""){
+                    alert("Debes rellenar todos los campos");
+                    return false;
+                }else{
+                    if(formu.passwd.value !== formu.passwd2.value){
+                        alert("Las contraseñas no coinciden");
+                        return false;
+                    }else{
+                        jQuery.post('/sweethomesw/backend/userreg/consultamailregistro.php', {mail:formu.email.value}, function(data, textStatus){
+                            if(data == 1){
+                                alert("El mail introducido ya existe");
+                                return false;
+                            }else if(data == 0){
+                                return true;
+                            }else if(data == 2 || data == 3){
+                                alert("A ocurrido un error. por favor accede al registro desde el enlace del correo");
+                                return false;
+                            }else{
+                                alert("A ocurrido un error");
+                                return false;
+                            }
+                        });
+                    }
+                }
+            }
+            
+            //Hacer lo de la fotousuario
+            
         </script>
     </head>
     <body>
         <header id="headerlogin" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="contentInput" data-role="content">
-            <form method="post" action="#">
+            <form method="post" action="/sweethomesw/backend/userreg/registrousuario.php" onsubmit="return validaCampos(this)">
                 <div class="dataInput">
                     <h4>Usuario</h4>
                     <input type="text" name="usuario">
@@ -35,7 +65,8 @@
                 <div class="dataInput">
                     <h4>Foto</h4>
                     <div class="photoInput">
-                        <button><img src="/sweethomesw/img/usuario.png" /></button>
+                        <input type="text" name="rutafoto" hidden="true">
+                        <button id="imageButton"><img src="/sweethomesw/img/usuario.png" /></button>
                     </div>
                 </div>
                 <div class="dataInput">
