@@ -12,10 +12,12 @@ $passwd2=sha1($_POST["passwd2"]);
 //Comprobaciones
 if($user == null || $mail == null || $homename == null || $passwd == null || $passwd2 == null){
     echo "Debes rellenar todos los datos";
+    header('Location: /sweethomesw/register.html');
     exit();
 }
 if($passwd !== $passwd2){
     echo "Las constraseñas no coinciden.";
+    header('Location: /sweethomesw/register.html');
     exit();
 }
 
@@ -30,6 +32,7 @@ $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 if($result->num_rows > 0){
     echo "El mail introducido ya pertenece a una casa. Sólo se puede pertenecer a una casa al mismo tiempo";
+    header('Location: /sweethomesw/register.html');
     exit();
 }
 

@@ -9,6 +9,7 @@ $passwd=sha1($_REQUEST["passwd"]);
 
 if($mail == NULL || $passwd == NULL){
     echo "Debe rellenar todos los campos";
+    header('Location: /sweethomesw/login.html');
     exit();
 }
 
@@ -22,6 +23,7 @@ $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 if($result->num_rows == 0){
     echo "El mail introducido no existe";
+    header('Location: /sweethomesw/login.html');
     exit();
 }
 $reg=$result->fetch_array();
@@ -29,6 +31,7 @@ $reg=$result->fetch_array();
 //Comprobar contraseña y asignar iduser
 if($passwd != $reg["passwd"]){
     echo "Contraseña errónea";
+    header('Location: /sweethomesw/login.html');
     exit();
 }
 $iduser=$reg["iduser"];
