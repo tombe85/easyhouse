@@ -1,0 +1,130 @@
+AJAX:
+    - El nombre de usuario y su foto en config y admin/config (cargan del mismo) -> crear userdata.html
+    - Sección de Mis tareas en config y admin/config (cargan del mismo) -> crear usertasks.php en la carpeta ajax
+        -> Organizar cómo hacer los phps
+    
+PHP:
+    - Login:
+        -> Crear login.php en la carpeta backend que recibe los datos del formulario de login.html (seguir ejemplo de registro.php)
+        -> Pasos:
+            * empezar la sesión
+            * Sacar los datos de POST / GET y meterlos en variables y comprobar que no son null y otras cosas pertinentes
+                --> A la contraseña hay que aplicarle encriptación ( sha1() )
+            * incluir functions.php y conectar a la base de datos con connectDataBase() (devuelve $db)
+            * Buscar el usuario en la tabla users
+            * Comprobar que la contraseña coincide con la de su usuario
+            * $db->close()
+            * Actualizar las variables de sesión (login, admin, idhome, iduser)
+            * Enlazar a home
+    
+        -> Actualizar login.html para que compruebe los campos (ejemplo en register.html con javascript) y para que el form lleve a login.php
+    
+    - Home:
+        -> Renombrar en la carpeta ajax: registry.html -> registry.php
+        -> Actualizar en home.html el load de registry en el head (registry.html -> registry.php)
+        -> Cambios en registry.php:
+            * Al principio de registry.php se hace include a loads.php y se llama a su función loadhome(idhome, iduser) que devuelve un array con los registros
+            * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
+        -> Código de loads.php:
+            * Contendrá una nueva función loadhome(idhome,iduser){}
+                * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                * Con un for comprobará los registros que el usuario no haya borrado ya y los cargará en un array de registros que devolverá al final
+                    -> El usuario habrá borrado el registro si aparece su iduser (sql -> like "%iduser%")
+                * Devuelve el array de registros
+        -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+    
+    - Expenses:
+        -> Renombrar en la carpeta ajax: expenses.html -> expenses.php
+        -> Actualizar en expenses.html el load de expensesList en el head (expenses.html -> expenses.php)
+        -> Cambios en expenses.php:
+            * Al principio se hace include a loads.php y se llama a su función loadexpenses(idhome) que devuelve un array con los registros
+            * Habrá un foreach y para cada registro del array generará el html con echo
+        -> Código de loads.php:
+            * Contendrá una nueva función loadexpenses(idhome){}
+                * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                * Gestionará los resultados para devolver un array o json con los datos necesarios (gasto y usuarios pagados/no pagados)
+                * Devuelve el array / json
+        -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+    
+    - Board:
+        - Main:
+            -> Renombrar en la carpeta ajax: messages.html -> messages.php
+            -> Actualizar en board/main.html el load de boardMessages en el head (messages.html -> messages.php)
+            -> Cambios en messages.php:
+                * Al principio se hace include a loads.php y se llama a su función loadboard(idhome) que devuelve un array con los registros
+                * Habrá un foreach y para cada registro del array generará el html con echo (guarda en la sesión el idboard)
+            -> Código de loads.php:
+                * Contendrá una nueva función loadboard(idhome){}
+                    * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                    * Gestionará los resultados para devolver un array o json con los datos necesarios (Debe devolver el idboard)
+                    * Devuelve el array / json
+            -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+        - Viewmessage:
+            - Mensaje original:
+                -> Renombrar en la carpeta ajax: singlemessage.html -> singlemessage.php
+                -> Actualizar en board/viewmessage.html el load de boardMessages en el head (singlemessage.html -> singlemessage.php)
+                -> Cambios en singlemessage.php:
+                    * Recoge de la sesión el idboard
+                    * Al principio se hace include a loads.php y se llama a su función loadsinglemessage(idhome, idboard) que devuelve un array con el registros
+                    * Generará el html con echo
+                -> Código de loads.php:
+                    * Contendrá una nueva función loadsinglemessage(idhome, idboard){}
+                        * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                        * Gestionará los resultados para devolver un array o json con los datos necesarios
+                        * Devuelve el array / json
+                -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+            -Comentarios
+                -> Renombrar en la carpeta ajax: messagecomments.html -> messagecomments.php
+                -> Actualizar en board/viewmessage.html el load de boardMessages en el head (messagecomments.html -> messagecomments.php)
+                -> Cambios en messagecomments.php:
+                    * Recoge de la sesión el idboard
+                    * Al principio se hace include a loads.php y se llama a su función loadmessagecomments(idhome, idboard) que devuelve un array con los registros
+                    * Generará el html con echo
+                -> Código de loads.php:
+                    * Contendrá una nueva función loadmessagecomments(idhome, idboard){}
+                        * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                        * Gestionará los resultados para devolver un array o json con los datos necesarios
+                        * Devuelve el array / json
+                -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+    
+    - Shopping:
+        - Main:
+            -> Renombrar en la carpeta ajax: shoppinglist.html -> shoppinglist.php
+            -> Actualizar en home.html el load de registry en el head (shoppinglist.html -> shoppinglist.php)
+            -> Cambios en shoppinglist.php:
+                * Al principio se hace include a loads.php y se llama a su función loadshoppinglist(idhome) que devuelve un array con los registros
+                * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
+            -> Código de loads.php:
+                * Contendrá una nueva función loadshoppinglist(idhome){}
+                    * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                    * Con un for comprobará los registros y los cargará en un array de registros / json
+                        -> Cargará en el array / json únicamente los que hayan sido añadidos a la lista de la compra
+                    * Devuelve el array de registros / json
+            -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+        - Add Product:
+            -> Renombrar en la carpeta ajax: productlist.html -> productlist.php
+            -> Actualizar en home.html el load de registry en el head (productlist.html -> productlist.php)
+            -> Cambios en productlist.php:
+                * Al principio se hace include a loads.php y se llama a su función loadshoppingproducts(idhome) que devuelve un array con los registros
+                * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
+            -> Código de loads.php:
+                * Contendrá una nueva función loadshoppingproducts(idhome){}
+                    * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                    * Con un for comprobará los registros y los cargará en un array de registros / json
+                        -> Cargará en el array / json únicamente los que NO hayan sido añadidos a la lista de la compra
+                    * Devuelve el array de registros / json
+            -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+    
+    - Tasks:
+        -> Renombrar en la carpeta ajax: tasks.html -> tasks.php
+        -> Actualizar en home.html el load de registry en el head (tasks.html -> tasks.php)
+        -> Cambios en tasks.php:
+            * Al principio se hace include a loads.php y se llama a su función loadtasks(idhome) que devuelve un array con los registros
+            * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
+        -> Código de loads.php:
+            * Contendrá una nueva función loadtasks(idhome){}
+                * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
+                * Con un for comprobará los registros de las tareas de la casa que estén activas y los cargará en un array de registros / json
+                    -> Sólo se deben cargar en el array / json las tareas actualmente activas
+                * Devuelve el array de registros / json
+        -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
