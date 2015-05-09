@@ -1,4 +1,0 @@
-Falta
-Las secciones de html que hay que exportar son la mayoria de contents de cada una de las paginas, pero en concreto son
-Las que se despliegan en Mis Tareas en config/main.html -> mytasks.html
-La Imagen y el nombre en config/main.html -> myprofile.html 
