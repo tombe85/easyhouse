@@ -4,8 +4,6 @@ AJAX:
         -> Organizar cómo hacer los phps
     
 PHP:
-    - Login:
-        ->Comprobar que contraseña esté bien por ajax
     
     - Home:
         -> Renombrar en la carpeta ajax: registry.html -> registry.php

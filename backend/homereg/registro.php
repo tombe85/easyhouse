@@ -49,7 +49,7 @@ $reg=$result->fetch_array();
 $idhome=$reg["idhome"];
 
 //Introducir usuario
-$query='insert into users (name,idhome,mail,passwd,admin) values ("administrador",'.$idhome.',"'.$mail.'","'.$passwd.'","1")';
+$query='insert into users (name,idhome,mail,passwd,admin) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$passwd.'","1")';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 
