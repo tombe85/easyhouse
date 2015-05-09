@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-05-2015 a las 19:27:14
+-- Tiempo de generación: 09-05-2015 a las 13:25:47
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -85,15 +85,14 @@ CREATE TABLE IF NOT EXISTS `homes` (
   `adminmail` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`idhome`),
   UNIQUE KEY `adminmail` (`adminmail`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `homes`
 --
 
 INSERT INTO `homes` (`idhome`, `name`, `numusers`, `maxscore`, `adminmail`) VALUES
-(1, 'First Home', 1, 0, NULL),
-(7, 'mig', 1, 0, 'mig@mig.com');
+(1, 'First Home', 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -105,8 +104,10 @@ CREATE TABLE IF NOT EXISTS `invited` (
   `idinvited` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `mail` text COLLATE utf8_spanish_ci NOT NULL,
   `code` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `idhome` int(11) unsigned NOT NULL,
   PRIMARY KEY (`idinvited`),
-  UNIQUE KEY `code` (`code`)
+  UNIQUE KEY `code` (`code`),
+  KEY `idhome` (`idhome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -176,15 +177,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`iduser`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`iduser`, `name`, `idhome`, `mail`, `photo`, `passwd`, `admin`) VALUES
-(1, 'Miguel', 1, 'mhiguera@easyhouse.me', '/sweethomesw/img/usuario.png', 'miguel', 1),
-(2, 'mig', 7, 'mig@mig.com', '/sweethomesw/img/usuario.png', 'fcb7cf1bbaa0f4add37c710d046418bdf0bfb43e', 1);
+(1, 'Miguel', 1, 'mhiguera@easyhouse.me', '/sweethomesw/img/usuario.png', 'miguel', 1);
 
 --
 -- Restricciones para tablas volcadas
@@ -209,6 +209,12 @@ ALTER TABLE `boardcomments`
 --
 ALTER TABLE `expenses`
   ADD CONSTRAINT `expenses_ibfk_1` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`);
+
+--
+-- Filtros para la tabla `invited`
+--
+ALTER TABLE `invited`
+  ADD CONSTRAINT `invited_ibfk_1` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`);
 
 --
 -- Filtros para la tabla `products`
