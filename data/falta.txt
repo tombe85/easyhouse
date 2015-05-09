@@ -34,10 +34,7 @@ PHP:
     
     - Board:
         - Main:
-            -> Renombrar en la carpeta ajax: messages.html -> messages.php
-            -> Actualizar en board/main.html el load de boardMessages en el head (messages.html -> messages.php)
             -> Cambios en messages.php:
-                * Al principio se hace include a loads.php y se llama a su función loadboard(idhome) que devuelve un array con los registros
                 * Habrá un foreach y para cada registro del array generará el html con echo (guarda en la sesión el idboard)
             -> Código de loads.php:
                 * Contendrá una nueva función loadboard(idhome){}

@@ -36,15 +36,15 @@ if($passwd != $reg["passwd"]){
 }
 $iduser=$reg["iduser"];
 $admin=$reg["admin"];
-$home=$reg["idhome"];
+$idhome=$reg["idhome"];
 
 $db->close();
 
 //Actualizar variables de sesión
-$_SESSION["login"]=true;
-$_SESSION["admin"]=$admin;
-$_SESSION["idhome"]=$idhome;
-$_SESSION["iduser"]=$iduser;
+setcookie("login", true, time() + (3600*24), "/sweethomesw/");
+setcookie("admin", $admin, time() + (3600*24), "/sweethomesw/");
+setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
+setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
 
 header('Location: /sweethomesw/home.html');
 
