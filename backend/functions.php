@@ -8,4 +8,12 @@
         $db->select_db('sweethomesw');
         return $db;
     }
+
+    function checklogin(){
+        if(!isset($_COOKIE["login"]) || $_COOKIE["login"] == false){
+            return false;
+        }else{
+            return true;
+        }
+    }
 ?>

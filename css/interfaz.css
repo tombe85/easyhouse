@@ -209,9 +209,19 @@ table{
     text-align: center;
 }
 
+#messagePhoto{
+    padding-left: 10px;
+}
+
+#messageDate{
+    height: auto;
+}
+
 #originalmessage{
     width: 100%;
     padding: 10px;
+    padding-top: 0px;
+    padding-left: 0px;
     margin: 0px;
     border-bottom: 2px solid #3f51b5;
 }
@@ -462,6 +472,10 @@ table{
     max-width: 35px;
 }
 
+.negrita{
+    font-family: 'roboto_condensedregular';
+}
+
 .photoInput button{
     background-color: #c5cae9;
     border: none;
@@ -500,26 +514,24 @@ table{
 .rowPhoto{
     width: 50px;
     text-align: center;
-    background-color: white;
     margin-top: 2px;
     margin-bottom: 2px;
     margin-right: 10px;
     height: 50px;
-    border-radius: 50% 50% 50% 50%;
-    -moz-border-radius: 50% 50% 50% 50%;
-    -webkit-border-radius: 50% 50% 50% 50%;
     overflow: hidden;
 }
 
 .rowPhoto img{
     height: 100%;
+     border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -webkit-border-radius: 50% 50% 50% 50%;
     overflow: hidden;
 }
 
 .rowPhotoSmall{
     width: 30px;
     text-align: center;
-    /*background-color: white;*/
     margin-top: 2px;
     margin-bottom: 2px;
     margin-right: 10px;
@@ -558,6 +570,7 @@ table{
     float: left;
     border-spacing: 0px;
     background-color: white;
+    padding: 0px;
 }
 
 .sendtext input{
