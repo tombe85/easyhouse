@@ -33,15 +33,6 @@ PHP:
         -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
     
     - Board:
-        - Main:
-            -> Cambios en messages.php:
-                * Habrá un foreach y para cada registro del array generará el html con echo (guarda en la sesión el idboard)
-            -> Código de loads.php:
-                * Contendrá una nueva función loadboard(idhome){}
-                    * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
-                    * Gestionará los resultados para devolver un array o json con los datos necesarios (Debe devolver el idboard)
-                    * Devuelve el array / json
-            -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
         - Viewmessage:
             - Mensaje original:
                 -> Renombrar en la carpeta ajax: singlemessage.html -> singlemessage.php

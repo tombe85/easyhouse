@@ -1,6 +1,9 @@
 <?php
 {
-    session_start();
+    if(!isset($_COOKIE["login"]) || $_COOKIE["login"] == false){
+        echo '<h4>No has iniciado sesión. Accede al <a href="/sweethomesw/login.html" data-ajax="false">login</a></h4>';
+        exit();
+    }
     $idhome=$_COOKIE["idhome"];
     include('../backend/loads.php');
     $dataArray = loadboard($idhome);
