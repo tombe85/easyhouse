@@ -13,7 +13,7 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
-                $("#taskList").load("/sweethomesw/ajax/tasks.html");
+                $("#taskList").load("/sweethomesw/ajax/tasks.php");
                 $(document).ajaxComplete(function(){
                     $("#confirmButtonLeft").find("button").click(function(){
                         location.href="/sweethomesw/tasks/main.html";

@@ -67,4 +67,42 @@
         $db->close();
         return $arr;
     }
+
+    function loadtasks($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from tasks where idhome = "'.$idhome.'"';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
+        
+        $arr = array();
+        $numrows=$result->num_rows;
+        $j=0;
+        for($i=0; $i < $numrows; $i++){
+            $row = $result->fetch_array();
+            
+            if($row["active"] == true){
+                $arr[$j]["idtask"] = $row["idtask"];
+                $arr[$j]["content"] = $row["name"];
+                $activesince = strtotime($row["activesince"]);
+                $dias = (time() - $activesince) / (3600 * 24);
+                $arr[$j]["dayson"] = floor($dias);
+                $j++;
+            }else{
+                $closedsince = strtotime($row["whenisdone"]);
+                $daysclosed = ((time() - $closedsince) / (3600*24));
+                if($daysclosed >= $row["period"]){
+                    $querym = 'update tasks set active = true, activesince = "'.date("d-m-Y").'" where idtask = "'.$row["idtask"].'"';
+                    $resultm = $db->query($querym)
+                        or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
+                    $arr[$j]["idtask"] = $row["idtask"];
+                    $arr[$j]["content"] = $row["name"];
+                    $arr[$j]["dayson"] = 0;
+                    $j++;
+                }
+            }
+        }
+        $db->close();
+        return $arr;
+    }
 ?>

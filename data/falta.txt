@@ -35,7 +35,7 @@ PHP:
     - Shopping:
         - Main:
             -> Renombrar en la carpeta ajax: shoppinglist.html -> shoppinglist.php
-            -> Actualizar en home.html el load de registry en el head (shoppinglist.html -> shoppinglist.php)
+            -> Actualizar en main.html el load de shoppinglist en el head (shoppinglist.html -> shoppinglist.php)
             -> Cambios en shoppinglist.php:
                 * Al principio se hace include a loads.php y se llama a su función loadshoppinglist(idhome) que devuelve un array con los registros
                 * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
@@ -61,15 +61,5 @@ PHP:
             -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
     
     - Tasks:
-        -> Renombrar en la carpeta ajax: tasks.html -> tasks.php
-        -> Actualizar en home.html el load de registry en el head (tasks.html -> tasks.php)
-        -> Cambios en tasks.php:
-            * Al principio se hace include a loads.php y se llama a su función loadtasks(idhome) que devuelve un array con los registros
-            * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
         -> Código de loads.php:
-            * Contendrá una nueva función loadtasks(idhome){}
-                * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
-                * Con un for comprobará los registros de las tareas de la casa que estén activas y los cargará en un array de registros / json
-                    -> Sólo se deben cargar en el array / json las tareas actualmente activas
-                * Devuelve el array de registros / json
         -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
