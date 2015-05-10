@@ -14,7 +14,7 @@ if($mail == NULL || $passwd == NULL){
 }
 
 //Conectar BBDD
-include('functions.php');
+include_once('functions.php');
 $db = connectDataBase();
 
 //Buscar usuario
@@ -41,10 +41,7 @@ $idhome=$reg["idhome"];
 $db->close();
 
 //Actualizar variables de sesión
-setcookie("login", true, time() + (3600*24), "/sweethomesw/");
-setcookie("admin", $admin, time() + (3600*24), "/sweethomesw/");
-setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
-setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
+setcookies(true,$admin,$idhome,$iduser);
 
 header('Location: /sweethomesw/home.html');
 

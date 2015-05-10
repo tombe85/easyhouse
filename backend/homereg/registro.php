@@ -22,7 +22,7 @@ if($passwd !== $passwd2){
 }
 
 //Conectamos a la base de datos
-include('../functions.php');
+include_once('../functions.php');
 $db = connectDataBase();
 
 //Añadimos registros a la base de datos
@@ -63,10 +63,7 @@ $iduser=$reg["iduser"];
 $db->close();
 
 //Actualizar variables de sesión y cookies
-setcookie("login", true, time() + (3600*24), "/sweethomesw/");
-setcookie("admin", true, time() + (3600*24), "/sweethomesw/");
-setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
-setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
+setcookies(true,true,$idhome,$iduser);
 
 header('Location: /sweethomesw/admin/config/main.html');
 ?>

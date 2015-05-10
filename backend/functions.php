@@ -16,4 +16,11 @@
             return true;
         }
     }
+
+    function setCookies($login,$admin,$idhome,$iduser){
+        setcookie("login", $login, time() + (3600*24), "/sweethomesw/");
+        setcookie("admin", $admin, time() + (3600*24), "/sweethomesw/");
+        setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
+        setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
+    }
 ?>

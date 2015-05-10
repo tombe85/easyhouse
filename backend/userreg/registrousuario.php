@@ -1,13 +1,12 @@
 <?php
-session_start();
 
-//Cogemos los datos de POST
+//Cogemos los datos
 $user=$_POST["usuario"];
 $mail=$_POST["email"];
 $rutafoto=$_POST["rutafoto"];
 $passwd=sha1($_POST["passwd"]);
 $passwd2=sha1($_POST["passwd2"]);
-$code=$_SESSION["code"];
+$code=$_COOKIE["code"];
 
 //Comprobaciones
 if($user == null || $mail == null || $rutafoto == null || $passwd == null || $passwd2 == null){
@@ -22,7 +21,7 @@ if($passwd !== $passwd2){
 }
 
 //Conectamos a la base de datos
-include('../functions.php');
+include_once('../functions.php');
 $db = connectDataBase();
 
 //Añadimos registros a la base de datos
@@ -75,10 +74,7 @@ $iduser=$reg["iduser"];
 $db->close();
 
 //Actualizar variables de sesión y cookies
-setcookie("login", true, time() + (3600*24), "/sweethomesw/");
-setcookie("admin", false, time() + (3600*24), "/sweethomesw/");
-setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
-setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
+setcookies(true,false,$idhome,$iduser);
 
 header('Location: /sweethomesw/config/main.html');
 ?>
