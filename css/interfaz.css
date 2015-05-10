@@ -529,6 +529,13 @@ table{
     overflow: hidden;
 }
 
+img.rowPhoto{
+     border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -webkit-border-radius: 50% 50% 50% 50%;
+    overflow: hidden;
+}
+
 .rowPhotoSmall{
     width: 30px;
     text-align: center;

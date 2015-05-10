@@ -12,6 +12,8 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
+                $("#userData").load("/sweethomesw/ajax/userdata.html");
+                $("#userTasks").load("/sweethomesw/ajax/usertasks.html");
                 $(document).ajaxComplete(function(){
                     $("#usuarioconfigbutton").attr("src","/sweethomesw/img/usuarioconfigselected.png");
                     $("#backHeader").find("a").attr("href","/sweethomesw/home.html");
@@ -50,17 +52,13 @@
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="contentConfig" data-role="content">
             <div id="userData">
-                <img src="/sweethomesw/img/usuario.png" />
-                <h2>NombreUser</h2>
             </div>
 
             <div class="configMenu" id="taskConfig">
                 <button type="submit" class="buttonDarkBlue" onclick='$("#taskConfig").openclose()'>
                     <h2>Mis Tareas</h2>
                 </button>
-                <ul>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Tarea 1</h4></li>
-                    <li><h4><img class="rowPhoto" src="/sweethomesw/img/usuario.png"/>Tarea 2</h4></li>
+                <ul id="userTasks">
                 </ul>
             </div>
 
