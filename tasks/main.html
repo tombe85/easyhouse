@@ -8,12 +8,20 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
+            var taskselected = null;
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#taskList").load("/sweethomesw/ajax/tasks.html");
                 $(document).ajaxComplete(function(){
+                    $("#confirmButtonLeft").find("button").click(function(){
+                        location.href="/sweethomesw/tasks/main.html";
+                    });
+
+                    $("#confirmButtonRight").find("button").click(function(){
+                        var id = taskselected;
+                    });
                     $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
                     $("#backbutton").css("display","none");
                     $("body").resize();

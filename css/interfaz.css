@@ -152,6 +152,34 @@ table{
     border: none;
 }
 
+#confirmButtons{
+    text-align: center;
+    padding: 0px;
+}
+
+div#confirmButtonLeft{
+    width: 50%;
+    float: left;
+}
+
+#confirmButtonLeft button{
+    background-color: #ff5252;
+    border: none;
+}
+
+
+div#confirmButtonRight{
+    width: 50%;
+    background-color: #d50000;
+    float: right;
+    border: none;
+}
+
+#confirmButtonRight button{
+    background-color: #d50000;
+    border: none;
+}
+
 #content tr{
     width: 100%;
     display: block;
