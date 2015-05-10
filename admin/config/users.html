@@ -12,6 +12,7 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
+                $("#users").load("/sweethomesw/ajax/usersmanage.html");
                 $(document).ajaxComplete(function(){
                     $("#usersbutton").attr("src","/sweethomesw/img/usuariosconfigselected.png");
                     $("#backHeader").find("a").attr("href","/sweethomesw/home.html");
@@ -31,41 +32,9 @@
             <div class="indicator">
                 <h4>Gestión de usuarios</h4>
             </div>
-            <table>
-                <tr class="rowBordered">
-                    <td class="rowPhoto">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>usuario1@mail.com</h3>
-                    </td>
-                    <td class="rowIcon">
-                        <img src="/sweethomesw/img/clean.png" class="buttonTrash" />
-                    </td>
-                </tr>
-                <tr class="rowBordered">
-                    <td class="rowPhoto">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>usuario2@mail.com</h3>
-                    </td>
-                    <td class="rowIcon">
-                        <img src="/sweethomesw/img/clean.png" class="buttonTrash" />
-                    </td>
-                </tr>
-                <tr class="rowBordered">
-                    <td class="rowPhoto">
-                        <img src="/sweethomesw/img/usuario.png" />
-                    </td>
-                    <td class="rowText">
-                        <h3>usuario3@mail.com</h3>
-                    </td>
-                    <td class="rowIcon">
-                        <img src="/sweethomesw/img/clean.png" class="buttonTrash" />
-                    </td>
-                </tr>
-            </table>
+            <div id="users">
+            </div>
+            
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <form>
                     <table>
