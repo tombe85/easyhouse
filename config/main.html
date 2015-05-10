@@ -55,7 +55,7 @@
             </div>
 
             <div class="configMenu" id="taskConfig">
-                <button type="submit" class="buttonDarkBlue" onclick='$("#taskConfig").openclose()'>
+                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose()'>
                     <h2>Mis Tareas</h2>
                 </button>
                 <ul id="userTasks">
@@ -63,7 +63,7 @@
             </div>
 
             <div id="passwdConfig" class="configMenu">
-                <button type="submit" class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
+                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
                 <ul>
@@ -76,7 +76,7 @@
             </div>
 
             <div id="mailConfig" class="configMenu">
-                <button type="submit" class="buttonDarkBlue" onclick='$("#mailConfig").openclose()'>
+                <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose()'>
                     <h2>Cambiar Correo</h2>
                 </button>
                 <ul>
@@ -86,6 +86,12 @@
                     <li><input type="password" name="emailpasswd"></li>
                     <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
                 </ul>
+            </div>
+            
+            <div class="configMenu" id="closeSesion">
+                <button class="buttonDarkBlue" onclick='location.href="/sweethomesw/backend/logout.php"'>
+                    <h2>Cerrar sesión</h2>
+                </button>
             </div>
 
         </div>

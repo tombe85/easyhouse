@@ -59,7 +59,3 @@ PHP:
                         -> Cargará en el array / json únicamente los que NO hayan sido añadidos a la lista de la compra
                     * Devuelve el array de registros / json
             -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
-    
-    - Tasks:
-        -> Código de loads.php:
-        -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
