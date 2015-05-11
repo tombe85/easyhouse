@@ -8,11 +8,24 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
+            function getCookie(galleta) {
+                var name = galleta + "=";
+                var arr = document.cookie.split(';');
+                for(var i=0; i<arr.length; i++) {
+                    var cook = arr[i];
+                    while (cook.charAt(0)==' ') cook = cook.substring(1);
+                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
+                }
+                return "";
+            }
+            $(document).bind('pagebeforecreate',function(){
+                var loged = getCookie("login");
+                if(loged == true){
+                    location.href='/sweethomesw/home.html';
+                }
+            });
             $(document).bind('pageinit', function(){
                 $("#headerlogin").load("/sweethomesw/header/header.html");
-                $("#registerbutton").click(function(){
-                    location.href="/sweethomesw/home.html";
-                });
                 $(document).ajaxComplete(function(){
                     $("#backbutton").css("display","none");
                     $("#fotousuario").css("display","none");
