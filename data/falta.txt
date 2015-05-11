@@ -1,6 +1,3 @@
-JAVASCRIPT:
-    - Login
-        * Si está logueado va a home    
 PHP (Toma de datos):
     
     - Home:
@@ -32,17 +29,6 @@ PHP (Toma de datos):
     
     - Shopping:
         - Main:
-            -> Renombrar en la carpeta ajax: shoppinglist.html -> shoppinglist.php
-            -> Actualizar en main.html el load de shoppinglist en el head (shoppinglist.html -> shoppinglist.php)
-            -> Cambios en shoppinglist.php:
-                * Al principio se hace include a loads.php y se llama a su función loadshoppinglist(idhome) que devuelve un array con los registros
-                * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
-            -> Código de loads.php:
-                * Contendrá una nueva función loadshoppinglist(idhome){}
-                    * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
-                    * Con un for comprobará los registros y los cargará en un array de registros / json
-                        -> Cargará en el array / json únicamente los que hayan sido añadidos a la lista de la compra
-                    * Devuelve el array de registros / json
             -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
         - Add Product:
             -> Renombrar en la carpeta ajax: productlist.html -> productlist.php
@@ -57,6 +43,8 @@ PHP (Toma de datos):
                         -> Cargará en el array / json únicamente los que NO hayan sido añadidos a la lista de la compra
                     * Devuelve el array de registros / json
             -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+            
+            
             
 PHP (Entrada de datos):
 
@@ -73,3 +61,7 @@ PHP (Entrada de datos):
             -> Crear addproduct.php en backend/config que añade el nuevo producto con active=1 si es admin o con active=0 si es user (ver cookie admin)
         - tasks:
             -> Crear addtask.php en backend/config que añade el nuevo producto con approved=1 si es admin o con approved=0 si es user (ver cookie admin)
+        - admin/users:
+            -> Acción para eliminar un usario -> crear removeuser.php en backend/config
+            -> Acción para añadir un usuario -> crear insertuser.php en backend/config
+        
