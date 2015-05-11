@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-05-2015 a las 13:25:47
+-- Tiempo de generación: 11-05-2015 a las 09:48:40
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -32,10 +32,19 @@ CREATE TABLE IF NOT EXISTS `board` (
   `content` text COLLATE utf8_spanish_ci NOT NULL,
   `idhome` int(10) unsigned NOT NULL,
   `date` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
+  `data` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`idboard`),
   KEY `iduser` (`iduser`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `board`
+--
+
+INSERT INTO `board` (`idboard`, `iduser`, `content`, `idhome`, `date`, `data`) VALUES
+(1, 4, 'Viene el de gas', 2, '09.05.2015', 'Viene el del gas el viernes 13 a las 19:00. Alguien tiene que estar en casa para atenderle.'),
+(2, 5, 'No funciona internet desde el jueves', 2, '10.05.2015', 'Estoy hasta los cojones de telefonica.');
 
 -- --------------------------------------------------------
 
@@ -52,7 +61,16 @@ CREATE TABLE IF NOT EXISTS `boardcomments` (
   PRIMARY KEY (`idcomment`),
   KEY `idboard` (`idboard`),
   KEY `iduser` (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `boardcomments`
+--
+
+INSERT INTO `boardcomments` (`idcomment`, `idboard`, `iduser`, `comment`, `date`) VALUES
+(1, 1, 2, 'Yo no puedo estar. Trabajo hasta tarde.', '05.05.2015'),
+(2, 1, 5, 'Yo puedo estar a las 19:00!', '05.05.2015'),
+(3, 1, 2, 'Ya puedo!!', '05.05.2015');
 
 -- --------------------------------------------------------
 
@@ -85,14 +103,14 @@ CREATE TABLE IF NOT EXISTS `homes` (
   `adminmail` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`idhome`),
   UNIQUE KEY `adminmail` (`adminmail`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `homes`
 --
 
 INSERT INTO `homes` (`idhome`, `name`, `numusers`, `maxscore`, `adminmail`) VALUES
-(1, 'First Home', 1, 0, NULL);
+(2, 'casa1', 3, 8, 'mhiguera@easyhouse.me');
 
 -- --------------------------------------------------------
 
@@ -121,6 +139,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `name` text COLLATE utf8_spanish_ci NOT NULL,
   `idhome` int(10) unsigned NOT NULL,
   `added` tinyint(1) NOT NULL,
+  `active` tinyint(1) NOT NULL,
   PRIMARY KEY (`idproduct`),
   KEY `idhome` (`idhome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
@@ -155,11 +174,20 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `idhome` int(11) unsigned NOT NULL,
   `active` tinyint(1) NOT NULL,
   `whenisdone` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `daysactive` int(11) NOT NULL,
   `points` int(11) NOT NULL,
+  `activesince` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
+  `approved` tinyint(1) NOT NULL,
   PRIMARY KEY (`idtask`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `tasks`
+--
+
+INSERT INTO `tasks` (`idtask`, `name`, `period`, `idhome`, `active`, `whenisdone`, `points`, `activesince`, `approved`) VALUES
+(1, 'Bajar la basura', 1, 2, 1, '', 2, '10.05.2015', 1),
+(2, 'Limpiar el baño', 3, 2, 1, '', 6, '08.05.2015', 1);
 
 -- --------------------------------------------------------
 
@@ -177,14 +205,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`iduser`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`iduser`, `name`, `idhome`, `mail`, `photo`, `passwd`, `admin`) VALUES
-(1, 'Miguel', 1, 'mhiguera@easyhouse.me', '/sweethomesw/img/usuario.png', 'miguel', 1);
+(2, 'miguel', 2, 'mhiguera@easyhouse.me', '/sweethomesw/img/usuario.png', '75004f149038473757da0be07ef76dd4a9bdbc8d', 1),
+(4, 'juanh', 2, 'juan@juan.com', '/sweethomesw/img/usuario.png', 'b49a5780a99ea81284fc0746a78f84a30e4d5c73', 0),
+(5, 'laura', 2, 'laura@laura.com', '/sweethomesw/img/usuario.png', '94745df4bd94de756ea5436584fec066fc7898d5', 0);
 
 --
 -- Restricciones para tablas volcadas

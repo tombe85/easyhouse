@@ -1,7 +1,7 @@
 JAVASCRIPT:
     - Login
         * Si está logueado va a home    
-PHP:
+PHP (Toma de datos):
     
     - Home:
         -> Renombrar en la carpeta ajax: registry.html -> registry.php
@@ -57,3 +57,19 @@ PHP:
                         -> Cargará en el array / json únicamente los que NO hayan sido añadidos a la lista de la compra
                     * Devuelve el array de registros / json
             -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
+            
+PHP (Entrada de datos):
+
+    - userregister:
+        -> Gestionar la entrada de la foto
+    
+    - Admin y Config: -> Carpeta config en backend
+        - Main:
+            -> Entrada de datos de contraseña y correo:
+                * Crear cambiopasswd.php en backend/config que compruebe passwd actual y ponga la nueva.
+                * Crear cambiomail.php en backend/config que compruebe passwd actual y ponga mail nuevo.
+            -> Hacer el cambio de nombre y foto
+        - products:
+            -> Crear addproduct.php en backend/config que añade el nuevo producto con active=1 si es admin o con active=0 si es user (ver cookie admin)
+        - tasks:
+            -> Crear addtask.php en backend/config que añade el nuevo producto con approved=1 si es admin o con approved=0 si es user (ver cookie admin)

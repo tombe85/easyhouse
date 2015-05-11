@@ -71,7 +71,7 @@
     function loadtasks($idhome){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from tasks where idhome = "'.$idhome.'"';
+        $query='select * from tasks where idhome = "'.$idhome.'" and approved = 1';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
         
