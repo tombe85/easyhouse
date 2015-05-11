@@ -26,6 +26,7 @@
             
             function cierraSelected(){
                 $(taskselected).css("padding","5px");
+                $(taskselected).html("");
                 $(taskselected).load("/sweethomesw/backend/tasks/loadtask.php?id="+taskid+"&cont="+taskcontent.replace(/ /g,"%20")+"&day="+taskdayson+"");
                 taskselected = null;
                 taskid = null;
