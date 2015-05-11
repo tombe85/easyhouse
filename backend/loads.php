@@ -122,4 +122,21 @@
         $db->close();
         return $arr;
     }
+
+    function loadshoppingproducts($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from products where idhome = "'.$idhome.'" and active = true and added = false';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
+        
+        $arr = array();
+        $numrows=$result->num_rows;
+        for($i=0; $i < $numrows; $i++){
+            $row = $result->fetch_array();
+            $arr[$i]["product"] = $row["name"];
+        }
+        $db->close();
+        return $arr;
+    }
 ?>

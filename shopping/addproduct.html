@@ -12,7 +12,7 @@
                 //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
-                $("#productsList").load("/sweethomesw/ajax/productlist.html");
+                $("#productsList").load("/sweethomesw/ajax/productlist.php");
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
                     $("#backHeader").find("a").attr("href","/sweethomesw/shopping/main.html");
@@ -28,17 +28,18 @@
             <div class="indicator">
                 <h4>Añadir productos</h4>
             </div>
-            
-            <div id="productsList">
-            </div>
-            
-            <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
-                <div id="buttonBottom">
-                    <button class="buttonAction" onclick='location.href="/sweethomesw/shopping/main.html"'>
-                    	<img class="menubutton" src="/sweethomesw/img/ok.png" />
-                    </button>
+            <form method="post" action="#" data-ajax="false">
+                <div id="productsList">
                 </div>
-            </div>
+
+                <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div id="buttonBottom">
+                        <button class="buttonAction" type="submit">
+                            <img class="menubutton" src="/sweethomesw/img/ok.png" />
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div id="footer"></div>

@@ -28,14 +28,7 @@ PHP (Toma de datos):
         -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
     
     - Shopping:
-        - Main:
-            -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
         - Add Product:
-            -> Renombrar en la carpeta ajax: productlist.html -> productlist.php
-            -> Actualizar en home.html el load de registry en el head (productlist.html -> productlist.php)
-            -> Cambios en productlist.php:
-                * Al principio se hace include a loads.php y se llama a su función loadshoppingproducts(idhome) que devuelve un array con los registros
-                * Dentro de la tabla habrá un foreach y para cada registro del array generará el html con echo
             -> Código de loads.php:
                 * Contendrá una nueva función loadshoppingproducts(idhome){}
                     * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)

@@ -8,7 +8,7 @@
     $idhome = $_COOKIE["idhome"];
     
     include_once('../backend/loads.php');
-    $arr = loadshoppinglist($idhome);
+    $arr = loadshoppingproducts($idhome);
     
     echo '<table>';
     foreach($arr as $reg){
