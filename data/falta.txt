@@ -26,17 +26,6 @@ PHP (Toma de datos):
                 * Gestionará los resultados para devolver un array o json con los datos necesarios (gasto y usuarios pagados/no pagados)
                 * Devuelve el array / json
         -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
-    
-    - Shopping:
-        - Add Product:
-            -> Código de loads.php:
-                * Contendrá una nueva función loadshoppingproducts(idhome){}
-                    * buscará dentro de la base de datos los registros de la casa (conectar con connectdataBase() de functions.php)
-                    * Con un for comprobará los registros y los cargará en un array de registros / json
-                        -> Cargará en el array / json únicamente los que NO hayan sido añadidos a la lista de la compra
-                    * Devuelve el array de registros / json
-            -> Al principio se debe comprobar que haya un usario dado de alta (variable de sesión login)
-            
             
             
 PHP (Entrada de datos):

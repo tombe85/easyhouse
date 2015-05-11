@@ -9,8 +9,7 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
             $(document).bind('pageinit', function(){
-                //Footer
-                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=main.html");
+                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/board/main.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
@@ -25,7 +24,7 @@
             <h4>Nueva entrada del Tablón</h4>
         </div>
         <div id="contentInput" data-role="content">
-            <form method="post" action="#">
+            <form method="post" action="/sweethomesw/backend/board/addmessage.php" data-ajax="false">
                 <div class="dataInput">
                     <h3>Título</h3>
                     <input type="text" name="titulo">

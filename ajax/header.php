@@ -1,7 +1,7 @@
 <?php
 {
     include_once('../backend/functions.php');
-    if(checkLogin()){
+    if(checklogin()){
         $iduser = $_COOKIE["iduser"];
         $rutafoto = userphotourl($iduser);
     }else{
