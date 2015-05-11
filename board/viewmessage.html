@@ -28,9 +28,9 @@
                 $("#comments").load(commentsurl);
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
-                    $("#backHeader").find("a").attr("href","/sweethomesw/board/main.html");
                     $("#content").css("height", ($("#originalmessage").height() + $("#comments").height() + $("footer").height() + $("#contentBottom").height()) + $("#messageDate").height() + "px");
                     $("body").resize();
+                    $("#idboard").attr("value", getQueryVariable("id"));
                 });
             });
         </script>
@@ -45,14 +45,15 @@
             </div>
             
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
-                <form method="post" action="">
+                <form method="post" action="/sweethomesw/backend/board/addcomment.php" data-ajax="false">
+                    <input type="hidden" name="idboard" value="" id="idboard">
                     <table>
                         <tr id="buttonBottom">
                             <td class="sendtext">
                                 <input type="text" name="texto" />
                             </td>
                             <td class="sendbutton">
-                                <button class="buttonAction" onclick='location.href="/sweethomesw/board/viewmessage.html"'><img src="/sweethomesw/img/add.png" class="menubutton" /> </button>
+                                <button class="buttonAction" type="submit"><img src="/sweethomesw/img/add.png" class="menubutton" /> </button>
                             </td>
                         </tr>
                     </table>
