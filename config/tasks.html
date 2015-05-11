@@ -10,15 +10,10 @@
         <script>
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#header").load("/sweethomesw/header/header.html");
+                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
                 $(document).ajaxComplete(function(){
                     $("#tasksbutton").attr("src","/sweethomesw/img/tareaconfigselected.png");
-                    $("#backHeader").find("a").attr("href","/sweethomesw/home.html");
-                    $("#fotoHeader").find("a").attr("href","/sweethomesw/about.html");
-                    $("#fotoHeader").find("img").attr("id","noone");
-                    $("#fotoHeader").find("img").attr("src","/sweethomesw/img/info.png");
-                    $("#fotoHeader").find("img").attr("class","menubutton");
                     $("body").resize();
                 });
             });

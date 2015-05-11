@@ -14,12 +14,11 @@
             var taskdayson = null;
             var loadurl = null;
             $(document).bind('pageinit', function(){
-                $("#header").load("/sweethomesw/header/header.html");
+                $("#header").load("/sweethomesw/ajax/header.php");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#taskList").load("/sweethomesw/ajax/tasks.php");
                 $(document).ajaxComplete(function(){
                     $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
-                    $("#backbutton").css("display","none");
                     $("body").resize();
                 });
             });

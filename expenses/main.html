@@ -11,14 +11,12 @@
             var abierto = 0;
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#header").load("/sweethomesw/header/header.html");
+                $("#header").load("/sweethomesw/ajax/header.php");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#expensesList").load("/sweethomesw/ajax/expenses.html");
                 $(document).ajaxComplete(function(){
                     $("#gastosbutton").attr("src","/sweethomesw/img/gastosselected.png");
-                    $("#backbutton").css("display","none");
                     $("body").resize();
-                    $("footer").resize();
                 });
             });
             

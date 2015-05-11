@@ -42,4 +42,18 @@
                     });
                 </script>';
     }
+    
+    function userphotourl($iduser){
+        $db = connectDataBase();
+        $query='select * from users where iduser = "'.$iduser.'"';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
+        if($result->num_rows > 0){
+            $row = $result->fetch_array();
+            $db->close();
+            return $row["photo"];
+        }else{
+            return null;
+        }
+    }
 ?>

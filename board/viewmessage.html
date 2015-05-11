@@ -22,7 +22,7 @@
             $(document).bind('pageinit', function(){
                 var origmessurl = "/sweethomesw/ajax/singlemessage.php?id=" + getQueryVariable("id");
                 var commentsurl = "/sweethomesw/ajax/messagecomments.php?id="  + getQueryVariable("id");
-                $("#header").load("/sweethomesw/header/header.html");
+                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=main.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#originalmessage").load(origmessurl);
                 $("#comments").load(commentsurl);

@@ -10,12 +10,11 @@
         <script>
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#header").load("/sweethomesw/header/header.html");
+                $("#header").load("/sweethomesw/ajax/header.php");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#boardMessages").load("/sweethomesw/ajax/messages.php");
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
-                    $("#backbutton").css("display","none");
                     $("body").resize();
                 });
             });

@@ -9,14 +9,9 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
             $(document).bind('pageinit', function(){
-                //Footer
-                $("#header").load("/sweethomesw/header/header.html");
+                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/config/main.html&info=true");
                 $(document).ajaxComplete(function(){
-                    $("#backHeader").find("a").attr("href","/sweethomesw/config/main.html");
-                    $("#fotoHeader").find("a").attr("href","#");
-                    $("#fotoHeader").find("img").attr("id","noone");
                     $("#fotoHeader").find("img").attr("src","/sweethomesw/img/infoselected.png");
-                    $("#fotoHeader").find("img").attr("class","menubutton");
                     $("body").resize();
                 });
             });

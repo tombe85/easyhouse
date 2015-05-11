@@ -10,12 +10,11 @@
         <script>
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#header").load("/sweethomesw/header/header.html");
+                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=main.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#productsList").load("/sweethomesw/ajax/productlist.php");
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
-                    $("#backHeader").find("a").attr("href","/sweethomesw/shopping/main.html");
                     $("body").resize();
                 });
             });
