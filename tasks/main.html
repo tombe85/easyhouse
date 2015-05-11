@@ -9,24 +9,29 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
             var taskselected = null;
+            var taskid = null;
+            var taskcontent = null;
+            var taskdayson = null;
+            var loadurl = null;
             $(document).bind('pageinit', function(){
-                //Footer
                 $("#header").load("/sweethomesw/header/header.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#taskList").load("/sweethomesw/ajax/tasks.php");
                 $(document).ajaxComplete(function(){
-                    $("#confirmButtonLeft").find("button").click(function(){
-                        location.href="/sweethomesw/tasks/main.html";
-                    });
-
-                    $("#confirmButtonRight").find("button").click(function(){
-                        var id = taskselected;
-                    });
                     $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
                     $("#backbutton").css("display","none");
                     $("body").resize();
                 });
             });
+            
+            function cierraSelected(){
+                $(taskselected).css("padding","5px");
+                $(taskselected).load("/sweethomesw/backend/tasks/loadtask.php?id="+taskid+"&cont="+taskcontent.replace(/ /g,"%20")+"&day="+taskdayson+"");
+                taskselected = null;
+                taskid = null;
+                taskcontent = null;
+                taskdayson = null;
+            }
         </script>
     </head>
     <body>

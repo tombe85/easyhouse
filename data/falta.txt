@@ -1,8 +1,6 @@
-AJAX:
-    - El nombre de usuario y su foto en config y admin/config (cargan del mismo) -> crear userdata.html
-    - Sección de Mis tareas en config y admin/config (cargan del mismo) -> crear usertasks.php en la carpeta ajax
-        -> Organizar cómo hacer los phps
-    
+JAVASCRIPT:
+    - Login
+        * Si está logueado va a home    
 PHP:
     
     - Home:
