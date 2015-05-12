@@ -3,7 +3,7 @@
     function loadregister($idhome,$iduser){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from registro where idhome = "'.$idhome.'" and usersdeleted not like "%'.$iduser.'%"';
+        $query='select * from registro where idhome = "'.$idhome.'" and usersdeleted not like "%'.$iduser.'%" order by idregistro desc';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
         
@@ -28,7 +28,7 @@
     function loadboard($idhome){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from board where idhome = "'.$idhome.'"';
+        $query='select * from board where idhome = "'.$idhome.'" order by idboard desc';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
         
