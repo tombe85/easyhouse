@@ -117,7 +117,7 @@
                 $closedsince = strtotime($row["whenisdone"]);
                 $daysclosed = ((time() - $closedsince) / (3600*24));
                 if($daysclosed >= $row["period"]){
-                    $querym = 'update tasks set active = true, activesince = "'.date("d-m-Y").'" where idtask = "'.$row["idtask"].'"';
+                    $querym = 'update tasks set active = true, activesince = "'.date("d.m.Y").'" where idtask = "'.$row["idtask"].'"';
                     $resultm = $db->query($querym)
                         or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
                     $arr[$j]["idtask"] = $row["idtask"];
