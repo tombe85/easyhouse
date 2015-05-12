@@ -25,7 +25,7 @@
                 }
             });
             $(document).bind('pageinit', function(){
-                $("#headerlogin").load("/sweethomesw/header/header.html");
+                $("#headerlogin").load("/sweethomesw/ajax/header.php");
                 $(document).ajaxComplete(function(){
                     $("#backbutton").css("display","none");
                     $("#fotousuario").css("display","none");
@@ -60,7 +60,9 @@
             }
             
             //Hacer lo de la fotousuario
-            
+            function changeImage(fileimput){
+                $("#imageButton").find("img").attr("src", "/sweethomesw/img/ok.png");
+            }
         </script>
     </head>
     <body>
@@ -78,8 +80,8 @@
                 <div class="dataInput">
                     <h4>Foto</h4>
                     <div class="photoInput">
-                        <input type="text" name="rutafoto" hidden="true">
-                        <button id="imageButton"><img src="/sweethomesw/img/usuario.png" /></button>
+                        <input type="file" name="foto" accept="image/*" id="userregfile" onchange="changeImage(this)">
+                        <button type="button" id="imageButton" onclick='document.getElementById("userregfile").click()'><img src="/sweethomesw/img/usuario.png" /></button>
                     </div>
                 </div>
                 <div class="dataInput">

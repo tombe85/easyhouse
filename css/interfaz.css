@@ -273,6 +273,10 @@ div#confirmButtonRight{
     overflow: hidden;
 }
 
+#userregfile{
+    display: none;
+}
+
 /* CLASES */
 
 .aboutLine{
