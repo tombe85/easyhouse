@@ -19,6 +19,7 @@
             $arr[$i]["idregistro"] = $row["idregistro"];
             $arr[$i]["content"] = $row["content"];
             $arr[$i]["date"] = $row["date"];
+            $arr[$i]["idregistro"] = $row["idregistro"];
         }
         $db->close();
         return $arr;

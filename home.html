@@ -8,6 +8,7 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
+            var idsreg = new Array();
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php");
@@ -16,6 +17,7 @@
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
                     $("body").resize();
+                    $("#strids").attr("vale", idsreg.toString().replace(/,/g," "));
                 });
             });
         </script>
@@ -30,12 +32,15 @@
             
             <div id="registry">
             </div>
-            
+            <form id="formdelete" method="post" action="/sweethomesw/backend/home/delete.php" data-ajax="false">
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <div id="buttonBottom">
-                    <button class="buttonActionAdd"><img id="cleanhomebutton" class="menubutton" src="/sweethomesw/img/clean.png" /></button>
+                        <input type="hidden" name="strids" value="" id="strids">
+                        <button class="buttonActionAdd" id="deleteButton" type="submit"><img id="cleanhomebutton" class="menubutton" src="/sweethomesw/img/clean.png" /></button>
+                    
                 </div>
             </div>
+            </form>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div id="footer">

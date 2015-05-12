@@ -25,6 +25,9 @@
         echo '<td class="rowDate"><h5>'.$reg["date"].'</h5></td>';
         
         echo '</tr>';
+        echo '<script>
+                    idsreg[idsreg.length] = '.$reg["idregistro"].'
+              </script>';
     }
         
     echo '</table>';
