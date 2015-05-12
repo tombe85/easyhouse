@@ -15,7 +15,9 @@
     });
 
     $("#confirmButtonRight").find("button").click(function(){
-        var id = taskselected;
+        var id = taskid.replace("task","");
+        var url = "/sweethomesw/backend/tasks/completetask.php?id=" + id;
+        location.href=url;
     });
     </script>
 </div>

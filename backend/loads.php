@@ -1,9 +1,9 @@
 <?php
     
-    function loadregister($idhome){
+    function loadregister($idhome,$iduser){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from registro where idhome = "'.$idhome.'"';
+        $query='select * from registro where idhome = "'.$idhome.'" and usersdeleted not like "%'.$iduser.'%"';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
         
@@ -117,7 +117,7 @@
                 $closedsince = strtotime($row["whenisdone"]);
                 $daysclosed = ((time() - $closedsince) / (3600*24));
                 if($daysclosed >= $row["period"]){
-                    $querym = 'update tasks set active = true, activesince = "'.date("d-m-Y").'" where idtask = "'.$row["idtask"].'"';
+                    $querym = 'update tasks set active = true, activesince = "'.date("d.m.Y").'" where idtask = "'.$row["idtask"].'"';
                     $resultm = $db->query($querym)
                         or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
                     $arr[$j]["idtask"] = $row["idtask"];

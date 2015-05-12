@@ -6,8 +6,9 @@
         exit();
     }
     $idhome=$_COOKIE["idhome"];
+    $iduser=$_COOKIE["iduser"];
     include_once('../backend/loads.php');
-    $dataArray = loadregister($idhome);
+    $dataArray = loadregister($idhome,$iduser);
     
     echo '<table>';
     foreach($dataArray as $reg){
