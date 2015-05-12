@@ -27,7 +27,7 @@
             <form method="post" action="/sweethomesw/backend/board/addmessage.php" data-ajax="false">
                 <div class="dataInput">
                     <h3>Título</h3>
-                    <input type="text" name="titulo">
+                    <input type="text" name="titulo" id="titulo" maxlength="30">
                 </div>
                 <div class="dataInput">
                     <h3>Mensaje</h3>
@@ -36,7 +36,7 @@
                 
                 <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                     <div id="buttonBottom">
-                        <button class="buttonAction" type="submit" onclick='location.href="/sweethomesw/board/main.html"'><img id="enviarbutton" class="menubutton" src="/sweethomesw/img/send.png" /></button>
+                        <button class="buttonAction" type="submit"><img id="enviarbutton" class="menubutton" src="/sweethomesw/img/send.png" /></button>
                     </div>
                 </div>
             </form>

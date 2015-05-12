@@ -11,32 +11,20 @@
     include('../backend/loads.php');
     $arr = loadsinglemessage($idhome,$idboard);
     
+    echo '<div class="indicator">
+        <h4>'.$arr["message"].'</h4>
+    </div>';
+    
     echo '<table>';
-/*    
-    echo '<tr id="messageDate"><td class="rowText"></td>';
-    echo '<td class="rowDate">';
-    echo '    <h5>'.$arr["date"].'</h5>';
-    echo '</td>';
-    echo '</tr>';
-*/  
-
-
-    echo '<tr>';
-    echo '<td id="messagePhoto" class="rowPhoto">';
+    echo '<tr class="rowBordered">';
+    echo '<td class="rowPhotoSmall">';
     echo '    <img src="'.$arr["rutafoto"].'" />';
     echo '</td>';
     echo '<td class="rowText">';
-    echo '    <h2>'.$arr["message"].'</h2>';
+    echo '    <h3>'.$arr["data"].'</h3>';
     echo '</td>';
-    echo '</tr>';
-    
-    echo '<tr>';
-    echo '<td></td>';
-    echo '<td id="originalmessBottom">';
-    echo '    <h3><p>'.$arr["data"].'</p></h3>';
-    echo '</td>';
-    
     echo '</tr>';
     echo '</table>';
+    
 }
 ?>
