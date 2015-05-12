@@ -18,7 +18,7 @@
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
                     $("#content").css("height", ($("#registry").height() + $("#contentBottom").height() + $("footer").height() + $("#indicator").height() + 10 + "px"));
                     $("body").resize();
-                    $("#strids").attr("vale", idsreg.toString().replace(/,/g," "));
+                    $("#strids").attr("value", idsreg.toString());
                 });
             });
         </script>
@@ -33,7 +33,7 @@
             
             <div id="registry">
             </div>
-            <form id="formdelete" method="post" action="/sweethomesw/backend/home/delete.php" data-ajax="false">
+            <form method="post" action="/sweethomesw/backend/home/delete.php" data-ajax="false">
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <div id="buttonBottom">
                         <input type="hidden" name="strids" value="" id="strids">
