@@ -15,7 +15,7 @@
                 $("#boardMessages").load("/sweethomesw/ajax/messages.php");
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
-                    $("#content").css("height", ($("#boardMessages").height() + $("#contentBottom").height() + $("footer").height() + $("#indicator").height() + 50 + "px"));
+                    $("#content").css("height", ($("#boardMessages").height() + $("#contentBottom").height() + $("footer").height() + $("#indicator").height() + 20 + "px"));
                     $("body").resize();
                 });
             });
