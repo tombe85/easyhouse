@@ -12,13 +12,15 @@
     $arr = loadsinglemessage($idhome,$idboard);
     
     echo '<table>';
-    
+/*    
     echo '<tr id="messageDate"><td class="rowText"></td>';
     echo '<td class="rowDate">';
     echo '    <h5>'.$arr["date"].'</h5>';
     echo '</td>';
     echo '</tr>';
-    
+*/  
+
+
     echo '<tr>';
     echo '<td id="messagePhoto" class="rowPhoto">';
     echo '    <img src="'.$arr["rutafoto"].'" />';
