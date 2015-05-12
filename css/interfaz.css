@@ -422,7 +422,7 @@ div#confirmButtonRight{
 }
 
 .expenseMenu{
-    border-bottom: 1px solid #3f51b5;
+    border-bottom: 2px solid #3f51b5;
 }
 
 .expenseMenu li{
@@ -439,7 +439,6 @@ div#confirmButtonRight{
     padding: 0px;
     height: 0px;
     margin: 0;
-    border-bottom: 2px solid #3f51b5;
 
     /*Animacion menu*/
     -webkit-transition: height 0.5s ease;
@@ -450,7 +449,7 @@ div#confirmButtonRight{
 }
 
 .expenseMenuOpen{
-    border-bottom: 1px solid #3f51b5;
+    border-bottom: 2px solid #3f51b5;
 }
 
 .expenseMenuOpen li{
@@ -467,7 +466,6 @@ div#confirmButtonRight{
     padding: 0px;
     height: 232px;
     margin: 0;
-    border-bottom: 2px solid #3f51b5;
 
     /*Animacion menu*/
     -webkit-transition: height 0.5s ease;
