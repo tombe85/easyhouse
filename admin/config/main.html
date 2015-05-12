@@ -11,7 +11,7 @@
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
-                $("#userData").load("/sweethomesw/ajax/userdata.html");
+                $("#userData").load("/sweethomesw/ajax/userdata.php");
                 $("#userTasks").load("/sweethomesw/ajax/usertasks.html");
                 $(document).ajaxComplete(function(){
                     $("#configbutton").attr("src","/sweethomesw/img/configselected.png");
@@ -26,10 +26,10 @@
             
             var abierto = 0;
             
-            $.fn.openclose = function(){
+            $.fn.openclose = function(tam){
                 var altura = $("#contentConfig").height();
                 if($(this).attr("class") === "configMenu"){
-                    altura += (225);
+                    altura += (tam);
                     $(this).attr("class", "configMenuOpen");
                     if(abierto === 0){
                         altura += $("footer").height();
@@ -37,7 +37,7 @@
                     abierto++;
                 }else{
                     abierto--;
-                    altura -= (225);
+                    altura -= (tam);
                     $(this).attr("class", "configMenu");
                     if(abierto === 0){
                         altura -= $("footer").height();
@@ -54,7 +54,7 @@
             </div>
 
             <div id="taskConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose()'>
+                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose(100)'>
                     <h2>Mis Tareas</h2>
                 </button>
                 <ul id="userTasks">
@@ -62,7 +62,7 @@
             </div>
 
             <div id="passwdConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
+                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose(230)'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
                 <ul>
@@ -75,7 +75,7 @@
             </div>
 
             <div id="mailConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose()'>
+                <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose(225)'>
                     <h2>Cambiar Correo</h2>
                 </button>
                 <ul>
