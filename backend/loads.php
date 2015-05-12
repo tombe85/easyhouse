@@ -1,9 +1,9 @@
 <?php
     
-    function loadregister($idhome){
+    function loadregister($idhome,$iduser){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from registro where idhome = "'.$idhome.'"';
+        $query='select * from registro where idhome = "'.$idhome.'" and usersdeleted not like "%'.$iduser.'%"';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
         
