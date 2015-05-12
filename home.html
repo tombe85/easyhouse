@@ -16,6 +16,7 @@
                 $("#registry").load("/sweethomesw/ajax/registry.php");
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
+                    $("#content").css("height", ($("#registry").height() + $("#contentBottom").height() + $("footer").height() + $("#indicator").height() + 20 + "px"));
                     $("body").resize();
                     $("#strids").attr("vale", idsreg.toString().replace(/,/g," "));
                 });
