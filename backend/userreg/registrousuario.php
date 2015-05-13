@@ -3,13 +3,12 @@
 //Cogemos los datos
 $user=$_POST["usuario"];
 $mail=$_POST["email"];
-$rutafoto=$_POST["rutafoto"];
 $passwd=sha1($_POST["passwd"]);
 $passwd2=sha1($_POST["passwd2"]);
 $code=$_COOKIE["code"];
 
 //Comprobaciones
-if($user == null || $mail == null || $rutafoto == null || $passwd == null || $passwd2 == null){
+if($user == null || $mail == null || $passwd == null || $passwd2 == null){
     echo "Debes rellenar todos los datos";
     header('Location: /sweethomesw/userregister.html');
     exit();
@@ -17,6 +16,14 @@ if($user == null || $mail == null || $rutafoto == null || $passwd == null || $pa
 if($passwd !== $passwd2){
     echo "Las constraseñas no coinciden.";
     header('Location: /sweethomesw/userregister.html');
+    exit();
+}
+
+$rutafoto = "/sweethomesw/img/uploads/" . basename( time(). "-" . str_replace(" ","_",$_FILES["foto"]['name']));
+chmod($_FILES["foto"]["tmp_name"], 0777);
+if(!move_uploaded_file($_FILES["foto"]["tmp_name"], $rutafoto)) {
+    echo 'temporal: '. $_FILES["foto"]["tmp_name"];
+    echo '<br>foto: ' . $rutafoto;
     exit();
 }
 
@@ -37,17 +44,16 @@ if($result->num_rows > 0){
 }
 
 //Ver si está invitado
-$query='select * from invited where mail like "'.$mail.'" and code like "'.$code.'"';
+$query='select * from invited where code like "'.$code.'"';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 if($result->num_rows == 0){
     echo "No apareces en la lista de invitados. Habla con el administrador de la casa para que te añada como usuario.";
     header('Location: /sweethomesw/userregister.html');
     exit();
-}else{
-    $row=$result->fetch_array();
-    $idhome = $row["idhome"];
 }
+$row=$result->fetch_array();
+$idhome = $row["idhome"];
 
 //añadir a usarios
 $query='insert into users (name,idhome,mail,photo,passwd) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$rutafoto.'","'.$passwd.'")';
@@ -76,5 +82,5 @@ $db->close();
 //Actualizar variables de sesión y cookies
 setcookies(true,false,$idhome,$iduser);
 
-header('Location: /sweethomesw/config/main.html');
+header('Location: /sweethomesw/home.html');
 ?>

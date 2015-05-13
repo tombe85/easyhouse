@@ -11,8 +11,8 @@ $result = $db->query($query)
 
 if($result->num_rows > 0){
     echo "1";
-}else if(isset($_SESSION["code"])){
-    $query='select * from invited where code like "'.$_SESSION["code"].'"';
+}else if(isset($_COOKIE["code"])){
+    $query='select * from invited where code like "'.$_COOKIE["code"].'"';
     $result = $db->query($query)
         or die($db->error. " en la línea ".(__LINE__-1));
     if($result->num_rows > 0){

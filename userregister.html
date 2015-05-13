@@ -33,7 +33,7 @@
             });
             
             function validaCampos(formu){
-                if(formu.usuario.value == "" || formu.email.value == "" || formu.passwd.value == "" || formu.passwd2.value == "" || formu.rutafoto.value == ""){
+                if(formu.usuario.value == "" || formu.email.value == "" || formu.passwd.value == "" || formu.passwd2.value == "" || formu.foto.value == ""){
                     alert("Debes rellenar todos los campos");
                     return false;
                 }else{
@@ -68,7 +68,7 @@
     <body>
         <header id="headerlogin" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="contentInput" data-role="content">
-            <form method="post" action="/sweethomesw/backend/userreg/registrousuario.php" onsubmit="return validaCampos(this)">
+            <form method="post" action="/sweethomesw/backend/userreg/registrousuario.php" onsubmit="return validaCampos(this)" data-ajax="false" enctype="multipart/form-data">
                 <div class="dataInput">
                     <h4>Usuario</h4>
                     <input type="text" name="usuario">
@@ -80,6 +80,7 @@
                 <div class="dataInput">
                     <h4>Foto</h4>
                     <div class="photoInput">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                         <input type="file" name="foto" accept="image/*" id="userregfile" onchange="changeImage(this)">
                         <button type="button" id="imageButton" onclick='document.getElementById("userregfile").click()'><img src="/sweethomesw/img/usuario.png" /></button>
                     </div>
