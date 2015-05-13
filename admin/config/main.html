@@ -24,38 +24,23 @@
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
-                $("#userMessage").load("/sweethomesw/ajax/usermessage.html");
+                $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
                 $(document).ajaxComplete(function(){
                     $("#configbutton").attr("src","/sweethomesw/img/configselected.png");
-                    $("#backHeader").find("a").attr("href","/sweethomesw/home.html");
-                    $("#fotoHeader").find("a").attr("href","/sweethomesw/aboutadmin.html");
-                    $("#fotoHeader").find("img").attr("id","noone");
-                    $("#fotoHeader").find("img").attr("src","/sweethomesw/img/info.png");
-                    $("#fotoHeader").find("img").attr("class","menubutton");
+                    $("#userMessage").css("height",$("#userMessage").find("table").height() + "px")
                     $("body").resize();
                 });
             });
             
             var abierto = 0;
             
-            $.fn.openclose = function(tam){
-                var altura = $("#contentConfig").height();
+            $.fn.openclose = function(){
                 if($(this).attr("class") === "configMenu"){
-                    altura += (tam);
                     $(this).attr("class", "configMenuOpen");
-                    if(abierto === 0){
-                        altura += $("footer").height();
-                    }
-                    abierto++;
                 }else{
-                    abierto--;
-                    altura -= (tam);
                     $(this).attr("class", "configMenu");
-                    if(abierto === 0){
-                        altura -= $("footer").height();
-                    }
                 }
-                $("#contentConfig").css("height", altura + "px");
+                $("body").resize();
             }
             
             function changeAvatar(){
@@ -87,6 +72,16 @@
                     });
                 }
             }
+            
+            function deleteMessage(idboard){
+                $.post('/sweethomesw/backend/userreg/deletemessage.php', {idboard:idboard}, function(data, textStatus){
+                    if(data == 0){
+                        alert("error al eliminar el mensaje ");
+                    }else{
+                        $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
+                    }
+                });
+            }
         </script>
     </head>
     <body>
@@ -96,37 +91,37 @@
             </div>
 
             <div id="taskConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose(100)'>
+                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose()'>
                     <h2>Mis Mensajes</h2>
                 </button>
-                <ul id="userMessage">
-                </ul>
+                <div><ul id="userMessage">
+                </ul></div>
             </div>
 
             <div id="passwdConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose(230)'>
+                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
-                <ul>
+                <div><ul>
                     <li><h4>Contraseña nueva</h4></li>
                     <li><input type="text" name="passwdnueva"></li>
                     <li><h4>Contraseña antigua</h4></li>
                     <li><input type="password" name="passwd"></li>
                     <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
-                </ul>
+                </ul></div>
             </div>
 
             <div id="mailConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose(225)'>
+                <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose()'>
                     <h2>Cambiar Correo</h2>
                 </button>
-                <ul>
+                <div><ul>
                     <li><h4>Nuevo Correo</h4></li>
                     <li><input type="text" name="email"></li>
                     <li><h4>Contraseña</h4></li>
                     <li><input type="password" name="emailpasswd"></li>
                     <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
-                </ul>
+                </ul></div>
             </div>
             
             <div class="configMenu" id="closeSesion">

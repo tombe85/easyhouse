@@ -10,7 +10,6 @@
     $dataArray = loadboard($idhome);
     
     echo '<table>';
-    
     foreach($dataArray as $reg){
         echo '<tr class="rowBordered">';
         
