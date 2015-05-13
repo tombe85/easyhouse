@@ -20,6 +20,13 @@
                 return "";
             }
             
+            $(document).bind('pagebeforecreate',function(){
+                var admin = getCookie("admin");
+                if(admin == false){
+                    location.href='/sweethomesw/config/main.html';
+                }
+            });
+            
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
