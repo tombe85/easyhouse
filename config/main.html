@@ -29,9 +29,10 @@
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
-                $("#userTasks").load("/sweethomesw/ajax/usertasks.html");
+                $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
                 $(document).ajaxComplete(function(){
                     $("#usuarioconfigbutton").attr("src","/sweethomesw/img/usuarioconfigselected.png");
+                    $("#userMessage").css("height",$("#userMessage").find("table").height() + "px")
                     $("body").resize();
                 });
             });
@@ -39,23 +40,51 @@
             var abierto = 0;
             
             $.fn.openclose = function(tam){
-                var altura = $("#contentConfig").height();
                 if($(this).attr("class") === "configMenu"){
-                    altura += (tam);
                     $(this).attr("class", "configMenuOpen");
-                    if(abierto === 0){
-                        altura += $("footer").height();
-                    }
-                    abierto++;
                 }else{
-                    abierto--;
-                    altura -= (tam);
                     $(this).attr("class", "configMenu");
-                    if(abierto === 0){
-                        altura -= $("footer").height();
-                    }
                 }
-                $("#contentConfig").css("height", altura + "px");
+                $("body").resize();
+            }
+            
+            function changeAvatar(){
+                var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
+                foto++;
+                if(foto > 13){
+                    foto = 1;
+                }
+                var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
+                $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
+                    if(data == 0){
+                        alert("error al cambiar la foto: No selecciona" + data);
+                    }else if(data == 1){
+                        alert("error al cambiar la foto: No actualiza" + data);
+                    }else{
+                        $("#userAvatar").attr("src",data);
+                    }
+                });
+            }
+            function changeName(){
+                var newname = prompt("Introduce tu nombre de usuario nuevo");
+                if(newname != null){
+                    $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
+                        if(data == 0){
+                            alert("error al cambiar el nombre" + data);
+                        }else{
+                            $("#userName").html(data);
+                        }
+                    });
+                }
+            }
+            function deleteMessage(idboard){
+                $.post('/sweethomesw/backend/userreg/deletemessage.php', {idboard:idboard}, function(data, textStatus){
+                    if(data == 0){
+                        alert("error al eliminar el mensaje" + data);
+                    }else{
+                        $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
+                    }
+                });
             }
         </script>
     </head>
@@ -65,38 +94,38 @@
             <div id="userData">
             </div>
 
-            <div class="configMenu" id="taskConfig">
-                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose(225)'>
+            <div id="taskConfig" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose(100)'>
                     <h2>Mis Mensajes</h2>
                 </button>
-                <ul id="userTasks">
-                </ul>
+                <div><ul id="userMessage">
+                </ul></div>
             </div>
 
             <div id="passwdConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose(225)'>
+                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose(230)'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
-                <ul>
+                <div><ul>
                     <li><h4>Contraseña nueva</h4></li>
                     <li><input type="text" name="passwdnueva"></li>
                     <li><h4>Contraseña antigua</h4></li>
                     <li><input type="password" name="passwd"></li>
                     <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
-                </ul>
+                </ul></div>
             </div>
 
             <div id="mailConfig" class="configMenu">
                 <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose(225)'>
                     <h2>Cambiar Correo</h2>
                 </button>
-                <ul>
+                <div><ul>
                     <li><h4>Nuevo Correo</h4></li>
                     <li><input type="text" name="email"></li>
                     <li><h4>Contraseña</h4></li>
                     <li><input type="password" name="emailpasswd"></li>
                     <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
-                </ul>
+                </ul></div>
             </div>
             
             <div class="configMenu" id="closeSesion">

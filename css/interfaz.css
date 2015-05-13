@@ -342,6 +342,16 @@ div#confirmButtonRight{
     margin-right: 20px;
 }
 
+.configMenu{
+    margin-bottom: 2px;
+}
+
+.configMenu div{
+    height: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
 .configMenu input[type="text"], .configMenu input[type="password"]{
     background-color: white;
 }
@@ -364,7 +374,6 @@ div#confirmButtonRight{
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 2px;
-    height: 225px;
     margin: 0;
 
     /*Animacion menu*/
@@ -375,13 +384,16 @@ div#confirmButtonRight{
             transition: height 0.5s ease; 
 }
 
+.configMenuOpen div{
+    margin-bottom: 10px;
+}
+
 .configMenu ul {
     list-style-type: none;
     overflow: hidden;
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 2px;
-    height: 0px;
     margin: 0;
 
     /*Animacion menu*/
