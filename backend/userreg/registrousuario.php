@@ -20,7 +20,6 @@ if($passwd !== $passwd2){
 }
 
 $rutafoto = "/sweethomesw/img/uploads/" . basename( time(). "-" . str_replace(" ","_",$_FILES["foto"]['name']));
-chmod($_FILES["foto"]["tmp_name"], 0777);
 if(!move_uploaded_file($_FILES["foto"]["tmp_name"], $rutafoto)) {
     echo 'temporal: '. $_FILES["foto"]["tmp_name"];
     echo '<br>foto: ' . $rutafoto;
