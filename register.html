@@ -32,9 +32,11 @@
                 });
             });
             
+            
+            
             function validaCampos(formu){
-                if(formu.usuario.value == "" || formu.email.value == "" || formu.nombrecasa.value == "" || formu.passwd.value == "" || formu.passwd2.value == ""){
-                    alert("Debes rellenar todos los campos");
+                if(formu.usuario.value == "" || formu.email.value == "" || formu.texto.email.indexOf("@") == -1 || formu.texto.email.indexOf(".") == -1 || formu.nombrecasa.value == "" || formu.passwd.value == "" || formu.passwd2.value == ""){
+                    alert("Debes rellenar todos los campos correctamente");
                     return false;
                 }else{
                     if(formu.passwd.value !== formu.passwd2.value){

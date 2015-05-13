@@ -35,7 +35,7 @@
             });
             
             function validaCampos(formu){
-                if(formu.usuario.value == "" || formu.passwd.value == ""){
+                if(formu.usuario.value == "" || formu.texto.usuario.indexOf("@") == -1 || formu.texto.usuario.indexOf(".") == -1 || formu.passwd.value == ""){
                     alert("Debes rellenar todos los campos");
                     return false;
                 }else{
