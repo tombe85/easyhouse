@@ -12,7 +12,7 @@
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
-                $("#userTasks").load("/sweethomesw/ajax/usertasks.html");
+                $("#userMessage").load("/sweethomesw/ajax/usermessage.html");
                 $(document).ajaxComplete(function(){
                     $("#configbutton").attr("src","/sweethomesw/img/configselected.png");
                     $("#backHeader").find("a").attr("href","/sweethomesw/home.html");
@@ -55,9 +55,9 @@
 
             <div id="taskConfig" class="configMenu">
                 <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose(100)'>
-                    <h2>Mis Tareas</h2>
+                    <h2>Mis Mensajes</h2>
                 </button>
-                <ul id="userTasks">
+                <ul id="userMessage">
                 </ul>
             </div>
 
