@@ -48,7 +48,7 @@ $row=$result->fetch_array();
 $idhome = $row["idhome"];
 
 //Sacar avatar
-$rutafoto = "/sweethomesw/img/avatares/default.png";
+$rutafoto = "/sweethomesw/img/avatares/1.png";
 
 //añadir a usarios
 $query='insert into users (name,idhome,mail,photo,passwd) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$rutafoto.'","'.$passwd.'")';

@@ -8,6 +8,18 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
+            
+            function getCookie(galleta) {
+                var name = galleta + "=";
+                var arr = document.cookie.split(';');
+                for(var i=0; i<arr.length; i++) {
+                    var cook = arr[i];
+                    while (cook.charAt(0)==' ') cook = cook.substring(1);
+                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
+                }
+                return "";
+            }
+            
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
@@ -44,6 +56,36 @@
                     }
                 }
                 $("#contentConfig").css("height", altura + "px");
+            }
+            
+            function changeAvatar(){
+                var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
+                foto++;
+                if(foto > 13){
+                    foto = 1;
+                }
+                var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
+                $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
+                    if(data == 0){
+                        alert("error al cambiar la foto: No selecciona" + data);
+                    }else if(data == 1){
+                        alert("error al cambiar la foto: No actualiza" + data);
+                    }else{
+                        $("#userAvatar").attr("src",data);
+                    }
+                });
+            }
+            function changeName(){
+                var newname = prompt("Introduce tu nombre de usuario nuevo");
+                if(newname != null){
+                    $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
+                        if(data == 0){
+                            alert("error al cambiar el nombre" + data);
+                        }else{
+                            $("#userName").html(data);
+                        }
+                    });
+                }
             }
         </script>
     </head>

@@ -12,7 +12,7 @@
         or die($db->error. " en la línea ".(__LINE__-1));
     $row = $result->fetch_array();
     $db->close();
-    echo '<img src="'.$row["photo"].'" />';
-    echo '<h2>'.$row["name"].'</h2>';
+    echo '<img id="userAvatar" src="'.$row["photo"].'" onclick="changeAvatar()" />';
+    echo '<h2 id="userName" onclick="changeName()">'.$row["name"].'</h2>';
 }
 ?>
