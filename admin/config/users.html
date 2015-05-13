@@ -11,12 +11,23 @@
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
-                $("#users").load("/sweethomesw/ajax/usersmanage.html");
+                $("#users").load("/sweethomesw/ajax/usersmanage.php");
                 $(document).ajaxComplete(function(){
                     $("#usersbutton").attr("src","/sweethomesw/img/usuariosconfigselected.png");
                     $("body").resize();
                 });
             });
+            function deleteuser(iduser){
+                if(confirm("¿Seguro que desea eliminar al usuario?")){
+                    $.post('/sweethomesw/backend/homereg/deleteuser.php', {iduser:iduser}, function(data, textStatus){
+                        if(data == 0){
+                            alert("error al eliminar al usuario ");
+                        }else{
+                            $("#users").load("/sweethomesw/ajax/usersmanage.php");
+                        }
+                    });
+                }
+            }
         </script>
     </head>
     <body>
