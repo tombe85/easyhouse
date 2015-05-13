@@ -20,7 +20,11 @@
     if(isset($iduser)){
         if(isset($_REQUEST["info"]) && $_REQUEST["info"] == "true"){
             echo '<a href="/sweethomesw/about.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/info.png" /></a>';
-        }else{
+        }else if(isset($_REQUEST["ranking"]) && $_REQUEST["ranking"] == "true"){
+            echo '<a href="/sweethomesw/ranking/ranking.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/total_ranking.png" /></a>';
+
+        }
+        else{
             echo '<a href="/sweethomesw/config/main.html" data-ajax="false"><img id="fotousuario" src="'.$rutafoto.'" /></a>';
         }
     }
