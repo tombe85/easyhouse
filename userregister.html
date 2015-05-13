@@ -13,8 +13,10 @@
                 var arr = document.cookie.split(';');
                 for(var i=0; i<arr.length; i++) {
                     var cook = arr[i];
-                    while (cook.charAt(0)==' ') cook = cook.substring(1);
-                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
+                    while (cook.charAt(0)==' ') 
+                        cook = cook.substring(1);
+                    if (cook.indexOf(name) == 0) 
+                        return cook.substring(name.length, cook.length);
                 }
                 return "";
             }
@@ -33,7 +35,7 @@
             });
             
             function validaCampos(formu){
-                if(formu.usuario.value == "" || formu.email.value == "" || formu.passwd.value == "" || formu.passwd2.value == "" || formu.foto.value == ""){
+                if(formu.usuario.value == "" || formu.email.value == "" || formu.passwd.value == "" || formu.passwd2.value == ""){
                     alert("Debes rellenar todos los campos");
                     return false;
                 }else{
@@ -76,14 +78,6 @@
                 <div class="dataInput">
                     <h4>Email</h4>
                     <input type="email" name="email">
-                </div>
-                <div class="dataInput">
-                    <h4>Foto</h4>
-                    <div class="photoInput">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
-                        <input type="file" name="foto" accept="image/*" id="userregfile" onchange="changeImage(this)">
-                        <button type="button" id="imageButton" onclick='document.getElementById("userregfile").click()'><img src="/sweethomesw/img/usuario.png" /></button>
-                    </div>
                 </div>
                 <div class="dataInput">
                     <h4>Contraseña</h4>
