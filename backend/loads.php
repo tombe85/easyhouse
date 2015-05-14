@@ -193,6 +193,27 @@
         return $arr;
     }
 
+    function loadranking($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from users where idhome = "'.$idhome.'"';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+        
+        $arr = array();
+        $numrows=$result->num_rows;
+        for($i=0; $i < $numrows; $i++){
+            $row = $result->fetch_array();
+            $arr[$i]["photo"] = $row["photo"];
+            $arr[$i]["iduser"] = $row["iduser"];
+            $arr[$i]["points"] = $row["points"];
+            $arr[$i]["name"] = $row["name"];
+            
+        }
+        $db->close();
+        return $arr;
+    }
+
     function loadusers($idhome){
         include_once('functions.php');
         $db = connectDataBase();
@@ -206,8 +227,7 @@
             $row = $result->fetch_array();
             $arr[$i]["photo"] = $row["photo"];
             $arr[$i]["mail"] = $row["mail"];
-            $arr[$i]["iduser"] = $row["iduser"];
-            
+            $arr[$i]["iduser"] = $row["iduser"];            
         }
         $db->close();
         return $arr;

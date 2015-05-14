@@ -12,8 +12,8 @@
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/tasks/main.html&ranking=true");
                 $("#footer").load("/sweethomesw/footer/footer.html");
-                $("#userData").load("/sweethomesw/ajax/user_ranking.php");
-                $("#userTasks").load("/sweethomesw/ajax/usertasks.html");
+                $("#userData").load("/sweethomesw/ajax/user_ranking_cabeza.php");
+                $("#users").load("/sweethomesw/ajax/user_ranking_cuerpo.php");
                 $(document).ajaxComplete(function(){
                 $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");                    
                 $("body").resize();
@@ -24,10 +24,11 @@
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
-        <div id="contentConfig" data-role="content">
+        <div id="content" data-role="content">
             <div id="userData">
             </div>
-
+            <div id="users">
+            </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div id="footer"></div>
