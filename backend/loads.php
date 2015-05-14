@@ -196,7 +196,7 @@
     function loadranking($idhome){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from users where idhome = "'.$idhome.'" order by points desc';
+        $query='select photo, iduser, points, name from users where idhome = "'.$idhome.'" order by points desc';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
         
