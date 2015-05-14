@@ -25,9 +25,8 @@
                         if(data != 0){
                             alert("Error " + data);
                         }else{
-                            alert("salio bien");
+                            document.location.href="/sweethomesw/shopping/main.html";
                         }
-                        $("#productsList").load("/sweethomesw/ajax/productlist.php");
                     });
                 }
             }
@@ -49,7 +48,6 @@
             <div class="indicator">
                 <h4>Añadir productos</h4>
             </div>
-            <form method="post" action="#" data-ajax="false">
                 <div id="productsList">
                 </div>
 
@@ -60,7 +58,6 @@
                         </button>
                     </div>
                 </div>
-            </form>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div id="footer"></div>

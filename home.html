@@ -21,6 +21,13 @@
                     $("#strids").attr("value", idsreg.toString());
                 });
             });
+            function validaHome(formu){
+                if($("#strids").attr("value") == "" || $("#strids").attr("value") == null){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
         </script>
     </head>
     <body>
@@ -33,7 +40,7 @@
             
             <div id="registry">
             </div>
-            <form method="post" action="/sweethomesw/backend/home/delete.php" data-ajax="false">
+            <form method="post" action="/sweethomesw/backend/home/delete.php" onsubmit="return validaHome(this)" data-ajax="false">
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
                 <div id="buttonBottom">
                         <input type="hidden" name="strids" value="" id="strids">
