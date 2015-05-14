@@ -33,7 +33,7 @@
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
                 $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
                 $(document).ajaxComplete(function(){
-                    $("#configbutton").attr("src","/sweethomesw/img/configselected.png");
+                    $("#configbutton").attr("src","/sweethomesw/img/usuarioconfigselected.png");
                     $("#userMessage").css("height",$("#userMessage").find("table").height() + "px")
                     $("body").resize();
                 });
