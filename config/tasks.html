@@ -8,43 +8,131 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
+            function getCookie(galleta) {
+                var name = galleta + "=";
+                var arr = document.cookie.split(';');
+                for(var i=0; i<arr.length; i++) {
+                    var cook = arr[i];
+                    while (cook.charAt(0)==' ') cook = cook.substring(1);
+                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
+                }
+                return "";
+            }
+            
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
+                $("#userData").load("/sweethomesw/ajax/userdata.php");
+                $("#taskList").load("/sweethomesw/ajax/tasklist.php");
                 $(document).ajaxComplete(function(){
                     $("#tasksbutton").attr("src","/sweethomesw/img/tareaconfigselected.png");
                     $("body").resize();
                 });
             });
+            
+            $.fn.openclose = function(){
+                if($(this).attr("class") === "configMenu"){
+                    $(this).attr("class", "configMenuOpen");
+                }else{
+                    $(this).attr("class", "configMenu");
+                }
+                $("body").resize();
+            }
+            
+            function changeAvatar(){
+                var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
+                foto++;
+                if(foto > 13){
+                    foto = 1;
+                }
+                var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
+                $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
+                    if(data == 0){
+                        alert("error al cambiar la foto: No selecciona" + data);
+                    }else if(data == 1){
+                        alert("error al cambiar la foto: No actualiza" + data);
+                    }else{
+                        $("#userAvatar").attr("src",data);
+                    }
+                });
+            }
+            function changeName(){
+                var newname = prompt("Introduce tu nombre de usuario nuevo");
+                if(newname != null){
+                    $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
+                        if(data == 0){
+                            alert("error al cambiar el nombre" + data);
+                        }else{
+                            $("#userName").html(data);
+                        }
+                    });
+                }
+            }
+            
+            function deleteTask(idtask, name){
+                $.post('/sweethomesw/backend/tasks/removetask.php', {idtask: idtask , name: name}, function(data,taxtStatus){
+                    if(data != 0){
+                        alert("Error " + data);
+                    }else{
+                        $("#taskList").load("/sweethomesw/ajax/tasklist.php");
+                    }
+                });
+            }
+            
+            function addTask(formu){
+                $.post('/sweethomesw/backend/tasks/addtask.php',{name:formu.tarea.value, points: formu.puntuacion.value, period: formu.periodo.value}, function(data, textStatus){
+                    if(data != 0){
+                        alert("Error " + data);
+                    }else{
+                        $("#taskList").load("/sweethomesw/ajax/tasklist.php");
+                        formu.tarea.value="";
+                        formu.puntuacion.value="";
+                        formu.periodo.value="";
+                        $("#addtaskdiv").openclose();
+                    }
+                });
+                return false;
+            }
         </script>
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
 		<div class="indicator">
-            <h4>Añadir tarea</h4>
+            <h4>Tareas</h4>
         </div>
-        <div id="contentInput" data-role="content">
+        <div id="content" data-role="content">
             
-            <form method="post" action="#">
-                <div class="dataInput">
-                    <h3>Nombre de la tarea</h3>
-                    <input type="text" name="tarea">
-                </div>
-                <div class="dataInput">
-                    <h3>Puntuacion</h3>
-                    <input type="number" name="puntuacion">
-                </div>
-				<div class="dataInput">
-                    <h3>Periodo</h3>
-                    <input type="number" name="periodo">
-                </div>
-            </form>
-            <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
-			    <div id="buttonBottom">
-                    <button class="buttonAction"><img class="menubutton" src="/sweethomesw/img/ok.png" /></button>
-                </div>
-			</div>
+            <div id="userData">
+            </div>
+            <div id="addtaskdiv" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#addtaskdiv").openclose()'>
+                    <h2>Añadir tarea</h2>
+                </button>
+                <div><ul><form data-ajax="false" onsubmit="return addTask(this)">
+                    <div class="dataInput">
+                        <li><h3>Nombre de la tarea</h3></li>
+                        <li><input type="text" name="tarea"></li>
+                    </div>
+                    <div class="dataInput">
+                        <h3>Puntuacion</h3>
+                        <li><input type="number" name="puntuacion"></li>
+                    </div>
+                    <div class="dataInput">
+                        <li><h3>Periodo</h3></li>
+                        <li><input type="number" name="periodo"></li>
+                    </div>
+                    <li class="submitButton"><button class="buttonAction" type="submit"><img class="menubutton" src="/sweethomesw/img/ok.png" /></button></li>
+                </form></ul></div>
+            </div>
+            
+            <div id="listtaskdiv" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#listtaskdiv").openclose()'>
+                    <h2>Lista de tareas</h2>
+                </button>
+                <div id="taskList"></div>
+            </div>
+            
         </div>
 		
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
