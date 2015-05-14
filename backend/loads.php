@@ -157,6 +157,24 @@
         return $arr;
     }
 
+    function loadalltasks($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from tasks where idhome = "'.$idhome.'"';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+        
+        $arr = array();
+        $numrows=$result->num_rows;
+        for($i=0; $i < $numrows; $i++){
+            $row = $result->fetch_array();
+            $arr[$i]["idtask"] = $row["idtask"];
+            $arr[$i]["content"] = $row["name"];
+        }
+        $db->close();
+        return $arr;
+    }
+
     function loadshoppinglist($idhome){
         include_once('functions.php');
         $db = connectDataBase();

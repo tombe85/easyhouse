@@ -145,6 +145,10 @@ table{
 
 /* IDS */
 
+#addtaskdiv{
+    margin-top: 15px;
+}
+
 #buttonBottom button{
     width: inherit;
     margin: 0px;
@@ -192,7 +196,7 @@ div#confirmButtonRight{
             transition: height 0.5s ease;
 }
 
-#contentInput input{
+#content input{
     background-color: white;
 }
 
