@@ -122,7 +122,7 @@
                 <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
-                <div><ul><form onsubmit="changePasswd(this)">
+                <div><ul><form onsubmit="return changePasswd(this)" data-ajax="false">
                     <li><h4>Contraseña nueva</h4></li>
                     <li><input type="password" name="passwdnueva"></li>
                     <li><h4>Contraseña antigua</h4></li>
