@@ -3,7 +3,7 @@
     //Comprobar passwd antigua
     include_once('../functions.php');
     $iduser = $_COOKIE["iduser"];
-    $mail = sha1($_REQUEST["mail"]);
+    $mail = $_REQUEST["mail"];
     $passwd = sha1($_REQUEST["passwd"]);
     
     $db = connectDataBase();
