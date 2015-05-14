@@ -86,14 +86,12 @@
             }
             
             function addTask(formu){
-                $.post('/sweethomesw/backend/tasks/addtask.php',{name:formu.tarea.value, points: formu.puntuacion.value, period: formu.periodo.value}, function(data, textStatus){
+                $.post('/sweethomesw/backend/tasks/addtask.php',{name:formu.tarea.value}, function(data, textStatus){
                     if(data != 0){
                         alert("Error " + data);
                     }else{
                         $("#taskList").load("/sweethomesw/ajax/tasklist.php");
                         formu.tarea.value="";
-                        formu.puntuacion.value="";
-                        formu.periodo.value="";
                         $("#addtaskdiv").openclose();
                     }
                 });

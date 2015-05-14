@@ -16,7 +16,7 @@
         echo '<tr class="rowBordered">';
         
         echo '<td class="rowText">';
-        echo '<h3>'.$reg["product"].'</h3>';
+        echo '<h3>'.$reg["name"].'</h3>';
         echo '</td>';
         
         echo '<td class="rowDate"><img class="menubutton" src="/sweethomesw/img/clean.png" onclick="deleteProduct('.$reg["idproduct"].')" /></td>';
