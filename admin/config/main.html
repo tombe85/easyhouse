@@ -102,6 +102,20 @@
                 formu.passwdnueva.value="";
                 return false;
             }
+            
+            function changeMail(formu){
+                $.post('/sweethomesw/backend/userreg/changemail.php', {passwd:formu.emailpasswd.value,mail:formu.email.value}, function(data, textStatus){
+                    if(data != 0){
+                        alert("error al cambiar la contraseña " + data);
+                    }else{
+                        alert("Conraseña actualizada correctamente");
+                        formu.email.value="";
+                    }
+                });
+                formu.emailpasswd.value="";
+                
+                return false;
+            }
         </script>
     </head>
     <body>
@@ -135,13 +149,13 @@
                 <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose()'>
                     <h2>Cambiar Correo</h2>
                 </button>
-                <div><ul>
+                <div><ul><form onsubmit="return changeMail(this)" data-ajax="false">
                     <li><h4>Nuevo Correo</h4></li>
                     <li><input type="text" name="email"></li>
                     <li><h4>Contraseña</h4></li>
                     <li><input type="password" name="emailpasswd"></li>
                     <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
-                </ul></div>
+                </form></ul></div>
             </div>
             
             <div class="configMenu" id="closeSesion">
