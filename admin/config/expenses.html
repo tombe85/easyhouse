@@ -75,7 +75,7 @@
                 }
             }
             
-            function deleteexpenses(idexpense){
+            function deleteExpense(idexpense){
                 if(confirm("¿Seguro que desea eliminar el gasto?")){
                     $.post('/sweethomesw/backend/expenses/deleteexpensesdb.php', {idexpense: idexpense}, function(data,taxtStatus){
                         if(data != 0){

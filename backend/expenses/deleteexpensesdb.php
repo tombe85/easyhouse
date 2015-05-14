@@ -13,7 +13,7 @@
     $content = $row["name"];
     
     //Elimina producto
-    $query = 'delete from products where idexpense = "'.$idexpense.'"';
+    $query = 'delete from expenses where idexpense = "'.$idexpense.'"';
     if($result = $db->query($query)){
         $iduser = $_COOKIE["iduser"];
         $idhome = $_COOKIE["idhome"];

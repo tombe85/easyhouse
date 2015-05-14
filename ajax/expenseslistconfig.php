@@ -19,7 +19,7 @@
         echo '<h3>'.$reg["expense"].'</h3>';
         echo '</td>';
         
-        echo '<td class="rowDate"><img class="menubutton" src="/sweethomesw/img/clean.png" onclick="deleteexpenses('.$reg["idexpenses"].')" /></td>';
+        echo '<td class="rowDate"><img class="menubutton" src="/sweethomesw/img/clean.png" onclick="deleteExpense('.$reg["idexpense"].')" /></td>';
         
         echo '</tr>';
     }
