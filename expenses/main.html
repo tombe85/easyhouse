@@ -13,18 +13,19 @@
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php");
                 $("#footer").load("/sweethomesw/footer/footer.html");
-                $("#expensesList").load("/sweethomesw/ajax/expenses.html");
+                $("#expensesList").load("/sweethomesw/ajax/expenses.php");
                 $(document).ajaxComplete(function(){
                     $("#gastosbutton").attr("src","/sweethomesw/img/gastosselected.png");
                     $("body").resize();
                 });
             });
             
-            $.fn.openclose = function(){
+            $.fn.openclose = function(n){
+                //$(".expenseMenuOpen ul").css("height", n);
                 var altura = $("#content").height();
                 if($(this).attr("class") === "expenseMenu"){
                     $(this).attr("class", "expenseMenuOpen");
-                    altura += (232);
+                    altura += (n);
                     if(abierto === 0){
                         altura += $("#footer").height();
                     }
@@ -32,7 +33,7 @@
                 }else{
                     abierto--;
                     $(this).attr("class", "expenseMenu");
-                    altura -= (232);
+                    altura -= (n);
                     if(abierto === 0){
                         altura -= $("#footer").height();
                     }

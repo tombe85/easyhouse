@@ -210,4 +210,41 @@
         $db->close();
         return $arr;
     }
+
+    function loadexpenses($idhome){
+        include_once('functions.php');
+       $db = connectDataBase();
+        
+
+        // Selecciono la lista de usuarios del idhome
+        $query =  'select * from users where idhome = "'.$idhome.'"';
+        $result2 = $db->query($query)
+            or die($db->error." en la línea ".(__LINE__-1));
+
+        // Guardo los nombres de mis usuarios en $users
+        $numusers=$result2->num_rows;
+        $users = array();
+        for($i=0;$i<$numusers;$i++){
+            $row = $result2->fetch_array();
+            $users[$i] = $row["name"];
+        }
+
+        // Selecciono los expenses del idhome
+        $query = 'select * from expenses where idhome = "'.$idhome.'"';
+        $result = $db->query($query)
+            or die($db->error." en la línea ".(__LINE__-1));
+
+        // Creo un array con el nombre del gasto, quien ha pagado o no
+        $arr = array();
+        $numrows=$result->num_rows;
+        for($i=0;$i<$numrows;$i++){
+            $row=$result->fetch_array();
+            $arr[$i]["name"] = $row["name"];
+            for($j=0;$j<$numusers;$j++){
+                    $arr[$i]["pagado"][$j] =  (strpos($row["users"],$users[$j]) !== false);
+            }
+        }
+        $db->close();
+        return $arr;
+    }
 ?>
