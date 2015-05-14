@@ -22,14 +22,11 @@
             function comprar(){
 
                 $.post("/sweethomesw/backend/shopping/removeproduct.php",{strids:idsreg},function(data,textStatus){
-
                     if(data==0){
                         alert("¡Compra realizada!");
 
                     }else{
-
-                        alert("Error "+ data);
-
+                        alert("Error " + data);
                     }
 
                 });
@@ -37,7 +34,7 @@
             }
             function addproducttolist(idproduct,productcheck){
 
-                if(productcheck.value==true){
+                if(productcheck.checked=="checked"){
                     idsreg=idsreg+' '+idproduct;
                 }
                     else{

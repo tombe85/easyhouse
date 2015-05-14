@@ -10,7 +10,7 @@ $text = $_REQUEST["strids"];
     foreach($idsproduct as $idproduct){
         echo 'entra en el for';
         $query='update products set added = false where idproduct = "'.$idproduct.'"';
-        $result = $db->query($query)
+        $result = $db->query($query);
         if($result = $db->query($query)){
             echo "0";
 
