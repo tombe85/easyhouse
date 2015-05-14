@@ -12,31 +12,107 @@
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
+                $("#userData").load("/sweethomesw/ajax/userdata.php");
+                $("#productList").load("/sweethomesw/ajax/productlistconfig.php");
                 $(document).ajaxComplete(function(){
                     $("#productsbutton").attr("src","/sweethomesw/img/compraractionselected.png");
                     $("body").resize();
                 });
             });
+            
+            
+            $.fn.openclose = function(){
+                if($(this).attr("class") === "configMenu"){
+                    $(this).attr("class", "configMenuOpen");
+                }else{
+                    $(this).attr("class", "configMenu");
+                }
+                $("body").resize();
+            }
+            
+            function changeAvatar(){
+                var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
+                foto++;
+                if(foto > 13){
+                    foto = 1;
+                }
+                var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
+                $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
+                    if(data == 0){
+                        alert("error al cambiar la foto: No selecciona" + data);
+                    }else if(data == 1){
+                        alert("error al cambiar la foto: No actualiza" + data);
+                    }else{
+                        $("#userAvatar").attr("src",data);
+                    }
+                });
+            }
+            function changeName(){
+                var newname = prompt("Introduce tu nombre de usuario nuevo");
+                if(newname != null){
+                    $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
+                        if(data == 0){
+                            alert("error al cambiar el nombre" + data);
+                        }else{
+                            $("#userName").html(data);
+                        }
+                    });
+                }
+            }
+            
+            function deleteProduct(idprod){
+                if(confirm("¿Seguro que desea eliminar el producto?")){
+                    $.post('/sweethomesw/backend/shopping/deleteproductdb.php', {idprod: idprod}, function(data,taxtStatus){
+                        if(data != 0){
+                            alert("Error " + data);
+                        }else{
+                            $("#productList").load("/sweethomesw/ajax/productlistconfig.php");
+                        }
+                    });
+                }
+            }
+            
+            function addProduct(formu){
+                $.post('/sweethomesw/backend/shopping/addproductdb.php',{name:formu.producto.value}, function(data, textStatus){
+                    if(data != 0){
+                        alert("Error " + data);
+                    }else{
+                        $("#productList").load("/sweethomesw/ajax/productlistconfig.php");
+                        formu.producto.value="";
+                        $("#addproductdiv").openclose();
+                    }
+                });
+                return false;
+            }
         </script>
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
-        <div class="indicator">
-            <h4>Añadir producto</h4>
-        </div>
-        <div id="contentInput" data-role="content">
+        <div id="contentConfig" data-role="content">
+            <div class="indicator">
+                <h4>Productos</h4>
+            </div>
+            <div id="userData">
+            </div>
             
-            <form method="post" action="#">
-                <div class="dataInput">
-                    <h3>Nombre del producto:</h3>
-                    <input type="text" name="usuario">
-                </div>
-                
-            </form>
-            <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
-                <div id="buttonBottom">
-                    <button class="buttonAction"><img class="menubutton" src="/sweethomesw/img/ok.png" /></button>
-                </div>
+            <div id="addproductdiv" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#addproductdiv").openclose()'>
+                    <h2>Añadir producto</h2>
+                </button>
+                <div><ul><form data-ajax="false" onsubmit="return addProduct(this)">
+                    <div class="dataInput">
+                        <li><h3>Nombre del producto</h3></li>
+                        <li><input type="text" name="producto"></li>
+                    </div>
+                    <li class="submitButton"><button class="buttonAction" type="submit"><img class="menubutton" src="/sweethomesw/img/ok.png" /></button></li>
+                </form></ul></div>
+            </div>
+            
+            <div id="listproductdiv" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#listproductdiv").openclose()'>
+                    <h2>Lista de productos</h2>
+                </button>
+                <div id="productList"></div>
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
