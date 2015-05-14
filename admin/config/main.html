@@ -89,6 +89,19 @@
                     }
                 });
             }
+            
+            function changePasswd(formu){
+                $.post('/sweethomesw/backend/userreg/changepasswd.php', {passwdant:formu.passwd.value,passwdnew:formu.passwdnueva.value}, function(data, textStatus){
+                    if(data != 0){
+                        alert("error al cambiar la contraseña " + data);
+                    }else{
+                        alert("Conraseña actualizada correctamente");
+                    }
+                });
+                formu.passwd.value="";
+                formu.passwdnueva.value="";
+                return false;
+            }
         </script>
     </head>
     <body>
@@ -97,8 +110,8 @@
             <div id="userData">
             </div>
 
-            <div id="taskConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#taskConfig").openclose()'>
+            <div id="messagesConfig" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#messagesConfig").openclose()'>
                     <h2>Mis Mensajes</h2>
                 </button>
                 <div><ul id="userMessage">
@@ -109,13 +122,13 @@
                 <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
-                <div><ul>
+                <div><ul><form onsubmit="changePasswd(this)">
                     <li><h4>Contraseña nueva</h4></li>
-                    <li><input type="text" name="passwdnueva"></li>
+                    <li><input type="password" name="passwdnueva"></li>
                     <li><h4>Contraseña antigua</h4></li>
                     <li><input type="password" name="passwd"></li>
                     <li class="submitbutton"><button type="submit"><h3>Actualizar</h3></button></li>
-                </ul></div>
+                </form></ul></div>
             </div>
 
             <div id="mailConfig" class="configMenu">
