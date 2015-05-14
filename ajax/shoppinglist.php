@@ -17,7 +17,7 @@
         echo '<td class="rowText">';
         
         $name = str_replace(" ", "",$reg["product"]);
-        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><input type="checkbox" name="'.$name.'"><h3>'.$reg["product"].'</h3></label></div>';
+        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><input onchange="addproducttolist('.$reg["idproduct"].',this)" type="checkbox" name="'.$name.'"><h3>'.$reg["product"].'</h3></label></div>';
         echo '</td>';
         
         echo '</tr>';
