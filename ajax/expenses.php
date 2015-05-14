@@ -8,7 +8,7 @@
     $idhome=$_COOKIE["idhome"];
     $iduser=$_COOKIE["iduser"];
     include_once('../backend/loads.php');
-    $dataArray = loadexpenses($idhome,$iduser);
+    $dataArray = loadexpenses($idhome);
     $userArray = loadusers($idhome);
 
     $n = count($userArray) * 58;
