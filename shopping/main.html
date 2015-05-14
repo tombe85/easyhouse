@@ -8,6 +8,7 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
+            var idsreg = new Array();
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php");
@@ -18,6 +19,34 @@
                     $("body").resize();
                 });
             });
+            function comprar(){
+
+                $.POST("/sweethomesw/backend/shopping/removeproduct.php",{strids:idsreg},function(data,textStatus){
+
+                    if(data==0){
+                        alert("¡Compra realizada!");
+
+                    }else{
+
+                        alert("Error "+ data);
+
+                    }
+
+                });
+
+            }
+            function addproducttolist(idproduct,productcheck){
+
+                if(productcheck.value==true){
+                    idsreg=idsreg+' '+idproduct;
+                }
+                    else{
+
+                        idsreg=idsreg.replace(idproduct +' ',"");
+
+
+                    }
+            }
         </script>
     </head>
     <body>
@@ -36,7 +65,7 @@
                     <button class="buttonActionAdd" onclick='location.href="/sweethomesw/shopping/addproduct.html"'><img class="menubutton" src="/sweethomesw/img/add.png" /></button>
                 </div>
                 <div id="contentBottomRight">
-                    <button class="buttonAction"><img class="menubutton" src="/sweethomesw/img/addItem.png" /></button>
+                    <button class="buttonAction" onclick="comprar()" ><img class="menubutton" src="/sweethomesw/img/addItem.png" /></button>
                 </div>
             </div>
         </div>
