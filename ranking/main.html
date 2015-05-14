@@ -12,7 +12,7 @@
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/tasks/main.html&ranking=true");
                 $("#footer").load("/sweethomesw/footer/footer.html");
-                $("#userData").load("/sweethomesw/ajax/userdata.php");
+                $("#userData").load("/sweethomesw/ajax/user_ranking.php");
                 $("#userTasks").load("/sweethomesw/ajax/usertasks.html");
                 $(document).ajaxComplete(function(){
                 $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");                    
