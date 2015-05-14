@@ -13,7 +13,7 @@
     echo '<table>';
     
     foreach($arr as $reg){
-        echo '<li><tr class="rowBordered">';
+        echo '<tr class="rowBordered">';
         
         echo '<td class="rowText">';
         echo '<h3>'.$reg["content"].'</h3>';
@@ -21,7 +21,7 @@
         
         echo '<td class="rowDate"><img class="menubutton" src="/sweethomesw/img/clean.png" onclick="deleteTask('.$reg["idtask"].')" /></td>';
         
-        echo '</tr></li>';
+        echo '</tr>';
     }
     
     echo '</table>';
