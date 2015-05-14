@@ -22,16 +22,16 @@
             $(document).bind('pagebeforecreate',function(){
                 var admin = getCookie("admin");
                 if(admin == false){
-                    location.href='/sweethomesw/config/products.html';
+                    location.href='/sweethomesw/config/expenses.html';
                 }
             });
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
-                $("#productList").load("/sweethomesw/ajax/productlistconfig.php");
+                $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
                 $(document).ajaxComplete(function(){
-                    $("#productsbutton").attr("src","/sweethomesw/img/compraractionselected.png");
+                    $("#expensesbutton").attr("src","/sweethomesw/img/expenses_config_selected.png");
                     $("body").resize();
                 });
             });
@@ -75,26 +75,26 @@
                 }
             }
             
-            function deleteProduct(idprod){
-                if(confirm("¿Seguro que desea eliminar el producto?")){
-                    $.post('/sweethomesw/backend/shopping/deleteproductdb.php', {idprod: idprod}, function(data,taxtStatus){
+            function deleteexpenses(idexpense){
+                if(confirm("¿Seguro que desea eliminar el gasto?")){
+                    $.post('/sweethomesw/backend/expenses/deleteexpensesdb.php', {idexpense: idexpense}, function(data,taxtStatus){
                         if(data != 0){
                             alert("Error " + data);
                         }else{
-                            $("#productList").load("/sweethomesw/ajax/productlistconfig.php");
+                            $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
                         }
                     });
                 }
             }
             
-            function addProduct(formu){
-                $.post('/sweethomesw/backend/shopping/addproductdb.php',{name:formu.producto.value}, function(data, textStatus){
+            function addexpenses(formu){
+                $.post('/sweethomesw/backend/expenses/addexpensesdb.php',{name:formu.expenses.value}, function(data, textStatus){
                     if(data != 0){
                         alert("Error " + data);
                     }else{
-                        $("#productList").load("/sweethomesw/ajax/productlistconfig.php");
-                        formu.producto.value="";
-                        $("#addproductdiv").openclose();
+                        $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
+                        formu.expenses.value="";
+                        $("#addexpensesdiv").openclose();
                     }
                 });
                 return false;
@@ -103,31 +103,32 @@
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
+        
         <div id="contentConfig" data-role="content">
             <div class="indicator">
-                <h4>Productos</h4>
+                <h4>Gastos</h4>
             </div>
             <div id="userData">
             </div>
             
-            <div id="addproductdiv" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#addproductdiv").openclose()'>
-                    <h2>Añadir producto</h2>
+            <div id="addexpensesdiv" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#addexpensesdiv").openclose()'>
+                    <h2>Añadir gasto</h2>
                 </button>
-                <div><ul><form data-ajax="false" onsubmit="return addProduct(this)">
+                <div><ul><form data-ajax="false" onsubmit="return addexpenses(this)">
                     <div class="dataInput">
-                        <li><h3>Nombre del producto</h3></li>
-                        <li><input type="text" name="producto"></li>
+                        <li><h3>Nombre del gasto</h3></li>
+                        <li><input type="text" name="expenses"></li>
                     </div>
                     <li class="submitButton"><button class="buttonAction" type="submit"><img class="menubutton" src="/sweethomesw/img/ok.png" /></button></li>
                 </form></ul></div>
             </div>
             
-            <div id="listproductdiv" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#listproductdiv").openclose()'>
-                    <h2>Lista de productos</h2>
+            <div id="listexpensesdiv" class="configMenu">
+                <button class="buttonDarkBlue" onclick='$("#listexpensesdiv").openclose()'>
+                    <h2>Lista de gastos</h2>
                 </button>
-                <div id="productList"></div>
+                <div id="expensesList"></div>
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
