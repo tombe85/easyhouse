@@ -28,6 +28,7 @@
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
                 $("#footer").load("/sweethomesw/footer/footerConfig.html");
+                $("#userData").load("/sweethomesw/ajax/userdata.php");
                 $("#taskList").load("/sweethomesw/ajax/tasklist.php");
                 $(document).ajaxComplete(function(){
                     $("#tasksbutton").attr("src","/sweethomesw/img/tareaconfigselected.png");
@@ -42,6 +43,36 @@
                     $(this).attr("class", "configMenu");
                 }
                 $("body").resize();
+            }
+            
+            function changeAvatar(){
+                var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
+                foto++;
+                if(foto > 13){
+                    foto = 1;
+                }
+                var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
+                $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
+                    if(data == 0){
+                        alert("error al cambiar la foto: No selecciona" + data);
+                    }else if(data == 1){
+                        alert("error al cambiar la foto: No actualiza" + data);
+                    }else{
+                        $("#userAvatar").attr("src",data);
+                    }
+                });
+            }
+            function changeName(){
+                var newname = prompt("Introduce tu nombre de usuario nuevo");
+                if(newname != null){
+                    $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
+                        if(data == 0){
+                            alert("error al cambiar el nombre" + data);
+                        }else{
+                            $("#userName").html(data);
+                        }
+                    });
+                }
             }
             
             function deleteTask(idtask, name){
@@ -77,6 +108,8 @@
             <h4>Tareas</h4>
         </div>
         <div id="content" data-role="content">
+            <div id="userData">
+            </div>
             <div id="addtaskdiv" class="configMenu">
                 <button class="buttonDarkBlue" onclick='$("#addtaskdiv").openclose()'>
                     <h2>Añadir tarea</h2>
@@ -98,7 +131,7 @@
                 </form></ul></div>
             </div>
             
-            <div id="listtaskdiv" class="configMenuOpen">
+            <div id="listtaskdiv" class="configMenu">
                 <button class="buttonDarkBlue" onclick='$("#listtaskdiv").openclose()'>
                     <h2>Lista de tareas</h2>
                 </button>

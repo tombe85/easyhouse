@@ -145,10 +145,6 @@ table{
 
 /* IDS */
 
-#addtaskdiv{
-    margin-top: 15px;
-}
-
 #buttonBottom button{
     width: inherit;
     margin: 0px;
@@ -694,6 +690,12 @@ img.rowPhoto{
     }
     
     #contentConfig button{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
+    
+    #content button{
         border-radius: 10px 10px 10px 10px;
         -moz-border-radius: 10px 10px 10px 10px;
         -webkit-border-radius: 10px 10px 10px 10px;
