@@ -4,7 +4,7 @@ include_once('../functions.php');
 
 $text = $_REQUEST["strids"];
     $idsproduct = array();
-    $idsproduct = split(",", $text);
+    $idsproduct = split(" ", trim($text));
     
     $db = connectDataBase();
     foreach($idsproduct as $idproduct){
