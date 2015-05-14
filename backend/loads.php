@@ -188,6 +188,7 @@
         for($i=0; $i < $numrows; $i++){
             $row = $result->fetch_array();
             $arr[$i]["product"] = $row["name"];
+            $arr[$i]["idproduct"] = $row["idproduct"];
         }
         $db->close();
         return $arr;

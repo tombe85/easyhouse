@@ -20,12 +20,14 @@
                 });
             });
             function comprar(){
-                $.post("/sweethomesw/backend/shopping/removeproduct.php",{strids:idsreg},function(data,textStatus){
-                    if(data != 0){
-                        alert("Error " + data);
-                    }
-                    $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
-                });
+                if(idsreg.trim() != ""){
+                    $.post("/sweethomesw/backend/shopping/removeproduct.php",{strids:idsreg},function(data,textStatus){
+                        if(data != 0){
+                            alert("Error " + data);
+                        }
+                        $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
+                    });
+                }
             }
             
             function addproducttolist(idproduct,productcheck){
