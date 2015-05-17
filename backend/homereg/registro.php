@@ -60,6 +60,12 @@ $result = $db->query($query)
 $reg=$result->fetch_array();
 $iduser=$reg["iduser"];
 
+//Mensaje de bienvenida
+$content="Bienvenidos a " . $homename;
+$query='insert into registro (iduser,content,idhome,date,usersdeleted) values ("'.$iduser.'","'.$content.'",'.$idhome.',"'.date("d.m.Y").'","")';
+$result = $db->query($query)
+    or die($db->error. " en la línea ".(__LINE__-1));
+
 $db->close();
 
 //Actualizar variables de sesión y cookies
