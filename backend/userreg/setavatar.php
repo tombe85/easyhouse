@@ -20,21 +20,21 @@
             $query = 'select * from users where idhome = "'.$idhome.'" and photo like "'.$ruta.'"';
             $result = $db->query($query);
             if(!$result){
-                echo "Error de consulta sql";
+                echo "0";
                 exit();
             }
         }   
     }else{
-        echo "Error de consulta sql";
+        echo "0";
         exit();
     }
     
     //Ponemos foto
     $query = 'update users set photo = "'.$ruta.'" where iduser = "'.$iduser.'"';
     if(($result = $db->query($query)) != null){
-        echo "0";
+        echo $ruta;
     }else{
-        echo "Error al actualizar la foto";
+        echo "0";
     }
     $db->close();
 }

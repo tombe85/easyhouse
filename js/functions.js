@@ -17,10 +17,10 @@ function changeAvatar(){
     }
     var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
     $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
-        if(data == 0){
-            $("#userData").load("/sweethomesw/ajax/userdata.php");
+        if(data != 0){
+            $("#userAvatar").attr("src",data);
         }else{
-            alert(data);
+            alert("Error al actualizar el avatar");
         }
     });
 }
