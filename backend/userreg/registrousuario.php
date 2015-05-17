@@ -47,11 +47,8 @@ if($result->num_rows == 0){
 $row=$result->fetch_array();
 $idhome = $row["idhome"];
 
-//Sacar avatar
-$rutafoto = "/sweethomesw/img/avatares/1.png";
-
 //añadir a usarios
-$query='insert into users (name,idhome,mail,photo,passwd) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$rutafoto.'","'.$passwd.'")';
+$query='insert into users (name,idhome,mail,passwd) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$passwd.'")';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 
