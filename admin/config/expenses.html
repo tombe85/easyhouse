@@ -54,11 +54,9 @@
                 var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
                 $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
                     if(data == 0){
-                        alert("error al cambiar la foto: No selecciona" + data);
-                    }else if(data == 1){
-                        alert("error al cambiar la foto: No actualiza" + data);
+                        $("#userData").load("/sweethomesw/ajax/userdata.php");
                     }else{
-                        $("#userAvatar").attr("src",data);
+                        alert(data);
                     }
                 });
             }
