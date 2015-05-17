@@ -18,10 +18,10 @@
     }
 
     function setCookies($login,$admin,$idhome,$iduser){
-        setcookie("login", $login, time() + (3600*24), "/sweethomesw/");
-        setcookie("admin", $admin, time() + (3600*24), "/sweethomesw/");
-        setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
-        setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
+        setcookie("login", $login, time() + (3600*24*365), "/sweethomesw/");
+        setcookie("admin", $admin, time() + (3600*24*365), "/sweethomesw/");
+        setcookie("idhome", $idhome, time() + (3600*24*365), "/sweethomesw/");
+        setcookie("iduser", $iduser, time() + (3600*24*365), "/sweethomesw/");
     }
 
     function printTaskButton($content, $dayson, $taskid){
