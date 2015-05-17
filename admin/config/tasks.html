@@ -100,6 +100,26 @@
                 return false;
             }
             
+            function activateTask(idtask){
+                $.post('/sweethomesw/backend/tasks/activatetask.php', {idtask: idtask}, function(data,taxtStatus){
+                    if(data != 0){
+                        alert("Error " + data);
+                    }else{
+                        $("#taskList").load("/sweethomesw/ajax/tasklist.php");
+                    }
+                });
+            }
+            
+            function pauseTask(idtask, name){
+                $.post('/sweethomesw/backend/tasks/completetask.php', {id: idtask, nouser: true}, function(data,taxtStatus){
+                    if(data != 0){
+                        alert("Error " + data);
+                    }else{
+                        $("#taskList").load("/sweethomesw/ajax/tasklist.php");
+                    }
+                });
+            }
+            
         </script>
     </head>
     <body>

@@ -170,6 +170,7 @@
             $row = $result->fetch_array();
             $arr[$i]["idtask"] = $row["idtask"];
             $arr[$i]["content"] = $row["name"];
+            $arr[$i]["active"] = $row["active"];
         }
         $db->close();
         return $arr;

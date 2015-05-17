@@ -18,6 +18,11 @@
         echo '<td class="rowText">';
         echo '<h3>'.$reg["content"].'</h3>';
         echo '</td>';
+        if($reg["active"]){
+            echo '<td class="rowDate"><img class="menubutton" src="/sweethomesw/img/pause.png" onclick="pauseTask('.$reg["idtask"].')" /></td>';
+        }else{
+            echo '<td class="rowDate"><img class="menubutton" src="/sweethomesw/img/play.png" onclick="activateTask('.$reg["idtask"].')" /></td>';
+        }
         
         echo '<td class="rowDate"><img class="menubutton" src="/sweethomesw/img/clean.png" onclick="deleteTask('.$reg["idtask"].')" /></td>';
         

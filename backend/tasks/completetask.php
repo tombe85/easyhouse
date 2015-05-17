@@ -11,15 +11,25 @@
         echo "Error. Variables corruptas.";
         exit();
     }
+    
+    //Ver si ha sido realizada o activada
+    if(isset($_REQUEST["nouser"]) && $_REQUEST["nouser"] == true){
+        $nouser = true;
+    }else{
+        $nouser = false;
+    }
+    
     $idtask = $_REQUEST["id"];
     $idhome = $_COOKIE["idhome"];
     $iduser = $_COOKIE["iduser"];
     
     //Actualizar tareas
     $db = connectDataBase();
-    $query='insert into tasksdone (idtask,iduser,date,idhome) values ('.$idtask.','.$iduser.',"'.date("d.m.Y").'",'.$idhome.')';
-    $result = $db->query($query)
-        or die($db->error. " en la línea ".(__LINE__-1));
+    if(!$nouser){
+        $query='insert into tasksdone (idtask,iduser,date,idhome) values ('.$idtask.','.$iduser.',"'.date("d.m.Y").'",'.$idhome.')';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+    }
     
     $query='update tasks set whenisdone = "'.date("d.m.Y").'", active = false where idtask = '. $idtask;
     $result = $db->query($query)
@@ -34,17 +44,25 @@
     $points = $row["points"];
     
     //Actualizar puntos de usuario
-    $query='update users set points = points + '.$points.' where iduser = '. $iduser;
-    $result = $db->query($query)
-        or die($db->error. " en la línea ".(__LINE__-1));
+    if(!$nouser){
+        $query='update users set points = points + '.$points.' where iduser = '. $iduser;
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+    }
     
     //Añadir a registro
-    $cont = "Ha realizado: " . $name;
-    $query='insert into registro (iduser,content,idhome,date) values ('.$iduser.', "'.$cont.'",'.$idhome.',"'.date("d.m.Y").'")';
-    $result = $db->query($query)
-        or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
+    if(!$nouser){
+        $cont = "Ha realizado: " . $name;
+        $query='insert into registro (iduser,content,idhome,date) values ('.$iduser.', "'.$cont.'",'.$idhome.',"'.date("d.m.Y").'")';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1)." idhome=".$idhome);
+    }
     
     //Ir a html tasks
-    header('Location: /sweethomesw/tasks/main.html');
+    if($nouser){
+        echo "0";
+    }else{
+        header('Location: /sweethomesw/tasks/main.html');
+    }
 }
 ?>
