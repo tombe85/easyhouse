@@ -9,7 +9,7 @@
     $arr = loadranking($idhome);
     
     echo '<table>';
-    
+    echo '<tr class="rowBordered"><td></td><td></td><td></td></tr>';
     foreach($arr as $user){
         echo '<tr class="rowBordered">';
         echo '<td class="rowPhoto">
