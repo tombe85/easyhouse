@@ -5,20 +5,12 @@
         <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/config/functionsconfig.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/config/functionsusers.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
-            function getCookie(galleta) {
-                var name = galleta + "=";
-                var arr = document.cookie.split(';');
-                for(var i=0; i<arr.length; i++) {
-                    var cook = arr[i];
-                    while (cook.charAt(0)==' ') cook = cook.substring(1);
-                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
-                }
-                return "";
-            }
-            
             $(document).bind('pagebeforecreate',function(){
                 var admin = getCookie("admin");
                 if(admin == false){
@@ -34,26 +26,6 @@
                     $("body").resize();
                 });
             });
-            function deleteuser(iduser){
-                if(confirm("¿Seguro que desea eliminar al usuario?")){
-                    $.post('/sweethomesw/backend/homereg/deleteuser.php', {iduser:iduser}, function(data, textStatus){
-                        if(data == 0){
-                            alert("error al eliminar al usuario ");
-                        }else{
-                            $("#users").load("/sweethomesw/ajax/usersmanage.php");
-                        }
-                    });
-                }
-            }
-            
-            function checkMail(formu){
-                if(formu.texto.value == "" || formu.texto.value.indexOf("@") == -1 || formu.texto.value.indexOf(".") == -1){
-                    alert("Debes introducir un mail para invitar");
-                    return false;
-                }else{
-                    return true;
-                }
-            }
         </script>
     </head>
     <body>

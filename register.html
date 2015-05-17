@@ -5,19 +5,11 @@
         <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/register.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
-            function getCookie(galleta) {
-                var name = galleta + "=";
-                var arr = document.cookie.split(';');
-                for(var i=0; i<arr.length; i++) {
-                    var cook = arr[i];
-                    while (cook.charAt(0)==' ') cook = cook.substring(1);
-                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
-                }
-                return "";
-            }
             $(document).bind('pagebeforecreate',function(){
                 var loged = getCookie("login");
                 if(loged == true){
@@ -31,29 +23,6 @@
                     $("#fotousuario").css("display","none");
                 });
             });
-            
-            
-            
-            function validaCampos(formu){
-                if(formu.usuario.value == "" || formu.email.value == "" || formu.texto.email.indexOf("@") == -1 || formu.texto.email.indexOf(".") == -1 || formu.nombrecasa.value == "" || formu.passwd.value == "" || formu.passwd2.value == ""){
-                    alert("Debes rellenar todos los campos correctamente");
-                    return false;
-                }else{
-                    if(formu.passwd.value !== formu.passwd2.value){
-                        alert("Las contraseñas no coinciden");
-                        return false;
-                    }else{
-                        jQuery.post('/sweethomesw/backend/homereg/consultamailregistro.php', {mail:formu.email.value}, function(data, textStatus){
-                            if(data == 1){
-                                alert("El mail introducido ya existe");
-                                return false;
-                            }else if(data == 0){
-                                return true;
-                            }
-                        });
-                    }
-                }
-            }
         </script>
     </head>
     <body>

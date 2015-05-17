@@ -5,19 +5,12 @@
         <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/config/functionsconfig.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/config/functionsmain.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
-            function getCookie(galleta) {
-                var name = galleta + "=";
-                var arr = document.cookie.split(';');
-                for(var i=0; i<arr.length; i++) {
-                    var cook = arr[i];
-                    while (cook.charAt(0)==' ') cook = cook.substring(1);
-                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
-                }
-                return "";
-            }
             $(document).bind('pagebeforecreate',function(){
                 var loged = getCookie("login");
                 var admin = getCookie("admin");
@@ -36,80 +29,6 @@
                     $("body").resize();
                 });
             });
-            
-            var abierto = 0;
-            
-            $.fn.openclose = function(tam){
-                if($(this).attr("class") === "configMenu"){
-                    $(this).attr("class", "configMenuOpen");
-                }else{
-                    $(this).attr("class", "configMenu");
-                }
-                $("body").resize();
-            }
-            
-            function changeAvatar(){
-                var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
-                foto++;
-                if(foto > 13){
-                    foto = 1;
-                }
-                var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
-                $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
-                    if(data == 0){
-                        $("#userData").load("/sweethomesw/ajax/userdata.php");
-                    }else{
-                        alert(data);
-                    }
-                });
-            }
-            function changeName(){
-                var newname = prompt("Introduce tu nombre de usuario nuevo");
-                if(newname != null){
-                    $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
-                        if(data == 0){
-                            alert("error al cambiar el nombre" + data);
-                        }else{
-                            $("#userName").html(data);
-                        }
-                    });
-                }
-            }
-            function deleteMessage(idboard){
-                $.post('/sweethomesw/backend/userreg/deletemessage.php', {idboard:idboard}, function(data, textStatus){
-                    if(data == 0){
-                        alert("error al eliminar el mensaje" + data);
-                    }else{
-                        $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
-                    }
-                });
-            }
-            
-            function changePasswd(formu){
-                $.post('/sweethomesw/backend/userreg/changepasswd.php', {passwdant:formu.passwd.value,passwdnew:formu.passwdnueva.value}, function(data, textStatus){
-                    if(data != 0){
-                        alert("error al cambiar la contraseña " + data);
-                    }else{
-                        alert("Conraseña actualizada correctamente");
-                    }
-                });
-                formu.passwd.value="";
-                formu.passwdnueva.value="";
-                return false;
-            }
-            
-            function changeMail(formu){
-                $.post('/sweethomesw/backend/userreg/changemail.php', {passwd:formu.emailpasswd.value,mail:formu.email.value}, function(data, textStatus){
-                    if(data != 0){
-                        alert("error al cambiar la contraseña " + data);
-                    }else{
-                        alert("Conraseña actualizada correctamente");
-                        formu.email.value="";
-                    }
-                });
-                formu.emailpasswd.value="";
-                return false;
-            }
         </script>
     </head>
     <body>

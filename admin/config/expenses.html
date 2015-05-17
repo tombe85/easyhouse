@@ -5,20 +5,11 @@
         <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/config/functionsconfig.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
-            function getCookie(galleta) {
-                var name = galleta + "=";
-                var arr = document.cookie.split(';');
-                for(var i=0; i<arr.length; i++) {
-                    var cook = arr[i];
-                    while (cook.charAt(0)==' ') cook = cook.substring(1);
-                    if (cook.indexOf(name) == 0) return cook.substring(name.length, cook.length);
-                }
-                return "";
-            }
-            
             $(document).bind('pagebeforecreate',function(){
                 var admin = getCookie("admin");
                 if(admin == false){
@@ -35,68 +26,6 @@
                     $("body").resize();
                 });
             });
-            
-            $.fn.openclose = function(){
-                if($(this).attr("class") === "configMenu"){
-                    $(this).attr("class", "configMenuOpen");
-                }else{
-                    $(this).attr("class", "configMenu");
-                }
-                $("body").resize();
-            }
-            
-            function changeAvatar(){
-                var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
-                foto++;
-                if(foto > 13){
-                    foto = 1;
-                }
-                var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
-                $.post('/sweethomesw/backend/userreg/setavatar.php', {ruta:ruta,user:getCookie("iduser")}, function(data, textStatus){
-                    if(data == 0){
-                        $("#userData").load("/sweethomesw/ajax/userdata.php");
-                    }else{
-                        alert(data);
-                    }
-                });
-            }
-            function changeName(){
-                var newname = prompt("Introduce tu nombre de usuario nuevo");
-                if(newname != null){
-                    $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
-                        if(data == 0){
-                            alert("error al cambiar el nombre" + data);
-                        }else{
-                            $("#userName").html(data);
-                        }
-                    });
-                }
-            }
-            
-            function deleteExpense(idexpense){
-                if(confirm("¿Seguro que desea eliminar el gasto?")){
-                    $.post('/sweethomesw/backend/expenses/deleteexpensesdb.php', {idexpense: idexpense}, function(data,taxtStatus){
-                        if(data != 0){
-                            alert("Error " + data);
-                        }else{
-                            $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
-                        }
-                    });
-                }
-            }
-            
-            function addexpenses(formu){
-                $.post('/sweethomesw/backend/expenses/addexpensesdb.php',{name:formu.expenses.value}, function(data, textStatus){
-                    if(data != 0){
-                        alert("Error " + data);
-                    }else{
-                        $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
-                        formu.expenses.value="";
-                        $("#addexpensesdiv").openclose();
-                    }
-                });
-                return false;
-            }
         </script>
     </head>
     <body>

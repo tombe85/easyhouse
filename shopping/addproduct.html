@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/shopping/shopping.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
@@ -19,26 +21,6 @@
                     $("body").resize();
                 });
             });
-            function addcomprar(){
-                if(idsreg.trim() != ""){
-                    $.post("/sweethomesw/backend/shopping/addproduct.php",{strids:idsreg},function(data,textStatus){
-                        if(data != 0){
-                            alert("Error " + data);
-                        }else{
-                            document.location.href="/sweethomesw/shopping/main.html";
-                        }
-                    });
-                }
-            }
-            
-            function addproducttolist(idproduct,productcheck){
-                if(productcheck.checked == true){
-                    idsreg = idsreg + " " + idproduct;
-                }else{
-                    var cad = idproduct + " ";
-                    idsreg = idsreg.replace(cad,"");
-                }
-            }
         </script>
     </head>
     <body>
