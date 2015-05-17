@@ -5,6 +5,7 @@
         header('Location: /sweethomesw/login.html');
     }
     $idhome=$_COOKIE["idhome"];
+    $iduser = $_COOKIE["iduser"];
     include('../backend/loads.php');
     $arr = loadusers($idhome);
     
@@ -18,9 +19,13 @@
         echo '<td class="rowText">
                 <h3>'.$user["mail"].'</h3>
             </td>';
-        echo '<td class="rowIcon">
-                <img src="/sweethomesw/img/clean.png" class="buttonTrash" onclick="deleteuser('.$user["iduser"].')" />
-            </td>';
+        echo '<td class="rowIcon">';
+        if($user["iduser"] == $iduser){
+            echo '  <img src="/sweethomesw/img/star.png" class="buttonTrash" />';
+        }else{
+            echo '  <img src="/sweethomesw/img/clean.png" class="buttonTrash" onclick="deleteuser('.$user["iduser"].')" />';
+        }
+        echo '    </td>';
         echo '</tr>';
     }
     
