@@ -1,15 +1,15 @@
 <?php
 {
-    $name = $_REQUEST["name"];
-    $iduser = $_REQUEST["user"];
+    $info = $_REQUEST["info"];
+    $idhome = $_REQUEST["home"];
     include_once('../functions.php');
     $db = connectDataBase();
-    $query = 'update users set name = "'.$name.'" where iduser = "'.$iduser.'"';
+    $query = 'update homes set info = "'.$info.'" where idhome = "'.$idhome.'"';
     if(($result = $db->query($query)) != null){
-        $query = 'select * from users where iduser = "'.$iduser.'"';
+        $query = 'select * from homes where idhome = "'.$idhome.'"';
         if(($result = $db->query($query)) != null){
             $row = $result->fetch_array();
-            echo $row["name"];
+            echo $row["info"];
         }else{
             echo "0";
         }

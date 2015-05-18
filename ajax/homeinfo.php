@@ -13,10 +13,10 @@
             <div id="infoHouse">
                 <h2>Información de contacto</h2>
                 <ul id="infoList">
-                    <li onclick="changeLordName()">Arrendador: '.$arr["lord"].'</li>
-                    <li onclick="changeLordPhone()">Teléfono: '.$arr["lordphone"].'</li>
-                    <li onclick="changeLordMail()">Email: '.$arr["lordmail"].'</li>
-                    <li onclick="changeHomeInfo()">Otros: '.$arr["info"].'</li>
+                    <li id="propietario" onclick="changeLordName()">Propietario: '.$arr["lord"].'</li>
+                    <li id="telefono" onclick="changeLordPhone()">Teléfono: '.$arr["lordphone"].'</li>
+                    <li id="correo" onclick="changeLordMail()">Email: '.$arr["lordmail"].'</li>
+                    <li id="extrainfo" onclick="changeHomeInfo()">Otro: '.$arr["info"].'</li>
                 </ul>
             </div>';
     

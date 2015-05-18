@@ -30,9 +30,61 @@ function changeName(){
     if(newname != null){
         $.post('/sweethomesw/backend/userreg/setname.php', {name:newname,user:getCookie("iduser")}, function(data, textStatus){
             if(data == 0){
-                alert("error al cambiar el nombre" + data);
+                alert("error al cambiar el nombre");
             }else{
                 $("#userName").html(data);
+            }
+        });
+    }
+}
+
+function changeLordName(){
+    var newname = prompt("Introduce el nombre del propietario");
+    if(newname != null){
+        $.post('/sweethomesw/backend/homereg/setlordname.php', {name:newname,home:getCookie("idhome")}, function(data, textStatus){
+            if(data == 0){
+                alert("error al cambiar el nombre");
+            }else{
+                $("#propietario").html("Propietario: " + data);
+            }
+        });
+    }
+}
+
+function changeLordPhone(){
+    var phone = prompt("Introduce el teléfono del propietario");
+    if(phone != null){
+        $.post('/sweethomesw/backend/homereg/setlordphone.php', {phone:phone,home:getCookie("idhome")}, function(data, textStatus){
+            if(data == 0){
+                alert("error al cambiar el nombre");
+            }else{
+                $("#telefono").html("Teléfono: " + data);
+            }
+        });
+    }
+}
+
+function changeLordMail(){
+    var mail = prompt("Introduce el correo electrónico del propietario");
+    if(mail != null){
+        $.post('/sweethomesw/backend/homereg/setlordmail.php', {mail:mail,home:getCookie("idhome")}, function(data, textStatus){
+            if(data == 0){
+                alert("error al cambiar el nombre");
+            }else{
+                $("#correo").html("Email: " + data);
+            }
+        });
+    }
+}
+
+function changeHomeInfo(){
+    var info = prompt("Introduce la información que desee guardar de la casa");
+    if(info != null){
+        $.post('/sweethomesw/backend/homereg/sethomeinfo.php', {info:info,home:getCookie("idhome")}, function(data, textStatus){
+            if(data == 0){
+                alert("error al cambiar el nombre");
+            }else{
+                $("#extrainfo").html("Otro: " + data);
             }
         });
     }
