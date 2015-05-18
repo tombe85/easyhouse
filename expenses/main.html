@@ -8,7 +8,6 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
-            var abierto = 0;
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php");
@@ -19,26 +18,15 @@
                     $("body").resize();
                 });
             });
-            
+
             $.fn.openclose = function(n){
-                //$(".expenseMenuOpen ul").css("height", n);
-                var altura = $("#content").height();
                 if($(this).attr("class") === "expenseMenu"){
                     $(this).attr("class", "expenseMenuOpen");
-                    altura += (n);
-                    if(abierto === 0){
-                        altura += $("#footer").height();
-                    }
-                    abierto++;
+                    $(".expenseMenuOpen ul").css("height", n);
                 }else{
-                    abierto--;
                     $(this).attr("class", "expenseMenu");
-                    altura -= (n);
-                    if(abierto === 0){
-                        altura -= $("#footer").height();
-                    }
+                    $(".expenseMenu ul").css("height", 0);
                 }
-                $("#content").css("height", altura);
             }
         </script>
     </head>

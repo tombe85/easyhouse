@@ -291,8 +291,7 @@
 
     function loadexpenses($idhome){
         include_once('functions.php');
-       $db = connectDataBase();
-        
+        $db = connectDataBase();
 
         // Selecciono la lista de usuarios del idhome
         $query =  'select * from users where idhome = "'.$idhome.'"';
@@ -304,7 +303,7 @@
         $users = array();
         for($i=0;$i<$numusers;$i++){
             $row = $result2->fetch_array();
-            $users[$i] = $row["name"];
+            $users[$i] = $row["iduser"]." ";
         }
 
         // Selecciono los expenses del idhome
