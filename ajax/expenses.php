@@ -28,7 +28,7 @@
 				$pagado="Pendiente";
 			}
 			$i++;
-			echo '<li><h4><img class="rowPhoto" src="'.$reg2["photo"].'"/>'.$pagado.'</h4></li>';
+			echo '<li data-name="'.$reg["name"].'" data-id="'.$i.'" onclick="expenseToggle()"><h4><img class="rowPhoto" src="'.$reg2["photo"].'"/>'.$pagado.'</h4></li>';
 		}
 		echo '</ul>';
 		echo '</div>'; 

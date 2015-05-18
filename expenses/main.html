@@ -28,6 +28,13 @@
                     $(".expenseMenu ul").css("height", 0);
                 }
             }
+
+            $.fn.expenseToggle = function(){
+                var admin = getCookie("admin");
+                if(admin == true){
+                    $(this).load("/sweethomesw/ajax/expensetoggle.php",{"name":$(this).attr(data-name),"id":$(this).attr(data-id)});
+                }
+            }
         </script>
     </head>
     <body>
