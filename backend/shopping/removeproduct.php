@@ -10,6 +10,8 @@
     foreach($idsproduct as $idproduct){
         $query='update products set added = false where idproduct = "'.$idproduct.'"';
         if($result = $db->query($query)){
+            $query = 'insert into registro (iduser,content,idhome,date,usersdeleted) values ('.$_COOKIE["iduser"].',"Ha hecho compra",'.$_COOKIE["idhome"].',"'.date("d.m.Y").'","")';
+            $db->query($query);
             echo "0";
         }else{
             echo "No se puede actualizar la lista de productos";
