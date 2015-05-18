@@ -11,7 +11,7 @@
         <script>
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#header").load("/sweethomesw/ajax/header.php");
+                $("#header").load("/sweethomesw/ajax/header.php?myhome=true");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#registry").load("/sweethomesw/ajax/registry.php");
                 $(document).ajaxComplete(function(){

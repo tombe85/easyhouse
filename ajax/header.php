@@ -13,6 +13,8 @@
     echo '      <td id="backHeader">';
     if(isset($iduser) && isset($_REQUEST["backbutton"]) && $_REQUEST["backbutton"] == "true"){
         echo '<a href="'.$_REQUEST["backurl"].'" data-ajax="false"><img id="backbutton" class="menubutton" src="/sweethomesw/img/back.png" /></a>';
+    }elseif(isset($iduser) && isset($_REQUEST["myhome"]) && $_REQUEST["myhome"] == true){
+        echo '<a href="/sweethomesw/myhome.html" data-ajax="false"><img id="backbutton" class="menubutton" src="/sweethomesw/img/my_home_white.png" /></a>';
     }
     echo '      </td>
                 <td id="logoHeader"><h1>sweetHome<span class="elevated">SW</span></h1></td>';
