@@ -18,6 +18,7 @@
                 $("#productsList").load("/sweethomesw/ajax/productlist.php");
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
+                    $("#content").css("height", ($("#productsList").height() + $("#contentBottom").height() + $("#indicator").height() + 20 + "px"));
                     $("body").resize();
                 });
             });
