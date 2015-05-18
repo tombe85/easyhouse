@@ -28,7 +28,7 @@
 				$pagado="Pendiente";
 			}
 			$i++;
-			echo '<li data-name="'.$reg["name"].'" data-id="'.$i.'" onclick="expenseToggle()"><h4><img class="rowPhoto" src="'.$reg2["photo"].'"/>'.$pagado.'</h4></li>';
+			echo '<li><div  onclick="expenseToggle('.$reg2["iduser"].','.$reg["idexpense"].',expense'.$reg["idexpense"] . $reg2["iduser"].')"><h4><img class="rowPhoto" src="'.$reg2["photo"].'" /><span id="expense'.$reg["idexpense"] . $reg2["iduser"].'">'.$pagado.'</span></h4></div></li>';
 		}
 		echo '</ul>';
 		echo '</div>'; 

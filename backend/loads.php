@@ -317,8 +317,9 @@
         for($i=0;$i<$numrows;$i++){
             $row=$result->fetch_array();
             $arr[$i]["name"] = $row["name"];
+            $arr[$i]["idexpense"] = $row["idexpense"];
             for($j=0;$j<$numusers;$j++){
-                    $arr[$i]["pagado"][$j] =  (strpos($row["users"],$users[$j]) !== false);
+                $arr[$i]["pagado"][$j] =  (strpos($row["users"],$users[$j]) !== false);
             }
         }
         $db->close();
