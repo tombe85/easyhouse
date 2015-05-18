@@ -13,11 +13,10 @@
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html");
                 $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#myhouseinfo").load("/sweethomesw/ajax/homeinfo.php");
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
-                    $("#content").css("height", ($("#registry").height() + $("#contentBottom").height() + $("footer").height() + $("#indicator").height() + 10 + "px"));
                     $("body").resize();
-                    $("#strids").attr("value", idsreg.toString());
                 });
             });
         </script>
@@ -29,6 +28,8 @@
             <div id="indicator" class="indicator">
                 <h4>My Home</h4>
             </div>
+            
+            <div id="myhouseinfo"></div>
             
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">

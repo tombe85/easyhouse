@@ -325,4 +325,22 @@
         $db->close();
         return $arr;
     }
+
+    function loadHomeInfo($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from homes where idhome = "'.$idhome.'"';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+        
+        $arr = array();
+        $row = $result->fetch_array();
+        $arr["name"] = $row["name"];
+        $arr["lord"] = $row["lord"];
+        $arr["lordphone"] = $row["lordphone"];
+        $arr["lordmail"] = $row["lordmail"];
+        $arr["info"] = $row["info"];
+        $db->close();
+        return $arr;
+    }
 ?>
