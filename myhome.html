@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/sweethomesw/jquery/jquery.mobile.structure-1.4.5.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/home.js"></script>
+        <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
+        <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
+        <script>
+            $(document).bind('pageinit', function(){
+                //Footer
+                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/board/main.html");
+                $("#footer").load("/sweethomesw/footer/footer.html");
+                $(document).ajaxComplete(function(){
+                    $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
+                    $("#content").css("height", ($("#registry").height() + $("#contentBottom").height() + $("footer").height() + $("#indicator").height() + 10 + "px"));
+                    $("body").resize();
+                    $("#strids").attr("value", idsreg.toString());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
+        
+        <div id="content" data-role="content">
+            <div id="indicator" class="indicator">
+                <h4>My Home</h4>
+            </div>
+            
+        </div>
+        <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div id="footer">
+            </div>
+        </footer>
+    </body>
+</html>
