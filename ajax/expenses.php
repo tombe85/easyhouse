@@ -11,12 +11,11 @@
     $dataArray = loadexpenses($idhome);
     $userArray = loadusers($idhome);
 
-    //$tam = count($userArray) * 58;
-    //echo json_encode($tam);
+    $tam = count($userArray) * 58;
 
 	foreach($dataArray as $reg){
 		echo '<div id="'.$reg["name"].'" class="expenseMenu">';
-		echo '<div class="buttonTransparent ui-btn" onclick="$(&quot;#'.$reg["name"].'&quot;).openclose()">';
+		echo '<div class="buttonTransparent ui-btn" onclick="$(&quot;#'.$reg["name"].'&quot;).openclose('.$tam.')">';
 		echo '<h2>'.$reg["name"].'</h2>';
 		echo '</div>';
 		echo '<ul>';
