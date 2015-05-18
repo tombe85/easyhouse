@@ -56,4 +56,9 @@
             return null;
         }
     }
+
+    function printAleatoryMonster(){
+        $num = rand(1, 9);
+        echo '<img src="/sweethomesw/img/avatares/monster/'.$num.'.png" />';
+    }
 ?>

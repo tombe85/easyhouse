@@ -33,7 +33,10 @@
 
         echo '</table>';
     }else{
-        echo '<div id="emptyHomeImg"><img src="/sweethomesw/img/my_home_empty.png" /></div>';
+        echo '<div id="emptyHomeImg">';
+        include_once('../backend/functions.php');
+        printAleatoryMonster();
+        echo '</div>';
     }
 }
 ?>
