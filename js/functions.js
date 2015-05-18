@@ -90,6 +90,19 @@ function changeHomeInfo(){
     }
 }
 
+function changeHouseName(){
+    var name = prompt("Introduce el nuevo nombre de la casa");
+    if(name != null){
+        $.post('/sweethomesw/backend/homereg/sethousename.php', {name:name,home:getCookie("idhome")}, function(data, textStatus){
+            if(data == 0){
+                alert("error al cambiar el nombre");
+            }else{
+                $("#userName").html(data);
+            }
+        });
+    }
+}
+
 function deleteExpense(idexpense){
     if(confirm("¿Seguro que desea eliminar el gasto?")){
         $.post('/sweethomesw/backend/expenses/deleteexpensesdb.php', {idexpense: idexpense}, function(data,taxtStatus){
