@@ -8,7 +8,7 @@
     include('../backend/loads.php');
     $dataArray = loadboard($idhome);
     
-    if(count($dataArray) > 0)){
+    if(count($dataArray) > 0){
         echo '<table>';
         foreach($dataArray as $reg){
             echo '<tr class="rowBordered">';
