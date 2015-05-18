@@ -10,26 +10,30 @@
     include_once('../backend/loads.php');
     $dataArray = loadregister($idhome,$iduser);
     
-    echo '<table>';
-    foreach($dataArray as $reg){
-        echo '<tr class="rowNormal">';
-        
-        echo '<td class="rowPhoto">';
-        echo '<img src="'.$reg["rutafoto"].'" />';        
-        echo '</td>';
-        
-        echo '<td class="rowText">';
-        echo '<h3>'.$reg["content"].'</h3>';
-        echo '</td>';
-        
-        echo '<td class="rowDate"><h5>'.$reg["date"].'</h5></td>';
-        
-        echo '</tr>';
-        echo '<script>
-                    idsreg[idsreg.length] = '.$reg["idregistro"].'
-              </script>';
+    if(count($dataArray) > 0){
+        echo '<table>';
+        foreach($dataArray as $reg){
+            echo '<tr class="rowNormal">';
+
+            echo '<td class="rowPhoto">';
+            echo '<img src="'.$reg["rutafoto"].'" />';        
+            echo '</td>';
+
+            echo '<td class="rowText">';
+            echo '<h3>'.$reg["content"].'</h3>';
+            echo '</td>';
+
+            echo '<td class="rowDate"><h5>'.$reg["date"].'</h5></td>';
+
+            echo '</tr>';
+            echo '<script>
+                        idsreg[idsreg.length] = '.$reg["idregistro"].'
+                  </script>';
+        }
+
+        echo '</table>';
+    }else{
+        echo '<div id="emptyHomeImg"><img src="/sweethomesw/img/my_home_empty.png" /></div>';
     }
-        
-    echo '</table>';
 }
 ?>
