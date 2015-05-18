@@ -8,23 +8,30 @@
     include('../backend/loads.php');
     $dataArray = loadboard($idhome);
     
-    echo '<table>';
-    foreach($dataArray as $reg){
-        echo '<tr class="rowBordered">';
-        
-        echo '<td class="rowPhoto">';
-        echo '<img src="'.$reg["rutafoto"].'" />';        
-        echo '</td>';
-        
-        echo '<td class="rowText">';
-        echo '<a href="/sweethomesw/board/viewmessage.html?id='.$reg["idboard"].'" data-ajax="false"><h3>'.$reg["message"].'</h3></a>';
-        echo '</td>';
-        
-        echo '<td class="rowDate"><h5>'.$reg["date"].'</h5></td>';
-        
-        echo '</tr>';
+    if(count($dataArray) > 0)){
+        echo '<table>';
+        foreach($dataArray as $reg){
+            echo '<tr class="rowBordered">';
+
+            echo '<td class="rowPhoto">';
+            echo '<img src="'.$reg["rutafoto"].'" />';        
+            echo '</td>';
+
+            echo '<td class="rowText">';
+            echo '<a href="/sweethomesw/board/viewmessage.html?id='.$reg["idboard"].'" data-ajax="false"><h3>'.$reg["message"].'</h3></a>';
+            echo '</td>';
+
+            echo '<td class="rowDate"><h5>'.$reg["date"].'</h5></td>';
+
+            echo '</tr>';
+        }
+
+        echo '</table>';
+    }else{
+        echo '<div id="emptyHomeImg">';
+        include_once('../backend/functions.php');
+        printAleatoryMonster();
+        echo '</div>';
     }
-    
-    echo '</table>';
 }
 ?>

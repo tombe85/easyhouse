@@ -10,18 +10,25 @@
     include_once('../backend/loads.php');
     $arr = loadshoppinglist($idhome);
     
-    echo '<table>';
-    foreach($arr as $reg){
-        echo '<tr class="rowBordered">';
-        
-        echo '<td class="rowText">';
-        
-        $name = str_replace(" ", "",$reg["product"]);
-        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><input onchange="addproducttolist('.$reg["idproduct"].',this)" type="checkbox" name="'.$name.'"><h3>'.$reg["product"].'</h3></label></div>';
-        echo '</td>';
-        
-        echo '</tr>';
+    if(count($arr) > 0){
+        echo '<table>';
+        foreach($arr as $reg){
+            echo '<tr class="rowBordered">';
+
+            echo '<td class="rowText">';
+
+            $name = str_replace(" ", "",$reg["product"]);
+            echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><input onchange="addproducttolist('.$reg["idproduct"].',this)" type="checkbox" name="'.$name.'"><h3>'.$reg["product"].'</h3></label></div>';
+            echo '</td>';
+
+            echo '</tr>';
+        }
+        echo '</table>';
+    }else{
+        echo '<div id="emptyHomeImg">';
+        include_once('../backend/functions.php');
+        printAleatoryMonster();
+        echo '</div>';
     }
-    echo '</table>';
 }
 ?>
