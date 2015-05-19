@@ -20,3 +20,15 @@ function validaCampos(formu){
         });
     }
 }
+
+function checkLoginError(mesa){
+    if(mesa != false){
+        if(mesa == 1)
+            alert("Debe rellenar todos los campos");
+        else if(mesa == 2)
+            alert("El mail introducido no existe");
+        else if(mesa == 3)
+            alert("Contraseña incorrecta");
+
+    }
+}

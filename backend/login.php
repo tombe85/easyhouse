@@ -4,9 +4,8 @@ session_start();
 //Sacar datos y comprobarlos
 $mail=$_REQUEST["usuario"];
 $passwd=sha1($_REQUEST["passwd"]);
-if($mail == NULL || $passwd == NULL){
-    echo "Debe rellenar todos los campos";
-    header('Location: /sweethomesw/login.html');
+if($mail == NULL || $mail == "" || $_REQUEST["passwd"] == NULL || $_REQUEST["passwd"] == ""){
+    header('Location: /sweethomesw/login.html?mess=1');
     exit();
 }
 //Conectar BBDD
@@ -17,15 +16,13 @@ $query='select * from users where mail like "'.$mail.'"';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 if($result->num_rows == 0){
-    echo "El mail introducido no existe";
-    header('Location: /sweethomesw/login.html');
+    header('Location: /sweethomesw/login.html?mess=2');
     exit();
 }
 $reg=$result->fetch_array();
 //Comprobar contraseña y asignar iduser
 if($passwd != $reg["passwd"]){
-    echo "Contraseña errónea";
-    header('Location: /sweethomesw/login.html');
+    header('Location: /sweethomesw/login.html?mess=3');
     exit();
 }
 $iduser=$reg["iduser"];
