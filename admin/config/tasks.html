@@ -12,6 +12,10 @@
         <script>
             $(document).bind('pagebeforecreate',function(){
                 var admin = getCookie("admin");
+                var login = getCookie("login");
+                if(!login){
+                    location.href='/sweethomesw/login.html';
+                }
                 if(admin == false){
                     location.href='/sweethomesw/config/tasks.html';
                 }
