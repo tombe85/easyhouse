@@ -21,6 +21,7 @@
                 $(document).ajaxComplete(function(){
                     $("#backbutton").css("display","none");
                     $("#fotousuario").css("display","none");
+                    checkRegisterError(getQueryVariable("mess"));
                 });
             });
         </script>

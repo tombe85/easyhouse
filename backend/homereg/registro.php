@@ -10,14 +10,12 @@ $passwd=sha1($_POST["passwd"]);
 $passwd2=sha1($_POST["passwd2"]);
 
 //Comprobaciones
-if($user == null || $mail == null || $homename == null || $passwd == null || $passwd2 == null){
-    echo "Debes rellenar todos los datos";
-    header('Location: /sweethomesw/register.html');
+if($user == null || $user == "" || $mail == null || $mail == "" || $homename == null || $homename == "" || $_POST["passwd"] == null || $_POST["passwd"] == "" || $_POST["passwd2"] == null || $_POST["passwd2"] == ""){
+    header('Location: /sweethomesw/register.html?mess=1');
     exit();
 }
 if($passwd !== $passwd2){
-    echo "Las constraseñas no coinciden.";
-    header('Location: /sweethomesw/register.html');
+    header('Location: /sweethomesw/register.html?mess=2');
     exit();
 }
 
@@ -31,8 +29,7 @@ $query='select * from users where mail like "'.$mail.'"';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 if($result->num_rows > 0){
-    echo "El mail introducido ya pertenece a una casa. Sólo se puede pertenecer a una casa al mismo tiempo";
-    header('Location: /sweethomesw/register.html');
+    header('Location: /sweethomesw/register.html?mess=3');
     exit();
 }
 
