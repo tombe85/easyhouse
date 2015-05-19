@@ -29,6 +29,21 @@
         echo '</tr>';
     }
     
+    $arr = loadinvitedusers($idhome);
+    foreach($arr as $user){
+        echo '<tr class="rowBordered">';
+        echo '<td class="rowPhoto">
+                <img src="/sweethomesw/img/avatares/0.png" />
+            </td>';
+        echo '<td class="rowText">
+                <h3>'.$user["mail"].'</h3>
+            </td>';
+        echo '<td class="rowIcon">';
+        echo '  <img src="/sweethomesw/img/clean.png" class="buttonTrash" onclick="deleteinviteduser('.$user["idinvited"].')" />';
+        echo '    </td>';
+        echo '</tr>';
+    }
+    
     echo '</table>';
 }
 ?>

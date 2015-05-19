@@ -211,6 +211,18 @@ function deleteuser(iduser){
     }
 }
 
+function deleteinviteduser(idinvited){
+    if(confirm("¿Seguro que desea eliminar la invitación?")){
+        $.post('/sweethomesw/backend/homereg/deleteinvitation.php', {idinvited:idinvited}, function(data, textStatus){
+            if(data == 0){
+                alert("error al eliminar la invitación");
+            }else{
+                $("#users").load("/sweethomesw/ajax/usersmanage.php");
+            }
+        });
+    }
+}
+
 function getQueryVariable(variable)            {
    var query = window.location.search.substring(1);
    var vars = query.split("&");

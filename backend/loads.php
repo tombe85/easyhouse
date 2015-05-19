@@ -289,6 +289,24 @@
         return $arr;
     }
 
+    function loadinvitedusers($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from invited where idhome = "'.$idhome.'"';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+        
+        $arr = array();
+        $numrows=$result->num_rows;
+        for($i=0; $i < $numrows; $i++){
+            $row = $result->fetch_array();
+            $arr[$i]["mail"] = $row["mail"];
+            $arr[$i]["idinvited"] = $row["idinvited"];            
+        }
+        $db->close();
+        return $arr;
+    }
+
     function loadexpenses($idhome){
         include_once('functions.php');
         $db = connectDataBase();
