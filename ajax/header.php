@@ -22,6 +22,12 @@
     if(isset($iduser)){
         if(isset($_REQUEST["info"]) && $_REQUEST["info"] == "true"){
             echo '<a href="/sweethomesw/about.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/info.png" /></a>';
+        }elseif(isset($_REQUEST["task"]) && $_REQUEST["task"] == "true"){
+            echo '<a href="/sweethomesw/config/tasks.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/tareaconfig.png" /></a>';
+        }elseif(isset($_REQUEST["product"]) && $_REQUEST["product"] == "true"){
+            echo '<a href="/sweethomesw/config/products.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/compraraction.png" /></a>';
+        }elseif(isset($_REQUEST["expense"]) && $_REQUEST["expense"] == "true"){
+            echo '<a href="/sweethomesw/admin/config/expenses.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/expenses_config.png" /></a>';
         }
         else{
             echo '<a href="/sweethomesw/config/main.html" data-ajax="false"><img id="fotousuario" src="'.$rutafoto.'" /></a>';

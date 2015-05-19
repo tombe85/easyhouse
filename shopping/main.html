@@ -18,7 +18,7 @@
             });
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#header").load("/sweethomesw/ajax/header.php");
+                $("#header").load("/sweethomesw/ajax/header.php?product=true");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
                 $(document).ajaxComplete(function(){

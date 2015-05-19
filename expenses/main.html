@@ -18,7 +18,11 @@
             });
             $(document).bind('pageinit', function(){
                 //Footer
-                $("#header").load("/sweethomesw/ajax/header.php");
+                if(getCookie("admin") == true){
+                    $("#header").load("/sweethomesw/ajax/header.php?expense=true");
+                }else{
+                    $("#header").load("/sweethomesw/ajax/header.php");
+                }
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#expensesList").load("/sweethomesw/ajax/expenses.php");
                 $(document).ajaxComplete(function(){

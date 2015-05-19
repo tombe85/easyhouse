@@ -17,7 +17,7 @@
                 }
             });
             $(document).bind('pageinit', function(){
-                $("#header").load("/sweethomesw/ajax/header.php");
+                $("#header").load("/sweethomesw/ajax/header.php?task=true");
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#taskList").load("/sweethomesw/ajax/tasks.php");
                 $(document).ajaxComplete(function(){
