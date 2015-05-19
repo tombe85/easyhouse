@@ -20,18 +20,3 @@ function validaCampos(formu){
         });
     }
 }
-
-function loginUser(formu){
-    if(formu.usuario.value == "" || formu.texto.usuario.indexOf("@") == -1 || formu.texto.usuario.indexOf(".") == -1 || formu.passwd.value == ""){
-        alert("Debes rellenar todos los campos");
-        return false;
-    }else{
-        jQuery.post('/sweethomesw/backend/login.php', {mail:formu.usuario.value,passwd:formu.passwd.value}, function(data, textStatus){
-            if(data == 0){
-                location.href='/sweethomesw/home.html';
-            }else{
-                alert(data);
-            }
-        }
-    }
-}

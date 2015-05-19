@@ -1,47 +1,38 @@
 <?php
-
 //Empezar la sesión
 session_start();
-
 //Sacar datos y comprobarlos
 $mail=$_REQUEST["usuario"];
 $passwd=sha1($_REQUEST["passwd"]);
-
 if($mail == NULL || $passwd == NULL){
     echo "Debe rellenar todos los campos";
+    header('Location: /sweethomesw/login.html');
     exit();
 }
-
 //Conectar BBDD
 include_once('functions.php');
 $db = connectDataBase();
-
 //Buscar usuario
 $query='select * from users where mail like "'.$mail.'"';
-if(!($result = $db->query($query))){
-    echo "Error de consulta";
-    exit();
-}
+$result = $db->query($query)
+    or die($db->error. " en la línea ".(__LINE__-1));
 if($result->num_rows == 0){
-    echo "El mail introducido no está registrado en ninguna casa";
+    echo "El mail introducido no existe";
+    header('Location: /sweethomesw/login.html');
     exit();
 }
 $reg=$result->fetch_array();
-
 //Comprobar contraseña y asignar iduser
 if($passwd != $reg["passwd"]){
-    echo "Contraseña incorrecta";
+    echo "Contraseña errónea";
+    header('Location: /sweethomesw/login.html');
     exit();
 }
 $iduser=$reg["iduser"];
 $admin=$reg["admin"];
 $idhome=$reg["idhome"];
-
 $db->close();
-
 //Actualizar variables de sesión
 setcookies(true,$admin,$idhome,$iduser);
-
-echo "0";
-
+header('Location: /sweethomesw/home.html');
 ?>
