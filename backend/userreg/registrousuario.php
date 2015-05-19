@@ -19,16 +19,6 @@ if($passwd !== $passwd2){
 include_once('../functions.php');
 $db = connectDataBase();
 
-//Añadimos registros a la base de datos
-
-//Ver si existe mail
-$query='select * from users where mail like "'.$mail.'"';
-$result = $db->query($query)
-    or die($db->error. " en la línea ".(__LINE__-1));
-if($result->num_rows > 0){
-    header('Location: /sweethomesw/userregister.html');
-}
-
 //Ver si está invitado
 $query='select * from invited where code like "'.$code.'"';
 $result = $db->query($query)
@@ -67,4 +57,5 @@ $db->close();
 setcookies(true,false,$idhome,$iduser);
 
 header('Location: /sweethomesw/home.html');
+
 ?>

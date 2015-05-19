@@ -18,6 +18,12 @@
     if($result->num_rows > 0){
         header('Location: /sweethomesw/admin/config/users.html');
     }
+    $query = 'select * from users where idhome = "'.$idhome.'" and mail like "'.$mail.'"';
+    $result = $db->query($query)
+        or die($db->error);
+    if($result->num_rows > 0){
+        header('Location: /sweethomesw/admin/config/users.html');
+    }
     
     //Agregamos a invitados
     $query = 'insert into invited (mail,code,idhome) values ("'.$mail.'","'.$code.'","'.$idhome.'")';
