@@ -9,7 +9,6 @@ $passwd=sha1($_REQUEST["passwd"]);
 
 if($mail == NULL || $passwd == NULL){
     echo "Debe rellenar todos los campos";
-    header('Location: /sweethomesw/login.html');
     exit();
 }
 
@@ -19,19 +18,19 @@ $db = connectDataBase();
 
 //Buscar usuario
 $query='select * from users where mail like "'.$mail.'"';
-$result = $db->query($query)
-    or die($db->error. " en la línea ".(__LINE__-1));
+if(!($result = $db->query($query))){
+    echo "Error de consulta";
+    exit();
+}
 if($result->num_rows == 0){
-    echo "El mail introducido no existe";
-    header('Location: /sweethomesw/login.html');
+    echo "El mail introducido no está registrado en ninguna casa";
     exit();
 }
 $reg=$result->fetch_array();
 
 //Comprobar contraseña y asignar iduser
 if($passwd != $reg["passwd"]){
-    echo "Contraseña errónea";
-    header('Location: /sweethomesw/login.html');
+    echo "Contraseña incorrecta";
     exit();
 }
 $iduser=$reg["iduser"];
@@ -43,6 +42,6 @@ $db->close();
 //Actualizar variables de sesión
 setcookies(true,$admin,$idhome,$iduser);
 
-header('Location: /sweethomesw/home.html');
+echo "0";
 
 ?>
