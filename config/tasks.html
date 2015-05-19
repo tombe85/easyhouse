@@ -49,15 +49,15 @@
                 <div><ul><form data-ajax="false" onsubmit="return addTask(this)">
                     <div class="dataInput">
                         <li><h3>Nombre de la tarea</h3></li>
-                        <li><input type="text" name="tarea" autocomplete="off"></li>
+                        <li><input type="text" name="tarea" autocomplete="off" required></li>
                     </div>
                     <div class="dataInput">
                         <h3>Puntuacion de 1 a 10</h3>
-                        <li><input type="number" name="puntuacion" autocomplete="off" min="1" max="10"></li>
+                        <li><input type="number" name="puntuacion" autocomplete="off" min="1" max="10" required></li>
                     </div>
                     <div class="dataInput">
                         <li><h3>Periodo en días</h3></li>
-                        <li><input type="number" name="periodo" autocomplete="off" min="1"></li>
+                        <li><input type="number" name="periodo" autocomplete="off" min="1" required></li>
                     </div>
                     <li class="submitButton"><button class="buttonAction" type="submit"><img class="menubutton" src="/sweethomesw/img/ok.png" /></button></li>
                 </form></ul></div>

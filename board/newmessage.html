@@ -35,11 +35,11 @@
             <form method="post" action="/sweethomesw/backend/board/addmessage.php" data-ajax="false" onsubmit="return validaCampos(this)">
                 <div class="dataInput">
                     <h3>Título</h3>
-                    <input type="text" name="titulo" id="titulo" maxlength="30" autocomplete="off">
+                    <input type="text" name="titulo" id="titulo" maxlength="30" autocomplete="off" required>
                 </div>
                 <div class="dataInput">
                     <h3>Mensaje</h3>
-                    <textarea class="textoGrande" name="mensaje"></textarea>
+                    <textarea class="textoGrande" name="mensaje" required></textarea>
                 </div>
                 
                 <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
