@@ -24,7 +24,6 @@
                 $("#comments").load(commentsurl);
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
-                    $("#content").css("height", ($("#originalmessage").height() + $("#comments").height() + $("footer").height() + $("#contentBottom").height()) + $("#messageDate").height() + "px");
                     $("body").resize();
                     $("#idboard").attr("value", getQueryVariable("id"));
                 });

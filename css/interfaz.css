@@ -145,10 +145,18 @@ table{
 
 /* IDS */
 
+#boardMessages{
+    margin-bottom: 60px;
+}
+
 #buttonBottom button{
     width: inherit;
     margin: 0px;
     border: none;
+}
+
+#comments{
+    margin-bottom: 60px;
 }
 
 #confirmButtons{
@@ -281,6 +289,22 @@ div#confirmButtonRight{
     width: 100%;
     padding: 0px;
     margin: 0px;
+}
+
+#productList{
+    margin-bottom: 60px;
+}
+
+#registry{
+    margin-bottom: 60px;
+}
+
+#shoppingList{
+    margin-bottom: 60px;
+}
+
+#taskList{
+    margin-bottom: 60px;
 }
 
 #userData{

@@ -23,7 +23,6 @@
                 $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
-                    $("#content").css("height", ($("#shoppingList").height() + $("#contentBottom").height() + $("#indicator").height() + 20 + "px"));
                     $("body").resize();
                 });
             });

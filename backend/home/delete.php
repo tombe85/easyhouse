@@ -17,7 +17,6 @@
     
     $db = connectDataBase();
     foreach($idsreg as $idregistro){
-        echo 'entra en el for';
         $query='select * from registro where idregistro = "'.$idregistro.'"';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
@@ -31,5 +30,6 @@
     }
     $db->close();
     header('Location: /sweethomesw/home.html');
+    
 }
 ?>

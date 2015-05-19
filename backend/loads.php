@@ -179,7 +179,7 @@
     function loadallproducts($idhome){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from products where idhome = "'.$idhome.'"';
+        $query='select * from products where idhome = "'.$idhome.'" order by name';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
         
@@ -197,7 +197,7 @@
     function loadshoppinglist($idhome){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from products where idhome = "'.$idhome.'" and active = true and added = true';
+        $query='select * from products where idhome = "'.$idhome.'" and active = true and added = true order by name';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
         
@@ -216,7 +216,7 @@
     function loadshoppingproducts($idhome){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from products where idhome = "'.$idhome.'" and active = true and added = false';
+        $query='select * from products where idhome = "'.$idhome.'" and active = true and added = false order by name';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
         

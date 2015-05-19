@@ -153,13 +153,15 @@ function deleteProduct(idprod){
 }
 
 function deleteTask(idtask, name){
-    $.post('/sweethomesw/backend/tasks/removetask.php', {idtask: idtask , name: name}, function(data,taxtStatus){
-        if(data != 0){
-            alert("Error " + data);
-        }else{
-            $("#taskList").load("/sweethomesw/ajax/tasklist.php");
-        }
-    });
+    if(confirm("¿Seguro que desea eliminar la tarea?")){
+        $.post('/sweethomesw/backend/tasks/removetask.php', {idtask: idtask , name: name}, function(data,taxtStatus){
+            if(data != 0){
+                alert("Error " + data);
+            }else{
+                $("#taskList").load("/sweethomesw/ajax/tasklist.php");
+            }
+        });
+    }
 }
 
 function addTask(formu){

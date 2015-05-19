@@ -6,6 +6,7 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/home.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <script>
@@ -22,7 +23,6 @@
                 $("#registry").load("/sweethomesw/ajax/registry.php");
                 $(document).ajaxComplete(function(){
                     $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");
-                    $("#content").css("height", ($("#registry").height() + $("#contentBottom").height() + $("#indicator").height() + 20 + "px"));
                     $("body").resize();
                     $("#strids").attr("value", idsreg.toString());
                 });
