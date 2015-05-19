@@ -1,5 +1,5 @@
 function validaCampos(formu){
-    if(formu.usuario.value == "" || formu.email.value == "" || formu.texto.email.indexOf("@") == -1 || formu.texto.email.indexOf(".") == -1 || formu.passwd.value == "" || formu.passwd2.value == ""){
+    if(formu.usuario.value == "" || formu.passwd.value == "" || formu.passwd2.value == ""){
         alert("Debes rellenar todos los campos");
         return false;
     }else{

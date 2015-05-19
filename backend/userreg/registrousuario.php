@@ -2,13 +2,12 @@
 
 //Cogemos los datos
 $user=$_POST["usuario"];
-$mail=$_POST["email"];
 $passwd=sha1($_POST["passwd"]);
 $passwd2=sha1($_POST["passwd2"]);
 $code=$_COOKIE["code"];
 
 //Comprobaciones
-if($user == null || $mail == null || $passwd == null || $passwd2 == null || $code == null){
+if($user == null || $passwd == null || $passwd2 == null || $code == null){
     header('Location: /sweethomesw/userregister.html');
 }
 if($passwd !== $passwd2){
@@ -28,6 +27,7 @@ if($result->num_rows == 0){
 }
 $row=$result->fetch_array();
 $idhome = $row["idhome"];
+$mail = $row["mail"];
 
 //añadir a usarios
 $query='insert into users (name,idhome,mail,passwd) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$passwd.'")';

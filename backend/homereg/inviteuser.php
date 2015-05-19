@@ -3,15 +3,24 @@
     $mail = $_REQUEST["texto"];
     $idhome = $_COOKIE["idhome"];
     $caracteres = "abcdefghijklmnopqrstuvwxyz1234567890";
-    $code = "";
-    for($i=0; $i<10; $i++)
-    {
-        $code = $code . substr($caracteres,rand(0,strlen($caracteres)),1);
-    }
-    
-    //Vemos que no esté invitados
+    $codegenerated = false;
     include_once('../functions.php');
     $db = connectDataBase();
+    while(!$codegenerated){
+        $code = "";
+        for($i=0; $i<20; $i++)
+        {
+            $code = $code . substr($caracteres,rand(0,strlen($caracteres)),1);
+        }
+        $query = 'select * from invited where code like "'.$code.'"';
+        $result = $db->query($query)
+            or die($db->error);
+        if($result->num_rows == 0){
+            $codegenerated = true;
+        }
+    }
+    
+    //Vemos que no esté invitados ya
     $query = 'select * from invited where idhome = "'.$idhome.'" and mail like "'.$mail.'"';
     $result = $db->query($query)
         or die($db->error);
