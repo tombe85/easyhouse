@@ -361,4 +361,42 @@
         $db->close();
         return $arr;
     }
+
+    function loadadminlisttasks($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from tasksdone where idhome = "'.$idhome.'" order by idtaskdone desc';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+        
+        $arr = array();
+        $numrows=$result->num_rows;
+        $j = 0;
+        for($i=0;$i<$numrows;$i++){
+            $row=$result->fetch_array();
+            $idtask = $row["idtask"];
+            $iduser = $row["iduser"];
+            $date = $row["date"];
+            $idtaskdone = $row["idtaskdone"];
+            
+            $doneat = strtotime($date);
+            $dias = (time() - $doneat) / (3600 * 24);
+            if($dias < 7){
+                $arr[$j]["photo"] = userphotourl($iduser);
+                
+                $query2='select * from tasks where idtask = "'.$idtask.'"';
+                $result2 = $db->query($query2)
+                    or die($db->error. " en la línea ".(__LINE__-1));
+                $row2 = $result2->fetch_array();
+                $arr[$j]["task"] = $row2["name"];
+                $arr[$j]["date"] = $date;
+                $arr[$j]["idtask"] = $idtask;
+                $arr[$j]["iduser"] = $iduser;
+                $arr[$j]["idtaskdone"] = $idtaskdone;
+                $j++;
+            }
+        }
+        $db->close();
+        return $arr;
+    }
 ?>

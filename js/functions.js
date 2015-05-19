@@ -234,3 +234,15 @@ function getQueryVariable(variable)            {
    }
    return(false);
 }
+
+function deleteTaskDone(iduser,idtask,idtaskdone){
+    if(getCookie("admin") && confirm("¿Seguro que desea invalidar la realización de la tarea?")){
+        $.post('/sweethomesw/backend/tasks/invalidatetask.php', {iduser:iduser,idtask:idtask,idtaskdone:idtaskdone}, function(data, textStatus){
+            if(data == 0){
+                alert("error al eliminar la tarea realizada");
+            }else{
+                $("#adminList").load("/sweethomesw/ajax/admintasklist.php");
+            }
+        });
+    }
+}
