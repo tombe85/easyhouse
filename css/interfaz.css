@@ -166,6 +166,7 @@ table{
 
 div#confirmButtonLeft{
     width: 50%;
+    background-color: #ff5252;
     float: left;
 }
 
