@@ -12,10 +12,10 @@ function comprar(){
 }
             
 function addproducttolist(idproduct,productcheck){
+    var cad = idproduct + " ";
     if(productcheck.checked == true){
-        idsreg = idsreg + " " + idproduct;
+        idsreg = idsreg + cad;
     }else{
-        var cad = idproduct + " ";
         idsreg = idsreg.replace(cad,"");
     }
 }
