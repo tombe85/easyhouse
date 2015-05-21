@@ -2,7 +2,8 @@
 {
     include_once('../backend/functions.php');
     if(!checkLogin()){
-        header('Location: /sweethomesw/login.html');
+        echo '<h4>No has iniciado sesión. Accede al <a href="/sweethomesw/login.html" data-ajax="false">login</a></h4>';
+        exit();
     }
     $idhome=$_COOKIE["idhome"];
     $iduser = $_COOKIE["iduser"];

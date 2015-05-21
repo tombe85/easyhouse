@@ -5,6 +5,10 @@
         echo '<h4>No has iniciado sesión. Accede al <a href="/sweethomesw/login.html" data-ajax="false">login</a></h4>';
         exit();
     }
+    if(!checkAdmin()){
+        echo '<h4>No tienes permisos de administrador</h4>';
+        exit();
+    }
     
     include_once('../backend/loads.php');
     $idhome = $_COOKIE["idhome"];
