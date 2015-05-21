@@ -1,6 +1,9 @@
 <?php
 {
     include_once('../functions.php');
+    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["texto"])){
+        header('Location: /sweethomesw/admin/config/users.html');
+    }
     $db = connectDataBase();
     
     $mail = $_REQUEST["texto"];
@@ -44,7 +47,9 @@
         or die($db->error);
     
     //Enviamos mail
-    /* Hacer para el server */
+    $msg = 'Has sido invitado a la casa de sweethome!. Para registrarte como usuario accede a http://www.easyhouse.me/backend/userreg/registroinvitado.php?code='.$code.' y empieza a disfrutar de SweetHome';
+    $headers = 'From: noreply@easyhouse.me' . " " . 'Reply-To: noreply@easyhouse.me' . " " . 'X-Mailer: PHP/' . phpversion();
+    mail("$mail", "Has sido invitado a una casa en Sweethome", "$msg", "$headers");
     
     //Nos vamos a gestion de usuarios
     header('Location: /sweethomesw/admin/config/users.html');

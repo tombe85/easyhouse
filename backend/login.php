@@ -1,13 +1,13 @@
 <?php
-//Empezar la sesión
-session_start();
+
 //Sacar datos y comprobarlos
-$mail=$_REQUEST["usuario"];
-$passwd=sha1($_REQUEST["passwd"]);
-if($mail == NULL || $mail == "" || $_REQUEST["passwd"] == NULL || $_REQUEST["passwd"] == ""){
+if(!isset($_REQUEST["usuario"]) || !isset($_REQUEST["passwd"])){
     header('Location: /sweethomesw/login.html?mess=1');
     exit();
 }
+$mail=$_REQUEST["usuario"];
+$passwd=sha1($_REQUEST["passwd"]);
+
 //Conectar BBDD
 include_once('functions.php');
 $db = connectDataBase();

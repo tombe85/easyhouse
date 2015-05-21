@@ -1,9 +1,23 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin()){
+        //Con 0 indicamos que ha habido un error
+        echo '0';
+        exit();
+    }
+    if(!checkAdmin()){
+        echo "0";
+        exit();
+    }
+    if(!isset($_REQUEST["user"]) || !isset($_REQUEST["expense"])){
+        echo "0";
+        exit();
+    }
     $iduser = $_REQUEST["user"];
     $idexpense = $_REQUEST["expense"];
     
-    include_once('../functions.php');
+    
     $db = connectDataBase();
     $idhome = $_COOKIE["idhome"];
     //Añade el gasto                             

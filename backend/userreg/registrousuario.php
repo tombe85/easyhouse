@@ -1,13 +1,16 @@
 <?php
 
 //Cogemos los datos
+if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_COOKIE["code"])){
+    header('Location: /sweethomesw/userregister.html');
+}
 $user=$_POST["usuario"];
 $passwd=sha1($_POST["passwd"]);
 $passwd2=sha1($_POST["passwd2"]);
 $code=$_COOKIE["code"];
 
 //Comprobaciones
-if($user == null || $passwd == null || $passwd2 == null || $code == null){
+if($user == null || $code == null){
     header('Location: /sweethomesw/userregister.html');
 }
 if($passwd !== $passwd2){

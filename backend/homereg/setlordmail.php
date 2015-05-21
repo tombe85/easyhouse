@@ -1,8 +1,12 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin() || !isset($_REQUEST["mail"]) || !isset($_REQUEST["home"])){
+        echo "0"; //error
+        exit();
+    }
     $mail = $_REQUEST["mail"];
     $idhome = $_REQUEST["home"];
-    include_once('../functions.php');
     $db = connectDataBase();
     $query = 'update homes set lordmail = "'.$mail.'" where idhome = "'.$idhome.'"';
     if(($result = $db->query($query)) != null){

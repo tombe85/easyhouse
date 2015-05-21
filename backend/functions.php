@@ -17,11 +17,28 @@
         }
     }
 
+    function checkAdmin(){
+        if(!isset($_COOKIE["admin"]) || $_COOKIE["admin"] == false){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     function setCookies($login,$admin,$idhome,$iduser){
-        setcookie("login", $login, time() + (3600*24*365), "/sweethomesw/");
-        setcookie("admin", $admin, time() + (3600*24*365), "/sweethomesw/");
-        setcookie("idhome", $idhome, time() + (3600*24*365), "/sweethomesw/");
-        setcookie("iduser", $iduser, time() + (3600*24*365), "/sweethomesw/");
+        setcookie("login", $login, time() + (3600*24), "/sweethomesw/");
+        setcookie("admin", $admin, time() + (3600*24), "/sweethomesw/");
+        setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
+        setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
+    }
+
+    function updateCookies(){
+        if(checkLogin()){
+            setcookie("login", $_REQUEST["login"], time() + (3600*24), "/sweethomesw/");
+            setcookie("admin", $_REQUEST["admin"], time() + (3600*24), "/sweethomesw/");
+            setcookie("idhome", $_REQUEST["idhome"], time() + (3600*24), "/sweethomesw/");
+            setcookie("iduser", $_REQUEST["iduser"], time() + (3600*24), "/sweethomesw/");
+        }
     }
 
     function printTaskButton($content, $dayson, $taskid){

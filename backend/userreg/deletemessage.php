@@ -1,7 +1,12 @@
 <?php
 {
-    $idboard = $_REQUEST["idboard"];
     include_once('../functions.php');
+    if(!checkLogin() || !isset($_REQUEST["idboard"])){
+        echo "0";   //error
+        exit();
+    }
+    $idboard = $_REQUEST["idboard"];
+    
     $db = connectDataBase();
     $query='select * from board where idboard = "'.$idboard.'"';
     $result = $db->query($query)

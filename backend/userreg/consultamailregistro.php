@@ -1,5 +1,4 @@
 <?php
-session_start();
 $mail=$_REQUEST["mail"];
 
 include('../functions.php');

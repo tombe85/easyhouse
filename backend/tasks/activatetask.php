@@ -2,10 +2,14 @@
 {
     //Comprobar login
     include_once('../functions.php');
+    if(!checkLogin()){
+        echo "No has iniciado sesión";
+        exit();
+    }
     
     //Toma de datos
     if(!isset($_REQUEST["idtask"]) || $_REQUEST["idtask"] == ""){
-        echo "Error. Variables corruptas.";
+        echo "Error al activar la tarea";
         exit();
     }
     

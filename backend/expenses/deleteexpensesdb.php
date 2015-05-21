@@ -1,6 +1,18 @@
 <?php
 {
     include_once('../functions.php');
+    if(!checkLogin()){
+        echo 'No has iniciado sesión';
+        exit();
+    }
+    if(!checkAdmin()){
+        echo "No tienes permisos de administrador";
+        exit();
+    }
+    if(!isset($_REQUEST["idexpense"])){
+        echo "Error en identificador del gasto";
+        exit();
+    }
     $db = connectDataBase();
     
     $idexpense = $_REQUEST["idexpense"];

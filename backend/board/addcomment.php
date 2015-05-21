@@ -3,18 +3,15 @@
     include_once('../functions.php');
     
     //Datos de sesión
-    if(!checklogin()){
-        echo "Error. Has sido desconectado.";
-        exit();
+    if(!checkLogin()){
+        header('Location: /sweethomesw/login.html');
     }
     $idhome = $_COOKIE["idhome"];
     $iduser = $_COOKIE["iduser"];
     
     //Datos por post
-    if(!isset($_REQUEST["texto"])){
-        //Comprobar con ajax en html
-        echo "Error. Variables corruptas.";
-        exit();
+    if(!isset($_REQUEST["texto"]) || !isset($_REQUEST["idboard"])){
+        header('Location: /sweethomesw/board/viewmessage.html');
     }
     $text = $_REQUEST["texto"];
     $idboard = $_REQUEST["idboard"];

@@ -1,9 +1,14 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin() || !isset($_REQUEST["ruta"]) || !isset($_REQUEST["user"])){
+        echo "0";   //error
+        exit();
+    }
     $ruta = $_REQUEST["ruta"];
     $iduser = $_REQUEST["user"];
     $idhome = $_COOKIE["idhome"];
-    include_once('../functions.php');
+    
     $db = connectDataBase();
     
     //Comprobamos foto

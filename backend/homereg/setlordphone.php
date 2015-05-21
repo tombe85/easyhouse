@@ -1,5 +1,10 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin() || !isset($_REQUEST["phone"]) || !isset($_REQUEST["home"])){
+        echo "0"; //error
+        exit();
+    }
     $phone = $_REQUEST["phone"];
     $idhome = $_REQUEST["home"];
     include_once('../functions.php');

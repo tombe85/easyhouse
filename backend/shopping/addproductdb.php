@@ -1,8 +1,16 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin()){
+        echo "No has iniciado sesión";
+        exit();
+    }
+    if(!isset($_REQUEST["name"])){
+        echo "Debes introducir un nombre para el producto";
+        exit();
+    }
     $name = $_REQUEST["name"];
     
-    include_once('../functions.php');
     $db = connectDataBase();
     $idhome = $_COOKIE["idhome"];
     //Añade producto

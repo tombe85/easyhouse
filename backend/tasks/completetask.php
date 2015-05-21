@@ -1,22 +1,31 @@
 <?php
 {
-    //Comprobar login
-    include_once('../functions.php');
-    if(!checklogin()){
-        header('Location /sweethomesw/login.html');
-    }
-    
-    //Toma de datos
-    if(!isset($_REQUEST["id"]) || $_REQUEST["id"] == ""){
-        echo "Error. Variables corruptas.";
-        exit();
-    }
-    
     //Ver si ha sido realizada o activada
     if(isset($_REQUEST["nouser"]) && $_REQUEST["nouser"] == true){
         $nouser = true;
     }else{
         $nouser = false;
+    }
+    
+    //Comprobar login
+    include_once('../functions.php');
+    if(!checklogin()){
+        if($nouser){
+            echo "No has iniciado sesión";
+            exit();
+        }else{
+            header('Location /sweethomesw/login.html');
+        }
+    }
+    
+    //Toma de datos
+    if(!isset($_REQUEST["id"]) || $_REQUEST["id"] == ""){
+        if($nouser){
+            echo "Error. Variables corruptas.";
+            exit();
+        }else{
+            header('Location: /sweethomesw/tasks/main.html');
+        }
     }
     
     $idtask = $_REQUEST["id"];

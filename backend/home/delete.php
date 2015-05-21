@@ -8,8 +8,7 @@
     $iduser = $_COOKIE["iduser"];
     
     if(!isset($_REQUEST["strids"]) || $_REQUEST["strids"] == ""){
-        echo "Variables corruptas";
-        exit();
+        header('Location: /sweethomesw/home.html');
     }
     $text = $_REQUEST["strids"];
     $idsreg = array();

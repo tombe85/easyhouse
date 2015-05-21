@@ -1,8 +1,15 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["idinvited"])){
+        // 0 == error
+        echo "0";
+        exit();
+    }
+    
     $idinvited = $_REQUEST["idinvited"];
     $idhome = $_COOKIE["idhome"];
-    include_once('../functions.php');
+    
     $db = connectDataBase();
     
     //Elimina invitacion

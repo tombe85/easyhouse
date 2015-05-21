@@ -1,8 +1,13 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin() || !isset($_REQUEST["info"]) || !isset($_REQUEST["home"})){
+        echo "0"; //error
+        exit();
+    }
     $info = $_REQUEST["info"];
     $idhome = $_REQUEST["home"];
-    include_once('../functions.php');
+    
     $db = connectDataBase();
     $query = 'update homes set info = "'.$info.'" where idhome = "'.$idhome.'"';
     if(($result = $db->query($query)) != null){

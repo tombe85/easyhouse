@@ -1,6 +1,14 @@
 <?php
 {
     include_once('../functions.php');
+    if(!checkLogin()){
+        echo "No has iniciado sesión";
+        exit();
+    }
+    if(!isset($_REQUEST["idtask"])){
+        echo "Error al eliminar la tarea";
+        exit();
+    }
     $db = connectDataBase();
     
     $idtask = $_REQUEST["idtask"];

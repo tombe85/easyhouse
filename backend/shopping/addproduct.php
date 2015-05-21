@@ -1,7 +1,14 @@
 <?php
 {
     include_once('../functions.php');
-    
+    if(!checkLogin()){
+        echo "Debes iniciar sesión para añadir un producto";
+        exit();
+    }
+    if(!isset($_REQUEST["strids"])){
+        echo "No has seleccionado productos";
+        exit();
+    }
     $text = $_REQUEST["strids"];
     $idsproduct = array();
     $idsproduct = split(" ", trim($text));

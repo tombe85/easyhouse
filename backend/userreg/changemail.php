@@ -2,6 +2,14 @@
 {
     //Comprobar passwd antigua
     include_once('../functions.php');
+    if(!checkLogin()){
+        echo "No has iniciado sesión";
+        exit();
+    }
+    if(!isset($_REQUEST["mail"]) || !isset($_REQUEST["passwd"])){
+        echo "Error al cambiar el e-mail";
+        exit();
+    }
     $iduser = $_COOKIE["iduser"];
     $mail = $_REQUEST["mail"];
     $passwd = sha1($_REQUEST["passwd"]);

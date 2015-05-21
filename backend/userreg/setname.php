@@ -1,8 +1,13 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin() || !isset($_REQUEST["name"]) || !isset($_REQUEST["user"])){
+        echo "0";   //error
+        exit();
+    }
     $name = $_REQUEST["name"];
     $iduser = $_REQUEST["user"];
-    include_once('../functions.php');
+    
     $db = connectDataBase();
     $query = 'update users set name = "'.$name.'" where iduser = "'.$iduser.'"';
     if(($result = $db->query($query)) != null){

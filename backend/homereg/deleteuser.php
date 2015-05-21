@@ -1,8 +1,14 @@
 <?php
 {
-    $iduser = $_REQUEST["iduser"];
-    $idhome = $_COOKIE["idhome"];
     include_once('../functions.php');
+    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["iduserdel"])){
+        echo "0";
+        exit();
+    }
+    
+    $iduser = $_REQUEST["iduserdel"];
+    $idhome = $_COOKIE["idhome"];
+    
     $db = connectDataBase();
     $query='select * from users where iduser = "'.$iduser.'"';
     $result = $db->query($query)
@@ -14,8 +20,7 @@
     $query = 'delete from users where iduser = "'.$iduser.'"';
     if($result = $db->query($query)){
         $query = 'update homes set numusers = (select count(*) from users where idhome = "'.$idhome.'") where idhome = "'.$idhome.'"';
-        $result = $db->query($query)
-            or die($db->error);
+        $db->query($query);
         echo "1";
     }else{
         echo "0";

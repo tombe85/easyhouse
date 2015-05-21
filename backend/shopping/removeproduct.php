@@ -1,7 +1,14 @@
 <?php
 {
     include_once('../functions.php');
-
+    if(!checkLogin()){
+        echo "No has iniciado sesión";
+        exit();
+    }
+    if(!isset($_REQUEST["strids"])){
+        echo "Error al eliminar el producto";
+        exit();
+    }
     $text = $_REQUEST["strids"];
     $idsproduct = array();
     $idsproduct = split(" ", trim($text));

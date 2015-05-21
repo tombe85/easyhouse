@@ -1,10 +1,19 @@
 <?php
 {
+    include_once('../functions.php');
+    if(!checkLogin()){
+        echo "No has iniciado sesión";
+        exit();
+    }
+    if(!isset($_REQUEST["name"]) || !isset($_REQUEST["points"]) || !isset($_REQUEST["period"])){
+        echo "Error al añadir la tarea";
+        exit();
+    }
     $name = $_REQUEST["name"];
     $points = $_REQUEST["points"];
     $period = $_REQUEST["period"];
     
-    include_once('../functions.php');
+    
     $db = connectDataBase();
     $idhome = $_COOKIE["idhome"];
     //Añade tarea
