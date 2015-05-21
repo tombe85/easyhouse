@@ -9,7 +9,7 @@
     
     //Comprobar login
     include_once('../functions.php');
-    if(!checklogin()){
+    if(!checkLogin()){
         if($nouser){
             echo "No has iniciado sesión";
             exit();

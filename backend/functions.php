@@ -9,7 +9,7 @@
         return $db;
     }
 
-    function checklogin(){
+    function checkLogin(){
         if(!isset($_COOKIE["login"]) || $_COOKIE["login"] == false){
             return false;
         }else{
@@ -34,10 +34,10 @@
 
     function updateCookies(){
         if(checkLogin()){
-            setcookie("login", $_REQUEST["login"], time() + (3600*24), "/sweethomesw/");
-            setcookie("admin", $_REQUEST["admin"], time() + (3600*24), "/sweethomesw/");
-            setcookie("idhome", $_REQUEST["idhome"], time() + (3600*24), "/sweethomesw/");
-            setcookie("iduser", $_REQUEST["iduser"], time() + (3600*24), "/sweethomesw/");
+            setcookie("login", $_COOKIE["login"], time() + (3600*24), "/sweethomesw/");
+            setcookie("admin", $_COOKIE["admin"], time() + (3600*24), "/sweethomesw/");
+            setcookie("idhome", $_COOKIE["idhome"], time() + (3600*24), "/sweethomesw/");
+            setcookie("iduser", $_COOKIE["iduser"], time() + (3600*24), "/sweethomesw/");
         }
     }
 

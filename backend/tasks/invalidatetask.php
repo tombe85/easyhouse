@@ -1,17 +1,16 @@
 <?php
 {
     include_once('../functions.php');
-    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["idinvited"]) || !isset($_REQUEST["idtask"]) || !isset($_POST["iduser"]) || !isset($_REQUEST["idtaskdone"])){
+    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["idtask"]) || !isset($_REQUEST["iduserd"]) || !isset($_REQUEST["idtaskdone"])){
         echo "0";
         exit();
     }
-    $idinvited = $_REQUEST["idinvited"];
     $idhome = $_COOKIE["idhome"];
     
     $db = connectDataBase();
     
     $idtask = $_REQUEST["idtask"];
-    $iduser = $_POST["iduser"];
+    $iduser = $_REQUEST["iduserd"];
     $idadmin = $_COOKIE["iduser"];
     $idtaskdone = $_REQUEST["idtaskdone"];
     

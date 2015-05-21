@@ -1,7 +1,7 @@
 <?php
 {
     include_once('../functions.php');
-    if(!checklogin()){
+    if(!checkLogin()){
         header('Location: /sweethomesw/login.html');
     }
     $idhome = $_COOKIE["idhome"];
