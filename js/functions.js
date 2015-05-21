@@ -104,7 +104,7 @@ function changeHouseName(){
 }
 
 function deleteExpense(idexpense){
-    if(confirm("¿Seguro que desea eliminar el gasto?")){
+    if(getCookie("admin") && confirm("¿Seguro que desea eliminar el gasto?")){
         $.post('/sweethomesw/backend/expenses/deleteexpensesdb.php', {idexpense: idexpense}, function(data,taxtStatus){
             if(data != 0){
                 alert("Error " + data);
@@ -116,15 +116,17 @@ function deleteExpense(idexpense){
 }
 
 function addexpenses(formu){
-    $.post('/sweethomesw/backend/expenses/addexpensesdb.php',{name:formu.expenses.value}, function(data, textStatus){
-        if(data != 0){
-            alert("Error " + data);
-        }else{
-            $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
-            formu.expenses.value="";
-            $("#addexpensesdiv").openclose();
-        }
-    });
+    if(getCookie("admin")){
+        $.post('/sweethomesw/backend/expenses/addexpensesdb.php',{name:formu.expenses.value}, function(data, textStatus){
+            if(data != 0){
+                alert("Error " + data);
+            }else{
+                $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
+                formu.expenses.value="";
+                $("#addexpensesdiv").openclose();
+            }
+        });
+    }
     return false;
 }
 
@@ -200,8 +202,8 @@ function pauseTask(idtask){
 }
 
 function deleteuser(iduser){
-    if(confirm("¿Seguro que desea eliminar al usuario?")){
-        $.post('/sweethomesw/backend/homereg/deleteuser.php', {iduser:iduser}, function(data, textStatus){
+    if(getCookie("admin") && confirm("¿Seguro que desea eliminar al usuario?")){
+        $.post('/sweethomesw/backend/homereg/deleteuser.php', {iduserdel:iduser}, function(data, textStatus){
             if(data == 0){
                 alert("error al eliminar al usuario ");
             }else{
@@ -212,7 +214,7 @@ function deleteuser(iduser){
 }
 
 function deleteinviteduser(idinvited){
-    if(confirm("¿Seguro que desea eliminar la invitación?")){
+    if(getCookie("admin") && confirm("¿Seguro que desea eliminar la invitación?")){
         $.post('/sweethomesw/backend/homereg/deleteinvitation.php', {idinvited:idinvited}, function(data, textStatus){
             if(data == 0){
                 alert("error al eliminar la invitación");
@@ -223,16 +225,17 @@ function deleteinviteduser(idinvited){
     }
 }
 
-function getQueryVariable(variable)            {
-   var query = window.location.search.substring(1);
-   var vars = query.split("&");
-   for (var i=0;i<vars.length;i++) {
-       var pair = vars[i].split("=");
-       if(pair[0] == variable){
-           return pair[1];
+function getQueryVariable(variable){
+    var url = window.location.search.substring(1);
+    var variables = url.split("&");
+    var i;
+    for (i = 0; i < variables.length; i++) {
+       var igualdad = variables[i].split("=");
+       if(igualdad[0] == variable){
+           return igualdad[1];
        }
-   }
-   return(false);
+    }
+    return false;
 }
 
 function deleteTaskDone(iduser,idtask,idtaskdone){
