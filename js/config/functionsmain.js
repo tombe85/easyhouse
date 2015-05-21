@@ -3,7 +3,7 @@ function changeMail(formu){
         if(data != 0){
             alert("error al cambiar la contraseña " + data);
         }else{
-            alert("Conraseña actualizada correctamente");
+            alert("Email actualizado correctamente");
             formu.email.value="";
         }
     });
@@ -17,7 +17,7 @@ function changePasswd(formu){
         if(data != 0){
             alert("error al cambiar la contraseña " + data);
         }else{
-            alert("Conraseña actualizada correctamente");
+            alert("Contraseña actualizada correctamente");
         }
     });
     formu.passwd.value="";
