@@ -5,3 +5,15 @@ function checkComment(formu){
         return true;
     }
 }
+
+function requestUpdate(){
+    setInterval(updateComments, 1000);
+}
+
+function updateComments(){
+    $.get("/sweethomesw/ajax/messagecomments.php?id=" + getQueryVariable("id"), function(respuestaSolicitud){
+        if(respuestaSolicitud !== $("#comments").html()){
+            $("#comments").html(respuestaSolicitud);
+        }
+    });
+}
