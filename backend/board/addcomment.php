@@ -21,7 +21,7 @@
     $query = 'insert into boardcomments (idboard,iduser,comment,date) values ('.$idboard.','.$iduser.',"'.$text.'","'.date("d.m.Y").'")';
     $result = $db->query($query)
         or die($db->error. " en la línea ".(__LINE__-1));
-    
+    updateCookies();
     header('Location: /sweethomesw/board/viewmessage.html?id='.$idboard);
 }
 ?>

@@ -28,6 +28,7 @@
             or die($db->error. " en la línea ".(__LINE__-1));
     }
     $db->close();
+    updateCookies();
     header('Location: /sweethomesw/home.html');
     
 }

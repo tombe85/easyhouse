@@ -36,6 +36,5 @@
     echo '      </td>';
     echo '  </tr>
           </table>';
-    updateCookies();
 }
 ?>

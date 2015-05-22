@@ -71,6 +71,7 @@
     if($nouser){
         echo "0";
     }else{
+        updateCookies();
         header('Location: /sweethomesw/tasks/main.html');
     }
 }

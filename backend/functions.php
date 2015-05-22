@@ -34,10 +34,14 @@
 
     function updateCookies(){
         if(checkLogin()){
-            setcookie("login", $_COOKIE["login"], time() + (3600*24), "/sweethomesw/");
-            setcookie("admin", $_COOKIE["admin"], time() + (3600*24), "/sweethomesw/");
-            setcookie("idhome", $_COOKIE["idhome"], time() + (3600*24), "/sweethomesw/");
-            setcookie("iduser", $_COOKIE["iduser"], time() + (3600*24), "/sweethomesw/");
+            $login = $_COOKIE["login"];
+            $admin = $_COOKIE["admin"];
+            $idhome = $_COOKIE["idhome"];
+            $iduser = $_COOKIE["iduser"];
+            setcookie("login", $login, time() + (3600*24), "/sweethomesw/");
+            setcookie("admin", $admin, time() + (3600*24), "/sweethomesw/");
+            setcookie("idhome", $idhome, time() + (3600*24), "/sweethomesw/");
+            setcookie("iduser", $iduser, time() + (3600*24), "/sweethomesw/");
         }
     }
 

@@ -51,6 +51,7 @@
     $headers = 'From: noreply@easyhouse.me' . " " . 'Reply-To: noreply@easyhouse.me' . " " . 'X-Mailer: PHP/' . phpversion();
     mail("$mail", "Has sido invitado a una casa en Sweethome", "$msg", "$headers");
     
+    updateCookies();
     //Nos vamos a gestion de usuarios
     header('Location: /sweethomesw/admin/config/users.html');
     
