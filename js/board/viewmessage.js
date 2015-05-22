@@ -14,9 +14,20 @@ function requestUpdate(){
 }
 
 function updateComments(){
+    var posnum;
+    var num = 0;
+    var cad = '<div id="numcomdiv" hidden="true">';
     $.get("/sweethomesw/ajax/messagecomments.php?id=" + getQueryVariable("id"), function(respuestaSolicitud){
-        if(respuestaSolicitud.toString() != $("#comments").html().toString()){
+        posnum = respuestaSolicitud.indexOf(cad) + cad.length;
+        while(!isNaN(respuestaSolicitud.charAt(posnum))){
+            num = (num*10) + respuestaSolicitud.charAt(posnum);
+            posnum++;
+        }
+        num /=10;
+        if(num != $("#numcomdiv").html()){
             $("#comments").html(respuestaSolicitud);
+            $('body').animate({scrollTop: $(document).height()},750)
+            $("#numcomdiv").html(num);
         }
     });
 }

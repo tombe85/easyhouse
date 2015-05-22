@@ -16,6 +16,7 @@
     include_once('../backend/loads.php');
     $arr = loadmessagecomments($idboard,$idhome);
     
+    echo '<div id="numcomdiv" hidden="true">'.count($arr).'</div>';
     echo '<table>';
     
     foreach($arr as $reg){
