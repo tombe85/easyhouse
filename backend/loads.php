@@ -84,7 +84,7 @@
          $arr = array();
          $row = $result->fetch_array();
          
-         $querym = 'select * from users where iduser = '.$row["iduser"];
+         $querym = 'select * from users where iduser = "'.$row["iduser"].'"';
          $resultm = $db->query($querym)
              or die($db->error. " en la línea ".(__LINE__-1));
          $user = $resultm->fetch_array();
@@ -97,10 +97,10 @@
          return $arr;
      }
 
-    function loadmessagecomments($idboard){
+    function loadmessagecomments($idboard, $idhome){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from boardcomments where idboard = "'.$idboard.'"';
+        $query='select * from boardcomments where idboard = "'.$idboard.'" and (select idhome from board where idboard = "'.$idboard.'") = "'.$idhome.'"';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
         

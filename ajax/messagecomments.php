@@ -11,9 +11,10 @@
         exit();
     }
     $idboard=$_REQUEST["id"];
+    $idhome = $_COOKIE["idhome"];
     
     include_once('../backend/loads.php');
-    $arr = loadmessagecomments($idboard);
+    $arr = loadmessagecomments($idboard,$idhome);
     
     echo '<table>';
     
