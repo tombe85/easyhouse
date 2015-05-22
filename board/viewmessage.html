@@ -24,11 +24,10 @@
                 $("#footer").load("/sweethomesw/footer/footer.html");
                 $("#originalmessage").load(origmessurl);
                 $("#comments").load(commentsurl);
+                $("#idboard").attr("value", getQueryVariable("id"));
                 $(document).ajaxComplete(function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
                     $("body").resize();
-                    $("#idboard").attr("value", getQueryVariable("id"));
-                    
                 });
                 requestUpdate();
             });
@@ -44,12 +43,12 @@
             </div>
             
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false">
-                <form method="post" action="/sweethomesw/backend/board/addcomment.php" data-ajax="false" onsubmit="return checkComment(this)">
+                <form method="post" action="#" data-ajax="false" onsubmit="return checkComment(this)">
                     <input type="hidden" name="idboard" value="" id="idboard">
                     <table>
                         <tr id="buttonBottom">
                             <td class="sendtext">
-                                <input type="text" name="texto" id="texto" autocomplete="off" required onclick="$('body').animate({scrollTop: $(document).height()},1000);" />
+                                <input type="text" name="texto" id="texto" autocomplete="off" required onclick="$('body').animate({scrollTop: $(document).height()},750)" />
                             </td>
                             <td class="sendbutton">
                                 <button class="buttonAction" type="submit"><img src="/sweethomesw/img/add.png" class="menubutton" /> </button>
