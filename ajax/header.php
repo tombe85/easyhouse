@@ -17,7 +17,7 @@
         echo '<a href="/sweethomesw/myhome.html" data-ajax="false"><img id="backbutton" class="menubutton" src="/sweethomesw/img/my_home_white.png" /></a>';
     }
     echo '      </td>
-                <td id="logoHeader"><h1>sweetHome<span class="elevated">SW</span></h1></td>';
+                <td id="logoHeader"><h1>easyHouse<span class="elevated">SW</span></h1></td>';
     echo '      <td id="fotoHeader">';
     if(isset($iduser)){
         if(isset($_REQUEST["info"]) && $_REQUEST["info"] == "true"){
