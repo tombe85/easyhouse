@@ -5,8 +5,10 @@ function comprar(){
         $.post("/sweethomesw/backend/shopping/removeproduct.php",{strids:idsreg},function(data,textStatus){
             if(data != 0){
                 alert("Error " + data);
+            }else{
+                $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
+                idsreg = "";
             }
-            $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
         });
     }
 }
