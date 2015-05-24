@@ -46,6 +46,17 @@
     $db->query($query)
         or die($db->error);
     
+    //Sacar info de casa
+    $query = 'select * from homes where idhome = "'.$idhome.'"';
+    if(!($result = $db->query($query))){
+        $nombre = "el administrador";
+        $casa = "sin nombre";
+    }else{
+        $row = $result->fetch_array();
+        $nombre = $row["adminmail"];
+        $casa = $row["name"];
+    }
+    
     //Enviamos mail
     $msg = inviteusermail($nombre,$casa,$code);
     $headers = getmailheaders();

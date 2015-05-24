@@ -31,7 +31,14 @@
     //Enviamos mail
     $headers = getmailheaders();
     $msg = addmessagemail($title);
-    mail("$mail", "Nuevo mensaje en easyHouse", "$msg", "$headers");
+    $query = 'select * from users where idhome = "'.$idhome.'"';
+    if($result = $db->query($query)){
+        $numrow = $result->num_rows;
+        for($i=0; $i<$numrow; $i++){
+            $row = $result->fetch_array();
+            mail($row["mail"],"Nuevo mensaje en easyHouse", "$msg", "$headers");
+        }
+    }
     
     updateCookies();
     header('Location: /sweethomesw/board/main.html');
