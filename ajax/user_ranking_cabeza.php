@@ -14,6 +14,6 @@
     $row = $result->fetch_array();
     $db->close();
     echo '<img id="userAvatar" src="'.$row["photo"].'" />';
-    echo '<h2>'.$row["points"].'</h2>';
+    echo '<h2>'.$row["points"].' pts</h2>';
 }
 ?>

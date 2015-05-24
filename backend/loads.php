@@ -138,6 +138,7 @@
                 $activesince = strtotime($row["activesince"]);
                 $dias = (time() - $activesince) / (3600 * 24);
                 $arr[$j]["dayson"] = floor($dias);
+                $arr[$j]["points"] = $row["points"];
                 $j++;
             }else{
                 $closedsince = strtotime($row["whenisdone"]);
@@ -149,6 +150,7 @@
                     $arr[$j]["idtask"] = $row["idtask"];
                     $arr[$j]["content"] = $row["name"];
                     $arr[$j]["dayson"] = 0;
+                    $arr[$j]["points"] = $row["points"];
                     $j++;
                 }
             }

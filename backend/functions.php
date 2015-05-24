@@ -45,9 +45,9 @@
         }
     }
 
-    function printTaskButton($content, $dayson, $taskid){
+    function printTaskButton($content, $dayson, $taskid, $points){
         echo '  <button class="buttonTransparent ui-btn ui-shadow ui-corner-all">';
-        echo '  <h3>'.$content.' ('.$dayson.' día';
+        echo '  <h3>'.$content.' - '.$points.' pts ('.$dayson.' día';
             if($dayson > 1 || $dayson == 0){echo 's';}
         echo ')</h3>';
         echo '  </button>';
@@ -58,6 +58,7 @@
                         taskid = "'.$taskid.'";
                         taskcontent = "'.$content.'";
                         taskdayson = '.$dayson.';
+                        taskpoints = '.$points.';
                         $(taskselected).css("padding","0px");
                         $(taskselected).load("/sweethomesw/tasks/confirm.html");
                     });
