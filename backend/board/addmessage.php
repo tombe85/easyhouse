@@ -27,6 +27,12 @@
     $query = 'insert into registro (iduser,content,idhome,date) values ('.$iduser.',"'.$cont.'",'.$idhome.',"'.date("d.m.Y").'")';
     $result = $db->query($query)
         or die($db->error. " en la línea ".(__LINE__-1));
+    
+    //Enviamos mail
+    $headers = getmailheaders();
+    $msg = addmessagemail($title);
+    mail("$mail", "Nuevo mensaje en easyHouse", "$msg", "$headers");
+    
     updateCookies();
     header('Location: /sweethomesw/board/main.html');
 }

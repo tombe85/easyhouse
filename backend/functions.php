@@ -82,4 +82,29 @@
         $num = rand(1, 9);
         echo '<img src="/sweethomesw/img/avatares/monster/'.$num.'.png" />';
     }
+
+    function addmessagemail($newmes){
+        $mess = '<html><body>';
+        $mess .= '<img src="http://www.easyhouse.me/img/logotipo.png" /><br><br>';
+        $mess .= '<h3>Hay un nuevo mensaje en tu casa!</h3><br><br><h2>'.$newmes.'</h2>.<br><br> <h3>Accede a easyHouse para verlo y añade un comentario!</h3><br><br>';
+        $mess .= '<h3><a href="http://www.easyhouse.me/board/main.html">www.easyhouse.me</a></h3>';
+        $mess .= '</body></html>';
+        return $mess;
+    }
+
+    function getmailheaders(){
+        $headers = "From: noreply@easyhouse.me\r\n";
+        $headers .= "Reply-To: noreply@easyhouse.me\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        return $headers;
+    }
+
+    function inviteusermail($nombre,$casa,$code){
+        $mess = '<html><body>';
+        $mess .= '<img src="http://www.easyhouse.me/img/logotipo.png" /><br><br>';
+        $mess .= '<h3>Has sido invitado por '.$nombre.' a la casa - '.$casa.' - en easyHouse!.</h3><br><br><h3>Para registrarte como usuario accede a <a href="http://www.easyhouse.me/backend/userreg/registroinvitado.php?code='.$code.'">www.easyhouse.me</a> y empieza a disfrutar de las ventajas de pertenecer a easyHouse.</h3><br><br><h3>Para registrarte haz click <a href="http://www.easyhouse.me/backend/userreg/registroinvitado.php?code='.$code.'">aquí</a></h3><br>';
+        $mess .= '</body></html>';
+        return $mess;
+    }
 ?>

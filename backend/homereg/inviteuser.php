@@ -47,8 +47,8 @@
         or die($db->error);
     
     //Enviamos mail
-    $msg = 'Has sido invitado a la casa de sweethome!. Para registrarte como usuario accede a http://www.easyhouse.me/backend/userreg/registroinvitado.php?code='.$code.' y empieza a disfrutar de SweetHome';
-    $headers = 'From: noreply@easyhouse.me' . " " . 'Reply-To: noreply@easyhouse.me' . " " . 'X-Mailer: PHP/' . phpversion();
+    $msg = inviteusermail($nombre,$casa,$code);
+    $headers = getmailheaders();
     mail("$mail", "Has sido invitado a una casa en Sweethome", "$msg", "$headers");
     
     updateCookies();
