@@ -31,3 +31,9 @@ function updateComments(){
         }
     });
 }
+
+function textClicked(){
+    $('body').animate({scrollTop: $(document).height()},750);
+    $("footer").hide();
+    $("#contentBottom").css("bottom","0px");
+}
