@@ -30,7 +30,7 @@
             echo '<a href="/sweethomesw/admin/config/expenses.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/expenses_config.png" /></a>';
         }
         else{
-            echo '<a href="/sweethomesw/config/main.html" data-ajax="false"><img id="fotousuario" src="'.$rutafoto.'" /></a>';
+            echo '<a href="/sweethomesw/config/index.html" data-ajax="false"><img id="fotousuario" src="'.$rutafoto.'" /></a>';
         }
     }
     echo '      </td>';

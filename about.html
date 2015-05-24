@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="/sweethomesw/img/favicon.ico">
         <script>
             $(document).bind('pageinit', function(){
-                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/config/main.html&info=true");
+                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/config/index.html&info=true");
                 $(document).ajaxComplete(function(){
                     $("#fotoHeader").find("img").attr("src","/sweethomesw/img/infoselected.png");
                     $("body").resize();

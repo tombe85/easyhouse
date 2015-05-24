@@ -28,7 +28,7 @@ function addcomprar(){
             if(data != 0){
                 alert("Error " + data);
             }else{
-                document.location.href="/sweethomesw/shopping/main.html";
+                document.location.href="/sweethomesw/shopping/index.html";
             }
         });
     }

@@ -6,29 +6,29 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
-        <script type="text/javascript" src="/sweethomesw/js/config/functionsconfig.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/config/functionsmain.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/config/functionsconfig.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <link rel="shortcut icon" href="/sweethomesw/img/favicon.ico">
         <script>
             $(document).bind('pagebeforecreate',function(){
-                var loged = getCookie("login");
                 var admin = getCookie("admin");
-                if(!loged){
+                var login = getCookie("login");
+                if(!login){
                     location.href='/sweethomesw/login.html';
                 }
-                if(loged == true && admin == true){
-                    location.href='/sweethomesw/admin/config/main.html';
+                if(admin == false){
+                    location.href='/sweethomesw/config/index.html';
                 }
             });
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
-                $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
+                $("#footer").load("/sweethomesw/footer/footerConfig.html");
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
                 $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
                 $(document).ajaxComplete(function(){
-                    $("#usuarioconfigbutton").attr("src","/sweethomesw/img/usuarioconfigselected.png");
+                    $("#configbutton").attr("src","/sweethomesw/img/usuarioconfigselected.png");
                     $("#userMessage").css("height",$("#userMessage").find("table").height() + "px")
                     $("body").resize();
                 });
@@ -53,7 +53,7 @@
             </div>
 
             <div id="passwdConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose(230)'>
+                <button class="buttonDarkBlue" onclick='$("#passwdConfig").openclose()'>
                     <h2>Cambiar Contraseña</h2>
                 </button>
                 <div><ul><form onsubmit="return changePasswd(this)" data-ajax="false">
@@ -66,7 +66,7 @@
             </div>
 
             <div id="mailConfig" class="configMenu">
-                <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose(225)'>
+                <button class="buttonDarkBlue" onclick='$("#mailConfig").openclose()'>
                     <h2>Cambiar Correo</h2>
                 </button>
                 <div><ul><form onsubmit="return changeMail(this)" data-ajax="false">

@@ -24,7 +24,7 @@
             echo "Error. Variables corruptas.";
             exit();
         }else{
-            header('Location: /sweethomesw/tasks/main.html');
+            header('Location: /sweethomesw/tasks/index.html');
         }
     }
     
@@ -72,7 +72,7 @@
         echo "0";
     }else{
         updateCookies();
-        header('Location: /sweethomesw/tasks/main.html');
+        header('Location: /sweethomesw/tasks/index.html');
     }
 }
 ?>

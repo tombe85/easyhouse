@@ -11,7 +11,7 @@
     
     //Datos por post
     if(!isset($_REQUEST["titulo"]) || !isset($_REQUEST["mensaje"])){
-        header('Location: /sweethomesw/board/main.html');
+        header('Location: /sweethomesw/board/index.html');
     }
     $title = $_REQUEST["titulo"];
     $message = $_REQUEST["mensaje"];
@@ -41,6 +41,6 @@
     }
     
     updateCookies();
-    header('Location: /sweethomesw/board/main.html');
+    header('Location: /sweethomesw/board/index.html');
 }
 ?>

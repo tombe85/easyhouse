@@ -7,24 +7,24 @@ userregister.html -- registro de un usuario normal (por invitación)
 -- USER -- 
 home.html -- registro de las ultimas noticias y compras urgentes y otras historias o una invitacion a crear una casa nuevo ya que no eres miembro de ninguna casa
 
-board/main.html -- pagina principal del tablon
+board/index.html -- pagina principal del tablon
 board/newmessage.html -- escribir un nuevo mensaje
 board/viewmessage.html -- ver un mensaje en concreto/responder
 
-config/main.html -- pagina principal de configuracion
+config/index.html -- pagina principal de configuracion
 config/tasks.html -- para usuarios permite sugerir tareas o aprovar tareas sugeridas por otros usuarios
 config/products.html -- para usuarios permite sugerir productos o aprovar productos sugeridas por otros usuarios
 
-expenses/main.html -- pagina de gastos para usuarios
+expenses/index.html -- pagina de gastos para usuarios
 
-tasks/main.html  -- pagina de tareas para usuarios
+tasks/index.html  -- pagina de tareas para usuarios
 
-shopping/main.html -- pagina con la lista de la compra
+shopping/index.html -- pagina con la lista de la compra
 shopping/addproduct.html -- pagina para añadir productos a la lista
 
 -- ADMIN -- home, tareas, etc las mismas que el usuario normal
 
-admin/config/main.html -- pagina principal de configuracion
+admin/config/index.html -- pagina principal de configuracion
 admin/config/users.html -- para admin permite añadir/quitar usuarios a la casa
 admin/config/tasks.html -- para admin permite añadir/quitar/modificar tareas o aprovar tareas sugeridas por otros usuarios
 admin/config/products.html -- para admin permite añadir/quitar/modificar productos o aprovar productos sugeridos por otros usuarios

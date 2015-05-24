@@ -68,5 +68,5 @@ $db->close();
 //Actualizar variables de sesión y cookies
 setcookies(true,true,$idhome,$iduser);
 
-header('Location: /sweethomesw/admin/config/main.html');
+header('Location: /sweethomesw/admin/config/index.html');
 ?>

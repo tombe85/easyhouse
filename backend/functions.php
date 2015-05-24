@@ -88,7 +88,7 @@
         $mess = '<html><body>';
         $mess .= '<img src="http://www.easyhouse.me/img/logotipo.png" /><br><br>';
         $mess .= '<h3>Hay un nuevo mensaje en tu casa!</h3><br><br><h2>'.$newmes.'</h2>.<br><br> <h3>Accede a easyHouse para verlo y añade un comentario!</h3><br><br>';
-        $mess .= '<h3><a href="http://www.easyhouse.me/board/main.html">www.easyhouse.me</a></h3>';
+        $mess .= '<h3><a href="http://www.easyhouse.me/board/index.html">www.easyhouse.me</a></h3>';
         $mess .= '</body></html>';
         return $mess;
     }
