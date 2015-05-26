@@ -1,12 +1,12 @@
 <?php
 {
     include_once('../functions.php');
-    if(!checkLogin() || !isset($_REQUEST["info"]) || !isset($_REQUEST["home"})){
+    if(!checkLogin() || !isset($_REQUEST["info"])){
         echo "0"; //error
         exit();
     }
     $info = $_REQUEST["info"];
-    $idhome = $_REQUEST["home"];
+    $idhome = $_COOKIE["idhome"];
     
     $db = connectDataBase();
     $query = 'update homes set info = "'.$info.'" where idhome = "'.$idhome.'"';
