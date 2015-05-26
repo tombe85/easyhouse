@@ -271,6 +271,15 @@ div#confirmButtonRight{
     text-align: center;
 }
 
+#matesHouse{
+    padding: 10px;
+}
+
+#matesHouse h2{
+    color: #3f51b5;
+    text-align: center;
+}
+
 #menuinf td{
     text-align: center;
 }

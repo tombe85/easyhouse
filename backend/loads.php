@@ -364,6 +364,27 @@
         return $arr;
     }
 
+    function loadHomeMates($idhome){
+        include_once('functions.php');
+        $db = connectDataBase();
+        $query='select * from users where idhome = "'.$idhome.'"';
+        $result = $db->query($query)
+            or die($db->error. " en la línea ".(__LINE__-1));
+        
+        $arr = array();
+        $numrows=$result->num_rows;
+        for($i=0;$i<$numrows;$i++){
+            $row = $result->fetch_array();
+            $arr[$i]["name"] = $row["name"];
+            $arr[$i]["id"] = $row["iduser"];
+            $arr[$i]["mail"] = $row["mail"];
+            $arr[$i]["ruta"] = $row["photo"];
+        }
+        
+        $db->close();
+        return $arr;
+    }
+
     function loadadminlisttasks($idhome){
         include_once('functions.php');
         $db = connectDataBase();
