@@ -20,10 +20,12 @@
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?product=true");
-                $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#footer").load("/sweethomesw/footer/footer.html", function(){
+                    $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
+                });
                 $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
                 $(document).ajaxComplete(function(){
-                    $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
+                    
                     $("body").resize();
                 });
             });

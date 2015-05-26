@@ -22,12 +22,12 @@
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=index.html&product=true");
                 $("#footer").load("/sweethomesw/footer/footer.html");
-                $("#productsList").load("/sweethomesw/ajax/productlist.php");
-                $(document).ajaxComplete(function(){
+                $("#productsList").load("/sweethomesw/ajax/productlist.php",function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
+                });
+                $(document).ajaxComplete(function(){
                     reCheckproducts();
                     $("body").resize();
-                    
                 });
             });
             

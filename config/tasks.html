@@ -24,11 +24,12 @@
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/tasks/index.html&info=true");
-                $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
+                $("#footer").load("/sweethomesw/footer/footerConfigUser.html", function(){
+                    $("#tasksbutton").attr("src","/sweethomesw/img/tareaconfigselected.png");
+                });
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
                 $("#taskList").load("/sweethomesw/ajax/tasklist.php");
                 $(document).ajaxComplete(function(){
-                    $("#tasksbutton").attr("src","/sweethomesw/img/tareaconfigselected.png");
                     $("body").resize();
                 });
             });

@@ -19,10 +19,12 @@
             });
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?task=true");
-                $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#footer").load("/sweethomesw/footer/footer.html", function(){
+                    $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
+                });
                 $("#taskList").load("/sweethomesw/ajax/tasks.php");
                 $(document).ajaxComplete(function(){
-                    $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
+                    
                     $("body").resize();
                 });
             });

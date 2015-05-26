@@ -23,11 +23,12 @@
             });
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/expenses/index.html&info=true");
-                $("#footer").load("/sweethomesw/footer/footerConfig.html");
+                $("#footer").load("/sweethomesw/footer/footerConfig.html",function(){
+                    $("#expensesbutton").attr("src","/sweethomesw/img/expenses_config_selected.png");
+                });
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
                 $("#expensesList").load("/sweethomesw/ajax/expenseslistconfig.php");
                 $(document).ajaxComplete(function(){
-                    $("#expensesbutton").attr("src","/sweethomesw/img/expenses_config_selected.png");
                     $("body").resize();
                 });
             });

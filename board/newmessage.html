@@ -19,9 +19,11 @@
             });
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/board/index.html");
-                $("#footer").load("/sweethomesw/footer/footer.html");
-                $(document).ajaxComplete(function(){
+                $("#footer").load("/sweethomesw/footer/footer.html", function(){
                     $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
+                });
+                $(document).ajaxComplete(function(){
+                    
                     $("body").resize();
                 });
             });

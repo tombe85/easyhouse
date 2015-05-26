@@ -18,12 +18,13 @@
             });
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/tasks/index.html");
-                $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#footer").load("/sweethomesw/footer/footer.html", function(){
+                    $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
+                });
                 $("#userData").load("/sweethomesw/ajax/user_ranking_cabeza.php");
                 $("#users").load("/sweethomesw/ajax/user_ranking_cuerpo.php");
                 $(document).ajaxComplete(function(){
-                $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");                    
-                $("body").resize();
+                    $("body").resize();
                 });
             });
         </script>

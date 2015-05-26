@@ -24,10 +24,11 @@
             });
             $(document).bind('pageinit', function(){
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
-                $("#footer").load("/sweethomesw/footer/footerConfig.html");
+                $("#footer").load("/sweethomesw/footer/footerConfig.html",function(){
+                    $("#usersbutton").attr("src","/sweethomesw/img/usuariosconfigselected.png");
+                });
                 $("#users").load("/sweethomesw/ajax/usersmanage.php");
                 $(document).ajaxComplete(function(){
-                    $("#usersbutton").attr("src","/sweethomesw/img/usuariosconfigselected.png");
                     $("body").resize();
                 });
             });

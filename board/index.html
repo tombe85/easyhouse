@@ -19,10 +19,11 @@
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php");
-                $("#footer").load("/sweethomesw/footer/footer.html");
+                $("#footer").load("/sweethomesw/footer/footer.html", function(){
+                    $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
+                });
                 $("#boardMessages").load("/sweethomesw/ajax/messages.php");
                 $(document).ajaxComplete(function(){
-                    $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
                     $("body").resize();
                 });
             });

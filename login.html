@@ -18,12 +18,13 @@
                 }
             });
             $(document).bind('pageinit', function(){
-                $("#headerlogin").load("/sweethomesw/ajax/header.php");
-                $(document).ajaxComplete(function(){
+                $("#headerlogin").load("/sweethomesw/ajax/header.php", function(){
                     $("#backbutton").css("display","none");
                     $("#fotousuario").css("display","none");
+                });
+                checkLoginError(getQueryVariable("mess"));
+                $(document).ajaxComplete(function(){
                     $("body").resize();
-                    checkLoginError(getQueryVariable("mess"));
                 });
                 
             });

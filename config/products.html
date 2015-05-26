@@ -25,11 +25,13 @@
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/shopping/index.html&info=true");
-                $("#footer").load("/sweethomesw/footer/footerConfigUser.html");
+                $("#footer").load("/sweethomesw/footer/footerConfigUser.html", function(){
+                    $("#productsbutton").attr("src","/sweethomesw/img/compraractionselected.png");
+                });
                 $("#userData").load("/sweethomesw/ajax/userdata.php");
                 $("#productList").load("/sweethomesw/ajax/productlistconfig.php");
                 $(document).ajaxComplete(function(){
-                    $("#productsbutton").attr("src","/sweethomesw/img/compraractionselected.png");
+                    
                     $("body").resize();
                 });
             });
