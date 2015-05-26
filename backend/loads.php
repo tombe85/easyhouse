@@ -215,10 +215,14 @@
         return $arr;
     }
 
-    function loadshoppingproducts($idhome){
+    function loadshoppingproducts($idhome, $startby){
         include_once('functions.php');
         $db = connectDataBase();
-        $query='select * from products where idhome = "'.$idhome.'" and active = true and added = false order by name';
+        $query='select * from products where idhome = "'.$idhome.'" and active = true and added = false ';
+        if($startby != ""){
+            $query .= 'and name like "'.$startby.'%" ';
+        }
+        $query .= 'order by name';
         $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
         

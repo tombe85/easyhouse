@@ -17,7 +17,7 @@
                     location.href='/sweethomesw/login.html';
                 }
             });
-            var idsreg = "";
+            
             $(document).bind('pageinit', function(){
                 //Footer
                 $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=index.html&product=true");
@@ -25,7 +25,9 @@
                 $("#productsList").load("/sweethomesw/ajax/productlist.php");
                 $(document).ajaxComplete(function(){
                     $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
+                    reCheckproducts();
                     $("body").resize();
+                    
                 });
             });
         </script>
@@ -36,6 +38,19 @@
         <div id="content" data-role="content">
             <div class="indicator">
                 <h4>Añadir productos a la lista</h4>
+            </div>
+            
+            <div id="newProduct">
+                <table>
+                    <tr>
+                        <td class="sendtext">
+                            <input type="text" name="textoProd" id="textoProd" autocomplete="off" required onkeyup="findProducts(event)" />
+                        </td>
+                        <td class="sendbutton">
+                            <button id="buttonAddProduct" class="buttonActionAdd" onclick="addNewProduct()"><img src="/sweethomesw/img/add.png" class="menubutton" /> </button>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div id="productsList">
             </div>
