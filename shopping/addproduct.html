@@ -30,6 +30,11 @@
                     
                 });
             });
+            
+            function textoClicked(){
+                $("footer").hide();
+                $("#contentBottom").css("bottom","0px");
+            }
         </script>
     </head>
     <body>
@@ -44,7 +49,7 @@
                 <table>
                     <tr>
                         <td class="sendtext">
-                            <input type="text" name="textoProd" id="textoProd" autocomplete="off" required onkeyup="findProducts(event)" />
+                            <input type="text" name="textoProd" id="textoProd" autocomplete="off" required onkeyup="findProducts(event)" onclick="textoClicked()" />
                         </td>
                         <td class="sendbutton">
                             <button id="buttonAddProduct" class="buttonActionAdd" onclick="addNewProduct()"><img src="/sweethomesw/img/add.png" class="menubutton" /> </button>
