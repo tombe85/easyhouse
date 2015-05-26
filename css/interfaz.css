@@ -419,7 +419,7 @@ div#confirmButtonRight{
     overflow: hidden;
 }
 
-.configMenu input[type="text"], .configMenu input[type="password"]{
+.configMenu input[type="text"], .configMenu input[type="password"], .configMenu input[type="email"]{
     background-color: white;
 }
 
@@ -427,7 +427,7 @@ div#confirmButtonRight{
     vertical-align: middle;
 }
 
-.configMenuOpen input[type="text"], .configMenuOpen input[type="password"]{
+.configMenuOpen input[type="text"], .configMenuOpen input[type="password"], .configMenuOpen input[type="email"]{
     background-color: white;
 }
 
