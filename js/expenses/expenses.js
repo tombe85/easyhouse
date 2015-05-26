@@ -1,3 +1,26 @@
+$(document).bind('pagebeforecreate',function(){
+    var loged = getCookie("login");
+    if(!loged){
+        location.href='/sweethomesw/login.html';
+    }
+});
+
+$(document).bind('pageinit', function(){
+    //Footer
+    if(getCookie("admin") == true){
+        $("#header").load("/sweethomesw/ajax/header.php?expense=true");
+    }else{
+        $("#header").load("/sweethomesw/ajax/header.php");
+    }
+    $("#footer").load("/sweethomesw/footer/footer.html", function(){
+        $("#gastosbutton").attr("src","/sweethomesw/img/gastosselected.png");
+    });
+    $("#expensesList").load("/sweethomesw/ajax/expenses.php");
+    $(document).ajaxComplete(function(){
+        $("body").resize();
+    });
+});
+
 $.fn.openclose = function(n){
     if($(this).attr("class") === "expenseMenu"){
         $(this).attr("class", "expenseMenuOpen");

@@ -1,3 +1,18 @@
+$(document).bind('pagebeforecreate',function(){
+    var loged = getCookie("login");
+    if(loged == true){
+        location.href='/sweethomesw/home.html';
+    }
+});
+
+$(document).bind('pageinit', function(){
+    $("#headerlogin").load("/sweethomesw/ajax/header.php", function(){
+        $("#backbutton").css("display","none");
+        $("#fotousuario").css("display","none");
+        checkRegisterError(getQueryVariable("mess"));
+    });
+});
+
 function validaCampos(formu){
     if(formu.usuario.value.length == 0 || formu.email.value.length == 0 || formu.texto.email.indexOf("@") == -1 || formu.texto.email.indexOf(".") == -1 || formu.nombrecasa.value.length == 0 || formu.passwd.value.length == 0 || formu.passwd2.value.length == 0){
         alert("Debes rellenar todos los campos correctamente");

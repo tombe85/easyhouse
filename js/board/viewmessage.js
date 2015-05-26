@@ -1,3 +1,26 @@
+$(document).bind('pagebeforecreate',function(){
+    var login = getCookie("login");
+    if(!login){
+        location.href='/sweethomesw/login.html';
+    }
+});
+
+$(document).bind('pageinit', function(){
+    var origmessurl = "/sweethomesw/ajax/singlemessage.php?id=" + getQueryVariable("id");
+    var commentsurl = "/sweethomesw/ajax/messagecomments.php?id="  + getQueryVariable("id");
+    $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=index.html");
+    $("#footer").load("/sweethomesw/footer/footer.html", function(){
+        $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
+    });
+    $("#originalmessage").load(origmessurl);
+    $("#comments").load(commentsurl);
+    $("#idboard").attr("value", getQueryVariable("id"));
+    $(document).ajaxComplete(function(){
+        $("body").resize();
+    });
+    requestUpdate();
+});
+
 function checkComment(formu){
     $.post("/sweethomesw/backend/board/addcomment.php",{texto: formu.texto.value ,idboard:formu.idboard.value}, function(data,textStatus){
         if(data != 0){

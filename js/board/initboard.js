@@ -6,21 +6,13 @@ $(document).bind('pagebeforecreate',function(){
 });
 
 $(document).bind('pageinit', function(){
-    $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/board/index.html");
+    //Footer
+    $("#header").load("/sweethomesw/ajax/header.php");
     $("#footer").load("/sweethomesw/footer/footer.html", function(){
         $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
     });
+    $("#boardMessages").load("/sweethomesw/ajax/messages.php");
     $(document).ajaxComplete(function(){
-
         $("body").resize();
     });
 });
-
-function validaCampos(formu){
-    if(formu.titulo.value == "" || formu.mensaje.value == ""){
-        alert("Debes rellenar los campos!");
-        return false;
-    }else{
-        return true;
-    }
-}

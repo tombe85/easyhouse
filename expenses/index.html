@@ -10,29 +10,6 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <link rel="shortcut icon" href="/sweethomesw/img/favicon.ico">
-        <script>
-            $(document).bind('pagebeforecreate',function(){
-                var loged = getCookie("login");
-                if(!loged){
-                    location.href='/sweethomesw/login.html';
-                }
-            });
-            $(document).bind('pageinit', function(){
-                //Footer
-                if(getCookie("admin") == true){
-                    $("#header").load("/sweethomesw/ajax/header.php?expense=true");
-                }else{
-                    $("#header").load("/sweethomesw/ajax/header.php");
-                }
-                $("#footer").load("/sweethomesw/footer/footer.html", function(){
-                    $("#gastosbutton").attr("src","/sweethomesw/img/gastosselected.png");
-                });
-                $("#expensesList").load("/sweethomesw/ajax/expenses.php");
-                $(document).ajaxComplete(function(){
-                    $("body").resize();
-                });
-            });
-        </script>
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>

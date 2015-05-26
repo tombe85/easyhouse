@@ -6,28 +6,10 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/ranking.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <link rel="shortcut icon" href="/sweethomesw/img/favicon.ico">
-        <script>
-            $(document).bind('pagebeforecreate',function(){
-                var loged = getCookie("login");
-                if(!loged){
-                    location.href='/sweethomesw/login.html';
-                }
-            });
-            $(document).bind('pageinit', function(){
-                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/tasks/index.html");
-                $("#footer").load("/sweethomesw/footer/footer.html", function(){
-                    $("#tareasbutton").attr("src","/sweethomesw/img/tareasselected.png");
-                });
-                $("#userData").load("/sweethomesw/ajax/user_ranking_cabeza.php");
-                $("#users").load("/sweethomesw/ajax/user_ranking_cuerpo.php");
-                $(document).ajaxComplete(function(){
-                    $("body").resize();
-                });
-            });
-        </script>
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>

@@ -11,20 +11,14 @@ $(document).bind('pagebeforecreate',function(){
 
 $(document).bind('pageinit', function(){
     $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
-    $("#footer").load("/sweethomesw/footer/footerConfig.html",function(){
-        $("#usersbutton").attr("src","/sweethomesw/img/usuariosconfigselected.png");
+    $("#footer").load("/sweethomesw/footer/footerConfig.html", function(){
+        $("#configbutton").attr("src","/sweethomesw/img/usuarioconfigselected.png");
     });
-    $("#users").load("/sweethomesw/ajax/usersmanage.php");
+    $("#userData").load("/sweethomesw/ajax/userdata.php");
+    $("#userMessage").load("/sweethomesw/ajax/usermessages.php",function(){
+        $("#userMessage").css("height",$("#userMessage").find("table").height() + "px");
+    });
     $(document).ajaxComplete(function(){
         $("body").resize();
     });
 });
-
-function checkMail(formu){
-    if(formu.texto.value == "" || formu.texto.value.indexOf("@") == -1 || formu.texto.value.indexOf(".") == -1){
-        alert("Debes introducir un mail para invitar");
-        return false;
-    }else{
-        return true;
-    }
-}

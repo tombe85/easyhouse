@@ -10,26 +10,6 @@
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <link rel="shortcut icon" href="/sweethomesw/img/favicon.ico">
-        <script>
-            $(document).bind('pagebeforecreate',function(){
-                var loged = getCookie("login");
-                if(!loged){
-                    location.href='/sweethomesw/login.html';
-                }
-            });
-            $(document).bind('pageinit', function(){
-                //Footer
-                $("#header").load("/sweethomesw/ajax/header.php?product=true");
-                $("#footer").load("/sweethomesw/footer/footer.html", function(){
-                    $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
-                });
-                $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
-                $(document).ajaxComplete(function(){
-                    
-                    $("body").resize();
-                });
-            });
-        </script>
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus=""></header>

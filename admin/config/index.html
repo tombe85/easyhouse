@@ -7,35 +7,11 @@
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/config/functionsmain.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/config/functionsmainadmin.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/config/functionsconfig.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <link rel="shortcut icon" href="/sweethomesw/img/favicon.ico">
-        <script>
-            $(document).bind('pagebeforecreate',function(){
-                var admin = getCookie("admin");
-                var login = getCookie("login");
-                if(!login){
-                    location.href='/sweethomesw/login.html';
-                }
-                if(admin == false){
-                    location.href='/sweethomesw/config/index.html';
-                }
-            });
-            $(document).bind('pageinit', function(){
-                $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html&info=true");
-                $("#footer").load("/sweethomesw/footer/footerConfig.html", function(){
-                    $("#configbutton").attr("src","/sweethomesw/img/usuarioconfigselected.png");
-                });
-                $("#userData").load("/sweethomesw/ajax/userdata.php");
-                $("#userMessage").load("/sweethomesw/ajax/usermessages.php",function(){
-                    $("#userMessage").css("height",$("#userMessage").find("table").height() + "px");
-                });
-                $(document).ajaxComplete(function(){
-                    $("body").resize();
-                });
-            });
-        </script>
     </head>
     <body>
         <header id="header" data-role="header" data-position="fixed" data-tap-toggle="false"></header>

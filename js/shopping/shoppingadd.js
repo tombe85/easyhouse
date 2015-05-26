@@ -10,16 +10,21 @@ $(document).bind('pagebeforecreate',function(){
 
 $(document).bind('pageinit', function(){
     //Footer
-    $("#header").load("/sweethomesw/ajax/header.php?product=true");
-    $("#footer").load("/sweethomesw/footer/footer.html", function(){
+    $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=index.html&product=true");
+    $("#footer").load("/sweethomesw/footer/footer.html");
+    $("#productsList").load("/sweethomesw/ajax/productlist.php",function(){
         $("#comprabutton").attr("src","/sweethomesw/img/compraselected.png");
     });
-    $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
     $(document).ajaxComplete(function(){
-
+        reCheckproducts();
         $("body").resize();
     });
 });
+
+function textoClicked(){
+    $("footer").hide();
+    $("#contentBottom").css("bottom","0px");
+}
 
 function comprar(){
     if(idsreg.trim() != ""){
