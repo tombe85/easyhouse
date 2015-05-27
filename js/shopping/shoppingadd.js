@@ -49,6 +49,9 @@ function addproducttolist(idproduct,productcheck){
     if(productcheck.checked == true){
         idsreg = idsreg + cad;
         names += nam;
+        $("#textoProd").val("");
+        document.getElementById("textoProd").focus();
+        $("#textoProd").keyup();
     }else{
         idsreg = idsreg.replace(cad,"");
         names = names.replace(nam,"");
