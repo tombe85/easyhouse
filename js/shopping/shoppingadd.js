@@ -19,12 +19,16 @@ $(document).bind('pageinit', function(){
         reCheckproducts();
         $("body").resize();
     });
-});
+    $("#textoProd").focusin(function(){
+        $("footer").hide();
+        $("#contentBottom").hide();
+    });
 
-function textoClicked(){
-    $("footer").hide();
-    $("#contentBottom").css("bottom","0px");
-}
+    $("#textoProd").focusout(function(){
+        $("footer").show();
+        $("#contentBottom").show();
+    });
+});
 
 function comprar(){
     if(idsreg.trim() != ""){
