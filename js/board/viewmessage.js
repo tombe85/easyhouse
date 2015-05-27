@@ -15,7 +15,6 @@ $(document).bind('pageinit', function(){
     $("#idboard").attr("value", getQueryVariable("id"));
     $(document).ajaxComplete(function(){
         $("body").resize();
-        document.getElementById("texto").focus();
     });
     
     requestUpdate();
@@ -30,6 +29,7 @@ function checkComment(formu){
             $('body').animate({scrollTop: $(document).height()},750);
         }
     });
+    $("#texto").focusin();
     return false;
 }
 
@@ -47,17 +47,11 @@ function updateComments(){
             num = (num*10) + respuestaSolicitud.charAt(posnum);
             posnum++;
         }
-        num /=10;
+        num /=10; //Coge el < como 0
         if(num != $("#numcomdiv").html()){
             $("#comments").html(respuestaSolicitud);
             $('body').animate({scrollTop: $(document).height()},750)
             $("#numcomdiv").html(num);
         }
     });
-}
-
-function textClicked(){
-    $('body').animate({scrollTop: $(document).height()},750);
-    $("footer").hide();
-    $("#contentBottom").css("bottom","0px");
 }

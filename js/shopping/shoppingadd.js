@@ -86,6 +86,7 @@ function addNewProduct(){
                     $("#"+texto.replace(" ","")).click();
                 });
                 $("#textoProd").val("");
+                $("#textoProd").focusin();
             }
         });
     }
