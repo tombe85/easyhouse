@@ -9,16 +9,17 @@ $(document).bind('pageinit', function(){
     var origmessurl = "/sweethomesw/ajax/singlemessage.php?id=" + getQueryVariable("id");
     var commentsurl = "/sweethomesw/ajax/messagecomments.php?id="  + getQueryVariable("id");
     $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=index.html");
-    $("#footer").load("/sweethomesw/footer/footer.html", function(){
-        $("#tablonbutton").attr("src","/sweethomesw/img/tablonselected.png");
-    });
+    $("#contentBottom").css("bottom","0px");
     $("#originalmessage").load(origmessurl);
     $("#comments").load(commentsurl);
     $("#idboard").attr("value", getQueryVariable("id"));
     $(document).ajaxComplete(function(){
         $("body").resize();
+        document.getElementById("texto").focus();
     });
+    
     requestUpdate();
+    
 });
 
 function checkComment(formu){
