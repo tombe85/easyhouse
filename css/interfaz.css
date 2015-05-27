@@ -241,6 +241,10 @@ div#confirmButtonRight{
     text-align: center;
 }
 
+#matesHouse tr{
+    display: table-row;
+}
+
 #menuinf{
     background-color: #3f51b5;
 }
@@ -269,10 +273,6 @@ div#confirmButtonRight{
 #infoHouse h2{
     color: #3f51b5;
     text-align: center;
-}
-
-#matesHouse{
-    padding: 10px;
 }
 
 #matesHouse h2{
@@ -559,6 +559,19 @@ div#confirmButtonRight{
             transition: height 0.5s ease; 
 }
 
+.homeMate{
+    margin: auto;
+    width: 50%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.homeMate img{
+    height: 60px;
+    width: 60px;
+}
+
 .indicator{
     background-color: #7986CB;
     text-align: center;
@@ -624,6 +637,7 @@ div#confirmButtonRight{
     margin-top: 2px;
     margin-bottom: 2px;
     margin-right: 10px;
+    margin-left: 10px;
     height: 50px;
     overflow: hidden;
 }

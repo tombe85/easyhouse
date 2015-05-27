@@ -6,7 +6,6 @@ $(document).bind('pagebeforecreate',function(){
 });
 
 $(document).bind('pageinit', function(){
-    //Footer
     $("#header").load("/sweethomesw/ajax/header.php?backbutton=true&backurl=/sweethomesw/home.html");
     $("#footer").load("/sweethomesw/footer/footer.html", function(){
         $("#homebutton").attr("src","/sweethomesw/img/homeselected.png");

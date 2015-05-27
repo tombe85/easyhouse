@@ -17,7 +17,7 @@
     echo '</h2>
             </div>
             <div id="infoHouse">
-                <h2>Información de contacto</h2>
+                <h2>Propietario</h2>
                 <ul id="infoList">
                     <li id="propietario" onclick="changeLordName()">Propietario: '.$arr["lord"].'</li>
                     <li id="telefono" onclick="changeLordPhone()">Teléfono: '.$arr["lordphone"].'</li>

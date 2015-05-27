@@ -11,11 +11,22 @@
     
     $arr = loadHomeMates($idhome);
     echo '  <div id="matesHouse">
-                <h2>Mis compañeros</h2>
+                <h2>Inquilinos</h2>
                 <table>';
     
+    $j = 0;
     foreach($arr as $mate){
-        echo '<tr class="rowNormal" id="mate'.$mate["id"].'"><td class="rowPhoto"><img src="'.$mate["ruta"].'" /></td><td class="rowText"><h3>'.$mate["name"].' </h3></td></tr>';
+        if($j % 2 == 0){
+            echo '<tr class="rowNormal">';
+        }
+        echo '<td class="homeMate"><img src="'.$mate["ruta"].'" /><h3>'.$mate["name"].'</h3></td>';
+        if($j % 2 != 0){
+            echo '</tr>';
+        }
+        $j++;
+    }
+    if($j % 2 != 0){
+        echo '<td class="homeMate"></td></tr>';
     }
     
     echo '
