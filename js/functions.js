@@ -12,7 +12,7 @@ function getCookie(galleta) {
 function changeAvatar(){
     var foto = $("#userAvatar").attr("src").replace("/sweethomesw/img/avatares/","").replace(".png","");
     foto++;
-    if(foto > 13){
+    if(foto > 54){
         foto = 1;
     }
     var ruta = "/sweethomesw/img/avatares/" + foto + ".png";
