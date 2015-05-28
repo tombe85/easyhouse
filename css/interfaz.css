@@ -694,7 +694,7 @@ img.rowPhoto{
 }
 
 .sendtext{
-    width: 100%;
+    width: auto;
     float: left;
     border-spacing: 0px;
     background-color: white;
