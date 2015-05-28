@@ -376,6 +376,7 @@ div#confirmButtonRight{
     border: none;
     color: white;
     width: 100%;
+    min-width: 60px;
 }
 
 .buttonDarkBlue{
@@ -694,8 +695,7 @@ img.rowPhoto{
 }
 
 .sendtext{
-    width: auto;
-    float: left;
+    width: 100%;
     border-spacing: 0px;
     background-color: white;
     padding: 0px;
