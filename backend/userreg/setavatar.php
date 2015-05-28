@@ -18,7 +18,7 @@
         while($result->num_rows > 0){
             $num = str_replace("/sweethomesw/img/avatares/","", str_replace(".png","",$ruta));
             $num++;
-            if($num > 13){
+            if($num > 54){
                 $num = 1;
             }
             $ruta = "/sweethomesw/img/avatares/".$num.".png";
