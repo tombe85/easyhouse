@@ -50,7 +50,6 @@ function addproducttolist(idproduct,productcheck){
         idsreg = idsreg + cad;
         names += nam;
         $("#textoProd").val("");
-        document.getElementById("textoProd").focus();
         $("#textoProd").keyup();
     }else{
         idsreg = idsreg.replace(cad,"");
