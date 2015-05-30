@@ -716,6 +716,10 @@ img.rowPhoto{
     overflow: hidden;
 }
 
+.tachado{
+    text-decoration: line-through;
+}
+
 .whitefont{
     color: white;
 }
