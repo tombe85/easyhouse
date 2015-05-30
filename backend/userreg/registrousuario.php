@@ -1,12 +1,15 @@
 <?php
 
+include_once('../functions.php');
+
 //Cogemos los datos
 if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_COOKIE["code"])){
     header('Location: /sweethomesw/userregister.html');
 }
+$sal = generateAleatoryCode();
 $user=$_POST["usuario"];
-$passwd=sha1($_POST["passwd"]);
-$passwd2=sha1($_POST["passwd2"]);
+$passwd=sha1($_POST["passwd"] . $sal);
+$passwd2=sha1($_POST["passwd2"] . $sal);
 $code=$_COOKIE["code"];
 
 //Comprobaciones
@@ -18,7 +21,6 @@ if($passwd !== $passwd2){
 }
 
 //Conectamos a la base de datos
-include_once('../functions.php');
 $db = connectDataBase();
 
 //Ver si está invitado
@@ -33,7 +35,7 @@ $idhome = $row["idhome"];
 $mail = $row["mail"];
 
 //añadir a usarios
-$query='insert into users (name,idhome,mail,passwd) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$passwd.'")';
+$query='insert into users (name,idhome,mail,passwd, sal) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$passwd.'","'.$sal.'")';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 

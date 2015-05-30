@@ -108,4 +108,15 @@
         $mess .= '</body></html>';
         return $mess;
     }
+
+    function generateAleatoryCode(){
+        $caracteres = "abcdefghijklmnopqrstuvwxyz1234567890";
+        $code = "";
+        
+        for($i=0; $i<20; $i++)
+        {
+            $code = $code . substr($caracteres,rand(0,strlen($caracteres)),1);
+        }
+        return $code;
+    }
 ?>

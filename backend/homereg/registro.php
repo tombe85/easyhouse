@@ -1,13 +1,18 @@
 <?php
-//cogemos la sesión
-session_start();
+
+if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_COOKIE["email"]) || !isset($_COOKIE["nombrecasa"])){
+    header('Location: /sweethomesw/register.html?mess=1');
+}
+
+include_once('../functions.php');
 
 //Cogemos los datos de POST
 $user=$_POST["usuario"];
 $mail=$_POST["email"];
 $homename=$_POST["nombrecasa"];
-$passwd=sha1($_POST["passwd"]);
-$passwd2=sha1($_POST["passwd2"]);
+$sal = generateAleatoryCode();
+$passwd=sha1($_POST["passwd"] . $sal);
+$passwd2=sha1($_POST["passwd2"] . $sal);
 
 //Comprobaciones
 if($user == null || $user == "" || $mail == null || $mail == "" || $homename == null || $homename == "" || $_POST["passwd"] == null || $_POST["passwd"] == "" || $_POST["passwd2"] == null || $_POST["passwd2"] == ""){
@@ -20,7 +25,6 @@ if($passwd !== $passwd2){
 }
 
 //Conectamos a la base de datos
-include_once('../functions.php');
 $db = connectDataBase();
 
 //Añadimos registros a la base de datos
@@ -46,7 +50,7 @@ $reg=$result->fetch_array();
 $idhome=$reg["idhome"];
 
 //Introducir usuario
-$query='insert into users (name,idhome,mail,passwd,admin) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$passwd.'","1")';
+$query='insert into users (name,idhome,mail,passwd,admin,sal) values ("'.$user.'",'.$idhome.',"'.$mail.'","'.$passwd.'","1","'.$sal.'")';
 $result = $db->query($query)
     or die($db->error. " en la línea ".(__LINE__-1));
 

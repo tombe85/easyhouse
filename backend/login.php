@@ -6,7 +6,7 @@ if(!isset($_REQUEST["usuario"]) || !isset($_REQUEST["passwd"])){
     exit();
 }
 $mail=$_REQUEST["usuario"];
-$passwd=sha1($_REQUEST["passwd"]);
+$passwd=$_REQUEST["passwd"];
 
 //Conectar BBDD
 include_once('functions.php');
@@ -21,7 +21,7 @@ if($result->num_rows == 0){
 }
 $reg=$result->fetch_array();
 //Comprobar contraseña y asignar iduser
-if($passwd != $reg["passwd"]){
+if(sha1($passwd . $reg["sal"]) != $reg["passwd"]){
     header('Location: /sweethomesw/login.html?mess=3');
     exit();
 }

@@ -11,8 +11,8 @@
         exit();
     }
     $iduser = $_COOKIE["iduser"];
-    $passwdant = sha1($_REQUEST["passwdant"]);
-    $passwdnew = sha1($_REQUEST["passwdnew"]);
+    $passwdant = $_REQUEST["passwdant"];
+    $passwdnew = $_REQUEST["passwdnew"];
     
     $db = connectDataBase();
     $query = 'select * from users where iduser = "'.$iduser.'"';
@@ -20,9 +20,10 @@
         or die($db->error);
     $row = $result->fetch_array();
     $passwddb = $row["passwd"];
+    $sal = $row["sal"];
     
-    if($passwdant == $passwddb){
-        $query = 'update users set passwd = "'.$passwdnew.'" where iduser = "'.$iduser.'"';
+    if(sha1($passwdant . $sal) == $passwddb){
+        $query = 'update users set passwd = "'.sha1($passwdnew . $sal).'" where iduser = "'.$iduser.'"';
         if($db->query($query)){
             echo "0";
         }else{

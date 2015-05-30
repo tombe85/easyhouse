@@ -8,15 +8,11 @@
     
     $mail = $_REQUEST["texto"];
     $idhome = $_COOKIE["idhome"];
-    $caracteres = "abcdefghijklmnopqrstuvwxyz1234567890";
-    $codegenerated = false;
     
+    
+    $codegenerated = false;
     while(!$codegenerated){
-        $code = "";
-        for($i=0; $i<20; $i++)
-        {
-            $code = $code . substr($caracteres,rand(0,strlen($caracteres)),1);
-        }
+        $code = generateAleatoryCode();
         $query = 'select * from invited where code like "'.$code.'"';
         $result = $db->query($query)
             or die($db->error);
