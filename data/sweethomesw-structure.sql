@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-05-2015 a las 14:35:49
+-- Tiempo de generación: 31-05-2015 a las 19:06:06
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `board` (
   `idhome` int(10) unsigned NOT NULL,
   `date` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `data` text COLLATE utf8_spanish_ci NOT NULL,
+  `lastcommenttime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idboard`),
   KEY `iduser` (`iduser`),
   KEY `idhome` (`idhome`)
@@ -53,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `boardcomments` (
   PRIMARY KEY (`idcomment`),
   KEY `idboard` (`idboard`),
   KEY `iduser` (`iduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=79 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=81 ;
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `invited` (
   PRIMARY KEY (`idinvited`),
   UNIQUE KEY `code` (`code`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `active` tinyint(1) NOT NULL,
   PRIMARY KEY (`idproduct`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=71 ;
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `registro` (
   PRIMARY KEY (`idregistro`),
   KEY `iduser` (`iduser`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=314 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=316 ;
 
 -- --------------------------------------------------------
 
@@ -200,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `sal` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`iduser`),
   KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=18 ;
 
 --
 -- Restricciones para tablas volcadas

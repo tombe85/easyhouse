@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-05-2015 a las 14:35:40
+-- Tiempo de generación: 31-05-2015 a las 19:06:36
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -20,50 +20,15 @@ SET time_zone = "+00:00";
 -- Base de datos: `sweethomesw`
 --
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `board`
---
-
-CREATE TABLE IF NOT EXISTS `board` (
-  `idboard` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `iduser` int(10) unsigned NOT NULL,
-  `content` text COLLATE utf8_spanish_ci NOT NULL,
-  `idhome` int(10) unsigned NOT NULL,
-  `date` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `data` text COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`idboard`),
-  KEY `iduser` (`iduser`),
-  KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=17 ;
-
 --
 -- Volcado de datos para la tabla `board`
 --
 
-INSERT INTO `board` (`idboard`, `iduser`, `content`, `idhome`, `date`, `data`) VALUES
-(12, 10, 'Viene el del gas', 2, '14.05.2015', 'Ana la marrana fulana'),
-(13, 4, 'Cena el 24', 2, '14.05.2015', 'Hola mierdas'),
-(15, 17, 'eso', 7, '22.05.2015', 'eso\r\n'),
-(16, 2, 'Hoy cenamos fuera', 2, '24.05.2015', 'He aprobado! Os invito a cenar!!');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `boardcomments`
---
-
-CREATE TABLE IF NOT EXISTS `boardcomments` (
-  `idcomment` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `idboard` int(11) unsigned NOT NULL,
-  `iduser` int(11) unsigned NOT NULL,
-  `comment` text COLLATE utf8_spanish_ci NOT NULL,
-  `date` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`idcomment`),
-  KEY `idboard` (`idboard`),
-  KEY `iduser` (`iduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=79 ;
+INSERT INTO `board` (`idboard`, `iduser`, `content`, `idhome`, `date`, `data`, `lastcommenttime`) VALUES
+(12, 10, 'Viene el del gas', 2, '14.05.2015', 'Ana la marrana fulana', '2015-05-31 17:05:36'),
+(13, 4, 'Cena el 24', 2, '14.05.2015', 'Hola mierdas', '2015-05-31 17:05:23'),
+(15, 17, 'eso', 7, '22.05.2015', 'eso\r\n', '0000-00-00 00:00:00'),
+(16, 2, 'Hoy cenamos fuera', 2, '24.05.2015', 'He aprobado! Os invito a cenar!!', '0000-00-00 00:00:00');
 
 --
 -- Volcado de datos para la tabla `boardcomments`
@@ -129,24 +94,9 @@ INSERT INTO `boardcomments` (`idcomment`, `idboard`, `iduser`, `comment`, `date`
 (75, 16, 2, 'eyyyy', '28.05.2015'),
 (76, 16, 2, 'ewrfgwe', '28.05.2015'),
 (77, 13, 2, 'asa', '28.05.2015'),
-(78, 13, 2, 'alalal', '28.05.2015');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `expenses`
---
-
-CREATE TABLE IF NOT EXISTS `expenses` (
-  `idexpense` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` text COLLATE utf8_spanish_ci NOT NULL,
-  `idhome` int(10) unsigned NOT NULL,
-  `users` text COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`idexpense`),
-  KEY `idhome` (`idhome`),
-  KEY `idhome_2` (`idhome`),
-  KEY `idhome_3` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=10 ;
+(78, 13, 2, 'alalal', '28.05.2015'),
+(79, 13, 2, 'aham', '31.05.2015'),
+(80, 12, 2, 'claro', '31.05.2015');
 
 --
 -- Volcado de datos para la tabla `expenses`
@@ -159,27 +109,6 @@ INSERT INTO `expenses` (`idexpense`, `name`, `idhome`, `users`) VALUES
 (8, 'internet', 3, ''),
 (9, 'Luz', 2, '4 10 2 ');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `homes`
---
-
-CREATE TABLE IF NOT EXISTS `homes` (
-  `idhome` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` text COLLATE utf8_spanish_ci NOT NULL,
-  `numusers` int(10) unsigned NOT NULL DEFAULT '1',
-  `maxscore` int(10) unsigned NOT NULL DEFAULT '0',
-  `adminmail` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `lord` varchar(50) COLLATE utf8_spanish_ci NOT NULL DEFAULT '',
-  `lordphone` varchar(25) COLLATE utf8_spanish_ci NOT NULL DEFAULT '',
-  `lordmail` varchar(100) COLLATE utf8_spanish_ci NOT NULL DEFAULT '',
-  `info` text COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`idhome`),
-  UNIQUE KEY `adminmail` (`adminmail`),
-  KEY `numusers` (`numusers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=8 ;
-
 --
 -- Volcado de datos para la tabla `homes`
 --
@@ -191,38 +120,6 @@ INSERT INTO `homes` (`idhome`, `name`, `numusers`, `maxscore`, `adminmail`, `lor
 (5, 'pr', 1, 0, 'prueba@p.com1', '', '', '', ''),
 (6, 'iaia', 1, 0, 'iaia@ia.ia', '', '', '', ''),
 (7, 'casa', 1, 0, 'miguel@miguel.com', '', '', '', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `invited`
---
-
-CREATE TABLE IF NOT EXISTS `invited` (
-  `idinvited` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `mail` text COLLATE utf8_spanish_ci NOT NULL,
-  `code` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `idhome` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`idinvited`),
-  UNIQUE KEY `code` (`code`),
-  KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `products`
---
-
-CREATE TABLE IF NOT EXISTS `products` (
-  `idproduct` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` text COLLATE utf8_spanish_ci NOT NULL,
-  `idhome` int(10) unsigned NOT NULL,
-  `added` tinyint(1) NOT NULL,
-  `active` tinyint(1) NOT NULL,
-  PRIMARY KEY (`idproduct`),
-  KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=69 ;
 
 --
 -- Volcado de datos para la tabla `products`
@@ -260,25 +157,9 @@ INSERT INTO `products` (`idproduct`, `name`, `idhome`, `added`, `active`) VALUES
 (65, 'pollo', 2, 1, 1),
 (66, 'ensalada', 2, 1, 1),
 (67, 'folios', 2, 0, 1),
-(68, 'aa', 2, 0, 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `registro`
---
-
-CREATE TABLE IF NOT EXISTS `registro` (
-  `idregistro` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `iduser` int(10) unsigned NOT NULL,
-  `content` text COLLATE utf8_spanish_ci NOT NULL,
-  `idhome` int(10) unsigned NOT NULL,
-  `date` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `usersdeleted` text COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`idregistro`),
-  KEY `iduser` (`iduser`),
-  KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=314 ;
+(68, 'aa', 2, 0, 1),
+(69, 'baba', 2, 0, 1),
+(70, 'bb', 2, 0, 1);
 
 --
 -- Volcado de datos para la tabla `registro`
@@ -591,27 +472,9 @@ INSERT INTO `registro` (`idregistro`, `iduser`, `content`, `idhome`, `date`, `us
 (310, 2, 'Ha añadido el producto: ensalada', 2, '27.05.2015', ' 2'),
 (311, 2, 'Ha añadido el producto: folios', 2, '27.05.2015', ' 2'),
 (312, 2, 'Ha hecho compra<br> (2 productos)', 2, '27.05.2015', ' 2'),
-(313, 2, 'Ha añadido el producto: aa', 2, '30.05.2015', ' 2');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tasks`
---
-
-CREATE TABLE IF NOT EXISTS `tasks` (
-  `idtask` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` text COLLATE utf8_spanish_ci NOT NULL,
-  `period` int(11) NOT NULL,
-  `idhome` int(11) unsigned NOT NULL,
-  `active` tinyint(1) NOT NULL,
-  `whenisdone` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `points` int(11) NOT NULL,
-  `activesince` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `approved` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`idtask`),
-  KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=15 ;
+(313, 2, 'Ha añadido el producto: aa', 2, '30.05.2015', ' 2'),
+(314, 2, 'Ha añadido el producto: baba', 2, '31.05.2015', ''),
+(315, 2, 'Ha añadido el producto: bb', 2, '31.05.2015', '');
 
 --
 -- Volcado de datos para la tabla `tasks`
@@ -623,25 +486,6 @@ INSERT INTO `tasks` (`idtask`, `name`, `period`, `idhome`, `active`, `whenisdone
 (12, 'limpiar cocina', 2, 3, 1, '', 5, '17.05.2015', 1),
 (13, 'bajar basura', 1, 3, 0, '17.05.2015', 2, '17.05.2015', 1),
 (14, 'limpiar baño', 2, 3, 1, '', 5, '17.05.2015', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tasksdone`
---
-
-CREATE TABLE IF NOT EXISTS `tasksdone` (
-  `idtaskdone` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `idtask` int(10) unsigned NOT NULL,
-  `iduser` int(10) unsigned NOT NULL,
-  `date` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `validated` tinyint(1) NOT NULL DEFAULT '0',
-  `idhome` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`idtaskdone`),
-  KEY `idtask` (`idtask`),
-  KEY `iduser` (`iduser`),
-  KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=19 ;
 
 --
 -- Volcado de datos para la tabla `tasksdone`
@@ -661,26 +505,6 @@ INSERT INTO `tasksdone` (`idtaskdone`, `idtask`, `iduser`, `date`, `validated`, 
 (17, 11, 2, '24.05.2015', 0, 2),
 (18, 11, 2, '26.05.2015', 0, 2);
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `iduser` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` text COLLATE utf8_spanish_ci NOT NULL,
-  `idhome` int(10) unsigned NOT NULL,
-  `mail` text COLLATE utf8_spanish_ci NOT NULL,
-  `photo` varchar(100) COLLATE utf8_spanish_ci NOT NULL DEFAULT '/sweethomesw/img/avatares/0.png',
-  `passwd` text COLLATE utf8_spanish_ci NOT NULL,
-  `admin` tinyint(1) NOT NULL DEFAULT '0',
-  `points` int(10) unsigned NOT NULL DEFAULT '0',
-  `sal` text COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`iduser`),
-  KEY `idhome` (`idhome`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=19 ;
-
 --
 -- Volcado de datos para la tabla `users`
 --
@@ -694,69 +518,6 @@ INSERT INTO `users` (`iduser`, `name`, `idhome`, `mail`, `photo`, `passwd`, `adm
 (15, 'prueba1', 5, 'prueba@p.com1', '/sweethomesw/img/avatares/0.png', '7e240de74fb1ed08fa08d38063f6a6a91462a815', 1, 0, ''),
 (16, 'iaia', 6, 'iaia@ia.ia', '/sweethomesw/img/avatares/0.png', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 1, 0, ''),
 (17, 'Miguel', 7, 'miguel@miguel.com', '/sweethomesw/img/avatares/1.png', '81bce1f3bf343c464685d875c626820cdb58e309', 1, 0, '');
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `board`
---
-ALTER TABLE `board`
-  ADD CONSTRAINT `board_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`) ON DELETE CASCADE,
-  ADD CONSTRAINT `board_ibfk_2` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `boardcomments`
---
-ALTER TABLE `boardcomments`
-  ADD CONSTRAINT `boardcomments_ibfk_1` FOREIGN KEY (`idboard`) REFERENCES `board` (`idboard`) ON DELETE CASCADE,
-  ADD CONSTRAINT `boardcomments_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `expenses`
---
-ALTER TABLE `expenses`
-  ADD CONSTRAINT `expenses_ibfk_1` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `invited`
---
-ALTER TABLE `invited`
-  ADD CONSTRAINT `invited_ibfk_1` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `products`
---
-ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `registro`
---
-ALTER TABLE `registro`
-  ADD CONSTRAINT `registro_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`) ON DELETE CASCADE,
-  ADD CONSTRAINT `registro_ibfk_2` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `tasks`
---
-ALTER TABLE `tasks`
-  ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `tasksdone`
---
-ALTER TABLE `tasksdone`
-  ADD CONSTRAINT `tasksdone_ibfk_1` FOREIGN KEY (`idtask`) REFERENCES `tasks` (`idtask`) ON DELETE CASCADE,
-  ADD CONSTRAINT `tasksdone_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `users` (`iduser`) ON DELETE CASCADE,
-  ADD CONSTRAINT `tasksdone_ibfk_3` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`idhome`) REFERENCES `homes` (`idhome`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
