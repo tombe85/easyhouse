@@ -40,7 +40,7 @@
             or die($db->error. " en la línea ".(__LINE__-1));
     }
     
-    $query='update tasks set whenisdone = "'.date("d.m.Y").'", active = false where idtask = '. $idtask;
+    $query='update tasks set whenisdone = "'.date("d.m.Y").'", active = false where idtask = "'. $idtask.'"';
     $result = $db->query($query)
         or die($db->error. " en la línea ".(__LINE__-1));
     

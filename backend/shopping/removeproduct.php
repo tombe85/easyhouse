@@ -10,24 +10,29 @@
         exit();
     }
     $text = $_REQUEST["strids"];
+    $idhome = $_COOKIE["idhome"];
     $idsproduct = array();
     $idsproduct = split(" ", trim($text));
     
     $db = connectDataBase();
-    $numprods = count($idsproduct);
+    $prods = "";
     foreach($idsproduct as $idproduct){
+        $query = 'select * from products where idproduct = "'.$idproduct.'"';
+        if(!($result = $db->query($query))){
+            echo "Error al actualizar la lista de productos";
+            exit();
+        }
+        $row = $result->fetch_array();
+        $prods = $prods . $row["name"] . ", ";
         $query='update products set added = false where idproduct = "'.$idproduct.'"';
         if(!($result = $db->query($query))){
             echo "Error al actualizar la lista de productos";
             exit();
         }
     }
-    if($numprods == 1)
-        $plural = "";
-    else
-        $plural = "s";
+    $prods = substr($prods, 0, -2);    
     
-    $query = 'insert into registro (iduser,content,idhome,date,usersdeleted) values ('.$_COOKIE["iduser"].',"Ha hecho compra<br> ('.$numprods.' producto'.$plural.')",'.$_COOKIE["idhome"].',"'.date("d.m.Y").'","")';
+    $query = 'insert into registro (iduser,content,idhome,date,usersdeleted) values ('.$_COOKIE["iduser"].',"Ha comprado:<br> ('.$prods.')",'.$_COOKIE["idhome"].',"'.date("d.m.Y").'","")';
     
     $db->query($query);
     $db->close();

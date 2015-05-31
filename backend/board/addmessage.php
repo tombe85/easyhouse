@@ -23,7 +23,7 @@
         or die($db->error. " en la línea ".(__LINE__-1));
     
     //Añadir al registro
-    $cont = "Ha añadido un mensaje al tablón";
+    $cont = "Nuevo mensaje en el tablón: " . $title;
     $query = 'insert into registro (iduser,content,idhome,date) values ('.$iduser.',"'.$cont.'",'.$idhome.',"'.date("d.m.Y").'")';
     $result = $db->query($query)
         or die($db->error. " en la línea ".(__LINE__-1));

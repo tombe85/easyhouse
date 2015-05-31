@@ -7,6 +7,7 @@
     }
     $name = $_REQUEST["name"];
     $idhome = $_REQUEST["home"];
+    $iduser = $_COOKIE["iduser"];
     
     $db = connectDataBase();
     $query = 'update homes set name = "'.$name.'" where idhome = "'.$idhome.'"';
@@ -14,7 +15,13 @@
         $query = 'select * from homes where idhome = "'.$idhome.'"';
         if(($result = $db->query($query)) != null){
             $row = $result->fetch_array();
-            echo $row["name"];
+            $nombre = $row["name"];
+            
+            $query = 'insert into registro (iduser,content,idhome,date,usersdeleted) values ('.$iduser.',"Nuevo nombre de la casa: '.$nombre.'",'.$idhome.',"'.date("d.m.Y").'","")';
+    
+            $db->query($query);
+            
+            echo $nombre;
         }else{
             echo "0";
         }

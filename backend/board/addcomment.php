@@ -6,7 +6,6 @@
     if(!checkLogin()){
         echo "0";
         exit();
-        //header('Location: /sweethomesw/login.html');
     }
     $idhome = $_COOKIE["idhome"];
     $iduser = $_COOKIE["iduser"];
@@ -15,7 +14,6 @@
     if(!isset($_REQUEST["texto"]) || !isset($_REQUEST["idboard"])){
         echo "0";
         exit();
-        //header('Location: /sweethomesw/board/viewmessage.html');
     }
     $text = $_REQUEST["texto"];
     $idboard = $_REQUEST["idboard"];
@@ -39,7 +37,5 @@
     echo '</td>';
     echo '</tr>';
     echo '</table>';
-    //updateCookies();
-    //header('Location: /sweethomesw/board/viewmessage.html?id='.$idboard.'&bottom=true');
 }
 ?>

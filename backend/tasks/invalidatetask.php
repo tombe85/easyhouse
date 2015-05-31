@@ -46,7 +46,7 @@
         exit();
     }
     //Añade al registro
-    $content = "Ha invalidado la tarea realizada por ".$usuario.": ". $task;
+    $content = "Invalidado - ".$task." - realizado por ".$usuario.";
     $query = 'insert into registro (iduser,content,idhome,date,usersdeleted) values ('.$idadmin.',"'.$content.'",'.$_COOKIE["idhome"].',"'.date("d.m.Y").'","")';
     $db->query($query);
     

@@ -24,7 +24,7 @@
     if($result = $db->query($query)){
         $iduser = $_COOKIE["iduser"];
         $idhome = $_COOKIE["idhome"];
-        $content = "Ha eliminado: " . $content;
+        $content = "Eliminado del tablón: " . $content;
         $query = 'insert into registro (iduser,content,idhome,date) values ("'.$iduser.'","'.$content.'",'.$idhome.',"'.date("d.m.Y").'")';
         $result = $db->query($query)
             or die($db->error);

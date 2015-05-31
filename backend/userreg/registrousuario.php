@@ -56,6 +56,10 @@ $result = $db->query($query)
 $reg=$result->fetch_array();
 $iduser=$reg["iduser"];
 
+$query = 'insert into registro (iduser,content,idhome,date) values ("'.$iduser.'","Se ha incorporado a la casa",'.$idhome.',"'.date("d.m.Y").'")';
+$result = $db->query($query)
+    or die($db->error);
+
 $db->close();
 
 //Actualizar variables de sesión y cookies
