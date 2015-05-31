@@ -72,8 +72,6 @@ function addcomprar(){
 
 function addNewProduct(){
     var texto = $("#textoProd").val();
-    var i = 0;
-    var ide;
     if(texto == null || texto == ""){
         alert("Debes introducir el nombre de un producto");
     }else{
@@ -85,7 +83,7 @@ function addNewProduct(){
                     $("#"+texto.replace(" ","")).click();
                 });
                 $("#textoProd").val("");
-                $("#textoProd").focusin();
+                $("#textoProd").focusout();
             }
         });
     }
