@@ -44,6 +44,10 @@
             $arr[$i]["idboard"] = $row["idboard"];
             $arr[$i]["message"] = $row["content"];
             $arr[$i]["date"] = $row["date"];
+            $querym = 'select * from boardcomments where idboard = '.$row["idboard"];
+            $resultm = $db->query($querym)
+                or die($db->error. " en la línea ".(__LINE__-1));
+            $arr[$i]["comments"] = $resultm->num_rows;
         }
         $db->close();
         return $arr;
