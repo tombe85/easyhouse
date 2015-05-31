@@ -25,6 +25,9 @@
     $query = 'insert into boardcomments (idboard,iduser,comment,date) values ('.$idboard.','.$iduser.',"'.$text.'","'.date("d.m.Y").'")';
     $result = $db->query($query)
         or die($db->error. " en la línea ".(__LINE__-1));
+    $query = 'update board set lastcommenttime = now() where idboard = "'.$idboard.'"';
+    $result = $db->query($query)
+        or die($db->error. " en la línea ".(__LINE__-1));
     $db->close();
     echo '<table>';
     echo '<tr class="rowBordered">';

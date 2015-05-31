@@ -28,7 +28,7 @@
     function loadboard($idhome){
          include_once('functions.php');
          $db = connectDataBase();
-         $query='select * from board where idhome = "'.$idhome.'" order by idboard desc';
+         $query='select * from board where idhome = "'.$idhome.'" order by lastcommenttime desc, idboard desc';
          $result = $db->query($query)
             or die($db->error. " en la línea ".(__LINE__-1));
         
