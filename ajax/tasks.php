@@ -33,7 +33,9 @@
                             taskdayson = '.$dayson.';
                             taskpoints = '.$points.';
                             $(taskselected).css("padding","0px");
-                            $(taskselected).load("/sweethomesw/tasks/confirm.html");
+                            $(taskselected).load("/sweethomesw/tasks/confirm.html",function(){
+                                $("#content").css("margin-bottom","65px");
+                            });
                         });
                     </script>';
             echo '</div>';
