@@ -210,7 +210,7 @@ div#confirmButtonRight{
     background-color: white;
 }
 
-#contentInput input{
+#contentForm input{
     background-color: white;
 }
 
@@ -273,6 +273,16 @@ div#confirmButtonRight{
 #infoHouse h2{
     color: #3f51b5;
     text-align: center;
+}
+
+#logoInicio{
+    text-align: center;
+    height: 38%;
+}
+
+#logoAbout{
+    text-align: center;
+    height: 20%;
 }
 
 #matesHouse h2{
@@ -579,16 +589,6 @@ div#confirmButtonRight{
     color: white;
 }
 
-#logoInicio{
-    text-align: center;
-    height: 38%;
-}
-
-#logoAbout{
-    text-align: center;
-    height: 20%;
-}
-
 .menubutton{
     max-width: 35px;
 }
@@ -718,10 +718,6 @@ img.rowPhoto{
 
 .tachado{
     text-decoration: line-through;
-}
-
-.whitefont{
-    color: white;
 }
 
 /* MOVIL */

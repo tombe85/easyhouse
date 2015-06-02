@@ -113,7 +113,7 @@ header{
         width: 100%;
     }
     
-    #contentInput{
+    #contentForm{
         padding: 1em 2em 2em;
         margin: 0px;
         height: auto;
@@ -155,7 +155,7 @@ header{
         height: auto;
     }
     
-    #contentInput{
+    #contentForm{
         padding: 1em 2em 2em;
         margin: 0px auto;
         max-width: 350px;
@@ -183,7 +183,7 @@ header{
         padding-bottom: auto;
     }
     
-    #contentInput{
+    #contentForm{
         background-color: rgba(197, 202, 233, 0.85);
         min-height: inherit;
         padding-bottom: auto;
