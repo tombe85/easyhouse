@@ -214,13 +214,13 @@ div#confirmButtonRight{
     background-color: white;
 }
 
-#emptyHomeImg{
+#emptyContentImg{
     height: 100%;
     margin-top: 15%;
     text-align: center;
     min-height: 200px;
 }
-#emptyHomeImg img{ 
+#emptyContentImg img{ 
     vertical-align: middle;
     width: 200px;
 }
