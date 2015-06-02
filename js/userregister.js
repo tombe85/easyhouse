@@ -8,7 +8,7 @@ $(document).bind('pagebeforecreate',function(){
 $(document).bind('pageinit', function(){
     $("#headerlogin").load("/sweethomesw/ajax/header.php", function(){
         $("#backbutton").css("display","none");
-        $("#fotousuario").css("display","none");
+        $("#userPhoto").css("display","none");
     });
 });
 

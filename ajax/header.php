@@ -18,7 +18,7 @@
     }
     echo '      </td>
                 <td id="logoHeader"><h1>easyHouse<span class="elevated">SW</span></h1></td>';
-    echo '      <td id="fotoHeader">';
+    echo '      <td id="photoHeader">';
     if(isset($iduser)){
         if(isset($_REQUEST["info"]) && $_REQUEST["info"] == "true"){
             echo '<a href="/sweethomesw/about.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/info.png" /></a>';
@@ -30,7 +30,7 @@
             echo '<a href="/sweethomesw/admin/config/expenses.html" data-ajax="false"><img class="menubutton" id="none" src="/sweethomesw/img/expenses_config.png" /></a>';
         }
         else{
-            echo '<a href="/sweethomesw/config/index.html" data-ajax="false"><img id="fotousuario" src="'.$rutafoto.'" /></a>';
+            echo '<a href="/sweethomesw/config/index.html" data-ajax="false"><img id="userPhoto" src="'.$rutafoto.'" /></a>';
         }
     }
     echo '      </td>';

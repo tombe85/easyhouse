@@ -39,22 +39,13 @@ header{
     bottom:41px;
 }
 
-#fotoHeader{
-    width: 16%; 
-    padding-right: 10px;
-}
-
-#infoHeader{
+#photoHeader{
     width: 16%; 
     padding-right: 10px;
 }
 
 #logoHeader{
     width: 68%;
-}
-
-#logoHeader100{
-    width: 100%;
 }
 
 #menuinf{

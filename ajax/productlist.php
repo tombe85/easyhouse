@@ -38,7 +38,7 @@
         echo '<td class="rowText">';
         
         $name = str_replace(" ", "",$reg["product"]);
-        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><h3><span class="tachado">'.$reg["product"].'</span></h3></label></div>';
+        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><h3><span class="lineThrough">'.$reg["product"].'</span></h3></label></div>';
         echo '</td>';
         
         echo '</tr>';

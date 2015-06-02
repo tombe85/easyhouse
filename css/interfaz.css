@@ -220,24 +220,17 @@ div#confirmButtonRight{
     text-align: center;
     min-height: 200px;
 }
+
 #emptyContentImg img{ 
     vertical-align: middle;
     width: 200px;
 }
 
-#fotoHeader{
-    text-align: right;
-}
-
-#infoHeader{
+#photoHeader{
     text-align: right;
 }
 
 #logoHeader{
-    text-align: center;
-}
-
-#logoHeader100{
     text-align: center;
 }
 
@@ -249,7 +242,7 @@ div#confirmButtonRight{
     background-color: #3f51b5;
 }
 
-#fotousuario{
+#userPhoto{
 	background-color: #ffffff;
     height: 50px;
     width: 50px;
@@ -260,7 +253,7 @@ div#confirmButtonRight{
     overflow: hidden;
 }
 
-#fotousuario img{
+#userPhoto img{
     text-align: right;
     height: 100%;
     overflow: hidden;
@@ -275,7 +268,7 @@ div#confirmButtonRight{
     text-align: center;
 }
 
-#logoInicio{
+#logoInit{
     text-align: center;
     height: 38%;
 }
@@ -294,25 +287,11 @@ div#confirmButtonRight{
     text-align: center;
 }
 
-#messagePhoto{
-    padding-left: 10px;
-}
-
-#messageDate{
-    height: auto;
-}
-
 #originalmessage{
     width: 100%;
     padding: 0px;
     padding-top: 0px;
     padding-left: 0px;
-    margin: 0px;
-}
-
-#originalmessBottom{
-    width: 100%;
-    padding: 0px;
     margin: 0px;
 }
 
@@ -351,10 +330,6 @@ div#confirmButtonRight{
     overflow: hidden;
 }
 
-#userregfile{
-    display: none;
-}
-
 /* CLASES */
 
 .aboutLine{
@@ -381,7 +356,7 @@ div#confirmButtonRight{
     width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
 }
 
-.buttonActionAdd{
+.buttonAction2{
     background-color: #FF5252;
     border: none;
     color: white;
@@ -397,13 +372,6 @@ div#confirmButtonRight{
 
 .buttonDarkBlue a{
     color: white;
-}
-
-.buttonNormal{
-    background-color: #C5CAE9;
-    border: none;
-    color: white;
-    width: 100%;    /* Necesario... Encerrar en un div para limitar tamaños */
 }
 
 .buttonTransparent{
@@ -593,21 +561,6 @@ div#confirmButtonRight{
     max-width: 35px;
 }
 
-.negrita{
-    font-family: 'roboto_condensedregular';
-}
-
-.photoInput button{
-    background-color: #c5cae9;
-    border: none;
-}
-
-.photoInput img{
-    width: 6em;
-    height: 6em;
-    overflow: hidden;
-}
-
 .rowBordered{
     width: 100%;
     margin: 0px;
@@ -716,7 +669,7 @@ img.rowPhoto{
     overflow: hidden;
 }
 
-.tachado{
+.lineThrough{
     text-decoration: line-through;
 }
 
