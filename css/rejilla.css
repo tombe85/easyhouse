@@ -39,11 +39,6 @@ header{
     bottom:41px;
 }
 
-#photoHeader{
-    width: 16%; 
-    padding-right: 10px;
-}
-
 #logoHeader{
     width: 68%;
 }
@@ -52,6 +47,11 @@ header{
     width: 100%;
     margin: 0px;
     padding: 2px;
+}
+
+#photoHeader{
+    width: 16%; 
+    padding-right: 10px;
 }
 
 /* CLASES */

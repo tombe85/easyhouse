@@ -145,6 +145,10 @@ table{
 
 /* IDS */
 
+#adminList{
+    margin-bottom: 60px;
+}
+
 #boardMessages{
     margin-bottom: 60px;
 }
@@ -226,39 +230,6 @@ div#confirmButtonRight{
     width: 200px;
 }
 
-#photoHeader{
-    text-align: right;
-}
-
-#logoHeader{
-    text-align: center;
-}
-
-#matesHouse tr{
-    display: table-row;
-}
-
-#menuinf{
-    background-color: #3f51b5;
-}
-
-#userPhoto{
-	background-color: #ffffff;
-    height: 50px;
-    width: 50px;
-    text-align: right;
-    border-radius: 50% 50% 50% 50%;
-    -moz-border-radius: 50% 50% 50% 50%;
-    -webkit-border-radius: 50% 50% 50% 50%;
-    overflow: hidden;
-}
-
-#userPhoto img{
-    text-align: right;
-    height: 100%;
-    overflow: hidden;
-}
-
 #infoHouse{
     padding: 10px;
 }
@@ -268,19 +239,31 @@ div#confirmButtonRight{
     text-align: center;
 }
 
-#logoInit{
-    text-align: center;
-    height: 38%;
-}
-
 #logoAbout{
     text-align: center;
     height: 20%;
 }
 
+#logoHeader{
+    text-align: center;
+}
+
+#logoInit{
+    text-align: center;
+    height: 38%;
+}
+
+#matesHouse tr{
+    display: table-row;
+}
+
 #matesHouse h2{
     color: #3f51b5;
     text-align: center;
+}
+
+#menuinf{
+    background-color: #3f51b5;
 }
 
 #menuinf td{
@@ -293,6 +276,10 @@ div#confirmButtonRight{
     padding-top: 0px;
     padding-left: 0px;
     margin: 0px;
+}
+
+#photoHeader{
+    text-align: right;
 }
 
 #productsList{
@@ -311,10 +298,6 @@ div#confirmButtonRight{
     margin-bottom: 60px;
 }
 
-#adminList{
-    margin-bottom: 60px;
-}
-
 #userData{
     margin-top: 1em;
     padding-bottom: 1em;
@@ -327,6 +310,23 @@ div#confirmButtonRight{
     border-radius: 50% 50% 50% 50%;
     -moz-border-radius: 50% 50% 50% 50%;
     -webkit-border-radius: 50% 50% 50% 50%;
+    overflow: hidden;
+}
+
+#userPhoto{
+	background-color: #ffffff;
+    height: 50px;
+    width: 50px;
+    text-align: right;
+    border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -webkit-border-radius: 50% 50% 50% 50%;
+    overflow: hidden;
+}
+
+#userPhoto img{
+    text-align: right;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -557,6 +557,10 @@ div#confirmButtonRight{
     color: white;
 }
 
+.lineThrough{
+    text-decoration: line-through;
+}
+
 .menubutton{
     max-width: 35px;
 }
@@ -667,10 +671,6 @@ img.rowPhoto{
     -moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius: 15px 15px 15px 15px;
     overflow: hidden;
-}
-
-.lineThrough{
-    text-decoration: line-through;
 }
 
 /* MOVIL */
