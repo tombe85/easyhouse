@@ -1,5 +1,8 @@
 <?php
 {
+    /*
+    *   Este php será accedido mediante un enlace. Modifica la base de datos y enlaza a la página correspondiente
+    */
     include_once('../functions.php');
     if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["texto"])){
         header('Location: /sweethomesw/admin/config/users.html');

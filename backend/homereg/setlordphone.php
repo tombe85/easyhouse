@@ -1,5 +1,8 @@
 <?php
 {
+    /*
+    *   Este php será llamado vía AJAX y devolverá el contenido del teléfono del casero en caso de éxito y 0 en caso de fallo
+    */
     include_once('../functions.php');
     if(!checkLogin() || !isset($_REQUEST["phone"]) || !isset($_REQUEST["home"])){
         echo "0"; //error

@@ -1,19 +1,27 @@
 <?php
 {
     include_once('../backend/functions.php');
+    
+    // Comprobamos login
     if(!checkLogin()){
         echo '<h4>No has iniciado sesión. Accede al <a href="/sweethomesw/login.html" data-ajax="false">login</a></h4>';
         exit();
     }
+    
+    //Comprobamos admin
     if(!checkAdmin()){
         echo '<h4>No tienes permisos de administrador</h4>';
         exit();
     }
     
-    include_once('../backend/loads.php');
+    // Tomamos datos de Cookies / Get / Post
     $idhome = $_COOKIE["idhome"];
+    
+    // Cargamos el array de registros llamando al php lógico/de consulta BBDD
+    include_once('../backend/loads.php');    
     $arr = loadadminlisttasks($idhome);
     
+    // Imprimimos el html para cada registro
     echo '<table>';
     
     foreach($arr as $reg){

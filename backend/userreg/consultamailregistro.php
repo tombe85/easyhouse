@@ -1,4 +1,8 @@
 <?php
+/*
+*   Este php será llamado vía AJAX y devolverá 0 en caso de éxito o el número correspondiente al error generado para la validación
+*   Por javascript
+*/
 $mail=$_REQUEST["mail"];
 
 include('../functions.php');

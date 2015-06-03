@@ -1,4 +1,7 @@
 <?php
+/*
+*   Este php será accedido mediante un enlace. Modifica la base de datos y enlaza a la página correspondiente
+*/
 
 if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_COOKIE["email"]) || !isset($_COOKIE["nombrecasa"])){
     header('Location: /sweethomesw/register.html?mess=1');

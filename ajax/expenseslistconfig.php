@@ -1,6 +1,8 @@
 <?php
 {
     include_once('../backend/functions.php');
+    
+    // Comprobamos login y admin
     if(!checkLogin()){
         echo '<h4>No has iniciado sesión. Accede al <a href="/sweethomesw/login.html" data-ajax="false">login</a></h4>';
         exit();
@@ -10,10 +12,13 @@
         exit();
     }
     
+    // Tomamos datos de cookies y cargamos en un array la consulta de datos
     include_once('../backend/loads.php');
     $idhome = $_COOKIE["idhome"];
     $arr = loadallexpenses($idhome);
     
+    
+    // Generamos el HTML
     echo '<table>';
     
     foreach($arr as $reg){

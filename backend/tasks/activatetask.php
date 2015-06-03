@@ -1,5 +1,8 @@
 <?php
 {
+    /*
+    *   Este php será llamado vía AJAX y devolverá el mensaje de error en caso de fallo y 0 en caso de éxito
+    */
     //Comprobar login
     include_once('../functions.php');
     if(!checkLogin()){

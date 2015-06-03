@@ -1,5 +1,9 @@
 <?php
 {
+    /*
+    *   Este php será llamado por AJAX y modificará la base de datos
+    *   Devolverá un 0 en caso de que haya habido algún error o "Pendiente" / "Pagado" según corresponda
+    */
     include_once('../functions.php');
     if(!checkLogin()){
         //Con 0 indicamos que ha habido un error

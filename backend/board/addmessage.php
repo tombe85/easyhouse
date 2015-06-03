@@ -1,5 +1,9 @@
 <?php
 {
+    /*
+    *   Este php será accedido mediante un enlace.
+    *   Modificará la base de datos y nos enlazará a la página correspondiente al finalizar
+    */
     include_once('../functions.php');
     
     //Datos de sesión

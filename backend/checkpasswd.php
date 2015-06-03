@@ -1,4 +1,7 @@
 <?php
+/*
+*   Este php será llamado vía AJAX y devolverá 0 en caso de fallo y 1 en caso de éxito
+*/
 $mail=$_REQUEST["user"];
 $passwd=sha1($_REQUEST["passwd"]);
 

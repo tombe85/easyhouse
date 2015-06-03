@@ -34,7 +34,6 @@
         echo '</table>';
     }else{
         echo '<div id="emptyContentImg">';
-        include_once('../backend/functions.php');
         printAleatoryMonster();
         echo '</div>';
     }

@@ -1,5 +1,10 @@
 <?php
 {
+    /*
+    *   Este php puede ser accedido de dos formas.
+    *       1. Accedido vía AJAX: devolverá el mensaje de error si lo hay o 0 en caso de éxito
+    *       2. Accedido mediante enlace. Modificará la base de datos y enlazará a la página correspondiente.
+    */
     //Ver si ha sido realizada o activada
     if(isset($_REQUEST["nouser"]) && $_REQUEST["nouser"] == true){
         $nouser = true;

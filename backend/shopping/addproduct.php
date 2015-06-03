@@ -1,5 +1,8 @@
 <?php
 {
+    /*
+    *   Este php será llamado vía AJAX y devolverá el contenido del error encontrado caso de fallo, o 0 en caso de éxito
+    */
     include_once('../functions.php');
     if(!checkLogin()){
         echo "Debes iniciar sesión para añadir un producto";

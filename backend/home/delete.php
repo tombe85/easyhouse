@@ -1,5 +1,8 @@
 <?php
 {
+    /*
+    *   Este php será accedido mediante un enlace. Modificará la base de datos y enlazará a la página correspondiente.
+    */
     include_once('../functions.php');
     if(!checkLogin()){
         header('Location: /sweethomesw/login.html');

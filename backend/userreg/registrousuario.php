@@ -1,5 +1,8 @@
 <?php
-
+/*
+*   Este php será accedido al hacer click a Registrarse y enlazará a la página principal si todo ha salido bien
+*   o a la página de registro de nuevo en caso de error
+*/
 include_once('../functions.php');
 
 //Cogemos los datos

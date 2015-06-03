@@ -1,5 +1,9 @@
 <?php
 {
+    /* 
+    *   Este php será ejecutado por AJAX y devolverá información a la función JavaScript solicitante
+    *   Devolverá un 0 en caso de error, o el HTML correspondiente a un comentario nuevo en un mensaje del tablón
+    */
     include_once('../functions.php');
     
     //Datos de sesión

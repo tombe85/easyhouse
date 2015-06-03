@@ -1,6 +1,8 @@
 <?php
 {
     include_once('../backend/functions.php');
+    
+    // Comprobamos login
     if(checkLogin()){
         $iduser = $_COOKIE["iduser"];
         $rutafoto = userphotourl($iduser);
@@ -8,6 +10,7 @@
         unset($iduser);
     }
     
+    // Imprimimos header según los parámetros pasados por GET
     echo '<table class = "tableHeader">
             <tr>';
     echo '      <td id="backHeader">';

@@ -1,4 +1,8 @@
 <?php
+/*
+*   Este php será llamado mediante un enlace y enlazará a la página ppal si todo ha ido bien o a la del login 
+*   con el correspondiente error pasado por GET
+*/
 
 //Sacar datos y comprobarlos
 if(!isset($_REQUEST["usuario"]) || !isset($_REQUEST["passwd"])){

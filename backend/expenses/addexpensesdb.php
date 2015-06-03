@@ -1,5 +1,9 @@
 <?php
 {
+    /*
+    *   Este php será llamado por AJAX y modificará la base de datos. 
+    *   Devolverá la información correspondiente al error encontrado o 0 en caso de que no haya habido ningún error.
+    */
     include_once('../functions.php');
     if(!checkLogin()){
         echo 'No has iniciado sesión';
