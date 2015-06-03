@@ -15,9 +15,16 @@
     }
     $iduser = $_COOKIE["iduser"];
     $mail = $_REQUEST["mail"];
-    $passwd = sha1($_REQUEST["passwd"]);
     
     $db = connectDataBase();
+    
+    $query='select * from users where iduser like "'.$iduser.'"';
+    $result = $db->query($query)
+        or die($db->error. " en la línea ".(__LINE__-1));
+    $reg=$result->fetch_array();
+    
+    $passwd = sha1($_REQUEST["passwd"] . reg["sal"]);
+    
     $query = 'select * from users where iduser = "'.$iduser.'"';
     $result = $db->query($query)
         or die($db->error);
