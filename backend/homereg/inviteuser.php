@@ -4,14 +4,13 @@
     *   Este php será accedido mediante un enlace. Modifica la base de datos y enlaza a la página correspondiente
     */
     include_once('../functions.php');
-    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["texto"])){
+    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["texto"]) || $_REQUEST["texto"] == "" || strpos($_REQUEST["texto"],"<") != false){
         header('Location: /sweethomesw/admin/config/users.html');
     }
     $db = connectDataBase();
     
     $mail = $_REQUEST["texto"];
     $idhome = $_COOKIE["idhome"];
-    
     
     $codegenerated = false;
     while(!$codegenerated){

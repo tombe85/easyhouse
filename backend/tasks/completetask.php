@@ -24,7 +24,7 @@
     }
     
     //Toma de datos
-    if(!isset($_REQUEST["id"]) || $_REQUEST["id"] == ""){
+    if(!isset($_REQUEST["id"]) || $_REQUEST["id"] == "" || strpos($_REQUEST["id"],"<") != false){
         if($nouser){
             echo "Error. Variables corruptas.";
             exit();

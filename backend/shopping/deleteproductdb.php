@@ -8,7 +8,7 @@
         echo "No has iniciado sesión";
         exit();
     }
-    if(!isset($_REQUEST["idprod"])){
+    if(!isset($_REQUEST["idprod"]) || $_REQUEST["idprod"] == "" || strpos($_REQUEST["idprod"],"<") != false){
         echo "Error al eliminar el producto";
         exit();
     }

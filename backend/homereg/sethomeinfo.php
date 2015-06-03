@@ -4,7 +4,7 @@
     *   Este php será llamado vía AJAX y devolverá el contenido del campo de información en caso de éxito y 0 en caso de fallo
     */
     include_once('../functions.php');
-    if(!checkLogin() || !isset($_REQUEST["info"])){
+    if(!checkLogin() || !isset($_REQUEST["info"]) || $_REQUEST["info"] == "" || strpos($_REQUEST["info"],"<") != false){
         echo "0"; //error
         exit();
     }

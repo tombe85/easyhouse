@@ -3,7 +3,7 @@
 *   Este php será accedido mediante un enlace. Modifica la base de datos y enlaza a la página correspondiente
 */
 
-if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_COOKIE["email"]) || !isset($_COOKIE["nombrecasa"])){
+if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_POST["email"]) || !isset($_POST["nombrecasa"]) || $_POST["usuario"] == "" || $_POST["passwd"] == "" || $_POST["passwd2"] == "" || $_POST["email"] == "" || $_POST["nombrecasa"] == "" || strpos($_POST["usuario"],"<") != false || strpos($_POST["email"],"<") != false || strpos($_POST["nombrecasa"],"<") != false || strpos($_POST["passwd"],"<") != false || strpos($_POST["passwd2"],"<") != false){
     header('Location: /sweethomesw/register.html?mess=1');
 }
 

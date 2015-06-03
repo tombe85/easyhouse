@@ -4,7 +4,7 @@
     *   Este php será llamado vía AJAX y devolverá la ruta del nuevo avatar en caso de éxito y 0 en caso de error
     */
     include_once('../functions.php');
-    if(!checkLogin() || !isset($_REQUEST["ruta"]) || !isset($_REQUEST["user"])){
+    if(!checkLogin() || !isset($_REQUEST["ruta"]) || !isset($_REQUEST["user"]) || $_REQUEST["ruta"] == "" || $_REQUEST["user"] == "" || strpos($_REQUEST["user"],"<") != false || strpos($_REQUEST["ruta"],"<") != false){
         echo "0";   //error
         exit();
     }

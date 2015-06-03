@@ -9,7 +9,7 @@
         echo "No has iniciado sesión";
         exit();
     }
-    if(!isset($_REQUEST["mail"]) || !isset($_REQUEST["passwd"])){
+    if(!isset($_REQUEST["mail"]) || !isset($_REQUEST["passwd"]) || $_REQUEST["mail"] == "" || strpos($_REQUEST["mail"],"<") != false || $_REQUEST["passwd"] || strpos($_REQUEST["passwd"],"<") != false){
         echo "Error al cambiar el e-mail";
         exit();
     }

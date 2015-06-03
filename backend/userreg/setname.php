@@ -4,7 +4,7 @@
     *   Este php será llamado vía AJAX y devolverá 0 en caso de fallo y el nuevo nombre en caso de éxito
     */
     include_once('../functions.php');
-    if(!checkLogin() || !isset($_REQUEST["name"]) || !isset($_REQUEST["user"])){
+    if(!checkLogin() || !isset($_REQUEST["name"]) || !isset($_REQUEST["user"]) || $_REQUEST["name"] == "" || $_REQUEST["user"] == "" || strpos($_REQUEST["name"],"<") != false || strpos($_REQUEST["user"],"<") != false){
         echo "0";   //error
         exit();
     }

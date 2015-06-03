@@ -15,7 +15,7 @@
     $iduser = $_COOKIE["iduser"];
     
     //Datos por post
-    if(!isset($_REQUEST["texto"]) || !isset($_REQUEST["idboard"])){
+    if(!isset($_REQUEST["texto"]) || !isset($_REQUEST["idboard"]) || $_REQUEST["texto"] == "" || $_REQUEST["idboard"] == "" || strpos($_REQUEST["texto"],"<") != FALSE || strpos($_REQUEST["idboard"],"<") != FALSE){
         echo "0";
         exit();
     }

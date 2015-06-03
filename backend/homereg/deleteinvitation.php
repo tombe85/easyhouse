@@ -4,7 +4,7 @@
     *   Este php será llamado vía AJAX y devolverá un 1 en caso de éxito y 0 en caso de fallo
     */
     include_once('../functions.php');
-    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["idinvited"])){
+    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["idinvited"]) || $_REQUEST["idinvited"] == "" || strpos($_REQUEST["idinvited"],"<") != false){
         // 0 == error
         echo "0";
         exit();

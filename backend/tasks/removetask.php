@@ -8,7 +8,7 @@
         echo "No has iniciado sesión";
         exit();
     }
-    if(!isset($_REQUEST["idtask"])){
+    if(!isset($_REQUEST["idtask"]) || $_REQUEST["idtask"] == "" || strpos($_REQUEST["idtask"],"<") != false){
         echo "Error al eliminar la tarea";
         exit();
     }

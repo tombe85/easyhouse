@@ -8,7 +8,7 @@
         echo "No has iniciado sesión";
         exit();
     }
-    if(!isset($_REQUEST["name"])){
+    if(!isset($_REQUEST["name"]) || $_REQUEST["name"] == "" || strpos($_REQUEST["name"],"<") != false){
         echo "Debes introducir un nombre para el producto";
         exit();
     }

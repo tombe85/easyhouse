@@ -4,7 +4,7 @@
     *   Este php será llamado vía AJAX y devolverá 0 caso de fallo y 1 en caso de éxito
     */
     include_once('../functions.php');
-    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["idtask"]) || !isset($_REQUEST["iduserd"]) || !isset($_REQUEST["idtaskdone"])){
+    if(!checkLogin() || !checkAdmin() || !isset($_REQUEST["idtask"]) || !isset($_REQUEST["iduserd"]) || !isset($_REQUEST["idtaskdone"]) || $_REQUEST["idtask"] == "" || strpos($_REQUEST["idtask"],"<") != false || $_REQUEST["iduserd"] == "" || strpos($_REQUEST["iduserd"],"<") != false || $_REQUEST["idtaskdone"] == "" || strpos($_REQUEST["idtaskdone"],"<") != false){
         echo "0";
         exit();
     }

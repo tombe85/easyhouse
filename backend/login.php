@@ -5,7 +5,7 @@
 */
 
 //Sacar datos y comprobarlos
-if(!isset($_REQUEST["usuario"]) || !isset($_REQUEST["passwd"])){
+if(!isset($_REQUEST["usuario"]) || !isset($_REQUEST["passwd"]) || $_REQUEST["usuario"] == "" || strpos($_REQUEST["usuario"],"<") != false || $_REQUEST["passwd"] == "" || strpos($_REQUEST["passwd"],"<") != false){
     header('Location: /sweethomesw/login.html?mess=1');
     exit();
 }

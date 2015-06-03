@@ -4,7 +4,7 @@
     *   Este php será llamado vía AJAX y devolverá el contenido del mail del casero en caso de éxito y 0 en caso de fallo
     */
     include_once('../functions.php');
-    if(!checkLogin() || !isset($_REQUEST["mail"]) || !isset($_REQUEST["home"])){
+    if(!checkLogin() || !isset($_REQUEST["mail"]) || !isset($_REQUEST["home"]) || $_REQUEST["mail"] == "" || strpos($_REQUEST["mail"],"<") != false || $_REQUEST["home"] == "" || strpos($_REQUEST["home"],"<") != false){
         echo "0"; //error
         exit();
     }

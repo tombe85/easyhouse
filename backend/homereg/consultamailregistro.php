@@ -3,6 +3,10 @@
 *   Este php será llamado vía AJAX, para comprobar si existe un mail en la BBDD.
 *   Devolverá un 1 en caso de que exista el mail o un 0 en caso de que no
 */
+if(!isset($_REQUEST["mail"]) || $_REQUEST["mail"] == "" || strpos($_REQUEST["mail"],"@") == false || strpos($_REQUEST["mail"],".") == false){
+    echo "0";
+    exit();
+}
 $mail=$_REQUEST["mail"];
 
 include('../functions.php');

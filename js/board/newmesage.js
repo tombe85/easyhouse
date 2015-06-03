@@ -20,6 +20,9 @@ function validaCampos(formu){
     if(formu.titulo.value == "" || formu.mensaje.value == ""){
         alert("Debes rellenar los campos!");
         return false;
+    }else if(formu.titulo.value.indexOf("<") != -1 || formu.mensaje.value.indexOf("<") != -1){
+        alert("Caracter ( < ) no permitido");
+        return false;
     }else{
         return true;
     }

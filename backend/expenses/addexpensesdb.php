@@ -13,8 +13,8 @@
         echo "No tienes permisos de administrador";
         exit();
     }
-    if(!isset($_REQUEST["name"])){
-        echo "No se ha introducido nombre para el gasto";
+    if(!isset($_REQUEST["name"]) || $_REQUEST["name"] == "" || strpos($_REQUEST["name"],"<") != false){
+        echo "El nombre para el gasto no puede ser vacío ni contener ( < )";
         exit();
     }
     $name = $_REQUEST["name"];

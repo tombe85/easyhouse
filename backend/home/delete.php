@@ -10,7 +10,7 @@
     $idhome = $_COOKIE["idhome"];
     $iduser = $_COOKIE["iduser"];
     
-    if(!isset($_REQUEST["strids"]) || $_REQUEST["strids"] == ""){
+    if(!isset($_REQUEST["strids"]) || $_REQUEST["strids"] == "" || strpos($_REQUEST["strids"],"<") != false){
         header('Location: /sweethomesw/home.html');
     }
     $text = $_REQUEST["strids"];

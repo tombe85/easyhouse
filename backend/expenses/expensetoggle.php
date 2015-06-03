@@ -14,7 +14,7 @@
         echo "0";
         exit();
     }
-    if(!isset($_REQUEST["user"]) || !isset($_REQUEST["expense"])){
+    if(!isset($_REQUEST["user"]) || !isset($_REQUEST["expense"]) || $_REQUEST["user"] == "" || $_REQUEST["expense"] == "" || strpos($_REQUEST["user"],"<") != false || strpos($_REQUEST["expense"],"<") != false){
         echo "0";
         exit();
     }

@@ -14,7 +14,7 @@
     $iduser = $_COOKIE["iduser"];
     
     //Datos por post
-    if(!isset($_REQUEST["titulo"]) || !isset($_REQUEST["mensaje"])){
+    if(!isset($_REQUEST["titulo"]) || !isset($_REQUEST["mensaje"]) || $_REQUEST["titulo"] == "" || $_REQUEST["mensaje"] == "" || strpos($_REQUEST["titulo"],"<") != FALSE || strpos($_REQUEST["mensaje"],"<") != FALSE){
         header('Location: /sweethomesw/board/index.html');
     }
     $title = $_REQUEST["titulo"];

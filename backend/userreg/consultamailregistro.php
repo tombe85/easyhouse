@@ -3,6 +3,10 @@
 *   Este php será llamado vía AJAX y devolverá 0 en caso de éxito o el número correspondiente al error generado para la validación
 *   Por javascript
 */
+if(!isset($_REQUEST["mail"]) || $_REQUEST["mail"] == "" || strpos($_REQUEST["mail"],"@") == false || strpos($_REQUEST["mail"],".") == false){
+    echo "0";
+    exit();
+}
 $mail=$_REQUEST["mail"];
 
 include('../functions.php');

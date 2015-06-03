@@ -11,7 +11,7 @@
     }
     
     //Toma de datos
-    if(!isset($_REQUEST["idtask"]) || $_REQUEST["idtask"] == ""){
+    if(!isset($_REQUEST["idtask"]) || $_REQUEST["idtask"] == "" || strpos($_REQUEST["idtask"],"<") != false){
         echo "Error al activar la tarea";
         exit();
     }

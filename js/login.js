@@ -27,14 +27,7 @@ function validaCampos(formu){
                 alert("El mail introducido no existe");
                 return false;
             }else if(data == 1){
-                jQuery.post('/sweethomesw/backend/checkpasswd.php', {user:formu.usuario.value,passwd:formu.passwd.value}, function(data, textStatus){
-                    if(data == 1){
-                        return true;
-                    }else{
-                        alert("Contraseña incorrecta");
-                        return false;
-                    }
-                });
+                return true;
             }
         });
     }

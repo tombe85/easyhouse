@@ -6,7 +6,7 @@
 include_once('../functions.php');
 
 //Cogemos los datos
-if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_COOKIE["code"])){
+if(!isset($_POST["usuario"]) || !isset($_POST["passwd"]) || !isset($_POST["passwd2"]) || !isset($_COOKIE["code"]) || $_POST["usuario"] == "" || $_POST["passwd"] == "" || $_POST["passwd2"] == "" || $_COOKIE["code"] == "" || strpos($_POST["usuario"],"<") != false || strpos($_POST["passwd"],"<") != false || strpos($_POST["passwd2"],"<") != false || strpos($_COOKIE["code"],"<") != false){
     header('Location: /sweethomesw/userregister.html');
 }
 $sal = generateAleatoryCode();

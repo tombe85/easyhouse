@@ -13,7 +13,7 @@
         echo "No tienes permisos de administrador";
         exit();
     }
-    if(!isset($_REQUEST["idexpense"])){
+    if(!isset($_REQUEST["idexpense"]) || $_REQUEST["idexpense"] == "" || strpos($_REQUEST["idexpense"],"<") != false){
         echo "Error en identificador del gasto";
         exit();
     }

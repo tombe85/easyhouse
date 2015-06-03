@@ -4,7 +4,7 @@
 *   a la página de registro
 */
 //El enlace del correo contendrá el code y el mail
-if(!isset($_REQUEST["code"])){
+if(!isset($_REQUEST["code"]) || $_REQUEST["code"] == "" || strpos($_REQUEST["code"],"<") != false){
     echo "Dirección inválida";
     exit();
 }

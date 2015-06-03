@@ -8,7 +8,7 @@
         echo "Debes iniciar sesión para añadir un producto";
         exit();
     }
-    if(!isset($_REQUEST["strids"])){
+    if(!isset($_REQUEST["strids"]) || $_REQUEST["strids"] == "" || strpos($_REQUEST["strids"],"<") != false){
         echo "No has seleccionado productos";
         exit();
     }

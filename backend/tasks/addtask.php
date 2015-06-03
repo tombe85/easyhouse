@@ -8,7 +8,7 @@
         echo "No has iniciado sesión";
         exit();
     }
-    if(!isset($_REQUEST["name"]) || !isset($_REQUEST["points"]) || !isset($_REQUEST["period"])){
+    if(!isset($_REQUEST["name"]) || !isset($_REQUEST["points"]) || !isset($_REQUEST["period"]) || $_REQUEST["name"] == "" || strpos($_REQUEST["name"],"<") != false || $_REQUEST["points"] == "" || strpos($_REQUEST["points"],"<") != false || $_REQUEST["period"] == "" || strpos($_REQUEST["period"],"<") != false){
         echo "Error al añadir la tarea";
         exit();
     }

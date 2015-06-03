@@ -9,7 +9,7 @@
         echo "No has iniciado sesión";
         exit();
     }
-    if(!isset($_REQUEST["passwdant"]) || !isset($_REQUEST["passwdnew"])){
+    if(!isset($_REQUEST["passwdant"]) || !isset($_REQUEST["passwdnew"]) || $_REQUEST["passwdant"] == "" || strpos($_REQUEST["passwdant"],"<") != false || $_REQUEST["passwdnew"] == "" || strpos($_REQUEST["passwdnew"],"<") != false){
         echo "Error al actualizar la contraseña";
         exit();
     }
