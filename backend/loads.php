@@ -397,7 +397,7 @@
         return $arr;
     }
 
-    function loadadminlisttasks($idhome){
+    function loadlastweektasks($idhome){
         include_once('functions.php');
         $db = connectDataBase();
         $query='select * from tasksdone where idhome = "'.$idhome.'" order by idtaskdone desc';
@@ -416,7 +416,7 @@
             
             $doneat = strtotime($date);
             $dias = (time() - $doneat) / (3600 * 24);
-            if($dias < 7){
+            if(floor($dias) < 7){
                 $arr[$j]["photo"] = userphotourl($iduser);
                 
                 $query2='select * from tasks where idtask = "'.$idtask.'"';
@@ -429,7 +429,8 @@
                 $arr[$j]["iduser"] = $iduser;
                 $arr[$j]["idtaskdone"] = $idtaskdone;
                 $j++;
-            }
+            }else
+                break;
         }
         $db->close();
         return $arr;

@@ -19,7 +19,7 @@
     
     // Cargamos el array de registros llamando al php lógico/de consulta BBDD
     include_once('../backend/loads.php');    
-    $arr = loadadminlisttasks($idhome);
+    $arr = loadlastweektasks($idhome);
     
     // Imprimimos el html para cada registro
     echo '<table>';
