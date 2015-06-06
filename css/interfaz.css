@@ -219,6 +219,10 @@ div#confirmButtonRight{
     background-color: white;
 }
 
+#contentConfig input{
+    background-color: white;
+}
+
 #contentForm input{
     background-color: white;
 }
