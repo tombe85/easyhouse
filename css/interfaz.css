@@ -95,6 +95,11 @@ h2{
     font-family: 'roboto_condensedlight';   
 }
 
+h2.subtittle{
+    color: #3f51b5;
+    text-align: center;
+}
+
 h3{
     padding: 0px;
     margin: 0px;

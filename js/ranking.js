@@ -12,6 +12,7 @@ $(document).bind('pageinit', function(){
     });
     $("#userData").load("/sweethomesw/ajax/user_ranking_cabeza.php");
     $("#users").load("/sweethomesw/ajax/user_ranking_cuerpo.php");
+    $("#lastWeek").load("/sweethomesw/ajax/lastweektasks.php");
     $(document).ajaxComplete(function(){
         $("body").resize();
     });
