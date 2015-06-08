@@ -15,7 +15,7 @@ function changeMail(formu){
 function changePasswd(formu){
     $.post('/sweethomesw/backend/userreg/changepasswd.php', {passwdant:formu.passwd.value,passwdnew:formu.passwdnueva.value}, function(data, textStatus){
         if(data != 0){
-            alert("error al cambiar la contraseña " + data);
+            alert("Error : " + data);
         }else{
             alert("Contraseña actualizada correctamente");
         }
