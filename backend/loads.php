@@ -123,6 +123,10 @@
         return $arr;
     }
 
+    function sortByDayson($a, $b) {
+        return $b['dayson'] - $a['dayson'];
+    }
+
     function loadtasks($idhome){
         include_once('functions.php');
         $db = connectDataBase();
@@ -159,6 +163,7 @@
                 }
             }
         }
+        usort($arr, 'sortByDayson');
         $db->close();
         return $arr;
     }
