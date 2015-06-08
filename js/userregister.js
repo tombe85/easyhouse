@@ -21,7 +21,7 @@ function validaCampos(formu){
             alert("Las contraseñas no coinciden");
             return false;
         }else{
-            jQuery.post('/sweethomesw/backend/userreg/consultamailregistro.php', {mail:formu.email.value}, function(data, textStatus){
+            jQuery.post('/sweethomesw/backend/userreg/consultamailregistro.php', {mail:formu.usuario.value}, function(data, textStatus){
                 if(data == 1){
                     alert("El mail introducido ya existe");
                     return false;

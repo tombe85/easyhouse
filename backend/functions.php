@@ -119,4 +119,13 @@
         }
         return $code;
     }
+
+    function resetpasswdmail($pass){
+        $mess = '<html><body>';
+        $mess .= '<img src="http://www.easyhouse.me/img/logotipo.png" /><br><br>';
+        $mess .= '<h3>Has solicitado el reinicio de contraseña.</h3><br><br><h3>Accede a <a href="http://www.easyhouse.me/login.html">www.easyhouse.me</a> y utiliza la siguiente contraseña: '.$pass.'</h3><br>';
+        $mess .= '</body></html>';
+        return $mess;
+    }
+    
 ?>

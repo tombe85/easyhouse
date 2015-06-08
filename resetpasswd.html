@@ -6,7 +6,7 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="/sweethomesw/jquery/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="/sweethomesw/js/functions.js"></script>
-        <script type="text/javascript" src="/sweethomesw/js/login.js"></script>
+        <script type="text/javascript" src="/sweethomesw/js/resetpasswd.js"></script>
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/rejilla.css" />
         <link rel="stylesheet" style="text/css" href="/sweethomesw/css/interfaz.css" />
         <link rel="shortcut icon" href="/sweethomesw/img/favicon.ico">
@@ -15,21 +15,13 @@
     <body>
         <header id="headerlogin" data-role="header" data-position="fixed" data-tap-toggle="false"></header>
         <div id="contentForm" data-role="content">
-            <form method="post" action="/sweethomesw/backend/login.php" data-ajax="false" onsubmit="return validaCampos(this)">
-                <div id="logoInit">
-                    <img id="logoInit" src="/sweethomesw/img/logotipo.png" />
-                </div>
+            <form method="post" action="/sweethomesw/backend/userreg/resetpasswd.php" onsubmit="return validaCampos(this)" data-ajax="false">
                 <div class="dataInput">
                     <h4>Email de usuario</h4>
-                    <input type="email" name="usuario" id="usermail" required>
-                </div>
-                <div class="dataInput">
-                    <h4>Contraseña</h4>
-                    <input type="password" name="passwd" required>
+                    <input type="text" name="usuario" required>
                 </div>
                 <div class="submitbutton">
-                    <button id="loginbutton" type="submit"><h3>Login</h3></button>
-                    <h5 id="createHome">¿No tienes casa todavía? <a href="/sweethomesw/register.html" data-ajax="false">¡Crea la tuya!</a></h5>
+                    <button id="registerbutton" type="submit"><h4>Registrarse</h4></button>
                 </div>
             </form>
         </div>

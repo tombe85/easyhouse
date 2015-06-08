@@ -26,7 +26,7 @@ if($result->num_rows == 0){
 $reg=$result->fetch_array();
 //Comprobar contraseña y asignar iduser
 if(sha1($passwd . $reg["sal"]) != $reg["passwd"]){
-    header('Location: /sweethomesw/login.html?mess=3');
+    header('Location: /sweethomesw/login.html?mess=3&mail='.$mail);
     exit();
 }
 $iduser=$reg["iduser"];

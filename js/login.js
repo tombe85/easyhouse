@@ -9,8 +9,8 @@ $(document).bind('pageinit', function(){
     $("#headerlogin").load("/sweethomesw/ajax/header.php", function(){
         $("#backbutton").css("display","none");
         $("#userPhoto").css("display","none");
+        checkLoginError(getQueryVariable("mess"));
     });
-    checkLoginError(getQueryVariable("mess"));
     $(document).ajaxComplete(function(){
         $("body").resize();
     });
@@ -39,8 +39,13 @@ function checkLoginError(mesa){
             alert("Debe rellenar todos los campos");
         else if(mesa == 2)
             alert("El mail introducido no existe");
-        else if(mesa == 3)
+        else if(mesa == 3){
+            $("#usermail").val(getQueryVariable("mail"));
             alert("Contraseña incorrecta");
+            $("#createHome").html('¿Has olvidado tu contraseña? <a href="/sweethomesw/resetpasswd.html" data-ajax="false">¡Resetéala!</a>');
+        }else if(mesa == 4){
+            alert("Se ha enviado un mail con la nueva contraseña a la dirección facilitada.");
+        }
 
     }
 }
