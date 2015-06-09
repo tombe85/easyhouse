@@ -136,6 +136,7 @@ function deleteMessage(idboard){
             if(data == 0){
                 alert("error al eliminar el mensaje ");
             }else{
+                $("#userMessage").html("<br>");
                 $("#userMessage").load("/sweethomesw/ajax/usermessages.php");
             }
         });
