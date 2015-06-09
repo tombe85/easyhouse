@@ -14,24 +14,15 @@ $(document).bind('pageinit', function(){
 });
 
 function validaCampos(formu){
+    var ok = true;
     if(formu.usuario.value.length == 0 || formu.email.value.length == 0 || formu.texto.email.indexOf("@") == -1 || formu.texto.email.indexOf(".") == -1 || formu.nombrecasa.value.length == 0 || formu.passwd.value.length == 0 || formu.passwd2.value.length == 0){
         alert("Debes rellenar todos los campos correctamente");
-        return false;
-    }else{
-        if(formu.passwd.value !== formu.passwd2.value){
-            alert("Las contraseñas no coinciden");
-            return false;
-        }else{
-            jQuery.post('/sweethomesw/backend/homereg/consultamailregistro.php', {mail:formu.email.value}, function(data, textStatus){
-                if(data == 1){
-                    alert("El mail introducido ya existe");
-                    return false;
-                }else if(data == 0){
-                    return true;
-                }
-            });
-        }
+        ok = false;
+    }else if(formu.passwd.value != formu.passwd2.value){
+        alert("Las contraseñas no coinciden");
+        ok = false;
     }
+    return ok;
 }
 
 function checkRegisterError(mesa){
