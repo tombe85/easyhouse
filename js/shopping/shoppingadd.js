@@ -50,7 +50,7 @@ function addproducttolist(idproduct,productcheck){
         idsreg = idsreg + cad;
         names += nam;
         $("#textoProd").val("");
-        $("#textoProd").keyup();
+        $("#textoProd").keyup();    //Para cargar todos los productos
     }else{
         idsreg = idsreg.replace(cad,"");
         names = names.replace(nam,"");
@@ -72,6 +72,7 @@ function addcomprar(){
 
 function addNewProduct(){
     var texto = $("#textoProd").val();
+    var textfmt = "#" + texto.replace(/ /g,""); // Para utilizar el identificador después
     if(texto == null || texto == ""){
         alert("Debes introducir el nombre de un producto");
     }else{
@@ -80,7 +81,7 @@ function addNewProduct(){
                 alert("Error " + data);
             }else{
                 $("#productsList").load("/sweethomesw/ajax/productlist.php",function(){
-                    $("#"+texto.replace(" ","")).click();
+                    $(textfmt).click();
                 });
                 $("#textoProd").val("");
                 $("#textoProd").focusout();
