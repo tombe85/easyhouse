@@ -22,14 +22,7 @@ function validaCampos(formu){
         alert("Debes rellenar todos los campos");
         return false;
     }else{
-        jQuery.post('/sweethomesw/backend/homereg/consultamailregistro.php', {mail:formu.usuario.value,passwd:formu.passwd.value}, function(data, textStatus){
-            if(data == 0){
-                alert("El mail introducido no existe");
-                return false;
-            }else if(data == 1){
-                return true;
-            }
-        });
+        return true;
     }
 }
 
