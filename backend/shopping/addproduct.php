@@ -8,23 +8,21 @@
         echo "Debes iniciar sesión para añadir un producto";
         exit();
     }
-    if(!isset($_REQUEST["strids"]) || $_REQUEST["strids"] == "" || strpos($_REQUEST["strids"],"<") != false){
+    if(!isset($_REQUEST["idp"]) || $_REQUEST["idp"] == "" || strpos($_REQUEST["idp"],"<") != false){
         echo "No has seleccionado productos";
         exit();
     }
-    $text = $_REQUEST["strids"];
-    $idsproduct = array();
-    $idsproduct = split(" ", trim($text));
+    $idproduct = $_REQUEST["idp"];
     
     $db = connectDataBase();
-    foreach($idsproduct as $idproduct){
-        $query='update products set added = true where idproduct = "'.$idproduct.'"';
-        if($result = $db->query($query)){
-            echo "0";
-        }else{
-            echo "No se puede actualizar la lista de productos";
-        }
+    
+    $query='update products set added = true where idproduct = "'.$idproduct.'"';
+    if($result = $db->query($query)){
+        echo "0";
+    }else{
+        echo "No se puede actualizar la lista de productos";
     }
+    
     $db->close();
 }
 ?>

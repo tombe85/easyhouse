@@ -19,16 +19,36 @@
                 <h4>Lista de la compra</h4>
             </div>
             
+            <div id="newProduct">
+                <table>
+                    <tr>
+                        <td class="sendtext">
+                            <input type="text" name="textoProd" id="textoProd" autocomplete="off" required onkeyup="findProducts(event)" />
+                        </td>
+                        <td class="sendbutton">
+                            <button id="buttonAddProduct" class="buttonAction2" onclick="addNewProduct()"><img src="/sweethomesw/img/add.png" class="menubutton" /> </button>
+                        </td>
+                    </tr>
+                </table>
+                <div id="productsList">
+                </div>
+            </div>
+            
             <div id="shoppingList">
             </div>
             
             <div id="contentBottom" data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-                <div id="contentBottomLeft">
+                <div id="buttonBottom">
+                    <button class="buttonAction" onclick="comprar()" >
+                        <img class="menubutton" src="/sweethomesw/img/addItem.png" />
+                    </button>
+                </div>
+                <!--div id="contentBottomLeft">
                     <button class="buttonAction2" onclick='location.href="/sweethomesw/shopping/addproduct.html"'><img class="menubutton" src="/sweethomesw/img/add.png" /></button>
                 </div>
                 <div id="contentBottomRight">
                     <button class="buttonAction" onclick="comprar()" ><img class="menubutton" src="/sweethomesw/img/addItem.png" /></button>
-                </div>
+                </div-->
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">

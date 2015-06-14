@@ -25,33 +25,34 @@
     // Generamos el HTML para los productos disponibles
     echo '<table>';
     foreach($arr as $reg){
-        echo '<tr class="rowBordered">';
+        echo '<tr class="rowSlim">';
         
         echo '<td class="rowText">';
         
         $name = str_replace(" ", "",$reg["product"]);
-        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><input onchange="addproducttolist('.$reg["idproduct"].',this)" type="checkbox" name="'.$name.'" id="'.$name.'"><h3>'.$reg["product"].'</h3></label></div>';
+        echo '   <div><button class="buttonTransparent" onclick="addcomprar('.$reg["idproduct"].')"><label class="ui-btn ui-corner-all ui-btn-inherit" ><h3>'.$reg["product"].'</h3></label></button></div>';
         echo '</td>';
         
         echo '</tr>';
     }
     echo '</table>';
     
+    /*
     // Cargamos el array con los productos ya añadidos (para informar al usuario de que ya están añadidos)
     $arr2 = loadshoppinglist($idhome,$startby);
     
     // Generamos el HTML para los productos ya añadidos
     echo '<table>';
     foreach($arr2 as $reg){
-        echo '<tr class="rowBordered">';
+        echo '<tr class="rowSlim">';
         
         echo '<td class="rowText">';
         
-        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off"><h3><span class="lineThrough">'.$reg["product"].'</span></h3></label></div>';
+        echo '   <div class="ui-checkbox"><label class="ui-btn ui-corner-all ui-btn-inherit"><h3><span class="lineThrough">'.$reg["product"].'</span> (añadido)</h3></label></div>';
         echo '</td>';
         
         echo '</tr>';
     }
-    echo '</table>';
+    echo '</table>';*/
 }
 ?>

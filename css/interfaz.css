@@ -292,7 +292,11 @@ div#confirmButtonRight{
 }
 
 #productsList{
-    margin-bottom: 60px;
+    min-width: 200px;
+    background-color: white;
+    margin: 5px;
+    z-index: 1000;
+    box-shadow: 1px 1px 3px grey;
 }
 
 #registry{
@@ -596,6 +600,12 @@ div#confirmButtonRight{
     width: 100%;
     margin: 0px;
     padding: 5px;
+}
+
+.rowSlim{
+     width: 100%;
+    margin: 0px;
+    padding: 1px;
 }
 
 .rowPhoto{

@@ -19,6 +19,20 @@ $(document).bind('pageinit', function(){
 
         $("body").resize();
     });
+    $("#newProduct").focusin(function(){
+        $("footer").hide();
+        $("#contentBottom").hide();
+        $("#productsList").show();
+        findProducts(null);
+    });
+
+    $("#newProduct").focusout(function(){
+        $("footer").show();
+        $("#contentBottom").show();
+        $("#productsList").hide();
+    });
+    
+    $("#productsList").hide();
 });
 
 function comprar(){
@@ -33,7 +47,7 @@ function comprar(){
         });
     }
 }
-            
+
 function addproducttolist(idproduct,productcheck){
     var cad = idproduct + " ";
     var nam = productcheck.name + " ";
@@ -46,16 +60,16 @@ function addproducttolist(idproduct,productcheck){
     }
 }
 
-function addcomprar(){
-    if(idsreg.trim() != ""){
-        $.post("/sweethomesw/backend/shopping/addproduct.php",{strids:idsreg},function(data,textStatus){
-            if(data != 0){
-                alert("Error " + data);
-            }else{
-                document.location.href="/sweethomesw/shopping/index.html";
-            }
-        });
-    }
+function addcomprar(idproduct){
+    $.post("/sweethomesw/backend/shopping/addproduct.php",{idp:idproduct},function(data,textStatus){
+        if(data != 0){
+            alert("Error " + data);
+        }else{
+            $("#textoProd").val("");
+            $("#newProduct").focusout();
+            $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
+        }
+    });
 }
 
 
@@ -70,10 +84,9 @@ function addNewProduct(){
             if(data != 0){
                 alert("Error " + data);
             }else{
-                $("#productsList").load("/sweethomesw/ajax/productlist.php",function(){
-                    $("#"+texto.replace(" ","")).click();
-                });
                 $("#textoProd").val("");
+                $("#newProduct").focusout();
+                $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
             }
         });
     }
@@ -88,7 +101,7 @@ function reCheckproducts(){
 }
 
 function findProducts(event){
-    if(event.keyCode == 13){
+    if(event != null && event.keyCode == 13){
         $("#buttonAddProduct").click();
     }else{
         var texto = $("#textoProd").val();
