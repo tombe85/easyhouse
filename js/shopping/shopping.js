@@ -111,3 +111,7 @@ function findProducts(event){
         }
     }
 }
+
+function closeSuggestions(){
+    $("#newProduct").focusout();
+}

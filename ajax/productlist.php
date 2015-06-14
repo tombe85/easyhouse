@@ -23,6 +23,7 @@
     $arr = loadshoppingproducts($idhome,$startby);
     
     // Generamos el HTML para los productos disponibles
+    echo '<div class="exitSuggestions"><button class="buttonTransparent" onclick="closeSuggestions()"><img class="exit" src="/sweethomesw/img/cancelBlack.png"></button></div>';
     echo '<table>';
     foreach($arr as $reg){
         echo '<tr class="rowSlim">';

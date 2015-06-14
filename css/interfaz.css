@@ -497,6 +497,17 @@ div#confirmButtonRight{
     vertical-align:super;
 }
 
+img.exit{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.exitSuggestions{
+    width: 100%;
+    align-content: flex-end;
+    text-align: right;
+}
+
 .expenseMenu{
     border-bottom: 2px solid #3f51b5;
 }
