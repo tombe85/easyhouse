@@ -26,14 +26,20 @@ $(document).bind('pageinit', function(){
         findProducts(null);
     });
 
-    $("#newProduct").focusout(function(){
+    /*$("#newProduct").focusout(function(){
         $("footer").show();
         $("#contentBottom").show();
         $("#productsList").hide();
-    });
+    });*/
     
     $("#productsList").hide();
 });
+
+function focusoutsuggestions(){
+    $("footer").show();
+    $("#contentBottom").show();
+    $("#productsList").hide();
+}
 
 function comprar(){
     if(idsreg.trim() != ""){
@@ -68,6 +74,7 @@ function addcomprar(idproduct){
             $("#textoProd").val("");
             $("#newProduct").focusout();
             $("#shoppingList").load("/sweethomesw/ajax/shoppinglist.php");
+            focusoutsuggestions();
         }
     });
 }
@@ -113,5 +120,5 @@ function findProducts(event){
 }
 
 function closeSuggestions(){
-    $("#newProduct").focusout();
+    focusoutsuggestions();
 }

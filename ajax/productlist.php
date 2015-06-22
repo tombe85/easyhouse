@@ -23,20 +23,16 @@
     $arr = loadshoppingproducts($idhome,$startby);
     
     // Generamos el HTML para los productos disponibles
-    echo '<div class="exitSuggestions"><button class="buttonTransparent" onclick="closeSuggestions()"><img class="exit" src="/sweethomesw/img/cancelBlack.png"></button></div>';
-    echo '<table>';
+    echo '<div class="exitSuggestions"><div onclick="closeSuggestions()"><img class="exit" src="/sweethomesw/img/cancelBlack.png"></div></div>';
     foreach($arr as $reg){
-        echo '<tr class="rowSlim">';
         
-        echo '<td class="rowText">';
+        echo '<div>';
         
         $name = str_replace(" ", "",$reg["product"]);
-        echo '   <div><button class="buttonTransparent" onclick="addcomprar('.$reg["idproduct"].')"><label class="ui-btn ui-corner-all ui-btn-inherit" ><h3>'.$reg["product"].'</h3></label></button></div>';
-        echo '</td>';
+        echo '   <div onclick="addcomprar('.$reg["idproduct"].')"><label class="ui-btn ui-corner-all ui-btn-inherit" ><h3>'.$reg["product"].'</h3></label></div>';
+        echo '</div>';
         
-        echo '</tr>';
     }
-    echo '</table>';
     
     /*
     // Cargamos el array con los productos ya añadidos (para informar al usuario de que ya están añadidos)
