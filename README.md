@@ -1,4 +1,5 @@
-# sweethomesw
+# easyhouse
 
-Un buen manual de uso de git ( sencillo y asequible ) -> http://rogerdudler.github.io/git-guide/index.es.html
-Manuel de contribuciones a un proyecto -> 				 http://git-scm.com/book/es/v1/Git-en-entornos-distribuidos-Contribuyendo-a-un-proyecto
+Proyecto de creación de una web para móvil que gestiona ciertos campos de la convivencia para gente que comparte piso.
+
+Actualmente en proceso de acabado
